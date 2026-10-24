@@ -1,59 +1,79 @@
 import { notes } from '../sections/types'
 
 /**
- * Nội dung lý luận — diễn đạt lại (không chép nguyên văn) theo Giáo trình KTCT Mác – Lênin (Bộ GD&ĐT, 2021),
- * Chương 4: mục II.1 (5 đặc điểm kinh tế của độc quyền) và mục III.1 (biểu hiện mới), tr.134–151.
- * ⚠️ Trước khi nộp: nhóm đối chiếu lại với bản giáo trình giấy, ghi đúng số trang.
+ * Nội dung lý luận — DIỄN ĐẠT LẠI (không chép nguyên văn) theo Giáo trình KTCT Mác – Lênin (Bộ GD&ĐT, 2021):
+ *  - Ch.4 mục II.1: 5 đặc điểm kinh tế của độc quyền (Lênin)
+ *  - Ch.4 mục III.1: biểu hiện mới của độc quyền (a–e)
+ * Cấu trúc tiêu đề đã đối chiếu với mục lục bản in 6/2021, slide Bộ môn KTCT ĐH Thương mại, đề cương ĐH Kinh tế – Luật.
  */
 export const THEORY = {
   leninTitleThen: 'Năm đặc điểm kinh tế của chủ nghĩa tư bản độc quyền',
   leninTitleNow: 'Độc quyền không biến mất — nó “đổi áo”',
-  citeThen: 'V.I. Lênin, “Chủ nghĩa đế quốc, giai đoạn tột cùng của chủ nghĩa tư bản” (viết năm 1916) · Giáo trình KTCT (2021), Ch.4 mục II',
-  citeNow: 'Giáo trình KTCT Mác – Lênin (2021), Ch.4 mục III.1 — “Biểu hiện mới của độc quyền”',
+  citeThen: 'V.I. Lênin, “Chủ nghĩa đế quốc, giai đoạn tột cùng của CNTB” (viết năm 1916) · Giáo trình KTCT (2021), Ch.4 mục II.1',
+  citeNow: 'Giáo trình KTCT Mác – Lênin (2021), Ch.4 mục III.1 — Biểu hiện mới của độc quyền',
   features: [
     {
-      then: 'Tích tụ, tập trung tư bản lớn → tổ chức độc quyền',
-      thenNote: 'Cartel, syndicate, trust, consortium chi phối sản xuất và giá cả trong từng ngành.',
-      now: 'Tập đoàn xuyên quốc gia (TNC) + mạng lưới doanh nghiệp vừa và nhỏ',
-      nowNote: 'Tích tụ, tập trung tăng lên qua sáp nhập, mua lại toàn cầu; DN vừa và nhỏ phát triển làm vệ tinh, nhà cung ứng cho TNC.',
-      example: 'VD: chuỗi cung ứng điện tử tại Bắc Ninh, Thái Nguyên',
+      then: 'Tích tụ, tập trung tư bản lớn → các tổ chức độc quyền',
+      thenNote: 'Cartel → Syndicate → Trust → Consortium: liên kết từ ngang sang dọc, chi phối sản lượng và giá cả.',
+      now: 'Công ty xuyên quốc gia bên cạnh doanh nghiệp vừa và nhỏ',
+      nowNote: 'Liên kết cả dọc lẫn ngang, xuyên biên giới (Concern, Conglomerate). “Hệ thống gia công” — DN nhỏ phụ thuộc tập đoàn lớn — là độc quyền dưới dạng mới.',
+      example: '→ Nhà cung ứng, xưởng gia công cho TNC tại Việt Nam',
     },
     {
-      then: 'Tư bản tài chính & bọn tài phiệt chi phối',
-      thenNote: 'Tư bản ngân hàng dung hợp với tư bản công nghiệp; “chế độ tham dự” kiểm soát qua cổ phần.',
-      now: 'Tập đoàn tài chính đa ngành, xuyên quốc gia',
-      nowNote: 'Tư bản tài chính mở rộng sang mọi ngành; quỹ đầu tư, định chế tài chính toàn cầu nắm cổ phần chi phối ở hàng nghìn công ty.',
-      example: 'VD: các quỹ quản lý tài sản quy mô hàng nghìn tỷ USD',
+      then: 'Tư bản tài chính & hệ thống tài phiệt chi phối',
+      thenNote: 'Ngân hàng dung hợp với công nghiệp; tài phiệt khống chế bằng “chế độ tham dự” (công ty mẹ – con – cháu).',
+      now: '“Chế độ tham dự” được bổ sung bằng “chế độ ủy nhiệm”',
+      nowNote: 'Cổ phiếu mệnh giá nhỏ phổ biến; tổ hợp đa ngành công – nông – thương – tín – dịch vụ; ngân hàng xuyên quốc gia, trung tâm tài chính thế giới.',
+      example: '→ Quỹ quản lý tài sản hàng nghìn tỷ USD',
     },
     {
       then: 'Xuất khẩu tư bản trở thành phổ biến',
-      thenNote: 'Đưa tư bản ra nước ngoài để thu giá trị thặng dư cao hơn ở nước kém phát triển.',
-      now: 'Xuất khẩu tư bản đa chiều, do TNC dẫn dắt',
-      nowNote: 'Dòng vốn chảy cả giữa các nước phát triển; FDI gắn với chuyển giao một phần công nghệ, kết hợp xuất khẩu vốn với xuất khẩu hàng hoá, dịch vụ.',
-      example: 'VD: FDI vào Việt Nam — xem Chương 4 của bài',
+      thenNote: 'Đưa giá trị ra nước ngoài (trực tiếp hoặc gián tiếp) để thu giá trị thặng dư ở nơi có lợi hơn.',
+      now: 'Xuất khẩu tư bản đổi chiều, đổi chủ thể, đổi hình thức',
+      nowNote: 'Chủ yếu giữa các nước phát triển; TNC & FDI là chủ thể chính; đan xen xuất khẩu hàng hóa, dịch vụ, chất xám (BOT, BT…); nguyên tắc cùng có lợi được đề cao.',
+      example: '→ FDI vào Việt Nam: xem Chương 4',
     },
     {
       then: 'Phân chia thị trường thế giới giữa các liên minh độc quyền',
-      thenNote: 'Các tổ chức độc quyền quốc tế thoả thuận chia nhau thị trường, nguồn nguyên liệu.',
-      now: 'Chuỗi giá trị toàn cầu, toàn cầu hoá & khu vực hoá',
-      nowNote: 'TNC chia nhỏ quy trình sản xuất ra nhiều quốc gia, giữ khâu giá trị cao; các khối liên kết kinh tế khu vực hình thành.',
-      example: 'VD: thiết kế ở nước A, linh kiện ở B, lắp ráp ở Việt Nam',
+      thenNote: 'Cartel, Syndicate, Trust quốc tế thỏa thuận chia nhau thị trường, nguồn nguyên liệu.',
+      now: 'Toàn cầu hóa song hành khu vực hóa — do tư bản độc quyền quốc tế chi phối',
+      nowNote: 'Sức mạnh TNC thúc đẩy quốc tế hóa đời sống kinh tế; các khối liên kết (EU, FTA, liên minh thuế quan…) hình thành.',
+      example: '→ Chuỗi giá trị toàn cầu: xem Chương 5',
     },
     {
-      then: 'Phân định lãnh thổ ảnh hưởng giữa các cường quốc',
-      thenNote: 'Lôi kéo chính phủ phân chia thuộc địa, khu vực ảnh hưởng để bảo vệ lợi ích độc quyền.',
-      now: 'Thống trị bằng hình thức mới: công nghệ, tiêu chuẩn, thương mại',
-      nowNote: 'Không còn chủ nghĩa thực dân cũ, nhưng cạnh tranh ảnh hưởng tiếp diễn qua chiến tranh thương mại, kiểm soát công nghệ lõi, “biên giới mềm”.',
-      example: 'VD: kiểm soát xuất khẩu chip, thuế quan đối ứng',
+      then: 'Lôi kéo chính phủ phân định khu vực lãnh thổ ảnh hưởng',
+      thenNote: 'Đòi chia lại thế giới → chiến tranh; sau 1950, chủ nghĩa thực dân mới thay thực dân cũ.',
+      now: '“Chiến lược biên giới mềm”, bành trướng “biên giới kinh tế”',
+      nowNote: 'Ràng buộc nước kém phát triển từ vốn, công nghệ đến chính trị; chiến tranh thương mại, chạy đua công nghệ.',
+      example: '→ Kiểm soát chip, thuế quan: xem Chương 6',
     },
   ],
   notesThen: notes(
-    'Giáo trình (Ch.4 mục II) tóm tắt 5 đặc điểm kinh tế cơ bản của CNTB độc quyền theo Lênin: (1) tích tụ, tập trung tư bản lớn tạo ra tổ chức độc quyền; (2) tư bản tài chính và tài phiệt chi phối; (3) xuất khẩu tư bản phổ biến; (4) phân chia thị trường thế giới; (5) phân định lãnh thổ ảnh hưởng.',
-    'Ý cần nhấn mạnh: độc quyền sinh ra từ cạnh tranh tự do — tích tụ về lượng đến một mức thì nhảy vọt về chất.',
+    'Giáo trình (Ch.4 mục II) tóm tắt 5 đặc điểm kinh tế của CNTB độc quyền theo Lênin: (1) tích tụ, tập trung tư bản lớn tạo ra tổ chức độc quyền; (2) tư bản tài chính và tài phiệt chi phối; (3) xuất khẩu tư bản phổ biến; (4) phân chia thị trường thế giới; (5) phân định khu vực lãnh thổ ảnh hưởng.',
+    'Năm đặc điểm này gắn bó chặt chẽ, nói lên bản chất thống trị của tư bản độc quyền.',
   ),
   notesNow: notes(
-    'Mục III.1 của giáo trình: cả 5 đặc điểm vẫn còn, nhưng mang hình thức mới. Đây là luận điểm trung tâm của nhóm: <b>độc quyền không biến mất mà “đổi áo”</b>.',
-    '• Thẻ 1 → TNC + DN vừa và nhỏ làm vệ tinh. • Thẻ 2 → tập đoàn tài chính đa ngành. • Thẻ 3 → xuất khẩu tư bản đa chiều. • Thẻ 4 → chuỗi giá trị toàn cầu. • Thẻ 5 → thống trị bằng công nghệ, thương mại.',
-    'Chuyển ý: “Vậy những hình thức mới này hiện diện ở Việt Nam ra sao? Bắt đầu từ dòng vốn.”',
+    'Giáo trình Ch.4 mục III.1: cả 5 đặc điểm vẫn còn, nhưng mang hình thức mới. Luận điểm của nhóm: <b>độc quyền không biến mất mà “đổi áo”</b>.',
+    '• Thẻ 1 — điểm then chốt cho cả bài: giáo trình gọi <b>“hệ thống gia công”</b> là độc quyền dưới dạng mới. • Thẻ 2 — chế độ ủy nhiệm. • Thẻ 3 — xuất khẩu tư bản đổi chiều, đổi chủ thể. • Thẻ 4 — toàn cầu hóa và khu vực hóa. • Thẻ 5 — “biên giới mềm”.',
+    'Chuyển ý: “Vì sao nói là ‘đổi áo’ chứ không phải ‘đổi người’? Triết học giúp ta trả lời.”',
+  ),
+}
+
+/** Lăng kính triết học — Giáo trình Triết học Mác – Lênin (2021), trang in đã kiểm chứng trên bản scan */
+export const PHIL = {
+  qty: {
+    title: 'Lượng – chất: “đổi áo” nhưng chưa “đổi chất”',
+    body: 'Cạnh tranh tự do làm tư bản tích tụ dần về lượng; vượt qua <b>điểm nút</b>, nó <b>nhảy vọt</b> sang chất mới là độc quyền. Các biểu hiện mới hôm nay là những thay đổi về lượng và hình thức <b>trong giới hạn của “độ”</b> — bản chất CNTB độc quyền vẫn giữ nguyên.',
+    cite: 'Giáo trình Triết học (2021), tr.241–243: độ, điểm nút, bước nhảy',
+  },
+  prod: {
+    title: 'LLSX – QHSX: sản xuất toàn cầu, chiếm hữu tập trung',
+    body: 'Chuỗi giá trị toàn cầu là lực lượng sản xuất được <b>xã hội hóa</b> ở quy mô hành tinh. Nhưng quan hệ sở hữu — “xuất phát, cơ bản, trung tâm” của QHSX — vẫn nằm trong tay chủ sở hữu công nghệ, thương hiệu; vì thế họ quyết định cả việc <b>phân phối giá trị</b>.',
+    cite: 'Giáo trình Triết học (2021), tr.295–300 · vận dụng của nhóm',
+  },
+  notes: notes(
+    'Ý 1 (lượng – chất): độc quyền sinh ra từ cạnh tranh là một <b>bước nhảy về chất</b>. Còn TNC, chuỗi giá trị, quỹ đầu tư… là thay đổi về lượng và hình thức trong cùng một “độ”: bản chất vẫn là CNTB độc quyền → vì thế nói “đổi áo”.',
+    'Ý 2 (LLSX – QHSX): sản xuất ngày càng xã hội hóa (thiết kế ở nước A, linh kiện ở B, lắp ráp ở Việt Nam) nhưng sở hữu công nghệ, thương hiệu lại tập trung → giáo trình Triết học tr.298: quan hệ sở hữu quyết định quản lý và phân phối. Đây là cách nhìn mâu thuẫn cơ bản của CNTB ở quy mô toàn cầu.',
+    'Lưu ý khi bị hỏi: ví dụ về độc quyền là <b>vận dụng của nhóm</b>, giáo trình Triết không viết ví dụ này.',
   ),
 }

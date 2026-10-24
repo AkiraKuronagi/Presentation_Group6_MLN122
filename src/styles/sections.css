@@ -485,9 +485,26 @@
   align-items: center;
   margin-top: 22px;
 }
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 36px);
+  margin-top: clamp(40px, 8vh, 90px);
+  padding-top: clamp(20px, 3vh, 30px);
+  border-top: 1px solid var(--line);
+}
+.roadmap p {
+  margin: 8px 0 0;
+  font-size: var(--t-lead);
+  line-height: 1.35;
+  font-weight: 300;
+}
 @media (max-width: 760px) {
   .hook__opts {
     grid-template-columns: 1fr 1fr;
+  }
+  .roadmap {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -619,6 +636,51 @@
   height: 160px;
   margin: 18px 0;
 }
+.phil__viz svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.phil .card h3 {
+  margin: 6px 0 10px;
+}
+.qty-bar {
+  fill: var(--steel);
+  opacity: 0.6;
+}
+.qty-leap {
+  fill: var(--red);
+}
+.qty-leap--2 {
+  fill: var(--gold);
+}
+.qty-node {
+  stroke: var(--red);
+  stroke-width: 1.5;
+}
+.qty-t {
+  fill: var(--fg-3);
+  font-family: var(--f-mono);
+  font-size: 11px;
+}
+.qty-t--red {
+  fill: var(--red);
+}
+.qty-t--gold {
+  fill: var(--gold);
+}
+.net-l {
+  stroke: var(--line-2);
+  stroke-width: 1.2;
+}
+.net-n {
+  fill: var(--bg-2);
+  stroke: var(--steel);
+  stroke-width: 2;
+}
+.net-hub {
+  fill: var(--gold);
+}
 .qty {
   display: flex;
   align-items: flex-end;
@@ -689,6 +751,57 @@
   }
 }
 
+/* ─── Thước đo quy mô ─────────────────────────────────────── */
+.scale {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: clamp(30px, 6vh, 70px);
+}
+.scale__row {
+  display: grid;
+  grid-template-columns: minmax(180px, 3fr) minmax(0, 7fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+.scale__l {
+  font-size: var(--t-small);
+  color: var(--fg-2);
+}
+.scale__track {
+  height: 24px;
+  position: relative;
+}
+.scale__bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: max(var(--w), 3px);
+  border-radius: 0 4px 4px 0;
+  background: var(--c2);
+}
+.scale__row--vn .scale__bar {
+  background: var(--c3);
+}
+.scale__row--fin .scale__bar {
+  background: var(--c1);
+}
+.scale__v {
+  font-weight: 600;
+  min-width: 6ch;
+  text-align: right;
+}
+@media (max-width: 760px) {
+  .scale__row {
+    grid-template-columns: 1fr auto;
+  }
+  .scale__track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
 /* ═══ FDI + quả địa cầu ═════════════════════════════════════ */
 .fdi {
   min-height: 210vh;
@@ -716,6 +829,91 @@
   inset: 0;
   pointer-events: none;
   z-index: 3;
+}
+.fdi__geo .geo-label {
+  font-size: var(--t-small);
+}
+.mini-list {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--t-small);
+  color: var(--fg-2);
+}
+.mini-list b {
+  color: var(--fg);
+  font-weight: 600;
+}
+.two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 30px);
+}
+.bal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bal__row {
+  display: grid;
+  grid-template-columns: 7.5em 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+.bal__y {
+  font-size: var(--t-small);
+  color: var(--fg-2);
+}
+.bal__axis {
+  position: relative;
+  height: 24px;
+  border-left: 0;
+}
+.bal__axis::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  bottom: -4px;
+  width: 1px;
+  background: var(--fg-3);
+}
+.bal__neg,
+.bal__pos {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--w);
+}
+.bal__neg {
+  right: calc(50% + 1px);
+  background: var(--c3);
+  border-radius: 4px 0 0 4px;
+}
+.bal__pos {
+  left: calc(50% + 1px);
+  background: var(--c1);
+  border-radius: 0 4px 4px 0;
+}
+.bal__v {
+  font-size: var(--t-small);
+  white-space: nowrap;
+}
+.bal__legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--fg-2);
+}
+@media (max-width: 760px) {
+  .two {
+    grid-template-columns: 1fr;
+  }
+  .bal__row {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 900px) {
   .fdi__inner {
@@ -944,6 +1142,57 @@
   }
 }
 
+/* ─── Dòng thời gian ─────────────────────────────────────── */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 22px;
+  border-left: 1px solid var(--line-2);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.timeline li {
+  position: relative;
+}
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.timeline__d {
+  font-size: var(--t-small);
+  color: var(--gold);
+}
+.timeline p {
+  margin: 4px 0 0;
+  font-size: var(--t-small);
+}
+.callout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(20px, 3vw, 60px);
+  margin-top: clamp(40px, 7vh, 80px);
+  padding: clamp(20px, 2.4vw, 36px);
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, var(--red-soft), transparent 70%);
+  border: 1px solid var(--line-2);
+}
+.callout p {
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .callout {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ═══ Độc quyền nhà nước ════════════════════════════════════ */
 .state__grid {
   display: grid;
@@ -1027,6 +1276,38 @@
   }
 }
 
+.balance__side li > div {
+  display: block;
+}
+.why {
+  margin-top: clamp(40px, 7vh, 80px);
+  padding-top: clamp(24px, 4vh, 40px);
+  border-top: 1px solid var(--line);
+}
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 36px);
+  margin: 16px 0 12px;
+}
+.why__grid b {
+  display: block;
+  font-family: var(--f-display);
+  font-weight: 450;
+  font-size: var(--t-h3);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.why__grid span {
+  color: var(--fg-2);
+  font-size: var(--t-small);
+}
+@media (max-width: 900px) {
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ═══ Con đường Việt Nam ════════════════════════════════════ */
 .path__grid {
   display: grid;
@@ -1067,7 +1348,32 @@
   }
 }
 
+.thesis {
+  margin-top: clamp(50px, 9vh, 110px);
+  padding: clamp(24px, 3vw, 48px);
+  border-radius: 20px;
+  border: 1px solid var(--gold);
+  background: radial-gradient(120% 140% at 0% 0%, var(--gold-soft), transparent 60%);
+}
+.thesis p {
+  margin: 0;
+}
+
 /* ═══ Bài học: chọn ngành ═══════════════════════════════════ */
+.datastrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 32px);
+  margin-bottom: clamp(36px, 6vh, 70px);
+}
+.datastrip .evidence__v {
+  font-size: clamp(1.8rem, 3.2vw, 3.6rem);
+}
+@media (max-width: 900px) {
+  .datastrip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .lesson__picker {
   display: flex;
   flex-wrap: wrap;
