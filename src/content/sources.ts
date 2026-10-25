@@ -41,7 +41,7 @@ export const SOURCES: Source[] = [
   {
     id: 'hp-2013',
     short: 'Hiến pháp, 2013',
-    apa: 'Quốc hội. (2013). <i>Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam</i> (Điều 50, 51). Cổng Thông tin điện tử Chính phủ.',
+    apa: 'Quốc hội. (2013). <i>Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam</i> (sửa đổi, bổ sung năm 2025; Điều 50, 51). Cổng Thông tin điện tử Chính phủ.',
     url: 'https://chinhphu.vn/hien-phap-nam-2013/chuong-iii-kinh-te-xa-hoi-van-hoa-giao-duc-khoa-hoc-cong-nghe-va-moi-truong-10052989',
   },
   {
@@ -72,13 +72,13 @@ export const SOURCES: Source[] = [
   // ── Số liệu Việt Nam ─────────────────────────────────────────────
   {
     id: 'nso-series',
-    short: 'Tổng cục Thống kê, 2015–2024',
+    short: 'Tổng cục Thống kê, 2015–2025',
     apa: 'Tổng cục Thống kê. (2015–2025). <i>Báo cáo / Thông cáo báo chí tình hình kinh tế – xã hội quý IV và cả năm</i> (các năm 2015–2024; đường dẫn từng năm trong bảng số liệu của biểu đồ). nso.gov.vn.',
   },
   {
     id: 'nso-2025',
     short: 'Cục Thống kê, 2026a',
-    apa: 'Cục Thống kê – Bộ Tài chính. (2026a, 05/01). <i>Báo cáo tình hình kinh tế – xã hội quý IV và năm 2025</i>.',
+    apa: 'Cục Thống kê – Bộ Tài chính. (2026a, tháng 1). <i>Báo cáo tình hình kinh tế – xã hội quý IV và năm 2025</i>. nso.gov.vn.',
     url: 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2026/01/bao-cao-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2025/',
   },
   {
@@ -86,6 +86,24 @@ export const SOURCES: Source[] = [
     short: 'Cục Thống kê, 2026b',
     apa: 'Cục Thống kê – Bộ Tài chính. (2026b, 03/10). <i>Báo cáo tình hình kinh tế – xã hội quý III và 9 tháng năm 2026</i>.',
     url: 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2026/10/bao-cao-tinh-hinh-kinh-te-xa-hoi-quy-iii-va-9-thang-nam-2026/',
+  },
+  {
+    id: 'nso-dientu',
+    short: 'Cục Thống kê, 2025',
+    apa: 'Cục Thống kê – Bộ Tài chính. (2025, 10/10). <i>Xuất, nhập khẩu điện tử, máy tính và linh kiện: Động lực tăng trưởng xuất khẩu của Việt Nam giai đoạn 2016–2025</i>. nso.gov.vn.',
+    url: 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2025/10/xuat-nhap-khau-dien-tu-may-tinh-va-linh-kien-dong-luc-tang-truong-xuat-khau-cua-viet-nam-giai-doan-2016-2025/',
+  },
+  {
+    id: 'nso-fdi-2025',
+    short: 'Cục Thống kê, 2026d',
+    apa: 'Cục Thống kê – Bộ Tài chính. (2026d, 01). <i>Ngành công nghiệp chế biến, chế tạo thu hút mạnh mẽ nhất dòng vốn đầu tư trực tiếp nước ngoài năm 2025</i>. nso.gov.vn.',
+    url: 'https://www.nso.gov.vn/tin-tuc-thong-ke/2026/01/nganh-cong-nghiep-che-bien-che-tao-thu-hut-manh-me-nhat-dong-von-dau-tu-truc-tiep-nuoc-ngoai-nam-2025/',
+  },
+  {
+    id: 'tttctt-2026',
+    short: 'Minh Nhật, 2026',
+    apa: 'Minh Nhật. (2026, 09/01). Năm 2025: Xuất nhập khẩu vượt mốc 930 tỷ USD, xuất siêu hơn 20 tỷ USD (số liệu Cục Thống kê). <i>Tạp chí Thị trường Tài chính Tiền tệ</i>.',
+    url: 'https://thitruongtaichinhtiente.vn/nam-2025-xuat-nhap-khau-vuot-moc-930-ty-usd-xuat-sieu-hon-20-ty-usd-76025.html',
   },
   {
     id: 'fia-2025',
@@ -101,7 +119,7 @@ export const SOURCES: Source[] = [
   },
   {
     id: 'vgp-930',
-    short: 'Báo Chính phủ, 2026a',
+    short: 'Anh Thơ, 2026',
     apa: 'Anh Thơ. (2026, 14/02). Xuất nhập khẩu sau mốc 930 tỷ USD: Những thách thức phía sau tăng trưởng. <i>Báo Điện tử Chính phủ</i>.',
     url: 'https://baochinhphu.vn/xuat-nhap-khau-sau-moc-930-ty-usd-nhung-thach-thuc-phia-sau-tang-truong-102260202142538212.htm',
   },
@@ -138,7 +156,7 @@ export const SOURCES: Source[] = [
   {
     id: 'nso-digital',
     short: 'Cục Thống kê, 2026c',
-    apa: 'Cục Thống kê – Bộ Tài chính. (2026c). <i>Tỷ trọng kinh tế số trong GDP năm 2025</i>. nso.gov.vn.',
+    apa: 'Cục Thống kê – Bộ Tài chính. (2026c, 05/01). <i>Thông cáo báo chí tỷ trọng giá trị tăng thêm của kinh tế số trong GDP, GRDP giai đoạn 2021–2025</i>. nso.gov.vn.',
     url: 'https://www.nso.gov.vn/?p=59576',
   },
 
@@ -160,12 +178,6 @@ export const SOURCES: Source[] = [
     short: 'Báo Nhân Dân, 2024',
     apa: 'Báo Nhân Dân. (2024). Nâng tầm giá trị dệt may. <i>Báo Nhân Dân điện tử</i>.',
     url: 'https://nhandan.vn/nang-tam-gia-tri-det-may-post790243.html',
-  },
-  {
-    id: 'moit-cmt',
-    short: 'Bộ Công Thương, 2023',
-    apa: 'Bộ Công Thương. (2023). Đón đường cho ngành dệt may tiến vào chuỗi cung ứng toàn cầu. <i>Cổng TTĐT Bộ Công Thương</i>.',
-    url: 'https://moit.gov.vn/tin-tuc/phat-trien-cong-nghiep/don-duong-cho-nganh-det-may-tien-vao-chuoi-cung-ung-toan-cau.html',
   },
   {
     id: 'moit-roo',
@@ -232,7 +244,7 @@ export const SOURCES: Source[] = [
   {
     id: 'eu-chips',
     short: 'European Commission, 2023',
-    apa: 'European Commission. (2023). <i>European Chips Act</i> [Regulation (EU) 2023/1781].',
+    apa: 'European Commission. (2023). <i>European Chips Act</i> [Regulation (EU) 2023/1781] — huy động hơn 43 tỷ EUR đầu tư công và tư.',
     url: 'https://digital-strategy.ec.europa.eu/en/factpages/chips-act',
   },
   {
@@ -268,7 +280,7 @@ export const SOURCES: Source[] = [
   {
     id: 'vgp-tariff46',
     short: 'Báo Chính phủ, 2025b',
-    apa: 'Báo Điện tử Chính phủ. (2025b, 03/04). Bộ Công Thương đề nghị Hoa Kỳ tạm hoãn áp thuế, hai bên còn không gian để đàm phán.',
+    apa: 'Báo Điện tử Chính phủ. (2025b, 04/04). Bộ Công Thương đề nghị Hoa Kỳ tạm hoãn áp thuế, hai bên còn không gian để đàm phán.',
     url: 'https://baochinhphu.vn/bo-cong-thuong-de-nghi-hoa-ky-tam-hoan-ap-thue-hai-ben-con-khong-gian-de-dam-phan-102250403194412688.htm',
   },
   {
@@ -291,8 +303,8 @@ export const SOURCES: Source[] = [
   },
   {
     id: 'wir-ineq',
-    short: 'World Inequality Lab, 2025',
-    apa: 'Chancel, L., Gómez-Carrera, R., Piketty, T., và cộng sự. (2025). <i>World Inequality Report 2026</i>. World Inequality Lab.',
+    short: 'World Inequality Lab, 2025a',
+    apa: 'Chancel, L., Gómez-Carrera, R., Piketty, T., và cộng sự. (2025a). <i>World Inequality Report 2026</i>. World Inequality Lab.',
     url: 'https://wir2026.wid.world/insight/global-economic-inequity/',
   },
   {
@@ -306,6 +318,48 @@ export const SOURCES: Source[] = [
     short: 'IPCC, 2023',
     apa: 'IPCC. (2023). <i>Climate Change 2023: Synthesis Report – Summary for Policymakers</i> (AR6). Intergovernmental Panel on Climate Change.',
     url: 'https://www.un.org/climatesecuritymechanism/sites/default/files/2025-07/IPCC_AR6_SYR_SPM.pdf',
+  },
+  {
+    id: 'nq50',
+    short: 'Bộ Chính trị, 2019',
+    apa: 'Bộ Chính trị. (2019). <i>Nghị quyết số 50-NQ/TW ngày 20/8/2019 về định hướng hoàn thiện thể chế, chính sách, nâng cao chất lượng, hiệu quả hợp tác đầu tư nước ngoài đến năm 2030</i> (đăng trên Báo Pháp luật Việt Nam).',
+    url: 'https://doanhnhan.baophapluat.vn/bo-chinh-tri-ban-hanh-nghi-quyet-ve-dau-tu-nuoc-ngoai-22033.html',
+  },
+  {
+    id: 'wh-2025',
+    short: 'The White House, 2025',
+    apa: 'The White House. (2025, 31/07). <i>Further modifying the reciprocal tariff rates</i> [Executive order].',
+    url: 'https://www.whitehouse.gov/presidential-actions/2025/07/further-modifying-the-reciprocal-tariff-rates/',
+  },
+  {
+    id: 'vgp-ieepa',
+    short: 'Báo Chính phủ, 2026b',
+    apa: 'Báo Điện tử Chính phủ. (2026b, 23/02). Thuế quan Hoa Kỳ: Thuế đối ứng sẽ ngừng thu từ 24/2.',
+    url: 'https://baochinhphu.vn/thue-quan-hoa-ky-thue-doi-ung-se-ngung-thu-tu-24-2-102260223154022631.htm',
+  },
+  {
+    id: 'vgp-dam-phan',
+    short: 'Báo Chính phủ, 2026c',
+    apa: 'Báo Điện tử Chính phủ. (2026c, 07/10). Bộ Công Thương thông tin về tiến trình đàm phán Hiệp định thương mại đối ứng với Hoa Kỳ.',
+    url: 'https://baochinhphu.vn/bo-cong-thuong-thong-tin-ve-tien-trinh-dam-phan-hiep-dinh-thuong-mai-doi-ung-voi-hoa-ky-102261007181551386.htm',
+  },
+  {
+    id: 'wir-exec',
+    short: 'World Inequality Lab, 2025b',
+    apa: 'World Inequality Lab. (2025b). <i>World Inequality Report 2026 – Executive summary</i>.',
+    url: 'https://wir2026.wid.world/insight/executive-summary/',
+  },
+  {
+    id: 'un-climate',
+    short: 'United Nations, 2025',
+    apa: 'United Nations. (2025). <i>Climate change</i> (dẫn UNEP Emissions Gap Report 2025). Sustainable Development Goals.',
+    url: 'https://www.un.org/sustainabledevelopment/climate-change/',
+  },
+  {
+    id: 'net-zero',
+    short: 'Báo Đại biểu Nhân dân, 2026',
+    apa: 'Báo Đại biểu Nhân dân. (2026, 14/01). Thủ tướng Phạm Minh Chính: Giảm phát thải ròng bằng “0” vào năm 2050 là sứ mệnh chính trị của quốc gia.',
+    url: 'https://daibieunhandan.vn/thu-tuong-pham-minh-chinh-giam-phat-thai-rong-bang-0-vao-nam-2050-la-su-menh-chinh-tri-cua-quoc-gia-10403748.html',
   },
   {
     id: 'wipo-gii',

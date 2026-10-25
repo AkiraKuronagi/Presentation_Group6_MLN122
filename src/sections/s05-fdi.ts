@@ -1,5 +1,5 @@
 import { renderChart } from '../charts/charts'
-import { FDI, NSO_YEAR_URLS } from '../content/data'
+import { ELECTRONICS, FDI, NSO_YEAR_URLS } from '../content/data'
 import { HUBS_IN } from '../content/geo'
 import { cite } from '../content/sources'
 import { docTop } from '../core/engine'
@@ -54,7 +54,7 @@ export const fdi: Section = {
             <div class="evidence">
               <div class="evidence__v"><span data-count="${FDI.registered9m2026}" data-digits="2">${nf(FDI.registered9m2026)}</span><span class="evidence__u">tỷ USD</span></div>
               <p class="evidence__l">vốn FDI đăng ký 9 tháng 2026, tăng 76,4% — ${nf(FDI.manufacturingShare2025, 1)}% vốn thực hiện năm 2025 vào chế biến, chế tạo</p>
-              ${cite('nso-9m2026', 'nso-2025')}
+              ${cite('nso-9m2026', 'nso-fdi-2025')}
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ export const fdi: Section = {
               .join('')}
             <div class="bal__legend t-small"><span><i class="sw" style="--sw:var(--c3)"></i>Khu vực trong nước (nhập siêu)</span><span><i class="sw" style="--sw:var(--c1)"></i>Khu vực FDI (xuất siêu)</span></div>
           </div>
-          <p style="margin:18px 0 6px">Khoảng <b>90%</b> kim ngạch nhập khẩu là nguyên liệu, linh kiện, bán thành phẩm phục vụ sản xuất; xuất khẩu vẫn chủ yếu là <b>gia công cho nhãn hàng nước ngoài</b>. ${cite('vgp-930')}</p>
+          <p style="margin:18px 0 6px">Năm 2025, nhóm <b>tư liệu sản xuất chiếm ${String(ELECTRONICS.capitalGoodsImportShare2025).replace('.', ',')}%</b> kim ngạch nhập khẩu ${cite('nso-2025')} — phù hợp với mô hình nhập linh kiện, nguyên liệu để lắp ráp, xuất khẩu. Báo Điện tử Chính phủ nhận định: do thiếu thương hiệu mạnh, xuất khẩu vẫn chủ yếu theo hình thức <b>gia công cho nhãn hàng nước ngoài</b> ${cite('vgp-930')}.</p>
           <p class="cite">Nguồn cán cân: ${cite('nso-2025', 'nso-9m2026')}</p>
         </div>
 
@@ -117,7 +117,7 @@ export const fdi: Section = {
               </ul>
             </div>
           </div>
-          <p class="cite">Theo lãnh đạo Cục Đầu tư nước ngoài — ${cite('fia-2026')}</p>
+          <p class="cite">Theo Nguyễn Duy Quý &amp; Đào Thanh Hương (Cục Đầu tư nước ngoài) ${cite('fia-2026')}; Cục Thống kê cũng đánh giá giá trị gia tăng nội địa trong nhiều dự án FDI còn thấp, liên kết với doanh nghiệp trong nước lỏng lẻo ${cite('nso-fdi-2025')}.</p>
         </div>
       </div>
       <div aria-hidden="true"></div>
@@ -154,28 +154,28 @@ export const fdi: Section = {
     const stationNotes = [
       notes(
         'Biểu hiện mới thứ 3 theo giáo trình có 4 ý: đổi chiều (chủ yếu giữa các nước phát triển), đổi chủ thể (TNC, FDI), đổi hình thức (BOT, BT, đan xen xuất khẩu hàng hóa), và đề cao nguyên tắc cùng có lợi.',
-        'Trên quả địa cầu: các cung vàng là dòng vốn từ Hàn Quốc, Singapore, Nhật Bản, Đài Loan, Hồng Kông, Trung Quốc… vào Việt Nam.',
+        'Trên quả địa cầu: các cung vàng là dòng vốn từ Hàn Quốc, Singapore, Nhật Bản, Đài Loan (TQ), Hồng Kông (TQ), Trung Quốc… vào Việt Nam.', 'Lưu ý: giáo trình nêu chủ thể xuất khẩu tư bản nay gồm cả nhà đầu tư từ các nước đang phát triển; dòng vốn vào Việt Nam đến từ nhiều đối tác với chế độ chính trị khác nhau. Nhóm phân tích quy luật vận động của dòng vốn, không gán chế độ chính trị cho từng đối tác.',
       ),
       notes(
         'Vốn FDI thực hiện tăng gần gấp đôi: 14,5 tỷ USD (2015) → 27,62 tỷ USD (2025), cao nhất 5 năm. 9 tháng 2026 vốn đăng ký đạt 50,36 tỷ USD, tăng 76,4%.',
         'Lũy kế đến hết 2025: 45.416 dự án, 529,6 tỷ USD vốn đăng ký; Hàn Quốc dẫn đầu (94,6 tỷ USD), Singapore thứ hai (89,8 tỷ USD). 82,8% vốn thực hiện năm 2025 đổ vào chế biến, chế tạo — tức khâu sản xuất của chuỗi giá trị.',
       ),
       notes(
-        'Khu vực FDI luôn chiếm khoảng 70–74% xuất khẩu; năm 2025 vọt lên 77,3% và 9 tháng 2026 là 80,7%.',
+        'Giai đoạn 2015–2024, khu vực FDI chiếm khoảng 69–74% xuất khẩu; năm 2025 vọt lên 77,3% và 9 tháng 2026 là 80,7%.',
         'Ý nghĩa: “Made in Vietnam” phần lớn là hàng của doanh nghiệp vốn nước ngoài.',
       ),
       notes(
-        'Hai khu vực, hai cán cân: năm 2025 khu vực FDI xuất siêu 49,46 tỷ USD, khu vực trong nước nhập siêu 29,43 tỷ USD. 9 tháng 2026 khoảng cách còn rộng hơn.',
-        'Khoảng 90% nhập khẩu là đầu vào sản xuất — dấu hiệu của mô hình gia công, lắp ráp.',
+        'Hai khu vực, hai cán cân: năm 2025 khu vực FDI xuất siêu 49,46 tỷ USD, khu vực trong nước nhập siêu 29,43 tỷ USD. 9 tháng 2026, khu vực trong nước đã nhập siêu 34,28 tỷ USD — vượt cả năm 2025; thặng dư khu vực FDI thu hẹp còn 14,86 tỷ USD, nên cả nước nhập siêu 19,42 tỷ USD.',
+        'Tư liệu sản xuất chiếm 93,6% kim ngạch nhập khẩu năm 2025 (Cục Thống kê) — phù hợp với mô hình nhập linh kiện, nguyên liệu để lắp ráp, xuất khẩu (tỷ trọng này cũng là đặc điểm chung của nền kinh tế đang công nghiệp hóa, nên đặt cạnh cán cân hai khu vực mới thấy rõ).',
       ),
       notes(
-        'Đánh giá theo quan điểm lịch sử – cụ thể: FDI đóng góp ~20% GDP, ~50% giá trị sản xuất công nghiệp, ~5 triệu việc làm — đó là vai trò tích cực thật.',
-        'Nhưng chính Cục Đầu tư nước ngoài thừa nhận nhiều dự án vẫn chủ yếu gia công, lắp ráp, tỷ lệ nội địa hóa thấp. Không quy chụp FDI là “bóc lột”; vấn đề là vị trí của ta trong chuỗi.',
+        'Đánh giá theo quan điểm lịch sử – cụ thể: FDI đóng góp ~20% GDP, ~50% giá trị sản xuất công nghiệp, ~5 triệu việc làm (Nguyễn Duy Quý & Đào Thanh Hương, Cục ĐTNN, 2026) — đó là vai trò tích cực thật.',
+        'Nhưng chính Cục Thống kê đánh giá GTGT nội địa trong nhiều dự án FDI còn thấp, phần lớn ở khâu gia công, lắp ráp, liên kết với DN trong nước lỏng lẻo. Không quy chụp FDI là “bóc lột”; vấn đề là vị trí của ta trong chuỗi.',
         'Chuyển ý: “Vậy cụ thể, trong một sản phẩm, Việt Nam giữ lại bao nhiêu?”',
       ),
     ]
     const labels = ['Biểu hiện mới 3 — xuất khẩu tư bản', 'Vốn FDI thực hiện 2015–2025', 'FDI chiếm ~77–81% xuất khẩu', 'Hai khu vực, hai cán cân', 'FDI: đóng góp và giới hạn']
-    const secs = [50, 50, 35, 40, 50]
+    const secs = [30, 30, 20, 25, 30]
     panels.forEach((p, i) =>
       engine.addStation({
         id: `fdi-${i}`,
@@ -191,12 +191,16 @@ export const fdi: Section = {
     const hubLabels = Array.from(el.querySelectorAll<HTMLElement>('[data-hub]'))
     const vnLabel = el.querySelector('[data-hub-vn]') as HTMLElement
     engine.onFrame(() => {
-      const on = !!globe && stage?.state?.mode === 'fdi'
+      // chỉ hiện khi section FDI thực sự chiếm phần lớn màn hình (tránh lấn sang chương khác)
+      const r = el.getBoundingClientRect()
+      const inView = r.top < window.innerHeight * 0.35 && r.bottom > window.innerHeight * 0.65 && window.innerWidth >= 900
+      const on = !!globe && stage?.state?.mode === 'fdi' && inView
       hubLabels.forEach((l, i) => {
         if (!on || !globe) return void (l.style.opacity = '0')
         const h = HUBS_IN[i]
         const s = globe.project(h.lat, h.lon)
-        l.style.transform = `translate(${s.x}px, ${s.y}px) translate(10px, -50%)`
+        const dy = h.labelDy ?? 0
+        l.style.transform = `translate(${s.x}px, ${s.y + dy}px) translate(10px, -50%)`
         l.style.opacity = s.front ? '1' : '0'
       })
       if (on && globe) {

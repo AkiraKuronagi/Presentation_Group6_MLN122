@@ -66,7 +66,7 @@ const MAJORS: Major[] = [
       ['Vật liệu & sản xuất', 'thiết kế làm ra được'],
       ['Bản sắc Việt', 'khác biệt khó sao chép'],
     ],
-    fact: `Dệt may mới ~10% đơn hàng theo phương thức ODM ${cite('moit-cmt')}; Chiến lược đến 2030 yêu cầu chuyển sang thiết kế, thương hiệu ${cite('qd1643')}`,
+    fact: `Dệt may mới ~9% doanh nghiệp làm ODM, ~1% OBM ${cite('nd-dm-smile')}; Chiến lược đến 2030 yêu cầu chuyển sang thiết kế, thương hiệu ${cite('qd1643')}`,
   },
   {
     id: 'logi',
@@ -189,7 +189,7 @@ export const lesson: Section = {
       chapter: 9,
       label: 'Khoảng cách năng lực — số liệu',
       y: () => docTop(el),
-      seconds: 40,
+      seconds: 25,
       notes: notes(
         'Bốn con số: 29,2% lao động có bằng, chứng chỉ (2025); GII hạng 43/139 nhưng vốn con người & nghiên cứu chỉ hạng 79; kinh tế số 14,02% GDP so với mục tiêu 30%; cần 50.000 nhân lực bán dẫn đến 2030.',
         'Liên hệ lý luận: lao động phức tạp tạo nhiều giá trị hơn lao động giản đơn trong cùng thời gian.',
@@ -200,7 +200,7 @@ export const lesson: Section = {
       chapter: 9,
       label: 'Chọn ngành → vị trí trên đường cong',
       y: () => docTop(picker) - window.innerHeight * 0.3,
-      seconds: 50,
+      seconds: 30,
       notes: notes(
         'Mời 1–2 bạn trong lớp nói ngành học; bấm chọn ngành tương ứng để thấy vị trí trên đường cong và 4 năng lực cần có.',
         'Thông điệp: ngành nào cũng có đường lên hai đầu — vấn đề là có chủ động tích lũy hay không.',
@@ -211,7 +211,7 @@ export const lesson: Section = {
       chapter: 9,
       label: 'Kêu gọi hành động — 3 cam kết',
       y: () => docTop(el.querySelector('.commit') as HTMLElement) - window.innerHeight * 0.45,
-      seconds: 30,
+      seconds: 15,
       notes: notes('Mời cả lớp chọn một cam kết. Bấm vào ô để đánh dấu cam kết được nhiều bạn chọn nhất.'),
     })
 

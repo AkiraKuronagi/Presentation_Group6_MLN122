@@ -1,0 +1,29 @@
+# PHỤ LỤC AI — BẢN NHÁP (theo mẫu Tab 6, file Assignment_MLN122)
+
+> ⚠️ Đây là **bản nháp** do trợ lý AI ghi lại những việc nó đã làm trong phiên làm việc. Nhóm **phải đọc, sửa cho đúng thực tế, bổ sung việc của từng thành viên**, rồi chép sang Word/Excel/Google Doc để nộp.
+> Theo Rubric 1.4 và FAQ Q2: “Dùng AI 100%” → 0 điểm tiêu chí 1.4; không giải thích được nội dung khi bị hỏi → cờ ĐỎ #3. Vì vậy mỗi thành viên cần **tự kiểm chứng lại số liệu mình trình bày** và **nói bằng lời của mình**.
+
+**Tên nhóm:** Nhóm 6 — «Mã lớp»
+**Dự án – Chủ đề:** Chủ đề 6 — Biểu hiện mới của độc quyền, độc quyền nhà nước trong điều kiện ngày nay: các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản
+**Cam kết:** Nhóm em cam kết đã sử dụng AI một cách liêm chính và đã kiểm chứng tất cả thông tin quan trọng dưới đây.
+
+| Nhiệm vụ (Task) | Công cụ AI | Prompt / câu lệnh chính (ví dụ) | Kết quả AI cung cấp (tóm tắt) | Cách nhóm kiểm chứng & sử dụng | Link chatbot / minh chứng |
+|---|---|---|---|---|---|
+| 1. Tìm ý tưởng hình thức sản phẩm (landing page cuộn trang thay cho slide) | Gemini | “Trích toàn bộ nội dung video [link YouTube] về cách prompt/làm việc để ra landing page…” | Quy trình 5 bước: tách tài nguyên hình ảnh → tạo video AI → cắt khung hình → viết bản thiết kế (blueprint) → giao cho AI lập trình | Nhóm **không dùng** ảnh/video AI (tránh cờ ĐỎ #5/VÀNG #5); thay bằng hình ảnh động tự sinh bằng code (quả địa cầu, điện thoại tách lớp) | «link Gemini» |
+| 2. Phân tích đề bài, xác định chương giáo trình | Claude (Claude Code) | “Tham khảo file Assignment của lớp, nhóm 6 thuyết trình… làm bài thuyết trình” | Xác định Chủ đề 6 (Ch.4 mục III; phụ trợ Ch.6 mục II). Phát hiện file giáo trình gửi kèm là **Giáo trình Triết học**, không phải KTCT | Nhóm đối chiếu file Assignment Tab 2. Dùng giáo trình Triết học làm lăng kính phụ (lượng – chất, LLSX – QHSX), trích số trang đã đối chiếu bản scan | «link/ảnh chụp phiên làm việc» |
+| 3. Đối chiếu nội dung giáo trình KTCT 2021 | Claude (tìm kiếm web) | “Xác lập cấu trúc Ch.4 mục III và Ch.6 mục II giáo trình KTCT 2021, đối chiếu ít nhất 2 nguồn” | Dàn ý mục III (5 biểu hiện mới; 3 biểu hiện mới của ĐQNN; vai trò tích cực – giới hạn). Phát hiện **số trang trong đề (tr.134–151) khác mục lục bản in 6/2021 (tr.149–168)** | «Thành viên …» đối chiếu từng tiêu đề với **sách giấy** của nhóm; nội dung trên trang được **diễn đạt lại**, không chép nguyên văn | «ảnh chụp trang sách» |
+| 4. Thu thập số liệu FDI, xuất khẩu 2015 – 9T/2026 | Claude (tìm kiếm web) + agent kiểm chứng độc lập | “Số liệu chính thống vốn FDI đăng ký/thực hiện, tỷ trọng XK khu vực FDI… kèm URL và trích nguyên văn” | Chuỗi số liệu từ báo cáo KT-XH của Cục Thống kê (nso.gov.vn). Lượt kiểm chứng thứ hai mở lại 26 URL: **không phát hiện số bịa**; sửa 2 chỗ ghi nguồn | «Thành viên …» tự mở lại báo cáo năm 2025 và 9T/2026, đối chiếu 77,3%, 80,7%, 27,62 tỷ USD, cán cân 2 khu vực | Đường dẫn từng năm có trong bảng số liệu của biểu đồ |
+| 5. Số liệu ngành điện tử, dệt may, giá trị gia tăng nội địa | Claude (tìm kiếm web) | “Kim ngạch XK/NK điện tử; tỷ lệ nội địa hóa; CMT/FOB/ODM; quy tắc xuất xứ EVFTA, CPTPP” | Cục Thống kê (10/2025): XK 18,5 → 72,6 → 107,7 tỷ USD; NK 27,8 → 107,1 → 150,7 tỷ USD. Bộ Công Thương: CMT ~65%, FOB ~25%, ODM ~10%; QĐ 1018: mục tiêu GTGT tại VN 10–15% | Loại bỏ số liệu không có nguồn chính thống; ghi “theo chuyên gia trên Báo Nhân Dân” cho số liệu phỏng vấn; không trộn hai chuỗi số liệu dệt may khác phạm vi | «…» |
+| 6. Bằng chứng quốc tế (UNCTAD, SEC, OECD, UNEP, IPCC, WIR) | Claude (tìm kiếm web) | “Bằng chứng cho 5 biểu hiện mới của độc quyền và độc quyền nhà nước ngày nay” | UNCTAD WIR 2026, báo cáo 10-K của Apple, báo cáo năm BlackRock, CHIPS Act, thuế tối thiểu toàn cầu (NQ 107/2023/QH15)… | Các tỷ lệ “lần GDP” **do nhóm tự tính**, có ghi chú; không quy chụp doanh nghiệp cụ thể là “bóc lột” | «…» |
+| 7. Dựng giao diện & mã nguồn trang thuyết trình | Claude (Claude Code) | “Làm bài thuyết trình landing page theo ý tưởng [quy trình Gemini]” | Mã nguồn Vite + TypeScript + GSAP + Three.js; 12 chương, 35 điểm dừng, ghi chú người nói, minigame, khảo sát | Nhóm duyệt từng chương, **viết lại lời thoại theo cách nói của mình**, chỉnh thời lượng ≤ 20 phút | Lịch sử commit GitHub |
+| 8. AI phản biện (đóng vai giảng viên khó tính) | Claude (2 agent độc lập) | “Chấm theo rubric & bảng cờ vi phạm; chỉ ra lỗ hổng 3C; kiểm chứng mọi con số” | Kiểm ~130 con số: ~115 đúng hoàn toàn, 3 sai (mốc thuế 46%→20% gán nhầm ngày 26/10/2025; bộ số CMT/FOB/ODM lệch nguồn; nhận định cán cân 9T/2026), ~10 chỗ ghi nguồn chưa đúng. Chỉ ra lỗi lý luận: lẫn “giá trị do lao động tạo ra” với “giá trị gia tăng thu về”; diễn đạt sai “chế độ ủy nhiệm”; rủi ro đồng nhất DNNN Việt Nam với độc quyền nhà nước TBCN; trích lời cố Tổng Bí thư bị cắt vế; tổng thời lượng 30 phút (vượt 20 phút) | Đã sửa: tách 2 mốc thuế; dùng một bộ số dệt may nhất quán; thêm định nghĩa nội địa hóa ≠ GTGT nội địa; viết lại “giá trị thu về” + lý luận lao động phức tạp, lợi nhuận độc quyền; thêm ô phân biệt kinh tế nhà nước VN (Hiến pháp Điều 51); trích đủ hai vế; bổ sung NQ 50-NQ/TW; rút thời lượng còn ~18:40. «Thành viên … tự kiểm lại các mục đã sửa» | «…» |
+| 9. «Nhóm tự điền» | | | | | |
+| 10. «Nhóm tự điền» | | | | | |
+
+### ✅ Tự kiểm tra (check hết 5 ô trước khi nộp)
+
+- [ ] Mọi số liệu đều có nguồn GỐC (không phải AI bịa) — đã mở lại link
+- [ ] Có ít nhất 1 ví dụ minh họa “kiểm chứng” trong bảng trên (mục 4, 5)
+- [ ] Không có task nào “100% từ AI” mà không có sự tham gia của nhóm
+- [ ] Có ít nhất 1 task “AI phản biện” để cải thiện sản phẩm (mục 8)
+- [ ] Tôi tự tin giải thích mọi ý/số liệu trong sản phẩm (không chỉ copy-paste)

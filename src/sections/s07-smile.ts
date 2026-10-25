@@ -28,14 +28,14 @@ const STAGES: Record<Mode, string[][]> = {
 
 const NOTES: Record<Mode, Array<{ h: string; p: string }>> = {
   'dien-tu': [
-    { h: 'Hai đầu — TNC nắm giữ', p: `R&D, thiết kế chip, phần mềm, thương hiệu: nơi tạo phần lớn giá trị, gắn với sở hữu trí tuệ của công ty mẹ. ${cite('gvc2017')}` },
+    { h: 'Hai đầu — TNC nắm giữ', p: `R&D, thiết kế chip, phần mềm, thương hiệu: nơi thu về phần lớn giá trị gia tăng nhờ sở hữu trí tuệ và vị thế độc quyền của công ty mẹ. ${cite('gvc2017')}` },
     { h: 'Đáy — Việt Nam đang đứng', p: `Lắp ráp, kiểm thử: nội địa hóa ngành điện tử chỉ ~${TEXTILE.localisation.electronics}%. ${cite('vcci-loc')}` },
     { h: 'Lối ra — leo lên hai đầu', p: `Mục tiêu 2030: ≥100 doanh nghiệp thiết kế chip; đào tạo ≥${new Intl.NumberFormat('vi-VN').format(SKILLS.chipTotalTarget)} nhân lực bán dẫn. ${cite('qd1018', 'qd1017')}` },
   ],
   'det-may': [
-    { h: 'Hai đầu — giá trị cao', p: `Sợi, dệt, nhuộm và thương hiệu, phân phối tạo phần lớn giá trị với ít lao động. ${cite('nd-dm-smile')}` },
-    { h: 'Đáy — 80% lao động, 18–20% giá trị', p: `Khâu may dùng ~${TEXTILE.sewingLabourShare}% lao động nhưng chỉ tạo ${TEXTILE.sewingValueShare}% giá trị; phương thức CMT ~${TEXTILE.modes.cmt}%, FOB ~${TEXTILE.modes.fob}%, ODM ~${TEXTILE.modes.odm}%. ${cite('nd-dm-smile', 'moit-cmt')}` },
-    { h: 'Nút thắt — nguyên liệu & “luật chơi”', p: `Năm 2025 nhập ~${TEXTILE.fabricImport2025} tỷ USD vải; quy tắc xuất xứ “từ vải” (EVFTA), “từ sợi” (CPTPP) khiến tỷ lệ tận dụng ưu đãi chỉ ~${TEXTILE.coUtilisation.cptpp}% (CPTPP), ${TEXTILE.coUtilisation.evfta}% (EVFTA). ${cite('nd-dm-vai', 'moit-roo')}` },
+    { h: 'Hai đầu — thu về giá trị cao', p: `Sợi, dệt, nhuộm và thương hiệu, phân phối thu về phần lớn giá trị gia tăng với ít lao động. Giá trị nội địa tăng thêm toàn ngành ~${TEXTILE.domesticValueAdded2025}% (2025). ${cite('nd-dm-smile', 'nd-dm-2025')}` },
+    { h: 'Đáy — 80% lao động, 18–20% giá trị thu về', p: `Khâu may dùng ~${TEXTILE.sewingLabourShare}% lao động nhưng chỉ thu về ${TEXTILE.sewingValueShare}% giá trị; hiện CMT ~${TEXTILE.modes.cmt}%, FOB ~${TEXTILE.modes.fob}%, ODM ~${TEXTILE.modes.odm}%, OBM ~${TEXTILE.modes.obm}% (10 năm trước CMT 70–80%) — đang leo dần. ${cite('nd-dm-smile')}` },
+    { h: 'Nút thắt — nguyên liệu & “luật chơi”', p: `Xuất khẩu ~${TEXTILE.export2025} tỷ USD (2025) ${cite('nd-dm-2025')} nhưng phải nhập ~${TEXTILE.fabricImport2025} tỷ USD vải; quy tắc xuất xứ “từ vải” (EVFTA), “từ sợi” (CPTPP) khiến tỷ lệ tận dụng ưu đãi chỉ ~${TEXTILE.coUtilisation.cptpp}% (CPTPP), ${TEXTILE.coUtilisation.evfta}% (EVFTA). ${cite('nd-dm-vai', 'moit-roo')}` },
   ],
 }
 
@@ -78,6 +78,7 @@ export const smile: Section = {
           <div>
             <p class="eyebrow">Đường cong nụ cười · Stan Shih (1992)</p>
             <h2 class="display t-h2">Ai giữ <em class="c-gold">hai đầu</em>, ai ở <em class="c-red">đáy?</em></h2>
+            <p class="t-small c-dim" style="margin:8px 0 0;max-width:70ch">Giáo trình cảnh báo nguy cơ hội nhập khiến nước đang phát triển <b>“có vị trí bất lợi và thua thiệt trong chuỗi giá trị toàn cầu”</b> ${cite('gt-ktct')}, Ch.6 mục II.2. Đường cong đo phần giá trị gia tăng mỗi khâu <b>thu về</b>, không phải nơi giá trị được tạo ra.</p>
           </div>
           <div class="seg-toggle" role="group" aria-label="Chọn ngành">
             <button type="button" aria-pressed="true" data-mode="dien-tu">Điện tử</button>
@@ -91,7 +92,6 @@ export const smile: Section = {
             <text x="${X0 - 22}" y="${YTOP - 46}" class="smile__axis-t">GIÁ TRỊ GIA TĂNG ↑</text>
             <text x="${X1 + 30}" y="${YBOT + 62}" class="smile__axis-t" text-anchor="end">CÁC KHÂU CỦA CHUỖI GIÁ TRỊ →</text>
             <text x="${X0}" y="${YBOT + 62}" class="smile__axis-t">TRƯỚC SẢN XUẤT</text>
-            <text x="${(X0 + X1) / 2}" y="${YBOT + 62}" class="smile__axis-t" text-anchor="middle">SẢN XUẤT</text>
             <path d="${d}L${X1},${YBOT + 40}L${X0},${YBOT + 40}Z" class="smile__area" data-area/>
             <path d="${d}" class="smile__curve" data-curve/>
             <path d="M${vx - 18},${vy - 14} Q${(vx + lx) / 2 - 40},${(vy + ly) / 2 + 30} ${lx + 18},${ly + 30}" class="smile__arrow" data-arrow marker-end="url(#ah)"/>
@@ -99,17 +99,21 @@ export const smile: Section = {
             <defs><marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="var(--red)"/></marker></defs>
             ${TS.map((t, i) => {
               const [x, y] = pt(t)
-              const up = i === 3
+              // nhãn đặt ra phía ngoài đường cong: nửa trái canh phải, nửa phải canh trái, đáy đặt bên dưới
+              const bottom = t === 0
+              const tx = bottom ? x : t < 0 ? x - 16 : x + 16
+              const anchor = bottom ? 'middle' : t < 0 ? 'end' : 'start'
+              const ty = bottom ? y + 36 : y - 4
               return `<g data-st="${i}">
                 <circle cx="${x}" cy="${y}" r="7" class="smile__dot"/>
-                <text x="${x}" y="${up ? y + 40 : y - 30}" class="smile__stage-t" text-anchor="middle" data-st-t>${''}</text>
-                <text x="${x}" y="${up ? y + 60 : y - 12}" class="smile__stage-d" text-anchor="middle" data-st-d>${''}</text>
+                <text x="${tx}" y="${ty}" class="smile__stage-t" text-anchor="${anchor}" data-st-t></text>
+                <text x="${tx}" y="${ty + 18}" class="smile__stage-d" text-anchor="${anchor}" data-st-d></text>
               </g>`
             }).join('')}
             <g data-vn>
               <circle cx="${vx}" cy="${vy}" r="12" class="smile__vn"/>
               <circle cx="${vx}" cy="${vy}" r="22" class="smile__vn-ring" data-ring/>
-              <text x="${vx + 30}" y="${vy - 16}" class="smile__stage-t" style="fill:var(--red)">Việt Nam hôm nay</text>
+              <text x="${vx + 34}" y="${vy + 5}" class="smile__stage-t" style="fill:var(--red)">← Việt Nam hôm nay</text>
             </g>
           </svg>
         </div>
@@ -133,10 +137,10 @@ export const smile: Section = {
       chapter: 5,
       label: 'Đường cong nụ cười — điện tử',
       y: at(0.62),
-      seconds: 55,
+      seconds: 30,
       notes: notes(
         'Khái niệm của Stan Shih (nhà sáng lập Acer, ~1992), được WTO, World Bank, OECD trình bày trong Báo cáo phát triển chuỗi giá trị toàn cầu 2017.',
-        'Hai đầu (R&D, thiết kế, thương hiệu) tạo giá trị cao và nằm trong tay TNC; đáy (lắp ráp) là nơi Việt Nam đang đứng — nội địa hóa điện tử ~15–18%.',
+        'Lưu ý lý luận: đường cong biểu diễn phần giá trị gia tăng mỗi khâu THU VỀ (đo bằng giá cả), không phải nơi giá trị được TẠO RA. Hai đầu thu về nhiều nhờ lao động phức tạp và nhờ vị thế độc quyền công nghệ, thương hiệu (lợi nhuận độc quyền).', 'Giáo trình Ch.6 mục II.2 cảnh báo nguy cơ “có vị trí bất lợi và thua thiệt trong chuỗi giá trị toàn cầu” — đáy đường cong chính là vị trí đó.',
         'Bấm nút “Dệt may” để so sánh.',
       ),
     })
@@ -145,9 +149,9 @@ export const smile: Section = {
       chapter: 5,
       label: 'Đường cong nụ cười — dệt may',
       y: at(0.97),
-      seconds: 55,
+      seconds: 30,
       notes: notes(
-        'Dệt may: khâu may dùng ~80% lao động nhưng chỉ tạo 18–20% giá trị (theo chuyên gia trên Báo Nhân Dân). Phương thức CMT ~65%, FOB ~25%, ODM ~10% (Bộ Công Thương).',
+        'Dệt may: khâu may dùng ~80% lao động nhưng chỉ thu về 18–20% giá trị gia tăng (chuyên gia trên Báo Nhân Dân, 2024). Phương thức hiện nay: CMT ~35%, FOB ~55%, ODM ~9%, OBM ~1% (TS Hoàng Xuân Hiệp, Báo Nhân Dân 2024); 10 năm trước CMT 70–80% → đang dịch chuyển lên. (Bộ Công Thương 2023 từng nêu CMT ~65% — khác phương pháp, nếu bị hỏi thì giải thích.)',
         'Nút thắt: nhập ~17 tỷ USD vải năm 2025; quy tắc xuất xứ “từ vải” (EVFTA), “từ sợi” (CPTPP) → tỷ lệ tận dụng ưu đãi chỉ ~15% (CPTPP), 30–35% (EVFTA). Đây là “luật chơi” mà người chơi lớn đặt ra — liên hệ biểu hiện mới 4 & 5.',
         'QĐ 1643/QĐ-TTg: chuyển từ gia công sang quản lý chuỗi cung ứng, thiết kế, thương hiệu.',
       ),
@@ -171,7 +175,14 @@ export const smile: Section = {
       if (animate && !reduceMotion) gsap.fromTo(notesEl.children, { autoAlpha: 0, y: 14 }, { autoAlpha: revealed ? 1 : 0, y: 0, duration: 0.5, stagger: 0.07 })
       else if (revealed) gsap.set(notesEl.children, { autoAlpha: 1 })
     }
-    btns.forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode as Mode)))
+    // bấm tay thì giữ lựa chọn; cuộn ngược về nửa đầu thì trả lại chế độ tự động
+    let manual = false
+    btns.forEach((b) =>
+      b.addEventListener('click', () => {
+        manual = true
+        setMode(b.dataset.mode as Mode)
+      }),
+    )
     setMode('dien-tu', false)
 
     if (reduceMotion || window.innerWidth < 900) {
@@ -205,9 +216,10 @@ export const smile: Section = {
             revealed = r
             gsap.to(notesEl.children, { autoAlpha: r ? 1 : 0, y: r ? 0 : 14, duration: 0.5, stagger: 0.08, overwrite: true })
           }
-          // tự chuyển sang dệt may ở nửa sau để người thuyết trình không cần bấm
-          const want: Mode = self.progress > 0.86 ? 'det-may' : 'dien-tu'
-          if (self.direction !== 0 && want !== mode && Math.abs(self.progress - 0.86) < 0.08) setMode(want)
+          // tự chuyển sang dệt may ở đoạn cuối để người thuyết trình không cần bấm
+          if (self.progress < 0.5) manual = false
+          const want: Mode = self.progress > 0.84 ? 'det-may' : 'dien-tu'
+          if (!manual && want !== mode) setMode(want)
         },
       },
     })

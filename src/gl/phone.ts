@@ -313,11 +313,11 @@ export class Phone implements GLScene {
     }
   }
 
-  /** Vị trí màn hình (px) của tâm một lớp — để đặt nhãn HTML */
-  project(key: string) {
+  /** Vị trí màn hình (px) của mép phải một lớp, ở độ cao fy (tỉ lệ theo chiều cao máy) — để đặt nhãn HTML */
+  project(key: string, fy = 0.38) {
     const L = this.layers.find((l) => l.key === key)
     if (!L) return { x: 0, y: 0 }
-    const v = new THREE.Vector3(W * 0.5, H * 0.38, 0)
+    const v = new THREE.Vector3(W * 0.5, H * fy, 0)
     L.group.localToWorld(v)
     v.project(this.camera)
     return { x: (v.x * 0.5 + 0.5) * this.w, y: (-v.y * 0.5 + 0.5) * this.h }

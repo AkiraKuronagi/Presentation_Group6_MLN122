@@ -21,7 +21,7 @@ export const hook: Section = {
   <section class="sec sec--pad sec--screen hook" id="cau-hoi" aria-label="Câu hỏi mở đầu">
     <div class="wrap">
       <div class="chapter-tag"><span class="chapter-tag__n">01</span><span class="eyebrow">Câu hỏi mở đầu · bình chọn</span></div>
-      <h2 class="display t-h1 hook__q" data-split>Trong <em class="c-gold">100 USD</em> một thiết bị điện tử “Made in Vietnam” xuất khẩu, bao nhiêu USD thực sự được tạo ra <em class="c-red">ở Việt Nam?</em></h2>
+      <h2 class="display t-h2 hook__q" data-split>Trong <em class="c-gold">100 USD</em> một thiết bị điện tử “Made in Vietnam” xuất khẩu, bao nhiêu USD giá trị gia tăng <em class="c-red">ở lại Việt Nam?</em></h2>
       <div class="hook__opts" data-stagger>
         ${HOOK_OPTIONS.map(
           (o, i) => `
@@ -38,7 +38,7 @@ export const hook: Section = {
         ).join('')}
       </div>
       <div class="hook__foot">
-        <p class="cite">Cách chơi: mời cả lớp giơ tay theo từng phương án, người điều khiển bấm “+” để ghi phiếu. Đáp án được công bố ở <b>Chương 5</b>.</p>
+        <p class="cite">Cách chơi: mời cả lớp giơ tay theo từng phương án, người điều khiển bấm “+” để ghi phiếu. Đáp án được công bố ở <b>Phần 5</b>.</p>
         <button class="btn" type="button" data-reset>Đặt lại phiếu</button>
       </div>
 
@@ -56,10 +56,10 @@ export const hook: Section = {
       chapter: 1,
       label: 'Câu hỏi mở đầu — bình chọn',
       y: () => docTop(el),
-      seconds: 60,
+      seconds: 45,
       notes: notes(
         'Đọc câu hỏi, mời cả lớp giơ tay cho A, B, C, D. Bấm “+” để ghi phiếu.',
-        'Không tiết lộ đáp án — hẹn công bố khi tách lớp chiếc điện thoại ở Chương 5.',
+        'Không tiết lộ đáp án — hẹn công bố khi tách lớp chiếc điện thoại ở Phần 5.',
         'Giới thiệu 3 câu hỏi dẫn dắt của bài (khớp với câu hỏi cốt lõi trong đề).',
       ),
     })

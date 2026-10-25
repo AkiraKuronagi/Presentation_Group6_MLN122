@@ -47,7 +47,7 @@ export const concentration: Section = {
           <p class="exp__then"><b>Lênin:</b> Cartel, Trust, Consortium chi phối từng ngành.<br/><b>Nay:</b> công ty xuyên quốc gia (TNC) bên cạnh mạng lưới doanh nghiệp vừa và nhỏ.</p>
         </div>
         <div class="exp__body">
-          <p>Giáo trình chỉ ra: các độc quyền liên kết <b>cả dọc lẫn ngang, trong và ngoài nước</b> (Concern, Conglomerate); doanh nghiệp vừa và nhỏ tăng lên nhưng nhiều nơi trở thành mắt xích của <mark class="hl">“hệ thống gia công” — một dạng độc quyền mới</mark>, phụ thuộc tập đoàn lớn về vốn, công nghệ, thị trường. ${cite('gt-ktct')}</p>
+          <p>Giáo trình chỉ ra: các độc quyền liên kết <b>cả dọc lẫn ngang, trong và ngoài nước</b> (Concern, Conglomerate); chuyên môn hóa sâu hình thành <mark class="hl">“hệ thống gia công”</mark> — doanh nghiệp vừa và nhỏ phụ thuộc tập đoàn lớn về nhiều mặt. Giáo trình viết: <i>“Đây cũng chính là biểu hiện của độc quyền dưới một dạng mới”</i> ${cite('gt-ktct')}, Ch.4 mục III.1.a.</p>
           <div class="ev-row" data-stagger>
             <div class="evidence">
               <div class="evidence__v"><span data-count="12677">12.677</span><span class="evidence__u">tỷ USD</span></div>
@@ -73,11 +73,11 @@ export const concentration: Section = {
           <p class="exp__then"><b>Lênin:</b> “chế độ tham dự” — công ty mẹ, con, cháu.<br/><b>Nay:</b> bổ sung “chế độ ủy nhiệm”, tập đoàn tài chính đa ngành, xuyên quốc gia.</p>
         </div>
         <div class="exp__body">
-          <p>Cổ phiếu mệnh giá nhỏ phổ biến nên chủ sở hữu lớn khống chế doanh nghiệp cả trực tiếp lẫn gián tiếp qua thị trường tài chính; hình thành ngân hàng xuyên quốc gia và các trung tâm tài chính thế giới. ${cite('gt-ktct')}</p>
+          <p>Cổ phiếu mệnh giá nhỏ phát hành rộng rãi; đông đảo cổ đông nhỏ <b>ủy nhiệm</b> cho đại cổ đông, định chế tài chính thay mặt quyết định — nên số ít chi phối lượng tư bản lớn gấp nhiều lần vốn tự có. Hình thành ngân hàng xuyên quốc gia và các trung tâm tài chính thế giới. ${cite('gt-ktct')}</p>
           <div class="ev-row" data-stagger>
             <div class="evidence">
               <div class="evidence__v"><span data-count="14.0" data-digits="1">14,0</span><span class="evidence__u">nghìn tỷ USD</span></div>
-              <p class="evidence__l">tài sản do riêng BlackRock quản lý (31/12/2025) — gấp khoảng <b>27 lần</b> GDP Việt Nam</p>
+              <p class="evidence__l">tài sản BlackRock <b>quản lý hộ</b> cho các nhà đầu tư (31/12/2025, không phải vốn sở hữu) — gấp khoảng <b>27 lần</b> GDP Việt Nam (nhóm tự tính)</p>
               ${cite('blackrock', 'wb-gdp')}
             </div>
             <div class="evidence">
@@ -97,7 +97,7 @@ export const concentration: Section = {
       chapter: 3,
       label: 'Quy mô tập đoàn so với một quốc gia',
       y: () => docTop(el),
-      seconds: 45,
+      seconds: 25,
       notes: notes(
         'Bốn thanh cùng một thước đo: GDP cả Việt Nam năm 2025 chỉ là một vạch ngắn bên cạnh doanh thu của 100 tập đoàn lớn nhất hay tài sản một quỹ đầu tư quản lý.',
         'Nói rõ: tài sản quản lý là “tồn”, GDP là “dòng” — so sánh để hình dung quy mô, không phải phép so sánh kinh tế chính xác.',
@@ -108,9 +108,9 @@ export const concentration: Section = {
       chapter: 3,
       label: 'Biểu hiện mới 1 — TNC & “hệ thống gia công”',
       y: () => docTop(exps[0]) - 40,
-      seconds: 45,
+      seconds: 35,
       notes: notes(
-        'Nhấn mạnh câu chữ của giáo trình: “hệ thống gia công” là độc quyền dưới dạng mới — đây là sợi chỉ nối sang phần Việt Nam.',
+        'Đọc nguyên văn ngắn của giáo trình: “Đây cũng chính là biểu hiện của độc quyền dưới một dạng mới” (về hệ thống gia công) — sợi chỉ nối sang phần Việt Nam. Nhóm cần mở sách giấy, ghi số trang trước khi thuyết trình.',
         'Số liệu UNCTAD 2026: 100 TNC lớn nhất có doanh thu 12.677 tỷ USD; Apple một năm thu bằng khoảng 81% GDP Việt Nam (nhóm tự tính từ báo cáo 10-K và World Bank).',
         'Không quy chụp doanh nghiệp cụ thể; Apple chỉ minh họa mô hình thuê ngoài, theo chính báo cáo bắt buộc của công ty.',
       ),
@@ -120,10 +120,10 @@ export const concentration: Section = {
       chapter: 3,
       label: 'Biểu hiện mới 2 — tư bản tài chính',
       y: () => docTop(exps[1]) - 40,
-      seconds: 40,
+      seconds: 25,
       notes: notes(
-        '“Chế độ tham dự” của Lênin nay được bổ sung bằng “chế độ ủy nhiệm”: nắm cổ phần nhỏ phân tán, khống chế qua thị trường tài chính.',
-        'BlackRock quản lý 14,0 nghìn tỷ USD — gấp ~27 lần GDP Việt Nam (tự tính). Quỹ đầu tư tư nhân chiếm ~20% M&A toàn cầu (UNCTAD).',
+        '“Chế độ tham dự” của Lênin nay được bổ sung bằng “chế độ ủy nhiệm”: đông đảo cổ đông nhỏ ủy nhiệm cho đại cổ đông, định chế tài chính thay mặt quyết định, nên số ít chi phối lượng tư bản rất lớn.',
+        'BlackRock quản lý hộ 14,0 nghìn tỷ USD (tiền của nhiều nhà đầu tư, kể cả quỹ hưu trí — không phải vốn sở hữu) — gấp ~27 lần GDP Việt Nam (tự tính): minh họa việc vốn phân tán được tập trung vào tay một số định chế (nhóm vận dụng). Quỹ đầu tư tư nhân chiếm ~20% M&A toàn cầu (UNCTAD).',
       ),
     })
     if (reduceMotion) return

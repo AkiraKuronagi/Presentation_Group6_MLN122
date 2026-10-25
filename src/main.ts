@@ -98,12 +98,31 @@ async function boot() {
   await document.fonts?.ready
   engine.refresh()
   ScrollTrigger.addEventListener('refresh', () => engine.sortStations())
-  // về đúng chương nếu URL có #id
-  if (location.hash) {
+  // về đúng chỗ nếu URL có ?s=<số điểm dừng> (tập dượt từng phần) hoặc #id
+  const s = new URLSearchParams(location.search).get('s')
+  if (s !== null) engine.goTo(+s - 1, true)
+  else if (location.hash) {
     const el = document.querySelector(location.hash) as HTMLElement | null
     if (el) engine.lenis.scrollTo(el, { immediate: true })
   }
   document.documentElement.classList.add('is-ready')
+  // cho phép kiểm thử tự động / tập dượt từ console: __deck.go(5)
+  Object.assign(window, {
+    __deck: {
+      count: () => engine.stations.length,
+      go: (i: number) => engine.goTo(i, true),
+      labels: () => engine.stations.map((s) => s.label),
+      /** xuất kịch bản: chương, điểm dừng, thời lượng gợi ý, ghi chú */
+      script: () =>
+        engine.stations.map((s) => ({
+          chapter: s.chapter,
+          chapterTitle: engine.chapters.find((c) => c.n === s.chapter)?.title ?? '',
+          label: s.label,
+          seconds: s.seconds ?? 0,
+          notes: s.notes ?? '',
+        })),
+    },
+  })
 }
 
 boot()

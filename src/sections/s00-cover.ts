@@ -27,7 +27,7 @@ export const cover: Section = {
 
       <div class="wrap cover__main">
         <p class="eyebrow" data-cover="kicker">Biểu hiện mới của độc quyền &amp; độc quyền nhà nước</p>
-        <h1 class="display t-mega cover__title" data-cover="title">Ai nắm giữ <em>chuỗi giá trị?</em></h1>
+        <h1 class="display t-mega cover__title" data-cover="title">Ai nắm giữ<br /><em>chuỗi giá trị?</em></h1>
         <p class="t-lead cover__sub" data-cover="sub">
           Các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản —
           nhìn từ những chiếc điện thoại và chiếc áo “Made in Vietnam”.
@@ -72,7 +72,7 @@ export const cover: Section = {
       chapter: 1,
       label: 'Bìa — giới thiệu nhóm & chủ đề',
       y: () => range()[0],
-      seconds: 30,
+      seconds: 20,
       notes: notes(
         'Chào thầy/cô và các bạn. Nhóm 6 trình bày Chủ đề 6: biểu hiện mới của độc quyền, độc quyền nhà nước; tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của CNTB.',
         'Câu hỏi dẫn đường của cả bài: <b>Ai nắm giữ chuỗi giá trị — và Việt Nam đang đứng ở đâu?</b>',
@@ -86,9 +86,9 @@ export const cover: Section = {
         const [s, e] = range()
         return s + (e - s) * 0.86
       },
-      seconds: 30,
+      seconds: 20,
       notes: notes(
-        'Các đường màu vàng: dòng vốn đầu tư trực tiếp nước ngoài (FDI) từ các trung tâm tư bản đổ vào Việt Nam.',
+        'Các đường màu vàng: dòng vốn đầu tư trực tiếp nước ngoài (FDI) từ các nền kinh tế, đối tác đầu tư lớn vào Việt Nam.',
         'Các đường màu đỏ: hàng hóa Việt Nam xuất khẩu ngược lại chính các thị trường đó.',
         'Lưu ý trên bản đồ: quần đảo Hoàng Sa, Trường Sa là của Việt Nam.',
       ),

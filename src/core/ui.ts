@@ -55,7 +55,7 @@ export function mountUI(engine: Engine, opts: UIOptions) {
         <dl>
           <dt><kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd></dt><dd>Điểm dừng tiếp theo</dd>
           <dt><kbd>←</kbd> <kbd>PgUp</kbd></dt><dd>Điểm dừng trước</dd>
-          <dt><kbd>1</kbd>–<kbd>9</kbd>, <kbd>0</kbd></dt><dd>Nhảy tới chương (0 = chương 10)</dd>
+          <dt><kbd>1</kbd>–<kbd>9</kbd>, <kbd>0</kbd></dt><dd>Nhảy tới phần (0 = phần 10)</dd>
           <dt><kbd>Home</kbd> / <kbd>End</kbd></dt><dd>Về đầu / cuối</dd>
           <dt><kbd>N</kbd></dt><dd>Bật/tắt ghi chú người nói</dd>
           <dt><kbd>P</kbd></dt><dd>Mở cửa sổ người thuyết trình (màn hình phụ)</dd>
@@ -78,7 +78,7 @@ export function mountUI(engine: Engine, opts: UIOptions) {
   rail.innerHTML = engine.chapters
     .map(
       (c) =>
-        `<button class="rail__dot" data-ch="${c.n}" aria-label="Chương ${c.n}: ${c.title}"><span class="rail__label">${String(c.n).padStart(2, '0')} · ${c.short}</span></button>`,
+        `<button class="rail__dot" data-ch="${c.n}" aria-label="Phần ${c.n}: ${c.title}"><span class="rail__label">${String(c.n).padStart(2, '0')} · ${c.short}</span></button>`,
     )
     .join('')
   rail.addEventListener('click', (e) => {
@@ -252,8 +252,9 @@ export function mountUI(engine: Engine, opts: UIOptions) {
   bc?.addEventListener('message', (ev) => {
     const d = ev.data
     if (d?.type !== 'cmd') return
-    if (d.cmd === 'next') engine.next()
-    else if (d.cmd === 'prev') engine.prev()
+    // trang chính bị che (trình duyệt dừng hoạt ảnh) → nhảy tức thì để không bị "đứng"
+    if (d.cmd === 'next') engine.next(document.hidden)
+    else if (d.cmd === 'prev') engine.prev(document.hidden)
     else if (d.cmd === 'hello') publish()
     else if (d.cmd === 'clock') {
       clockStart = Date.now()

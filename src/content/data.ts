@@ -11,7 +11,7 @@ export const NSO_YEAR_URLS: Record<string, string> = {
   '2018': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2019/04/thong-cao-bao-chi-ve-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2018/',
   '2019': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2019/12/thong-cao-bao-chi-ve-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2019/',
   '2020': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2020/12/thong-cao-bao-chi-ve-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2020/',
-  '2021': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2021/12/thong-cao-bao-chi-ve-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2021/',
+  '2021': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2021/12/bao-cao-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2021/',
   '2022': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2022/12/thong-cao-bao-chi-ve-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2022/',
   '2023': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2023/12/thong-cao-bao-chi-ve-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2023/',
   '2024': 'https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2025/01/thong-cao-bao-chi-tinh-hinh-kinh-te-xa-hoi-quy-iv-va-nam-2024/',
@@ -63,7 +63,8 @@ export const TEXTILE = {
   export2025: 46,
   domesticValueAdded2025: 52,
   fabricImport2025: 17,
-  modes: { cmt: 65, fob: 25, odm: 10 },
+  /** theo TS Hoàng Xuân Hiệp (Báo Nhân Dân, 02/01/2024); 10 năm trước CMT chiếm 70–80% */
+  modes: { cmt: 35, fob: 55, odm: 9, obm: 1 },
   sewingLabourShare: 80,
   sewingValueShare: '18–20',
   coUtilisation: { cptpp: 15, evfta: '30–35' },
@@ -72,13 +73,17 @@ export const TEXTILE = {
 }
 
 /**
- * Điện tử — chờ kết quả nghiên cứu mảng điện tử (đang chạy).
- * Đã xác minh: mục tiêu GTGT tại Việt Nam của ngành điện tử & bán dẫn đến 2030 chỉ 10–15% (qd1018);
- * nội địa hóa điện tử ~15–18% (vcci-loc); ~90% kim ngạch nhập khẩu là đầu vào sản xuất (vgp-930).
+ * Điện tử, máy tính và linh kiện — nso-dientu (2016, 2024; Cục Thống kê 10/10/2025) và tttctt-2026 (2025, dẫn Cục Thống kê).
+ * Mục tiêu GTGT tại Việt Nam của điện tử & bán dẫn đến 2030 chỉ 10–15% (qd1018); nội địa hóa ~15–18% (vcci-loc).
+ * Tư liệu sản xuất chiếm 93,6% kim ngạch nhập khẩu năm 2025 (nso-2025).
  */
 export const ELECTRONICS = {
+  years: ['2016', '2024', '2025'],
+  exports: [18.5, 72.6, 107.7],
+  imports: [27.8, 107.1, 150.7],
+  exportShare2025: 22.7,
   vaTarget2030: '10–15',
-  importInputsShare: 90,
+  capitalGoodsImportShare2025: 93.6,
 }
 
 /** Giới hạn của CNTB — wir-ineq, unep-2025, ipcc-2023 */

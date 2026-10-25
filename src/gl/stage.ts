@@ -82,7 +82,8 @@ export class Stage {
     let bestP = 0
     for (const z of this.zones) {
       const [s, e] = z.range()
-      const lo = s - window.innerHeight * 0.5
+      // bật khi mép trên vùng đã lên quá ~1/3 màn hình; tắt khi mép dưới rời nửa màn hình
+      const lo = s - window.innerHeight * 0.15
       const hi = e + window.innerHeight * 0.5
       if (probe >= lo && probe <= hi && s > bestStart) {
         best = z

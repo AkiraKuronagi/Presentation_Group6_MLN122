@@ -4,6 +4,7 @@ import { type Section, notes } from './types'
 
 export const outro: Section = {
   id: 'ket',
+  chapter: { n: 12, title: 'Kết luận', short: 'Kết' },
   html: () => `
   <section class="sec sec--clear outro" id="ket" aria-label="Kết thúc">
     <div class="outro__pin">
@@ -29,7 +30,7 @@ export const outro: Section = {
       chapter: 12,
       label: 'Kết luận & cảm ơn',
       y: () => range()[0] + (range()[1] - range()[0]) * 0.5,
-      seconds: 30,
+      seconds: 20,
       notes: notes(
         'Kết luận một câu: độc quyền ngày nay không biến mất mà đổi hình thức — tập đoàn xuyên quốc gia điều phối chuỗi giá trị toàn cầu và giữ hai đầu giá trị cao.',
         'Việt Nam lựa chọn hội nhập sâu rộng nhưng giữ vững độc lập, tự chủ; với sinh viên, đó là nâng năng lực để leo lên hai đầu “đường cong nụ cười”.',

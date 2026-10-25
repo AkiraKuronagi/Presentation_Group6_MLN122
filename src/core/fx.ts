@@ -95,14 +95,15 @@ export function staticCounts(root: ParentNode = document) {
   })
 }
 
-/** Nhiễu chữ kiểu "giải mã" — dùng cho chuyển 1916 → nay */
+/** Nhiễu chữ kiểu "giải mã" — dùng cho chuyển 1916 → nay. Mỗi phần tử chỉ có một hiệu ứng chạy tại một thời điểm. */
+const scrambling = new WeakMap<HTMLElement, gsap.core.Tween>()
 export function scramble(el: HTMLElement, to: string, dur = 0.9) {
   const chars = 'ABCDEFGHIKLMNOPQRSTUVXYĐƯƠÂÊÔ0123456789#%$&'
+  scrambling.get(el)?.kill()
   const from = el.textContent ?? ''
   const len = Math.max(from.length, to.length)
   const o = { p: 0 }
-  gsap.killTweensOf(o)
-  gsap.to(o, {
+  const tw = gsap.to(o, {
     p: 1,
     duration: reduceMotion ? 0 : dur,
     ease: 'none',
@@ -118,4 +119,5 @@ export function scramble(el: HTMLElement, to: string, dur = 0.9) {
     },
     onComplete: () => (el.textContent = to),
   })
+  scrambling.set(el, tw)
 }

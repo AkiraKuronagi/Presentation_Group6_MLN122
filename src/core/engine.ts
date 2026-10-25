@@ -103,17 +103,17 @@ export class Engine {
     this.lenis.scrollTo(target, { duration: dur, immediate: immediate || reduceMotion, force: true, lock: dur > 0 })
   }
 
-  next() {
+  next(immediate = false) {
     const y = this.scrollY
     const k = this.stations.findIndex((s) => s.y() > y + 6)
-    if (k >= 0) this.goTo(k)
+    if (k >= 0) this.goTo(k, immediate)
   }
 
-  prev() {
+  prev(immediate = false) {
     const y = this.scrollY
     let k = -1
     for (let i = 0; i < this.stations.length; i++) if (this.stations[i].y() < y - 6) k = i
-    if (k >= 0) this.goTo(k)
+    if (k >= 0) this.goTo(k, immediate)
   }
 
   goChapter(n: number) {

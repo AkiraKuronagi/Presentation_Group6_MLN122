@@ -1,9 +1,10 @@
 import { docTop, gsap, reduceMotion } from '../core/engine'
 import { scramble } from '../core/fx'
+import { cite } from '../content/sources'
 import { THEORY } from '../content/theory'
-import { type Section, notes } from './types'
+import type { Section } from './types'
 
-/** Chương 2: 5 đặc điểm kinh tế của CNTB độc quyền (Lênin, 1916) lật thành 5 biểu hiện mới hôm nay. */
+/** Phần 2: 5 đặc điểm kinh tế của CNTB độc quyền (Lênin, 1916) lật thành 5 biểu hiện mới hôm nay. */
 export const lenin: Section = {
   id: 'ly-luan',
   chapter: { n: 2, title: 'Từ Lênin 1916 đến hôm nay', short: 'Lý luận' },
@@ -39,7 +40,7 @@ export const lenin: Section = {
             .join('')}
         </div>
         <div class="lenin__foot">
-          <p class="cite" data-lenin="cite">${THEORY.citeThen}</p>
+          <p class="cite" data-lenin="cite">${THEORY.citeThen} ${cite('lenin-t27', 'gt-ktct')}</p>
           <p class="cite" style="text-align:right">${THEORY.citeNow}</p>
         </div>
       </div>
@@ -60,7 +61,7 @@ export const lenin: Section = {
       chapter: 2,
       label: '5 đặc điểm kinh tế của CNTB độc quyền (Lênin)',
       y: at(0.02),
-      seconds: 55,
+      seconds: 40,
       notes: THEORY.notesThen,
     })
     engine.addStation({
@@ -68,7 +69,7 @@ export const lenin: Section = {
       chapter: 2,
       label: '5 biểu hiện mới của độc quyền ngày nay',
       y: at(0.985),
-      seconds: 60,
+      seconds: 45,
       notes: THEORY.notesNow,
     })
 

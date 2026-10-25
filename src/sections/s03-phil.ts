@@ -73,7 +73,7 @@ export const phil: Section = {
       chapter: 2,
       label: 'Nhìn từ triết học: lượng – chất, LLSX – QHSX',
       y: () => docTop(el) + 40,
-      seconds: 60,
+      seconds: 40,
       notes: PHIL.notes,
     })
     if (reduceMotion) return

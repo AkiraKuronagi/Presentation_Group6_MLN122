@@ -8,7 +8,6 @@
 }
 .wi {
   display: inline-block;
-  will-change: transform;
 }
 
 .chapter-tag {
@@ -276,7 +275,9 @@
 }
 .cover__title {
   margin: 0;
-  max-width: 13ch;
+}
+.cover__title em {
+  white-space: nowrap;
 }
 .cover__title em {
   color: var(--gold);
@@ -341,16 +342,21 @@
 }
 .cover__dive {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 18vh;
-  text-align: center;
+  left: var(--gutter);
+  bottom: 10vh;
+  max-width: min(40vw, 640px);
   pointer-events: none;
   opacity: 0;
 }
 .cover__dive p {
-  margin: 0 auto;
-  max-width: 24ch;
+  margin: 0;
+  text-shadow: 0 2px 24px var(--bg);
+}
+@media (max-width: 760px) {
+  .cover__dive {
+    max-width: none;
+    right: var(--gutter);
+  }
 }
 .cover__geo {
   position: absolute;
@@ -409,8 +415,8 @@
 
 /* ═══ 01 · Câu hỏi mở đầu ═══════════════════════════════════ */
 .hook__q {
-  max-width: 18ch;
-  margin: 0 0 clamp(26px, 5vh, 56px);
+  max-width: 26ch;
+  margin: 0 0 clamp(22px, 4vh, 44px);
 }
 .hook__opts {
   display: grid;
@@ -833,6 +839,12 @@
 .fdi__geo .geo-label {
   font-size: var(--t-small);
 }
+.fdi__panel .evidence__v {
+  font-size: clamp(2rem, 3.1vw, 3.6rem);
+}
+.evidence__u {
+  white-space: nowrap;
+}
 .mini-list {
   margin: 0;
   padding-left: 1.2em;
@@ -949,6 +961,7 @@
 }
 .phone__step h3 {
   margin: 12px 0 14px;
+  font-size: clamp(1.8rem, 3.3vw, 3.9rem);
 }
 .phone__step p {
   margin: 0 0 12px;
@@ -1063,7 +1076,7 @@
 }
 .smile__svg {
   width: 100%;
-  height: clamp(300px, 52vh, 560px);
+  height: clamp(280px, 46vh, 520px);
   overflow: visible;
 }
 .smile__curve {
@@ -1074,7 +1087,7 @@
 }
 .smile__area {
   fill: var(--gold);
-  opacity: 0.07;
+  fill-opacity: 0.08;
 }
 .smile__axis {
   stroke: var(--line-2);
@@ -1172,6 +1185,14 @@
 }
 .timeline p {
   margin: 4px 0 0;
+  font-size: var(--t-small);
+}
+.distinct {
+  margin-top: clamp(28px, 5vh, 50px);
+  padding: 18px 22px;
+  border-left: 3px solid var(--red);
+  background: var(--bg-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
   font-size: var(--t-small);
 }
 .callout {
@@ -1278,6 +1299,44 @@
 
 .balance__side li > div {
   display: block;
+}
+.role-quote {
+  margin: clamp(30px, 5vh, 50px) auto 0;
+  max-width: 62ch;
+  text-align: center;
+}
+.role-quote .quote {
+  font-size: clamp(1.2rem, 1.8vw, 2rem);
+}
+.match {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: clamp(30px, 5vh, 56px);
+  font-size: var(--t-small);
+}
+.match th,
+.match td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.match th {
+  font-family: var(--f-mono);
+  font-weight: 500;
+  font-size: var(--t-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.match td:first-child {
+  color: var(--red);
+  width: 38%;
+}
+.match td:nth-child(2) {
+  color: var(--fg-3);
+  width: 3em;
+  text-align: center;
 }
 .why {
   margin-top: clamp(40px, 7vh, 80px);
@@ -1522,6 +1581,53 @@
 }
 .quiz__opt.is-wrong {
   opacity: 0.45;
+}
+.quiz__opt.is-picked {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+.poll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
+}
+.poll__row {
+  display: grid;
+  grid-template-columns: minmax(180px, 2.4fr) minmax(0, 3fr) 2.5em auto;
+  gap: 14px;
+  align-items: center;
+  font-size: var(--t-small);
+}
+.poll__bar {
+  height: 14px;
+  background: var(--bg-3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.poll__bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--gold);
+  border-radius: 999px;
+  transition: width 0.4s var(--ease-out);
+}
+.poll__row button {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--line-2);
+  font-family: var(--f-mono);
+}
+@media (max-width: 760px) {
+  .poll__row {
+    grid-template-columns: 1fr auto auto;
+  }
+  .poll__bar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }
 .quiz__explain {
   margin-top: 18px;
