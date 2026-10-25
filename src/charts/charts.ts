@@ -164,7 +164,12 @@ export function renderChart(host: HTMLElement, spec: ChartSpec) {
           p.style.transformBox = 'view-box'
           anims.push(() => gsap.fromTo(p, { scaleY: 0 }, { scaleY: 1, duration: 1.1, delay: i * 0.05 + si * 0.08, ease: 'expo.out' }))
           if (labelIdx.includes(i)) {
-            const t = el('text', { x: x + bw / 2, y: y(v) - 8, class: 'dl', 'text-anchor': 'middle' }, svg)
+            // nhiều chuỗi: cột đầu canh nhãn về trái, cột cuối canh về phải để không đè nhau / đè cột bên cạnh
+            const first = k > 1 && si === 0
+            const last = k > 1 && si === k - 1
+            const lx = first ? x + bw : last ? x : x + bw / 2
+            const anchor = first ? 'end' : last ? 'start' : 'middle'
+            const t = el('text', { x: lx, y: y(v) - 8, class: 'dl', 'text-anchor': anchor }, svg)
             t.textContent = fmt.format(v)
           }
         })

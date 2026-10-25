@@ -83,7 +83,8 @@ export const phone: Section = {
       unit: 'tỷ USD',
       digits: 1,
       labelAt: [0, 2],
-      height: 210,
+      // vừa khung cả máy chiếu 1366×768 lẫn màn hình lớn
+      height: Math.round(Math.max(140, Math.min(220, window.innerHeight * 0.21))),
     })
 
     const at = (f: number) => () => {

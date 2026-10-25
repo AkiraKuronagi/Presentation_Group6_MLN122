@@ -944,18 +944,20 @@
   height: 100svh;
   overflow: hidden;
 }
+/* Các bước chồng lên nhau trong cùng một ô lưới, căn giữa theo chiều dọc bằng align-items
+   (không dùng transform vì GSAP ghi đè transform khi chạy hiệu ứng y). */
 .phone__steps {
   position: absolute;
   left: var(--gutter);
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  bottom: 0;
   width: min(560px, 42vw);
+  display: grid;
+  align-items: center;
+  padding: clamp(60px, 9vh, 96px) 0 clamp(24px, 4vh, 48px);
 }
 .phone__step {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translateY(-50%);
+  grid-area: 1 / 1;
   opacity: 0;
   visibility: hidden;
 }
@@ -1010,14 +1012,10 @@
     left: var(--gutter);
     right: var(--gutter);
     width: auto;
-    top: auto;
-    bottom: 24px;
-    transform: none;
+    align-items: end;
+    padding-bottom: 24px;
   }
   .phone__step {
-    transform: none;
-    top: auto;
-    bottom: 0;
     background: color-mix(in srgb, var(--bg) 88%, transparent);
     padding: 16px;
     border-radius: var(--radius);
