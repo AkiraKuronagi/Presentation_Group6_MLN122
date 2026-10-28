@@ -40,6 +40,14 @@ export const PHOTOS: Record<string, Photo> = {
     url: 'https://commons.wikimedia.org/wiki/File:Manhattan_at_night.jpg',
     caption: 'Khu tài chính Manhattan về đêm',
   },
+  wafer: {
+    title: '5C2A5961R – Silicon Wafer 20200519.jpg',
+    author: 'Rob Bulmahn',
+    license: 'CC BY 2.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/2.0/',
+    url: 'https://commons.wikimedia.org/wiki/File:5C2A5961R_%E2%80%93_Silicon_Wafer_20200519.jpg',
+    caption: 'Cận cảnh tấm wafer silicon',
+  },
 }
 
 const files = import.meta.glob('../assets/img/*.jpg', { eager: true, query: '?url', import: 'default' }) as Record<string, string>
