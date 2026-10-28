@@ -1,0 +1,1379 @@
+/* ═══ Thành phần của từng slide — đơn vị px của sân khấu 1920×1080 ═══ */
+
+.col {
+  width: 820px;
+}
+.col--narrow {
+  width: 700px;
+}
+.col--wide {
+  width: 1000px;
+}
+.note {
+  margin: 34px 0 0;
+  max-width: 760px;
+  font-size: 22px;
+  color: var(--fg-3);
+  line-height: 1.45;
+}
+.row--3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.h em.b {
+  color: var(--c2);
+}
+.sw {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+.sw--gold {
+  background: var(--gold);
+}
+.sw--red {
+  background: var(--red);
+}
+.sw--blue {
+  background: var(--c2);
+}
+.sw--fg {
+  background: var(--fg);
+}
+.legend {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+  font-size: 22px;
+  color: var(--fg-2);
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.cards {
+  display: grid;
+  gap: 16px;
+  margin-top: 40px;
+}
+.card {
+  display: grid;
+  gap: 4px;
+  padding: 20px 26px;
+  border-radius: 16px;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 72%, transparent);
+  backdrop-filter: blur(8px);
+}
+.card b {
+  font-size: 28px;
+  font-weight: 600;
+}
+.card span {
+  font-size: 22px;
+  color: var(--fg-2);
+}
+.card--gold {
+  border-color: var(--gold);
+}
+.hero-num {
+  margin-top: 38px;
+}
+.hero-num p {
+  margin: 12px 0 0;
+  font-size: 24px;
+  color: var(--fg-2);
+  max-width: 640px;
+}
+.slide .btn {
+  font-size: 20px;
+  padding: 12px 22px;
+  border-radius: 999px;
+}
+
+/* nhãn 3D */
+.gl-label.vn {
+  color: var(--red);
+}
+.gl-label.small {
+  font-size: calc(17px * var(--s, 1));
+}
+.gl-label.hub {
+  color: var(--gold);
+}
+.gl-label .blue {
+  color: var(--c2);
+}
+
+/* ─── 1. Bìa ─── */
+.cover {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 1060px;
+}
+.cover__title {
+  font-size: 140px;
+}
+.cover__sub {
+  max-width: 820px;
+}
+.cover__meta {
+  display: flex;
+  gap: 56px;
+  margin-top: auto;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.cover__meta span {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.cover__meta b {
+  display: block;
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.cover__team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 20px;
+  color: var(--fg-2);
+}
+.cover__team small {
+  margin-left: 8px;
+  font-family: var(--f-mono);
+  font-size: 15px;
+  color: var(--fg-3);
+}
+.cover__hint {
+  margin: 26px 0 0;
+  font-family: var(--f-mono);
+  font-size: 16px;
+  color: var(--fg-3);
+}
+.slide kbd {
+  font-family: var(--f-mono);
+  font-size: 0.9em;
+  padding: 1px 8px;
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+}
+
+/* ─── 2. Câu hỏi + bình chọn ─── */
+.hook__q {
+  max-width: 1380px;
+}
+.vote {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+.vote__opt {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 6px 18px;
+  padding: 26px 28px 22px;
+  border-radius: 20px;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+  backdrop-filter: blur(10px);
+}
+.vote__k {
+  grid-row: span 2;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 84px;
+  line-height: 1;
+  color: var(--gold);
+}
+.vote__t {
+  font-size: 30px;
+  font-weight: 600;
+}
+.vote__n {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  font-family: var(--f-mono);
+  font-size: 40px;
+  color: var(--fg-2);
+}
+.vote__bar {
+  grid-column: 2;
+  display: block;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--line);
+  overflow: hidden;
+}
+.vote__bar i,
+.recap__row > i > i,
+.poll__row > i > i {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.5s var(--ease-out);
+}
+.vote__btns {
+  position: absolute;
+  right: 14px;
+  top: -18px;
+  display: flex;
+  gap: 6px;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+}
+.vote__opt:hover .vote__btns {
+  opacity: 1;
+}
+.vote__btns button,
+.score__btns button,
+.poll__row button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  background: var(--bg-3);
+  color: var(--fg);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.hook__foot {
+  margin: 40px 0 0;
+  font-family: var(--f-mono);
+  font-size: 18px;
+  color: var(--fg-3);
+}
+
+/* ─── 3. Lênin → nay: thẻ lật ─── */
+.lenin__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.lenin__year {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: 230px;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.flips {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+  margin-top: 70px;
+  perspective: 1600px;
+}
+.flip {
+  all: unset;
+  display: block;
+  height: 380px;
+  cursor: pointer;
+}
+.flip__in {
+  position: relative;
+  display: block;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.9s var(--ease-out);
+}
+.flip.is-now .flip__in {
+  transform: rotateY(180deg);
+}
+.flip__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  backdrop-filter: blur(10px);
+}
+.flip__face i {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 60px;
+  line-height: 1;
+  color: var(--fg-3);
+}
+.flip__face span {
+  margin-top: auto;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+.flip__face small {
+  margin-top: 18px;
+  font-family: var(--f-mono);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.flip__face--now {
+  transform: rotateY(180deg);
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--bg-3) 88%, var(--gold));
+}
+.flip__face--now i,
+.flip__face--now small {
+  color: var(--gold);
+}
+
+/* ─── 4. Triết học ─── */
+.phil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 56px;
+}
+.phil__panel {
+  margin: 0;
+}
+.phil__panel figcaption {
+  font-size: 24px;
+  color: var(--fg-2);
+  margin-bottom: 18px;
+}
+.phil__panel figcaption b {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--fg);
+  margin-bottom: 6px;
+}
+.phil__panel svg {
+  width: 100%;
+  overflow: visible;
+}
+.phil__panel text {
+  font-family: var(--f-body);
+  font-size: 19px;
+  fill: var(--fg-2);
+}
+.phil__line {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 3;
+}
+.phil__dot {
+  fill: var(--fg-3);
+}
+.phil__node {
+  fill: var(--red);
+}
+.phil .phil__t--dim {
+  fill: var(--fg-3);
+  font-size: 17px;
+}
+.phil .phil__t--red {
+  fill: var(--red);
+  font-weight: 600;
+}
+.phil .phil__t--gold {
+  fill: var(--gold);
+  font-style: italic;
+  font-size: 22px;
+}
+.phil__form circle {
+  fill: var(--gold);
+}
+.phil .phil__form text {
+  fill: var(--fg);
+  font-weight: 500;
+}
+.phil__mesh {
+  stroke: var(--line-2);
+  stroke-width: 1.5;
+}
+.phil__flow {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  opacity: 0.7;
+}
+.phil__pnode circle {
+  fill: var(--bg);
+  stroke: var(--fg);
+  stroke-width: 2;
+}
+.phil__own {
+  fill: color-mix(in srgb, var(--gold) 22%, var(--bg));
+  stroke: var(--gold);
+  stroke-width: 3;
+}
+.phil .phil__t--own {
+  fill: var(--gold);
+  font-size: 24px;
+  font-weight: 600;
+}
+.phil .phil__t--own2 {
+  fill: var(--fg-2);
+  font-size: 15px;
+}
+
+/* ─── 6. FDI sparkline ─── */
+.spark {
+  display: block;
+  width: 720px;
+  margin-top: 26px;
+  overflow: visible;
+}
+.spark__grid {
+  stroke: var(--grid);
+  stroke-width: 2;
+}
+.spark__line {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+.spark__dot {
+  fill: var(--gold);
+}
+.spark__t {
+  font-family: var(--f-mono);
+  font-size: 20px;
+  fill: var(--fg-2);
+}
+.spark__t--hi {
+  fill: var(--gold);
+  font-weight: 700;
+  font-size: 24px;
+}
+.spark__t--dim {
+  fill: var(--fg-3);
+  font-size: 17px;
+}
+.row .stat {
+  flex: 1;
+}
+
+/* ─── 7. Gauge + cán cân ─── */
+.share {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 110px;
+  align-items: center;
+  margin-top: 40px;
+}
+.gauge {
+  position: relative;
+  margin: 0;
+  width: 440px;
+  height: 440px;
+}
+.gauge svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.gauge__bg {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 30;
+}
+.gauge__fg {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 30;
+  stroke-linecap: round;
+}
+.gauge__c {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+}
+.gauge__c > b {
+  font-size: 104px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--gold);
+}
+.gauge__c > b small {
+  font-size: 0.45em;
+}
+.gauge__c > span {
+  font-size: 21px;
+  color: var(--fg-2);
+  max-width: 260px;
+}
+.gauge__c > .gauge__sub {
+  font-family: var(--f-mono);
+  font-size: 18px;
+  color: var(--fg-3);
+}
+.bal__h {
+  margin: 0 0 8px;
+  font-family: var(--f-mono);
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.bal__y {
+  margin: 24px 0 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.bal__row {
+  display: grid;
+  grid-template-columns: 250px 1fr 130px;
+  align-items: center;
+  gap: 18px;
+  margin: 10px 0;
+  font-size: 22px;
+  color: var(--fg-2);
+}
+.bal__row b {
+  font-family: var(--f-mono);
+  font-size: 26px;
+  text-align: right;
+}
+.bal__track {
+  position: relative;
+  height: 30px;
+}
+.bal__track::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  bottom: -8px;
+  width: 2px;
+  background: var(--line-2);
+}
+.bal__track i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--w);
+  border-radius: 4px;
+}
+.bal__track i.pos {
+  left: 50%;
+  background: var(--gold);
+  transform-origin: 0 50%;
+}
+.bal__track i.neg {
+  right: 50%;
+  background: var(--red);
+  transform-origin: 100% 50%;
+}
+.hi {
+  color: var(--gold);
+}
+.lo {
+  color: var(--red);
+}
+.twin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+.twin > div {
+  padding: 18px 24px;
+  border-radius: 14px;
+  font-size: 22px;
+  color: var(--fg-2);
+  background: color-mix(in srgb, var(--bg-2) 75%, transparent);
+  backdrop-filter: blur(8px);
+}
+.twin b {
+  display: block;
+  font-size: 18px;
+  font-family: var(--f-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.twin__a {
+  border-left: 4px solid var(--gold);
+}
+.twin__a b {
+  color: var(--gold);
+}
+.twin__b {
+  border-left: 4px solid var(--red);
+}
+.twin__b b {
+  color: var(--red);
+}
+
+/* ─── 11. Đáp án + đường cong nụ cười ─── */
+.answer {
+  display: grid;
+  grid-template-columns: 640px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.recap {
+  display: grid;
+  gap: 10px;
+  margin-top: 40px;
+}
+.recap__row {
+  display: grid;
+  grid-template-columns: 34px 170px 1fr 50px;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+  color: var(--fg-3);
+}
+.recap__row > i {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--line);
+  overflow: hidden;
+}
+.recap__row em {
+  font-style: normal;
+  font-family: var(--f-mono);
+  text-align: right;
+}
+.recap__row.is-ans {
+  color: var(--fg);
+  font-weight: 600;
+}
+.recap__row.is-ans b {
+  color: var(--red);
+}
+.recap__row.is-ans > i > i {
+  background: var(--red);
+}
+.smile {
+  margin: 30px 0 0;
+}
+.smile svg {
+  width: 100%;
+  overflow: visible;
+}
+.smile__axis {
+  stroke: var(--line-2);
+  stroke-width: 2;
+  fill: none;
+}
+.smile__curve {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+.smile__t {
+  font-family: var(--f-body);
+  font-size: 24px;
+  fill: var(--fg);
+}
+.smile__t--dim {
+  font-family: var(--f-mono);
+  font-size: 17px;
+  fill: var(--fg-3);
+}
+.smile__t--hi {
+  fill: var(--gold);
+  font-weight: 600;
+}
+.smile__t--lo {
+  fill: var(--red);
+  font-weight: 600;
+}
+.smile__vn {
+  fill: var(--red);
+}
+.smile__pulse {
+  fill: var(--red);
+  opacity: 0.3;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 1.8s ease-out infinite;
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ─── 12. Dệt may ─── */
+.stack {
+  margin-top: 56px;
+}
+.stack__h {
+  margin: 0 0 14px;
+  font-size: 20px;
+  color: var(--fg-3);
+}
+.stack__bar {
+  display: flex;
+  height: 92px;
+}
+.stack__seg:first-child {
+  border-radius: 14px 0 0 14px;
+}
+.stack__seg:last-child {
+  border-radius: 0 14px 14px 0;
+}
+.stack__seg {
+  position: relative;
+  flex: var(--v) 0 0;
+  display: flex;
+  align-items: center;
+  padding-left: 22px;
+  transform-origin: 0 50%;
+}
+.stack__seg b {
+  font-size: 28px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.stack__seg--red {
+  background: var(--red);
+  color: #fff;
+}
+.stack__seg--gold {
+  background: var(--c1);
+  color: #fff;
+}
+.stack__seg--blue {
+  background: var(--c2);
+}
+.stack__seg--fg {
+  background: var(--fg);
+}
+.stack__seg--blue b,
+.stack__seg--fg b {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 12px);
+  font-size: 22px;
+  color: var(--fg);
+}
+.stack__seg--fg b {
+  left: auto;
+  right: 0;
+}
+.stack__keys {
+  display: flex;
+  gap: 34px;
+  margin-top: 58px;
+  font-size: 21px;
+  color: var(--fg-2);
+}
+.stack__keys span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.stack__keys b {
+  color: var(--fg);
+}
+.slide .row--3 {
+  margin-top: 54px;
+}
+
+/* ─── 13. Dòng thời gian ─── */
+.tl {
+  list-style: none;
+  margin: 34px 0 30px;
+  padding: 0 0 0 28px;
+  border-left: 2px solid var(--line-2);
+  display: grid;
+  gap: 18px;
+}
+.tl li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: baseline;
+}
+.tl li::before {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--gold);
+}
+.tl span {
+  font-family: var(--f-mono);
+  font-size: 22px;
+  color: var(--gold);
+}
+.tl p {
+  margin: 0;
+  font-size: 25px;
+}
+.tl b {
+  color: var(--red);
+}
+
+/* ─── 14. Độc quyền nhà nước ─── */
+.sm {
+  display: grid;
+  grid-template-columns: 760px 1fr;
+  gap: 90px;
+}
+.venn {
+  display: block;
+  width: 640px;
+  margin-top: 30px;
+}
+.venn circle {
+  stroke-width: 3;
+  mix-blend-mode: screen;
+}
+:root[data-theme='light'] .venn circle {
+  mix-blend-mode: multiply;
+}
+.venn__a {
+  fill: color-mix(in srgb, var(--gold) 26%, transparent);
+  stroke: var(--gold);
+}
+.venn__b {
+  fill: color-mix(in srgb, var(--c2) 26%, transparent);
+  stroke: var(--c2);
+}
+.venn text {
+  font-family: var(--f-body);
+  font-size: 26px;
+  fill: var(--fg);
+}
+.venn .venn__mid {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 46px;
+  fill: var(--red);
+}
+.sm__3 {
+  margin: 18px 0 0;
+  font-family: var(--f-mono);
+  font-size: 20px;
+  color: var(--fg-2);
+}
+.sm__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px 50px;
+  align-content: center;
+  padding-top: 40px;
+}
+.distinct {
+  position: absolute;
+  left: 120px;
+  right: 120px;
+  bottom: 86px;
+  margin: 0;
+  padding: 18px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--red);
+  font-size: 23px;
+  background: color-mix(in srgb, var(--bg-2) 82%, transparent);
+  backdrop-filter: blur(8px);
+}
+.distinct b {
+  color: var(--red);
+}
+
+/* ─── 15. Hai mặt ─── */
+.sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 40px;
+}
+.sides ul {
+  margin: 0;
+  padding: 18px 22px;
+  list-style: none;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+  display: grid;
+  gap: 8px;
+  font-size: 23px;
+}
+.sides li::before {
+  content: '● ';
+  font-size: 0.7em;
+  vertical-align: 2px;
+}
+.sides__a {
+  border-top: 4px solid var(--gold);
+}
+.sides__a li::before {
+  color: var(--gold);
+}
+.sides__b {
+  border-top: 4px solid var(--red);
+}
+.sides__b li::before {
+  color: var(--red);
+}
+.slide .row {
+  margin-top: 40px;
+}
+.q {
+  margin: 40px 0 0;
+  padding-left: 24px;
+  border-left: 3px solid var(--fg-3);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 25px;
+  line-height: 1.4;
+  color: var(--fg-2);
+}
+.q cite {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--f-body);
+  font-style: normal;
+  font-size: 18px;
+  color: var(--fg-3);
+}
+
+/* ─── 16. Văn kiện ─── */
+.docs {
+  list-style: none;
+  margin: 44px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  counter-reset: d;
+}
+.docs li {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  font-size: 20px;
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+}
+.docs li:last-child {
+  border-color: var(--red);
+}
+
+/* ─── 17. Bài học ─── */
+.majors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+.majors button {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+  color: var(--fg-2);
+  font: inherit;
+  font-size: 21px;
+  cursor: pointer;
+}
+.majors button[aria-pressed='true'] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg);
+  font-weight: 600;
+}
+.lesson {
+  display: grid;
+  grid-template-columns: 640px 1fr;
+  gap: 60px;
+  margin-top: 30px;
+  min-height: 330px;
+}
+.mini {
+  width: 640px;
+  overflow: visible;
+}
+.mini__curve {
+  fill: none;
+  stroke: var(--fg-3);
+  stroke-width: 4;
+}
+.mini__vn {
+  fill: var(--fg-3);
+}
+.mini__dot {
+  fill: var(--gold);
+  stroke: var(--bg);
+  stroke-width: 4;
+}
+.mini__t {
+  font-size: 18px;
+  fill: var(--fg-3);
+}
+.lesson__stage {
+  margin: 4px 0 0;
+  font-family: var(--f-mono);
+  font-size: 20px;
+  color: var(--gold);
+}
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 30px;
+}
+.skills li {
+  padding-left: 18px;
+  border-left: 3px solid var(--gold);
+}
+.skills b {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+}
+.skills span {
+  font-size: 19px;
+  color: var(--fg-2);
+}
+.lesson__fact {
+  margin: 26px 0 0;
+  font-size: 19px;
+  color: var(--fg-3);
+}
+.lesson__stats {
+  position: absolute;
+  left: 120px;
+  right: 120px;
+  bottom: 84px;
+}
+.lesson__stats .stat__v {
+  font-size: 54px;
+}
+
+/* ─── 18. Minigame ─── */
+.quiz {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 70px;
+  height: 100%;
+}
+.quiz__n {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 22px;
+  color: var(--gold);
+}
+.quiz__q {
+  margin: 14px 0 0;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.15;
+  min-height: 174px;
+}
+.quiz__opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 30px;
+}
+.quiz__opt {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 16px;
+  min-height: 110px;
+  padding: 16px 22px;
+  border-radius: 16px;
+  border: 1px solid var(--line-2);
+  background: var(--bg-2);
+  color: var(--fg);
+  font: inherit;
+  font-size: 24px;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+.quiz__opt b {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  font-size: 24px;
+}
+.quiz__opt.is-picked {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 14%, var(--bg-2));
+}
+.quiz__opt.is-right {
+  border-color: var(--ok);
+  background: color-mix(in srgb, var(--ok) 20%, var(--bg-2));
+}
+.quiz__opt.is-right b {
+  background: var(--ok);
+  color: var(--bg);
+}
+.quiz__opt.is-wrong {
+  border-color: var(--red);
+  opacity: 0.7;
+}
+.quiz__why {
+  margin: 22px 0 0;
+  padding: 16px 22px;
+  border-radius: 14px;
+  border-left: 4px solid var(--ok);
+  background: var(--bg-2);
+  font-size: 21px;
+  color: var(--fg-2);
+}
+.quiz__nav {
+  position: absolute;
+  left: 120px;
+  bottom: 70px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.quiz__dots {
+  display: flex;
+  gap: 8px;
+  margin-right: 18px;
+}
+.quiz__dots i {
+  width: 34px;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--line-2);
+}
+.quiz__dots i.is-on {
+  background: var(--gold);
+}
+.score {
+  align-self: center;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--line-2);
+  background: var(--bg-2);
+}
+.score__h {
+  margin: 0 0 16px;
+  font-family: var(--f-mono);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.score__team {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 26px;
+}
+.score__team > b {
+  font-family: var(--f-mono);
+  font-size: 44px;
+  color: var(--gold);
+  min-width: 50px;
+  text-align: right;
+}
+.score__btns {
+  display: flex;
+  gap: 6px;
+}
+.score__tip {
+  margin: 16px 0 0;
+  font-size: 17px;
+  color: var(--fg-3);
+}
+
+/* ─── 19. Kết ─── */
+.outro__h {
+  font-size: 92px;
+}
+.pledges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 48px;
+}
+.pledge {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 75%, transparent);
+  color: var(--fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.pledge b {
+  font-size: 22px;
+}
+.pledge span {
+  font-size: 17px;
+  color: var(--fg-3);
+}
+.pledge.is-on {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 16%, var(--bg-2));
+}
+.outro__thanks {
+  position: absolute;
+  left: 120px;
+  bottom: 70px;
+  margin: 0;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 40px;
+  color: var(--gold);
+}
+.open {
+  position: absolute;
+  right: 120px;
+  bottom: 70px;
+  width: 620px;
+  padding: 28px 30px;
+  border-radius: 20px;
+  border: 1px solid var(--line-2);
+  background: color-mix(in srgb, var(--bg-2) 80%, transparent);
+  backdrop-filter: blur(14px);
+}
+.open__k {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.open__q {
+  margin: 8px 0 18px;
+  font-size: 26px;
+  line-height: 1.35;
+}
+.open__q em {
+  font-style: normal;
+  color: var(--gold);
+}
+.open__q em.r {
+  color: var(--red);
+}
+.poll {
+  display: grid;
+  gap: 10px;
+}
+.poll__row {
+  display: grid;
+  grid-template-columns: 250px 1fr 40px 38px;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: var(--fg-2);
+}
+.poll__row > i {
+  height: 8px;
+  border-radius: 6px;
+  background: var(--line);
+  overflow: hidden;
+}
+.poll__row b {
+  font-family: var(--f-mono);
+  text-align: right;
+}
+.open__qr {
+  position: absolute;
+  right: 30px;
+  top: -150px;
+  width: 130px;
+  height: 130px;
+  padding: 6px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* ─── 20. Tài liệu ─── */
+.refs__head {
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+.refs__head .h {
+  font-size: 64px;
+}
+.refs__note {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--fg-3);
+}
+.refs__note + .refs__note {
+  margin-top: 6px;
+}
+.refs {
+  margin: 22px 0 0;
+  padding: 0 0 0 30px;
+  columns: 4;
+  column-gap: 40px;
+  font-size: 12px;
+  line-height: 1.34;
+  color: var(--fg-2);
+}
+.refs li {
+  break-inside: avoid;
+  margin-bottom: 5px;
+}
+.refs a {
+  color: var(--fg-3);
+  font-family: var(--f-mono);
+  font-size: 11px;
+}
+#tai-lieu .slide__stage {
+  padding-top: 84px;
+  padding-bottom: 40px;
+}

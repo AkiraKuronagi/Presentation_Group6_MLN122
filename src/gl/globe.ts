@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { type GLScene, clamp01, easeInOut, easeOut, lerp, seg } from './stage'
+import { type GLScene, anchorCamera, clamp01, easeInOut, easeOut, lerp, seg } from './stage'
 
 export interface GlobeDots {
   land: number[]
@@ -134,6 +134,10 @@ export class Globe implements GLScene {
   private arcs: Array<{ mesh: THREE.Mesh; mat: THREE.ShaderMaterial; kind: 'in' | 'out'; delay: number }> = []
   private w = 1
   private h = 1
+  /** điểm neo (px khung nhìn) & tỉ lệ sân khấu — do Stage cấp mỗi khung hình */
+  private ax = -1
+  private ay = -1
+  private k = 1
   private cur: Params = { lat: 8, lon: -20, dist: 4.6, offset: 0, arcsIn: 0, arcsOut: 0, vnGlow: 0, landAlpha: 1 }
   private target: Params = { ...this.cur }
   private first = true
@@ -254,7 +258,7 @@ export class Globe implements GLScene {
     this.arcs.push({ mesh, mat, kind: a.kind, delay: (i % 7) * 0.06 })
   }
 
-  setTheme(theme: GlobeTheme, light: boolean) {
+  setPalette(theme: GlobeTheme, light: boolean) {
     this.landMat.uniforms.uColor.value.set(theme.dot)
     this.vnMat.uniforms.uColor.value.set(theme.vn)
     this.atmoMat.uniforms.uColor.value.set(theme.atmo)
@@ -283,11 +287,16 @@ export class Globe implements GLScene {
     return Math.min(window.devicePixelRatio || 1, 1.75)
   }
 
+  setAnchor(x: number, y: number, k: number) {
+    this.ax = x
+    this.ay = y
+    this.k = k
+  }
+
   private applyOffset() {
-    const ox = this.cur.offset * this.w
-    if (Math.abs(ox) > 0.5) this.camera.setViewOffset(this.w, this.h, -ox, 0, this.w, this.h)
-    else this.camera.clearViewOffset()
-    this.camera.updateProjectionMatrix()
+    const x = this.ax < 0 ? this.w / 2 : this.ax
+    const y = this.ay < 0 ? this.h / 2 : this.ay
+    anchorCamera(this.camera, this.w, this.h, x + this.cur.offset * this.w, y)
   }
 
   /** Trạng thái đích theo chế độ + tiến độ cuộn */
@@ -310,12 +319,39 @@ export class Globe implements GLScene {
         landAlpha: 1 - 0.35 * c,
       }
     }
+    if (mode === 'cover') {
+      // bìa: quay từ Ấn Độ Dương về châu Á rồi đung đưa quanh Việt Nam (lệch phải tâm cầu), cung vốn – hàng hóa vẽ dần theo p
+      const a = easeInOut(seg(p, 0, 1))
+      return {
+        lon: lerp(55, 94 + Math.sin(t * 0.12) * 7, a),
+        lat: lerp(8, 14, a),
+        dist: 3.25,
+        offset: 0,
+        arcsIn: easeOut(seg(p, 0.2, 0.8)),
+        arcsOut: easeOut(seg(p, 0.45, 1)),
+        vnGlow: seg(p, 0.3, 0.9),
+        landAlpha: 1,
+      }
+    }
+    if (mode === 'tariff') {
+      // biên giới mềm: nhìn từ Thái Bình Dương thấy cả Việt Nam lẫn Bắc Mỹ, cung hàng hóa đỏ nổi bật
+      return {
+        lon: 172 + Math.sin(t * 0.15) * 4,
+        lat: 24,
+        dist: narrow ? 6 : 4.5,
+        offset: 0,
+        arcsIn: 0.15,
+        arcsOut: easeOut(seg(p, 0, 1)),
+        vnGlow: 1,
+        landAlpha: 0.8,
+      }
+    }
     if (mode === 'fdi') {
       return {
         lon: 104 + Math.sin(t * 0.2) * 5,
         lat: 20,
         dist: narrow ? 4.6 : 3.05,
-        offset: narrow ? 0 : 0.2,
+        offset: 0,
         arcsIn: 1,
         arcsOut: clamp01(p * 3),
         vnGlow: 1,
@@ -353,7 +389,7 @@ export class Globe implements GLScene {
     c.landAlpha = lerp(c.landAlpha, g.landAlpha, k)
 
     this.root.rotation.set(c.lat * DEG, -c.lon * DEG, 0)
-    this.camera.position.set(0, 0, c.dist)
+    this.camera.position.set(0, 0, c.dist / Math.max(0.35, this.k))
     this.camera.lookAt(0, 0, 0)
     this.applyOffset()
 

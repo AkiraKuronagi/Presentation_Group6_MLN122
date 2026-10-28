@@ -1,27 +1,29 @@
 # Ai nắm giữ chuỗi giá trị? — Nhóm 6 · MLN122
 
-Trang thuyết trình dạng cuộn (scrollytelling) cho **Chủ đề 6 — Kinh tế chính trị Mác – Lênin (MLN122)**:
+Bộ slide web toàn màn hình (20 slide, mỗi slide đúng một khung hình 16:9) cho **Chủ đề 6 — Kinh tế chính trị Mác – Lênin (MLN122)**:
 *Biểu hiện mới của độc quyền, độc quyền nhà nước trong điều kiện ngày nay: các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản.*
 
 - Lý luận: Giáo trình KTCT Mác – Lênin (Bộ GD&ĐT, 2021) Ch.4 mục III; phụ trợ Ch.6 mục II. Lăng kính phụ: Giáo trình Triết học (2021) — lượng – chất, LLSX – QHSX.
 - Minh chứng bắt buộc: số liệu FDI, xuất khẩu, tỷ lệ giá trị gia tăng nội địa (điện tử + dệt may) từ Cục Thống kê, cơ quan nhà nước, tổ chức thuộc LHQ; văn kiện Đảng.
-- 12 phần · 35 điểm dừng · ~18 phút 40 giây (Rubric 2.1: không vượt 20 phút).
+- 20 slide · ít chữ, nhiều mô hình 3D và ảnh thật · ~16–17 phút + phản biện (Rubric 2.1: không vượt 20 phút).
 
 ## Trình chiếu ở lớp (không cần mạng)
 
 Mở **`dist-single/index.html`** bằng Chrome hoặc Edge — chỉ một file, chạy offline. Nhấn `F` để toàn màn hình.
+Sân khấu thiết kế 1920×1080 tự co vừa mọi màn hình (máy chiếu 1366×768, laptop, màn 4K): mỗi lần nhấn `↓` là sang **đúng một slide mới**, không bao giờ có hai nội dung chen nhau.
 
 | Phím | Tác dụng |
 |---|---|
-| `→` `Space` `PgDn` / `←` `PgUp` | Điểm dừng tiếp theo / trước |
-| `1`…`9`, `0` | Nhảy tới phần (0 = phần 10) |
+| `↓` `→` `Space` `PgDn` / `↑` `←` `PgUp` | Slide sau / slide trước |
+| Cuộn chuột, vuốt | Mỗi cử chỉ một slide |
+| `1`…`9`, `0` | Nhảy tới slide 1–9 (0 = slide 10) · `Home` / `End` về đầu / cuối |
 | `N` | Bật/tắt ghi chú người nói |
 | `P` | Mở cửa sổ người thuyết trình (ghi chú + đồng hồ, điều khiển trang chính) |
 | `T` / `R` | Đồng hồ bấm giờ / đặt lại |
 | `L` | Giao diện sáng (phòng nhiều đèn, máy chiếu mờ) |
 | `?` | Bảng phím tắt |
 
-Mở thẳng một điểm dừng để tập dượt: `index.html?s=15` (điểm dừng số 15).
+Mở thẳng một slide để tập dượt: `index.html?s=15` hoặc `index.html#15` (slide số 15).
 
 > Cửa sổ người thuyết trình (`P`) đồng bộ tốt nhất khi chạy qua máy chủ (`npm run preview` hoặc GitHub Pages). Mở trực tiếp file thì dùng phím `N`.
 
@@ -57,10 +59,12 @@ npm run build:single
 
 ```
 src/content/   nội dung & số liệu (sửa chữ ở đây): meta, theory, data, sources (APA 7), geo
-src/sections/  từng chương: bố cục + ghi chú người nói + thời lượng
-src/gl/        cảnh WebGL tự sinh bằng code: quả địa cầu (Three.js), điện thoại tách lớp → bản vẽ
-src/charts/    biểu đồ SVG (bảng màu đã kiểm định cho người mù màu, có bảng số liệu tương đương)
-src/core/      cuộn mượt (Lenis + GSAP), điểm dừng, phím tắt, cửa sổ người thuyết trình
+src/content/images.ts  ảnh nền (Wikimedia Commons, giấy phép mở) + dòng ghi nguồn
+src/slides/    20 slide: bố cục 1920×1080 + ghi chú người nói + thời lượng + "cú máy" 3D
+src/gl/        mô hình 3D tự dựng bằng code (Three.js): quả địa cầu, điện thoại tách lớp, tháp quy mô,
+               container xuất – nhập, đồng xu hai mặt, cây cầu → bậc thang
+src/core/      deck.ts (chuyển slide, co sân khấu, nhãn bám mô hình 3D), ui.ts (HUD, ghi chú, cửa sổ người thuyết trình)
+dev/scene.html xem thử riêng từng mô hình 3D: /dev/scene.html?scene=towers&mode=rise
 ```
 
-Mọi hình ảnh động đều tự sinh bằng code — **không dùng ảnh/video AI**, không có hình ảnh lãnh tụ (tránh cờ ĐỎ #5 / VÀNG #5 trong Tab 4).
+Mô hình 3D, biểu đồ, sơ đồ đều tự dựng bằng code; ảnh nền là **ảnh chụp thật** lấy từ Wikimedia Commons với giấy phép mở (ghi tác giả, giấy phép ngay trên slide và ở slide Tài liệu tham khảo) — **không dùng ảnh/video do AI tạo**, không có hình ảnh lãnh tụ (tránh cờ ĐỎ #5 / VÀNG #5 trong Tab 4).

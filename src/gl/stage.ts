@@ -1,37 +1,65 @@
 import * as THREE from 'three'
 
-/** Một cảnh WebGL dùng chung renderer (quả địa cầu, điện thoại...). */
+/**
+ * Một cảnh WebGL dùng chung renderer (quả địa cầu, điện thoại, tháp dữ liệu…).
+ * Mỗi slide khai báo cảnh + "mode" + tiến độ đích p (0..1); Stage tự đưa p hiện tại tiến dần tới p đích,
+ * nên khi chuyển slide mô hình chuyển động mượt sang trạng thái mới (giống cuộn video nhưng theo phím bấm).
+ */
 export interface GLScene {
   readonly name: string
   readonly scene: THREE.Scene
   readonly camera: THREE.PerspectiveCamera
-  /** mode + p (0..1) do vùng cuộn đang hoạt động quyết định; t = giây kể từ lúc khởi tạo */
+  /** dt: giây từ khung trước · t: giây từ lúc khởi tạo · mode: trạng thái · p: tiến độ 0..1 (đã được Stage làm mượt) */
   update(dt: number, t: number, mode: string, p: number): void
   resize(w: number, h: number): void
+  /**
+   * Điểm neo: tâm mô hình phải hiện ở (x, y) — toạ độ px của khung nhìn.
+   * k = chiều cao sân khấu 1920×1080 đã co / chiều cao khung nhìn (≤ 1). Cảnh dùng k để giữ kích thước tương đối.
+   */
+  setAnchor?(x: number, y: number, k: number): void
+  setTheme?(light: boolean): void
 }
 
-/** Vùng cuộn gắn với một cảnh: khi trang cuộn trong [start,end] thì cảnh đó được vẽ. */
-export interface GLZone {
+/** "Cú máy" của một slide */
+export interface GLShot {
   scene: string
   mode: string
-  /** trả về [start, end] theo pixel cuộn — đọc lại mỗi khung hình nên luôn đúng sau khi resize */
-  range(): [number, number]
+  /** tiến độ đích (mặc định 1) */
+  p?: number
+  /** khi vào cảnh/mode mới thì p bắt đầu từ đây (mặc định 0) */
+  from?: number
+  /** điểm neo trên sân khấu thiết kế 1920×1080 (mặc định giữa: 960, 540) */
+  x?: number
+  y?: number
+  /** tốc độ p (đơn vị/giây), mặc định 0.55 */
+  speed?: number
 }
 
-/**
- * Renderer WebGL duy nhất cho cả trang, cố định phía sau nội dung.
- * Cảnh được chọn hoàn toàn từ vị trí cuộn (không phụ thuộc thứ tự sự kiện),
- * nên nhảy cóc bằng bàn phím hay kéo thanh cuộn đều ra trạng thái đúng.
- */
+/** Ánh xạ toạ độ sân khấu 1920×1080 → px khung nhìn (do Deck cung cấp vì Deck biết cách co sân khấu) */
+export type StageMapper = (x: number, y: number) => { x: number; y: number; k: number }
+
+export const DESIGN_W = 1920
+export const DESIGN_H = 1080
+
+/** Đặt camera sao cho gốc toạ độ cảnh hiện tại điểm neo (x, y) trên khung nhìn w×h */
+export function anchorCamera(camera: THREE.PerspectiveCamera, w: number, h: number, x: number, y: number) {
+  const ox = x - w / 2
+  const oy = y - h / 2
+  if (Math.abs(ox) > 0.5 || Math.abs(oy) > 0.5) camera.setViewOffset(w, h, -ox, -oy, w, h)
+  else camera.clearViewOffset()
+  camera.aspect = w / h
+  camera.updateProjectionMatrix()
+}
+
 export class Stage {
   readonly renderer: THREE.WebGLRenderer
   private scenes = new Map<string, GLScene>()
-  private zones: GLZone[] = []
   private last = performance.now()
   private t0 = performance.now()
-  private visible = false
-  private current: { scene: GLScene; mode: string; p: number } | null = null
-  private listeners: Array<(s: { scene: string; mode: string; p: number } | null) => void> = []
+  private shot: GLShot | null = null
+  private cur: { scene: GLScene; mode: string; p: number } | null = null
+  private map: StageMapper = (x, y) => ({ x: (x / DESIGN_W) * window.innerWidth, y: (y / DESIGN_H) * window.innerHeight, k: 1 })
+  private fadeTimer = 0
 
   constructor(private canvas: HTMLCanvasElement) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' })
@@ -48,16 +76,54 @@ export class Stage {
     s.resize(window.innerWidth, window.innerHeight)
   }
 
-  zone(z: GLZone) {
-    this.zones.push(z)
+  get(name: string) {
+    return this.scenes.get(name) ?? null
   }
 
-  onChange(fn: (s: { scene: string; mode: string; p: number } | null) => void) {
-    this.listeners.push(fn)
+  setMapper(m: StageMapper) {
+    this.map = m
   }
 
+  setTheme(light: boolean) {
+    this.scenes.forEach((s) => s.setTheme?.(light))
+  }
+
+  /** Trạng thái hiện tại (để lớp nhãn HTML biết cảnh nào đang hiện) */
   get state() {
-    return this.current ? { scene: this.current.scene.name, mode: this.current.mode, p: this.current.p } : null
+    return this.cur ? { scene: this.cur.scene.name, mode: this.cur.mode, p: this.cur.p } : null
+  }
+
+  /** Chuyển sang cú máy mới; null = tắt WebGL (slide không có mô hình) */
+  show(shot: GLShot | null, instant = false): void {
+    this.shot = shot
+    window.clearTimeout(this.fadeTimer)
+    if (!shot) {
+      this.canvas.classList.remove('is-on')
+      // dừng vẽ sau khi mờ hẳn cho nhẹ máy
+      this.fadeTimer = window.setTimeout(() => {
+        if (!this.shot) this.cur = null
+      }, 700)
+      return
+    }
+    const scene = this.scenes.get(shot.scene)
+    if (!scene) return this.show(null)
+    const same = this.cur && this.cur.scene === scene && this.cur.mode === shot.mode
+    if (!same) {
+      const from = instant ? shot.p ?? 1 : shot.from ?? 0
+      if (this.cur && this.cur.scene !== scene && !instant) {
+        // đổi cảnh: mờ nhanh rồi hiện lại để không "giật"
+        this.canvas.classList.remove('is-on')
+        this.fadeTimer = window.setTimeout(() => {
+          this.cur = { scene, mode: shot.mode, p: from }
+          this.canvas.classList.add('is-on')
+        }, 260)
+        return
+      }
+      this.cur = { scene, mode: shot.mode, p: from }
+    } else if (instant && this.cur) {
+      this.cur.p = shot.p ?? 1
+    }
+    this.canvas.classList.add('is-on')
   }
 
   private onResize() {
@@ -68,49 +134,24 @@ export class Stage {
     this.scenes.forEach((s) => s.resize(w, h))
   }
 
-  /** Gọi mỗi khung hình (gắn vào gsap.ticker). */
-  tick(scrollY: number) {
+  /** Gọi mỗi khung hình (gsap.ticker) */
+  tick() {
     const now = performance.now()
     const dt = Math.min((now - this.last) / 1000, 0.1)
     this.last = now
     const t = (now - this.t0) / 1000
-
-    // vùng đang hoạt động = vùng chứa tâm màn hình; ưu tiên vùng bắt đầu muộn nhất
-    const probe = scrollY + window.innerHeight * 0.5
-    let best: GLZone | null = null
-    let bestStart = -Infinity
-    let bestP = 0
-    for (const z of this.zones) {
-      const [s, e] = z.range()
-      // bật khi mép trên vùng đã lên quá ~1/3 màn hình; tắt khi mép dưới rời nửa màn hình
-      const lo = s - window.innerHeight * 0.15
-      const hi = e + window.innerHeight * 0.5
-      if (probe >= lo && probe <= hi && s > bestStart) {
-        best = z
-        bestStart = s
-        bestP = e > s ? (scrollY - s) / (e - s) : 0
-      }
+    const c = this.cur
+    if (!c) return
+    const shot = this.shot
+    if (shot && shot.scene === c.scene.name && shot.mode === c.mode) {
+      const target = shot.p ?? 1
+      const step = (shot.speed ?? 0.55) * dt
+      c.p = c.p < target ? Math.min(target, c.p + step) : Math.max(target, c.p - step)
+      const a = this.map(shot.x ?? DESIGN_W / 2, shot.y ?? DESIGN_H / 2)
+      c.scene.setAnchor?.(a.x, a.y, a.k)
     }
-
-    const scene = best ? this.scenes.get(best.scene) ?? null : null
-    const on = !!scene
-    if (on !== this.visible) {
-      this.visible = on
-      this.canvas.classList.toggle('is-on', on)
-    }
-    const prev = this.current
-    if (scene && best) {
-      const p = Math.min(1, Math.max(0, bestP))
-      this.current = { scene, mode: best.mode, p }
-      scene.update(dt, t, best.mode, p)
-      this.renderer.render(scene.scene, scene.camera)
-    } else {
-      this.current = null
-    }
-    if (prev?.scene !== this.current?.scene || prev?.mode !== this.current?.mode) {
-      const st = this.state
-      this.listeners.forEach((fn) => fn(st))
-    }
+    c.scene.update(dt, t, c.mode, c.p)
+    this.renderer.render(c.scene.scene, c.scene.camera)
   }
 }
 

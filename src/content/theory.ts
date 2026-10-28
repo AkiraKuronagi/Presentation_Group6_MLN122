@@ -1,4 +1,4 @@
-import { notes } from '../sections/types'
+import { notes } from '../slides/util'
 
 /**
  * Nội dung lý luận — DIỄN ĐẠT LẠI (không chép nguyên văn) theo Giáo trình KTCT Mác – Lênin (Bộ GD&ĐT, 2021):

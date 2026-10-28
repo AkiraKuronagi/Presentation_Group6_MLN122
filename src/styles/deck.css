@@ -1,0 +1,348 @@
+/* ═══ Chế độ trình chiếu: mỗi slide = đúng một khung 16:9 ═══════════════════
+   Sân khấu thiết kế 1920×1080, co bằng transform scale(var(--s)) — mọi cỡ chữ dưới đây
+   tính theo px của sân khấu nên tỉ lệ giống nhau trên máy chiếu 1366×768 hay màn 4K. */
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.deck {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+}
+.slide.is-active {
+  visibility: visible;
+}
+
+.slide__stage {
+  position: absolute;
+  left: var(--ox, 0px);
+  top: var(--oy, 0px);
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+  /* scale do JS đặt qua --s; y được GSAP điều khiển riêng nên tách thành translate */
+  scale: var(--s, 1);
+  padding: 110px 120px 96px;
+  color: var(--fg);
+  font-size: 28px;
+  line-height: 1.45;
+}
+
+/* Ảnh nền tràn màn hình (lớp riêng dưới canvas 3D) + lớp phủ tối để chữ luôn đọc được */
+.deck-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.slide__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.slide__bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: 60% 50%;
+  will-change: transform;
+}
+.slide__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) calc(var(--dim) * 100%), transparent) 55%, color-mix(in srgb, var(--bg) 35%, transparent) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 35%);
+}
+:root[data-theme='light'] .slide__bg img {
+  filter: saturate(0.85);
+}
+.slide__credit {
+  position: absolute;
+  right: 120px;
+  bottom: 34px;
+  margin: 0;
+  max-width: 600px;
+  text-align: right;
+  font-family: var(--f-mono);
+  font-size: 15px;
+  color: var(--fg-3);
+}
+
+/* ─── Kiểu chữ trên sân khấu ─────────────────────────────── */
+.k {
+  /* kicker */
+  font-family: var(--f-mono);
+  font-size: 20px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 26px;
+}
+.k b {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 34px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--red);
+}
+.k::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: currentColor;
+}
+.h {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin: 0;
+}
+.h em {
+  font-style: italic;
+  color: var(--gold);
+  font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+}
+.h .r,
+.h em.r {
+  color: var(--red);
+}
+.h--xl {
+  font-size: 150px;
+}
+.h--l {
+  font-size: 96px;
+}
+.h--m {
+  font-size: 76px;
+}
+.lead {
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: 300;
+  color: var(--fg-2);
+  margin: 28px 0 0;
+  max-width: 900px;
+}
+.lead b {
+  color: var(--fg);
+  font-weight: 600;
+}
+.src {
+  position: absolute;
+  left: 120px;
+  bottom: 34px;
+  margin: 0;
+  max-width: 1020px;
+  font-family: var(--f-mono);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--fg-3);
+}
+.half {
+  width: 820px;
+}
+
+/* Số lớn */
+.big {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 170px;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.big small {
+  font-size: 0.3em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--fg-2);
+  margin-left: 0.2em;
+}
+.big--gold {
+  color: var(--gold);
+}
+.big--red {
+  color: var(--red);
+}
+
+/* Thẻ, chip */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  font-size: 24px;
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+  backdrop-filter: blur(6px);
+}
+.chip b {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.chip i {
+  font-style: normal;
+  font-family: var(--f-mono);
+  font-size: 18px;
+  color: var(--fg-3);
+}
+.chip--gold {
+  border-color: var(--gold);
+}
+.chip--red {
+  border-color: var(--red);
+}
+.stat {
+  border-left: 3px solid var(--gold);
+  padding: 4px 0 4px 24px;
+}
+.stat__v {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.stat__v small {
+  font-size: 0.4em;
+  font-weight: 500;
+  color: var(--fg-2);
+  margin-left: 6px;
+}
+.stat__l {
+  margin-top: 10px;
+  font-size: 22px;
+  color: var(--fg-2);
+  line-height: 1.35;
+}
+.stat--red {
+  border-color: var(--red);
+}
+.stat--blue {
+  border-color: var(--c2);
+}
+.row {
+  display: flex;
+  gap: 48px;
+}
+
+/* ─── Nhãn bám mô hình 3D (toạ độ khung nhìn, cỡ chữ theo --s) ─── */
+.gl-labels {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.gl-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  font-size: calc(22px * var(--s, 1));
+  line-height: 1.25;
+  color: var(--fg);
+  white-space: nowrap;
+  text-shadow: 0 2px 14px var(--bg), 0 0 2px var(--bg);
+}
+.gl-label.is-on {
+  opacity: 1;
+}
+.gl-label > div {
+  transform: translate(calc(14px * var(--s, 1)), -50%);
+  /* nền mờ nhẹ để nhãn đọc được cả khi nằm trên mô hình tối/sáng */
+  padding: calc(4px * var(--s, 1)) calc(10px * var(--s, 1));
+  border-radius: calc(8px * var(--s, 1));
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(3px);
+}
+.gl-label--right > div {
+  transform: translate(calc(-100% - 14px * var(--s, 1)), -50%);
+  text-align: right;
+}
+.gl-label--center > div {
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.gl-label--above > div {
+  transform: translate(-50%, calc(-100% - 12px * var(--s, 1)));
+  text-align: center;
+}
+.gl-label b {
+  display: block;
+  font-weight: 600;
+  font-size: 1.35em;
+}
+.gl-label i {
+  font-style: normal;
+  font-family: var(--f-mono);
+  font-size: 0.78em;
+  color: var(--fg-2);
+}
+.gl-label .tag {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 0.72em;
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid currentColor;
+  margin-left: 6px;
+}
+.gl-label .hi {
+  color: var(--gold);
+}
+.gl-label .lo {
+  color: var(--red);
+}
+
+/* ─── Màn hình dọc (điện thoại): gợi ý xoay ngang ─── */
+.rotate-hint {
+  display: none;
+}
+.is-portrait .rotate-hint {
+  display: flex;
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 80;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--bg-3);
+  border: 1px solid var(--line-2);
+  font-size: 14px;
+  color: var(--fg-2);
+  align-items: center;
+  gap: 10px;
+}

@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
-import { type GLScene, clamp01, easeInOut, lerp, seg } from './stage'
+import { type GLScene, anchorCamera, clamp01, easeInOut, lerp, seg } from './stage'
 
 /**
  * Điện thoại "lắp ráp tại Việt Nam" được tách lớp (exploded view) khi cuộn,
@@ -95,6 +95,9 @@ export class Phone implements GLScene {
   private gridMat: THREE.LineBasicMaterial
   private w = 1
   private h = 1
+  private ax = -1
+  private ay = -1
+  private k = 1
   private sm = { explode: 0, wire: 0, rotY: 0, rotX: 0, dist: 5.2, lift: 0, assembly: 0 }
   private first = true
   private pmrem: THREE.PMREMGenerator | null = null
@@ -221,7 +224,7 @@ export class Phone implements GLScene {
     })
 
     this.scene.add(this.rig)
-    this.setTheme(theme)
+    this.setPalette(theme)
   }
 
   private addLayer(key: string, baseZ: number, spread: number, build: (g: THREE.Group) => void) {
@@ -245,7 +248,7 @@ export class Phone implements GLScene {
     this.layers.push({ key, group, solids, edges, baseZ, spread })
   }
 
-  setTheme(theme: PhoneTheme) {
+  setPalette(theme: PhoneTheme) {
     this.edgeMat.color.set(theme.line)
     this.edgeAccent.color.set(theme.accent)
     this.gridMat.color.set(theme.line)
@@ -256,6 +259,12 @@ export class Phone implements GLScene {
     this.h = h
     this.camera.aspect = w / h
     this.camera.updateProjectionMatrix()
+  }
+
+  setAnchor(x: number, y: number, k: number) {
+    this.ax = x
+    this.ay = y
+    this.k = k
   }
 
   /**
@@ -287,9 +296,10 @@ export class Phone implements GLScene {
     ;(Object.keys(tgt) as Array<keyof typeof tgt>).forEach((key) => (s[key] = lerp(s[key], tgt[key], k)))
 
     this.rig.rotation.set(s.rotX, s.rotY, 0)
-    this.rig.position.set(narrow ? 0 : 0.62, s.lift, 0)
-    this.camera.position.set(0, 0.1, s.dist)
-    this.camera.lookAt(narrow ? 0 : 0.62 * 0.35, 0, 0)
+    this.rig.position.set(0, s.lift, 0)
+    this.camera.position.set(0, 0.1, s.dist / Math.max(0.35, this.k))
+    this.camera.lookAt(0, 0, 0)
+    anchorCamera(this.camera, this.w, this.h, this.ax < 0 ? this.w / 2 : this.ax, this.ay < 0 ? this.h / 2 : this.ay)
 
     const solidA = 1 - s.wire
     const edgeA = clamp01(s.wire * 1.2)

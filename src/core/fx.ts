@@ -1,97 +1,22 @@
-import { gsap, ScrollTrigger, reduceMotion } from './engine'
+import gsap from 'gsap'
+import { reduceMotion } from './deck'
 
-/** Tách tiêu đề [data-split] thành từ để làm hiệu ứng "mặt nạ" khi xuất hiện. */
-export function splitWords(root: ParentNode = document) {
-  root.querySelectorAll<HTMLElement>('[data-split]').forEach((el) => {
-    if (el.dataset.splitDone) return
-    el.dataset.splitDone = '1'
-    const walk = (node: Node) => {
-      Array.from(node.childNodes).forEach((c) => {
-        if (c.nodeType === Node.TEXT_NODE) {
-          const parts = (c.textContent ?? '').split(/(\s+)/)
-          const frag = document.createDocumentFragment()
-          parts.forEach((p) => {
-            if (!p) return
-            if (/^\s+$/.test(p)) frag.appendChild(document.createTextNode(p))
-            else {
-              const w = document.createElement('span')
-              w.className = 'w'
-              const i = document.createElement('span')
-              i.className = 'wi'
-              i.textContent = p
-              w.appendChild(i)
-              frag.appendChild(w)
-            }
-          })
-          c.replaceWith(frag)
-        } else if (c.nodeType === Node.ELEMENT_NODE && !(c as HTMLElement).classList.contains('w')) {
-          walk(c)
-        }
-      })
-    }
-    walk(el)
-  })
+const nfCache = new Map<number, Intl.NumberFormat>()
+const nf = (d: number) => {
+  if (!nfCache.has(d)) nfCache.set(d, new Intl.NumberFormat('vi-VN', { minimumFractionDigits: d, maximumFractionDigits: d }))
+  return nfCache.get(d)!
 }
 
-/** Hiệu ứng xuất hiện khi cuộn tới: [data-reveal], [data-split], [data-count], [data-stagger] */
-export function initReveals(root: ParentNode = document) {
-  if (reduceMotion) return
-  root.querySelectorAll<HTMLElement>('[data-split]').forEach((el) => {
-    const words = el.querySelectorAll('.wi')
-    gsap.set(words, { yPercent: 110 })
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 88%',
-      once: true,
-      onEnter: () => gsap.to(words, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: 0.035 }),
-    })
-  })
-  root.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
-    gsap.set(el, { autoAlpha: 0, y: 28 })
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 90%',
-      once: true,
-      onEnter: () => gsap.to(el, { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out', delay: +(el.dataset.delay ?? 0) }),
-    })
-  })
-  root.querySelectorAll<HTMLElement>('[data-stagger]').forEach((el) => {
-    const kids = Array.from(el.children)
-    gsap.set(kids, { autoAlpha: 0, y: 24 })
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 85%',
-      once: true,
-      onEnter: () => gsap.to(kids, { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.09 }),
-    })
-  })
-  root.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
-    const to = parseFloat(el.dataset.count!)
-    const d = +(el.dataset.digits ?? (String(el.dataset.count).split('.')[1]?.length ?? 0))
-    const f = new Intl.NumberFormat('vi-VN', { minimumFractionDigits: d, maximumFractionDigits: d })
+/** Đếm số từ 0 tới data-count (định dạng Việt Nam) cho mọi [data-count] trong el */
+export function countUp(el: ParentNode, delay = 0.35) {
+  el.querySelectorAll<HTMLElement>('[data-count]').forEach((n) => {
+    const to = parseFloat(n.dataset.count!)
+    const d = +(n.dataset.digits ?? (String(n.dataset.count).split('.')[1]?.length ?? 0))
     const o = { v: 0 }
-    el.textContent = f.format(0)
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 90%',
-      once: true,
-      onEnter: () =>
-        gsap.to(o, {
-          v: to,
-          duration: 1.8,
-          ease: 'expo.out',
-          onUpdate: () => (el.textContent = f.format(o.v)),
-        }),
-    })
-  })
-}
-
-/** Số định dạng kiểu Việt Nam cho phần tử có data-count khi không có chuyển động */
-export function staticCounts(root: ParentNode = document) {
-  root.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
-    const to = parseFloat(el.dataset.count!)
-    const d = +(el.dataset.digits ?? (String(el.dataset.count).split('.')[1]?.length ?? 0))
-    el.textContent = new Intl.NumberFormat('vi-VN', { minimumFractionDigits: d, maximumFractionDigits: d }).format(to)
+    gsap.killTweensOf(o)
+    if (reduceMotion) return void (n.textContent = nf(d).format(to))
+    n.textContent = nf(d).format(0)
+    gsap.to(o, { v: to, duration: 1.8, delay, ease: 'expo.out', onUpdate: () => (n.textContent = nf(d).format(o.v)) })
   })
 }
 
@@ -120,4 +45,14 @@ export function scramble(el: HTMLElement, to: string, dur = 0.9) {
     onComplete: () => (el.textContent = to),
   })
   scrambling.set(el, tw)
+}
+
+/** Vẽ dần các đường SVG [data-draw] (stroke-dashoffset) */
+export function drawLines(el: ParentNode, delay = 0.3, dur = 1.4) {
+  el.querySelectorAll<SVGGeometryElement>('[data-draw]').forEach((p, i) => {
+    const len = p.getTotalLength()
+    gsap.killTweensOf(p)
+    if (reduceMotion) return void gsap.set(p, { strokeDasharray: 'none', strokeDashoffset: 0 })
+    gsap.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: dur, delay: delay + i * 0.12, ease: 'power2.inOut' })
+  })
 }

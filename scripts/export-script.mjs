@@ -28,26 +28,23 @@ const strip = (h) =>
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`
 
 let total = 0
-let md = `# Kịch bản thuyết trình — Nhóm 6 · MLN122\n\n`
-md += `> Tự động xuất từ ghi chú người nói trong trang (phím **N** hoặc **P** khi trình chiếu). Sửa nội dung ở \`src/sections/*.ts\` rồi chạy lại \`node scripts/export-script.mjs\`.\n\n`
-md += `| # | Chương | Điểm dừng | Thời lượng | Cộng dồn | Người trình bày |\n|---|---|---|---|---|---|\n`
+let md = '# Kịch bản thuyết trình — Nhóm 6 · MLN122\n\n'
+md += '> Tự động xuất từ ghi chú người nói trong trang (phím **N** hoặc **P** khi trình chiếu). Sửa nội dung ở `src/slides/*.ts` rồi chạy lại `node scripts/export-script.mjs`.\n>\n'
+md += '> Mỗi slide là đúng một khung hình: **↓ / → / Space** sang slide sau, **↑ / ←** quay lại.\n\n'
+md += '| Slide | Nội dung | Thời lượng | Cộng dồn | Người trình bày |\n|---|---|---|---|---|\n'
 rows.forEach((r, i) => {
   total += r.seconds
-  md += `| ${i + 1} | ${String(r.chapter).padStart(2, '0')} · ${r.chapterTitle} | ${r.label} | ${mmss(r.seconds)} | ${mmss(total)} | «…» |\n`
+  md += `| ${i + 1} | ${r.label} | ${mmss(r.seconds)} | ${mmss(total)} | «…» |\n`
 })
 md += `\n**Tổng thời lượng gợi ý: ${mmss(total)}** (Rubric 2.1: 10–20 phút, không vượt 20 phút; minigame ≤ 5 phút theo FAQ).\n\n---\n`
-let ch = -1
 rows.forEach((r, i) => {
-  if (r.chapter !== ch) {
-    ch = r.chapter
-    md += `\n## ${String(r.chapter).padStart(2, '0')} · ${r.chapterTitle}\n`
-  }
-  md += `\n### ${i + 1}. ${r.label} — ${mmss(r.seconds)}\n\n${strip(r.notes)
+  const body = strip(r.notes)
     .split('\n')
     .filter(Boolean)
     .map((l) => (l.startsWith('• ') ? `- ${l.slice(2)}` : l))
-    .join('\n\n')}\n`
+    .join('\n\n')
+  md += `\n## Slide ${i + 1} · ${r.label} — ${mmss(r.seconds)}\n\n${body}\n`
 })
 mkdirSync(resolve(root, 'docs'), { recursive: true })
 writeFileSync(resolve(root, 'docs/KICH_BAN_THUYET_TRINH.md'), md)
-console.log(`OK: ${rows.length} điểm dừng, tổng ${mmss(total)}`)
+console.log(`OK: ${rows.length} slide, tổng ${mmss(total)}`)

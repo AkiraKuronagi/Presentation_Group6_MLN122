@@ -1,4 +1,5 @@
-import { type Engine, gsap, reduceMotion } from './engine'
+import gsap from 'gsap'
+import { type Deck, reduceMotion } from './deck'
 
 const CHANNEL = 'mln122-g6-deck'
 
@@ -30,7 +31,7 @@ const fmt = (s: number) => {
 }
 
 /** HUD, thanh tiến độ, rail chương, ghi chú người nói, trợ giúp phím, đồng hồ, con trỏ, âm thanh, theme. */
-export function mountUI(engine: Engine, opts: UIOptions) {
+export function mountUI(engine: Deck, opts: UIOptions) {
   const root = document.createElement('div')
   root.className = 'ui'
   root.innerHTML = `
@@ -53,9 +54,9 @@ export function mountUI(engine: Engine, opts: UIOptions) {
       <div class="help__card">
         <p class="eyebrow">Điều khiển khi thuyết trình</p>
         <dl>
-          <dt><kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd></dt><dd>Điểm dừng tiếp theo</dd>
-          <dt><kbd>←</kbd> <kbd>PgUp</kbd></dt><dd>Điểm dừng trước</dd>
-          <dt><kbd>1</kbd>–<kbd>9</kbd>, <kbd>0</kbd></dt><dd>Nhảy tới phần (0 = phần 10)</dd>
+          <dt><kbd>↓</kbd> <kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd></dt><dd>Slide tiếp theo</dd>
+          <dt><kbd>↑</kbd> <kbd>←</kbd> <kbd>PgUp</kbd></dt><dd>Slide trước</dd>
+          <dt><kbd>1</kbd>–<kbd>9</kbd>, <kbd>0</kbd></dt><dd>Nhảy tới slide 1–9 (0 = slide 10)</dd>
           <dt><kbd>Home</kbd> / <kbd>End</kbd></dt><dd>Về đầu / cuối</dd>
           <dt><kbd>N</kbd></dt><dd>Bật/tắt ghi chú người nói</dd>
           <dt><kbd>P</kbd></dt><dd>Mở cửa sổ người thuyết trình (màn hình phụ)</dd>
@@ -65,7 +66,7 @@ export function mountUI(engine: Engine, opts: UIOptions) {
           <dt><kbd>M</kbd></dt><dd>Âm thanh chuyển cảnh</dd>
           <dt><kbd>?</kbd></dt><dd>Đóng/mở bảng này</dd>
         </dl>
-        <p class="cite">Cuộn chuột / vuốt vẫn hoạt động bình thường.</p>
+        <p class="cite">Cuộn chuột / vuốt: mỗi lần một slide.</p>
       </div>
     </div>
     <div class="cursor" data-ui="cursor" aria-hidden="true"><span></span></div>
@@ -88,9 +89,8 @@ export function mountUI(engine: Engine, opts: UIOptions) {
 
   // ── Tiến độ ────────────────────────────────────────────────
   const bar = $('bar')
-  engine.onFrame((y) => {
-    const max = document.documentElement.scrollHeight - window.innerHeight
-    bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`
+  engine.onFrame(() => {
+    bar.style.transform = `scaleX(${engine.progress()})`
   })
 
   // ── Điểm dừng hiện tại ─────────────────────────────────────
@@ -114,7 +114,7 @@ export function mountUI(engine: Engine, opts: UIOptions) {
       type: 'state',
       i,
       total: engine.stations.length,
-      chapter: engine.chapters.find((c) => c.n === s.chapter)?.title ?? '',
+      chapter: `Slide ${i + 1}/${engine.stations.length}`,
       label: s.label,
       notes: s.notes ?? '',
       seconds: s.seconds ?? 0,
@@ -198,19 +198,8 @@ export function mountUI(engine: Engine, opts: UIOptions) {
   window.addEventListener('keydown', (e) => {
     if (typing(e.target) || e.ctrlKey || e.metaKey || e.altKey) return
     const k = e.key
-    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) {
-      e.preventDefault()
-      engine.next()
-    } else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey)) {
-      e.preventDefault()
-      engine.prev()
-    } else if (k === 'Home') {
-      e.preventDefault()
-      engine.goTo(0)
-    } else if (k === 'End') {
-      e.preventDefault()
-      engine.goTo(engine.stations.length - 1)
-    } else if (/^[0-9]$/.test(k)) {
+    // chuyển slide (mũi tên, Space, PgUp/PgDn, Home/End) do Deck xử lý
+    if (/^[0-9]$/.test(k)) {
       engine.goChapter(k === '0' ? 10 : +k)
     } else if (k === 'n' || k === 'N') {
       toggle(notes)
@@ -253,8 +242,8 @@ export function mountUI(engine: Engine, opts: UIOptions) {
     const d = ev.data
     if (d?.type !== 'cmd') return
     // trang chính bị che (trình duyệt dừng hoạt ảnh) → nhảy tức thì để không bị "đứng"
-    if (d.cmd === 'next') engine.next(document.hidden)
-    else if (d.cmd === 'prev') engine.prev(document.hidden)
+    if (d.cmd === 'next') engine.goTo(engine.current + 1, document.hidden)
+    else if (d.cmd === 'prev') engine.goTo(engine.current - 1, document.hidden)
     else if (d.cmd === 'hello') publish()
     else if (d.cmd === 'clock') {
       clockStart = Date.now()

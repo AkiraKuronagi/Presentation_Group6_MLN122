@@ -2,24 +2,29 @@ import './styles/fonts.css'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/ui.css'
-import './styles/sections.css'
+import './styles/deck.css'
+import './styles/slides.css'
 
-import { Engine, ScrollTrigger, reduceMotion } from './core/engine'
+import type * as THREE from 'three'
+import { Deck } from './core/deck'
 import { mountUI, mountPresenter } from './core/ui'
-import { initReveals, splitWords, staticCounts } from './core/fx'
-import { Stage } from './gl/stage'
+import { countUp, drawLines } from './core/fx'
+import { Stage, type GLScene } from './gl/stage'
 import { Globe, type ArcSpec } from './gl/globe'
 import { Phone } from './gl/phone'
 import landDots from './data/land-dots.json'
 import { meta } from './content/meta'
 import { HUBS_IN, MARKETS_OUT } from './content/geo'
-import { SECTIONS } from './sections'
-import type { Ctx } from './sections/types'
+import { SLIDES } from './slides'
+
+/** Các cảnh 3D còn lại (tháp, container, đồng xu, cây cầu…) tự đăng ký qua create(renderer, light) */
+const SCENES = import.meta.glob<{ create?: (r: THREE.WebGLRenderer, light: boolean) => GLScene }>('./gl/*.ts', { eager: true })
 
 const css = (v: string) => getComputedStyle(document.documentElement).getPropertyValue(v).trim()
+const isLight = () => document.documentElement.dataset.theme === 'light'
 
-function glTheme() {
-  const light = document.documentElement.dataset.theme === 'light'
+function palettes() {
+  const light = isLight()
   return {
     globe: {
       dot: light ? '#3b3a36' : '#cfc8b8',
@@ -48,75 +53,67 @@ async function boot() {
     return
   }
 
-  const app = document.getElementById('app')!
-  app.innerHTML = SECTIONS.map((s) => s.html()).join('')
-
-  const engine = new Engine()
-  const ctx: Ctx = { engine, stage: null, globe: null, phone: null }
-
-  // WebGL (bỏ qua êm nếu máy không hỗ trợ — nội dung chữ vẫn đầy đủ)
+  // WebGL (bỏ qua êm nếu máy không hỗ trợ — chữ và biểu đồ vẫn đầy đủ)
+  let stage: Stage | null = null
+  let globe: Globe | null = null
+  let phone: Phone | null = null
   if (webglOK()) {
     try {
-      const th = glTheme()
-      const stage = new Stage(document.getElementById('gl') as HTMLCanvasElement)
+      const th = palettes()
+      stage = new Stage(document.getElementById('gl') as HTMLCanvasElement)
       const arcs: ArcSpec[] = [
         ...HUBS_IN.map((h) => ({ from: [h.lat, h.lon] as [number, number], to: h.to, kind: 'in' as const })),
         ...MARKETS_OUT.map((m) => ({ from: m.from, to: [m.lat, m.lon] as [number, number], kind: 'out' as const })),
       ]
-      const globe = new Globe(landDots, arcs, th.globe)
-      const phone = new Phone(stage.renderer, th.phone, ['THIẾT KẾ: Ở NƯỚC NGOÀI', 'LINH KIỆN: NHIỀU QUỐC GIA', 'LẮP RÁP TẠI VIỆT NAM'])
+      globe = new Globe(landDots, arcs, th.globe)
+      phone = new Phone(stage.renderer, th.phone, ['THIẾT KẾ: Ở NƯỚC NGOÀI', 'LINH KIỆN: NHIỀU QUỐC GIA', 'LẮP RÁP TẠI VIỆT NAM'])
       stage.add(globe)
       stage.add(phone)
-      engine.onFrame((y) => stage.tick(y))
-      Object.assign(ctx, { stage, globe, phone })
+      for (const mod of Object.values(SCENES)) if (mod.create) stage.add(mod.create(stage.renderer, th.light))
     } catch (err) {
       console.warn('WebGL không khởi tạo được, dùng chế độ tĩnh.', err)
+      stage = null
     }
   }
 
-  // Chương
-  SECTIONS.forEach((s) => {
-    const el = document.getElementById(s.id)!
-    if (s.chapter) engine.chapters.push({ ...s.chapter, el })
+  const deck = new Deck(document.getElementById('app')!, SLIDES, stage)
+  deck.mountAll()
+  if (stage) deck.onFrame(() => stage!.tick())
+  // số đếm & nét vẽ chạy lại mỗi khi vào slide
+  deck.onStation((_, i) => {
+    countUp(deck.els[i], 0.7)
+    drawLines(deck.els[i], 0.6)
   })
 
-  splitWords(app)
-  SECTIONS.forEach((s) => s.mount(document.getElementById(s.id)!, ctx))
-  if (reduceMotion) staticCounts(app)
-  else initReveals(app)
-
-  mountUI(engine, {
+  mountUI(deck, {
     brand: `<b>N6</b> · ${meta.courseCode}`,
     budgetMinutes: meta.budgetMinutes,
     onTheme: () => {
-      const th = glTheme()
-      ctx.globe?.setTheme(th.globe, th.light)
-      ctx.phone?.setTheme(th.phone)
+      const th = palettes()
+      globe?.setPalette(th.globe, th.light)
+      phone?.setPalette(th.phone)
+      stage?.setTheme(th.light)
     },
   })
 
   await document.fonts?.ready
-  engine.refresh()
-  ScrollTrigger.addEventListener('refresh', () => engine.sortStations())
-  // về đúng chỗ nếu URL có ?s=<số điểm dừng> (tập dượt từng phần) hoặc #id
-  const s = new URLSearchParams(location.search).get('s')
-  if (s !== null) engine.goTo(+s - 1, true)
-  else if (location.hash) {
-    const el = document.querySelector(location.hash) as HTMLElement | null
-    if (el) engine.lenis.scrollTo(el, { immediate: true })
-  }
+  // vào đúng slide nếu URL có ?s=<số> (tập dượt từng phần) hoặc #<số>
+  const q = new URLSearchParams(location.search).get('s')
+  const h = /^#(\d+)$/.exec(location.hash)
+  deck.goTo((q ? +q : h ? +h[1] : 1) - 1, true)
   document.documentElement.classList.add('is-ready')
-  // cho phép kiểm thử tự động / tập dượt từ console: __deck.go(5)
+
+  // kiểm thử tự động / tập dượt từ console: __deck.go(5)
   Object.assign(window, {
     __deck: {
-      count: () => engine.stations.length,
-      go: (i: number) => engine.goTo(i, true),
-      labels: () => engine.stations.map((s) => s.label),
-      /** xuất kịch bản: chương, điểm dừng, thời lượng gợi ý, ghi chú */
+      count: () => deck.count,
+      go: (i: number) => deck.goTo(i, true),
+      labels: () => deck.stations.map((s) => s.label),
+      /** xuất kịch bản: slide, thời lượng gợi ý, ghi chú */
       script: () =>
-        engine.stations.map((s) => ({
-          chapter: s.chapter,
-          chapterTitle: engine.chapters.find((c) => c.n === s.chapter)?.title ?? '',
+        deck.stations.map((s, i) => ({
+          chapter: i + 1,
+          chapterTitle: s.label,
           label: s.label,
           seconds: s.seconds ?? 0,
           notes: s.notes ?? '',
