@@ -143,6 +143,17 @@ export const references: Slide = {
     <ol class="refs">
       ${SOURCES.map((s) => `<li>${s.apa}${s.url ? ` <a href="${s.url}" target="_blank" rel="noopener">${s.url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}</a>` : ''}</li>`).join('')}
     </ol>`,
+  // chữ danh mục to nhất có thể mà vẫn vừa một khung (phông khác nhau giữa các máy nên đo khi vào slide)
+  enter(el) {
+    const ol = el.querySelector<HTMLElement>('.refs')!
+    const stage = el.querySelector<HTMLElement>('.slide__stage')!
+    const room = stage.clientHeight - parseFloat(getComputedStyle(stage).paddingBottom) - ol.offsetTop
+    let fs = 20
+    do {
+      ol.style.fontSize = `${fs}px`
+      fs -= 0.25
+    } while (ol.offsetHeight > room && fs > 10)
+  },
   notes: notes(
     'Số liệu trong bài đều có nguồn, ghi theo chuẩn APA 7 ở slide này. Việc nhóm dùng AI được ghi trong Phụ lục AI nộp kèm.',
   ),

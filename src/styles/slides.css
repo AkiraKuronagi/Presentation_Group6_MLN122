@@ -1371,7 +1371,7 @@
 .refs a {
   color: var(--fg-3);
   font-family: var(--f-mono);
-  font-size: 11px;
+  font-size: 0.9em;
 }
 #tai-lieu .slide__stage {
   padding-top: 84px;
