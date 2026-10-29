@@ -48,7 +48,7 @@ export const bridge: Slide = {
     <div class="col">
       <p class="k"><b>15</b>Lựa chọn của Việt Nam · quan điểm nhóm</p>
       <h2 class="h h--m" data-in>FDI là <em>cây cầu</em> —<br />chỉ thành <em class="r">bậc thang</em><br />khi có nội lực</h2>
-      <p class="why" data-in><b>Giáo trình (tr.150):</b> mâu thuẫn cơ bản không tự giải quyết được → CNTB “không tồn tại vĩnh viễn”, sẽ được thay bằng hình thái kinh tế – xã hội tiến bộ hơn. <b>Vì vậy Việt Nam đi lên CNXH</b>, bỏ qua chế độ TBCN: kế thừa thành tựu nhân loại, <b>không lặp lại</b> áp bức, bất công, bóc lột.</p>
+      <p class="why" data-in><b>Giáo trình (tr.150):</b> mâu thuẫn cơ bản không tự giải quyết được → CNTB “không tồn tại vĩnh viễn”, sẽ được thay bằng hình thái kinh tế – xã hội tiến bộ hơn. Cùng với điều kiện lịch sử và thực tiễn cách mạng, đây là cơ sở để <b>Việt Nam đi lên CNXH, bỏ qua chế độ TBCN</b>: bỏ qua áp bức, bất công, bóc lột — <b>không bỏ qua</b> thành tựu, giá trị văn minh nhân loại.</p>
       <ol class="docs" data-in style="margin-top:22px">${DOCS.map((d) => `<li>${d}</li>`).join('')}</ol>
       <ul class="more more--narrow" data-in>
         <li>Vì lợi ích thiểu số → <b>dân giàu, nước mạnh, dân chủ, công bằng, văn minh</b></li>
@@ -58,7 +58,7 @@ export const bridge: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.3 (tr.150), Ch.6 mục II; ${refs('hp-2013', 'nq50', 'dh13', 'nq59', 'dh14', 'npt-2021')}`)}`,
   notes: notes(
-    'Giáo trình trang 150 kết luận: vì mâu thuẫn gốc không tự giải quyết được, chủ nghĩa tư bản không tồn tại vĩnh viễn, mà sẽ được thay bằng một kiểu xã hội mới, tiến bộ hơn, giáo trình gọi là hình thái kinh tế – xã hội mới. Vì vậy Việt Nam chọn đi lên chủ nghĩa xã hội, không đi qua chế độ tư bản chủ nghĩa, bằng nền kinh tế thị trường định hướng xã hội chủ nghĩa: học lấy những gì nhân loại đã làm được dưới chủ nghĩa tư bản, nhưng không lặp lại áp bức, bất công, bóc lột. Hội nhập nhưng không hòa tan.',
+    'Giáo trình trang 150 kết luận: vì mâu thuẫn gốc không tự giải quyết được, chủ nghĩa tư bản không tồn tại vĩnh viễn, mà sẽ được thay bằng một kiểu xã hội mới, tiến bộ hơn, giáo trình gọi là hình thái kinh tế – xã hội mới. Kết luận lý luận đó, cùng với điều kiện lịch sử, thực tiễn cách mạng và mục tiêu phát triển của Việt Nam, là cơ sở để Việt Nam lựa chọn quá độ lên chủ nghĩa xã hội, bỏ qua chế độ tư bản chủ nghĩa, bằng nền kinh tế thị trường định hướng xã hội chủ nghĩa. Theo cố Tổng Bí thư Nguyễn Phú Trọng, “bỏ qua chế độ tư bản chủ nghĩa là bỏ qua chế độ áp bức, bất công, bóc lột tư bản chủ nghĩa… chứ không phải bỏ qua cả những thành tựu, giá trị văn minh mà nhân loại đã đạt được trong thời kỳ phát triển chủ nghĩa tư bản”. Hội nhập nhưng không hòa tan.',
     'Hướng đi này có trong các văn bản trên màn hình, từ Hiến pháp 2013, Nghị quyết 50 năm 2019 về thu hút FDI có chọn lọc, đến Nghị quyết 59 năm 2025 về hội nhập quốc tế và Đại hội XIV. Ứng với ba giới hạn của chủ nghĩa tư bản, Việt Nam có ba hướng đi: dân giàu, nước mạnh, dân chủ, công bằng, văn minh; đối ngoại độc lập, tự chủ, tự cường, hòa bình, hữu nghị, hợp tác và phát triển, như Đại hội XIV ghi; và kinh tế lớn lên phải đi cùng tiến bộ, công bằng xã hội ngay từ từng bước.',
     'Nhóm nghĩ thế này: FDI là cây cầu giúp Việt Nam bước vào chuỗi giá trị toàn cầu. Nhưng muốn cây cầu đó thành bậc thang đưa mình lên khâu có giá trị cao hơn, thì mình phải đủ sức học được công nghệ, và phải có chính sách để doanh nghiệp Việt được làm cùng, học được từ doanh nghiệp FDI. Mà sức mạnh đó bắt đầu từ con người.',
   ),

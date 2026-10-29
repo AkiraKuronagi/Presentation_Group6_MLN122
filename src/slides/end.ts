@@ -25,7 +25,7 @@ export const lesson: Slide = {
     const [vx, vy] = sp(0)
     return `
     <p class="k"><b>16</b>Bài học cho sinh viên</p>
-    <h2 class="h h--m" data-in>Ngành nào cũng có đường lên <em>hai đầu</em> đường cong</h2>
+    <h2 class="h h--m" data-in>Nâng năng lực để bước lên <em>khâu giá trị cao hơn</em></h2>
     <div class="majors" role="group" aria-label="Chọn ngành học" data-in>
       ${MAJORS.map((m, i) => `<button type="button" data-major="${m.id}" aria-pressed="${i === 0}">${m.name}</button>`).join('')}
     </div>
@@ -50,8 +50,8 @@ export const lesson: Slide = {
     </div>
     <div class="row row--3 lesson__stats" data-in>
       <div class="stat stat--red"><div class="stat__v">${count(SKILLS.trainedLabour2025, 1)}<small>%</small></div><div class="stat__l">lao động qua đào tạo có bằng, chứng chỉ (ước tính 2025)</div></div>
-      <div class="stat stat--blue"><div class="stat__v">${SKILLS.giiRank2026}<small>/139</small></div><div class="stat__l">Đổi mới sáng tạo 2026 · vốn con người &amp; nghiên cứu hạng ${SKILLS.giiHumanCapitalRank2026}</div></div>
-      <div class="stat"><div class="stat__v">${count(SKILLS.chipTotalTarget)}</div><div class="stat__l">nhân lực bán dẫn trình độ ĐH trở lên cần đào tạo đến 2030</div></div>
+      <div class="stat stat--blue"><div class="stat__v">${SKILLS.giiRank2026}<small>/139</small></div><div class="stat__l">Chỉ số Đổi mới sáng tạo toàn cầu 2026 · riêng trụ cột vốn con người &amp; nghiên cứu hạng ${SKILLS.giiHumanCapitalRank2026}</div></div>
+      <div class="stat"><div class="stat__v">${count(SKILLS.chipTotalTarget)}</div><div class="stat__l">mục tiêu đào tạo ít nhất 50.000 nhân lực bán dẫn trình độ ĐH trở lên đến 2030 (QĐ 1017/QĐ-TTg)</div></div>
     </div>
     ${source(refs('nso-2025', 'wipo-gii', 'most-gii', 'qd1017', 'gt-triet'))}`
   },
@@ -77,8 +77,8 @@ export const lesson: Slide = {
     pick(MAJORS[0].id)
   },
   notes: notes(
-    'Với sinh viên như chúng em, bài học khá cụ thể. Năm 2025, chỉ 29,2% lao động Việt Nam có bằng cấp, chứng chỉ. Năm 2026, Việt Nam xếp hạng 43 trên 139 nước về đổi mới sáng tạo, nhưng riêng mục con người và nghiên cứu thì chỉ hạng 79. Đến năm 2030, ngành bán dẫn cần đào tạo 50.000 người có trình độ đại học trở lên.',
-    'Ngành nào cũng có đường đi lên hai đầu của đường cong nụ cười, từ thiết kế vi mạch, trí tuệ nhân tạo, phần mềm, đến kinh doanh quốc tế, marketing hay ngoại ngữ. Lao động phức tạp tạo ra nhiều giá trị hơn lao động giản đơn trong cùng một khoảng thời gian. Và theo quy luật lượng – chất, phải tích lũy đủ kỹ năng và kinh nghiệm thì mới có bước nhảy; không vội vàng, nhưng cũng đừng đứng yên.',
+    'Với sinh viên như chúng em, bài học khá cụ thể. Năm 2025, tỷ lệ lao động qua đào tạo có bằng, chứng chỉ ước đạt 29,2%. Năm 2026, Việt Nam xếp hạng 43 trên 139 nền kinh tế về Chỉ số Đổi mới sáng tạo toàn cầu, nhưng riêng trụ cột vốn con người và nghiên cứu chỉ hạng 79 — đây là hạng của một trụ cột, không phải hạng chung. Theo Quyết định 1017 của Thủ tướng, đến năm 2030 phải đào tạo ít nhất 50.000 nhân lực bán dẫn trình độ từ đại học trở lên.',
+    'Sinh viên cần nâng cao chuyên môn, công nghệ, ngoại ngữ và kỹ năng để có khả năng tham gia những công đoạn có giá trị gia tăng cao hơn — từ thiết kế vi mạch, trí tuệ nhân tạo, phần mềm, đến kinh doanh quốc tế, marketing hay ngoại ngữ. Lao động phức tạp tạo ra nhiều giá trị hơn lao động giản đơn trong cùng một khoảng thời gian. Và theo quy luật lượng – chất, phải tích lũy đủ kỹ năng và kinh nghiệm thì mới có bước nhảy; không vội vàng, nhưng cũng đừng đứng yên.',
     'Cách bấm: bấm 2–3 ngành (ví dụ ngành của các bạn trong nhóm) để thấy vị trí trên đường cong và các kỹ năng cần có.',
   ),
 }
@@ -101,8 +101,8 @@ export const outro: Slide = {
       <p class="k"><b>17</b>Thông điệp của nhóm</p>
       <h2 class="h h--l outro__h" data-in>Hội nhập để lớn lên —<br /><em>tự chủ để không<br />bị cuốn đi.</em></h2>
       <ul class="more" data-in style="max-width:960px">
-        <li>Độc quyền không mất đi mà đổi cách làm: tập đoàn xuyên quốc gia điều khiển chuỗi giá trị, giữ hai đầu có lời nhất</li>
-        <li>Việt Nam hội nhập sâu nhưng giữ độc lập, tự chủ; sinh viên nâng năng lực để leo lên hai đầu đường cong</li>
+        <li>Độc quyền không mất đi mà đổi hình thức: tập đoàn xuyên quốc gia chi phối nhiều chuỗi giá trị toàn cầu, thường nắm các khâu giá trị gia tăng cao — nghiên cứu, thiết kế, công nghệ, thương hiệu</li>
+        <li>Việt Nam hội nhập sâu nhưng giữ độc lập, tự chủ; sinh viên nâng năng lực để tham gia những khâu có giá trị cao hơn</li>
       </ul>
       <div class="pledges" data-in>
         ${PLEDGES.map(([b, s]) => `<div class="pledge"><b>${b}</b><span>${s}</span></div>`).join('')}
@@ -110,7 +110,7 @@ export const outro: Slide = {
       <p class="outro__thanks" data-in>Cảm ơn thầy và các bạn đã lắng nghe!</p>
     </div>`,
   notes: notes(
-    'Tóm lại, độc quyền ngày nay không mất đi mà chỉ đổi cách làm: các tập đoàn xuyên quốc gia điều khiển chuỗi giá trị toàn cầu và giữ hai đầu có lời nhất. Việt Nam chọn hội nhập sâu, nhưng vẫn giữ độc lập, tự chủ. Còn với mỗi sinh viên, điều đó có nghĩa là phải nâng năng lực của mình để leo lên hai đầu đường cong, bằng ba việc: học thật sâu một kỹ năng chính, hiểu luật chơi của thế giới, và làm việc có trách nhiệm.',
+    'Tóm lại, độc quyền ngày nay không mất đi mà chỉ đổi cách làm: các tập đoàn xuyên quốc gia có vai trò chi phối trong nhiều chuỗi giá trị toàn cầu; các tập đoàn dẫn đầu thường có lợi thế ở những công đoạn như nghiên cứu, thiết kế, công nghệ và thương hiệu, vốn tạo ra giá trị gia tăng cao. Việt Nam chọn hội nhập sâu, nhưng vẫn giữ độc lập, tự chủ. Còn với mỗi sinh viên, điều đó có nghĩa là phải nâng năng lực của mình để tham gia những khâu có giá trị gia tăng cao hơn, bằng ba việc: học thật sâu một kỹ năng chính, hiểu luật chơi của thế giới, và làm việc có trách nhiệm.',
     'Thông điệp của nhóm 6 là: hội nhập để lớn lên, tự chủ để không bị cuốn đi. Phần trình bày của nhóm đến đây là hết. Cảm ơn thầy và các bạn đã lắng nghe.',
     'Sau đó mời Nhóm 7, 8, 9 đặt câu hỏi.',
   ),
