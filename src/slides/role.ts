@@ -23,7 +23,7 @@ export const coin: Slide = {
       <blockquote class="q" data-in>“Chủ nghĩa tư bản chưa bao giờ mang tính toàn cầu như ngày nay … [nhưng] vẫn không thể khắc phục được những mâu thuẫn cơ bản vốn có của nó.”<cite>— Cố Tổng Bí thư Nguyễn Phú Trọng (2021)</cite></blockquote>
     </div>
     <p class="distinct" data-in><b>Gốc rễ (giáo trình, tr.149):</b> mâu thuẫn cơ bản — sản xuất ngày càng xã hội hóa ↔ chiếm hữu tư nhân TBCN về tư liệu sản xuất. <b>Nhóm cụ thể hóa:</b> sản xuất vì lợi nhuận → chi phí môi trường bị đẩy ra ngoài · sở hữu quyết định phân phối → bất bình đẳng tự lặp lại · cạnh tranh giữa các khối → khó hợp tác toàn cầu</p>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục III.3 (tr.148–150); ${refs('npt-2021', 'wir-ineq', 'wir-exec', 'unep-2025', 'ipcc-2023')}`)}`,
+    ${source(`${refs('gt-ktct')}, Ch.4 mục III.3 (tr.148–150); ${refs('npt-2021', 'wir-ineq', 'wir-exec', 'unep-2025')}`)}`,
   notes: notes(
     'Chủ nghĩa tư bản có hai mặt. Mặt tích cực, giáo trình nêu ba điểm: làm máy móc, kỹ thuật và tay nghề phát triển mạnh, giáo trình gọi là phát triển lực lượng sản xuất; biến làm ăn nhỏ thành sản xuất lớn; và biến sản xuất thành việc chung của nhiều người, nhiều nơi. Chuỗi giá trị toàn cầu chính là cả thế giới cùng làm ra một sản phẩm.',
     'Mặt giới hạn: chủ nghĩa tư bản sản xuất vì lợi ích của số ít, gây ra chiến tranh, xung đột, và khoảng cách giàu nghèo ngày càng xa. Theo Báo cáo Bất bình đẳng Thế giới 2026, 10% người giàu nhất nhận 53% thu nhập của cả thế giới. Theo UNEP, nếu cứ giữ chính sách như hiện nay, trái đất sẽ nóng lên khoảng 2,8 độ C.',
@@ -52,14 +52,14 @@ export const bridge: Slide = {
       <ol class="docs" data-in style="margin-top:22px">${DOCS.map((d) => `<li>${d}</li>`).join('')}</ol>
       <ul class="more more--narrow" data-in>
         <li>Vì lợi ích thiểu số → <b>dân giàu, nước mạnh, dân chủ, công bằng, văn minh</b></li>
-        <li>Chiến tranh, xung đột → <b>độc lập, tự chủ, hòa bình, hợp tác và phát triển</b></li>
+        <li>Chiến tranh, xung đột → <b>độc lập, tự chủ, tự cường, hòa bình, hữu nghị, hợp tác và phát triển</b></li>
         <li>Phân hóa giàu nghèo → <b>tăng trưởng đi cùng tiến bộ, công bằng xã hội</b></li>
       </ul>
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.3 (tr.150), Ch.6 mục II; ${refs('hp-2013', 'nq50', 'dh13', 'nq59', 'dh14', 'npt-2021')}`)}`,
   notes: notes(
     'Giáo trình trang 150 kết luận: vì mâu thuẫn gốc không tự giải quyết được, chủ nghĩa tư bản không tồn tại vĩnh viễn, mà sẽ được thay bằng một kiểu xã hội mới, tiến bộ hơn, giáo trình gọi là hình thái kinh tế – xã hội mới. Vì vậy Việt Nam chọn đi lên chủ nghĩa xã hội, không đi qua chế độ tư bản chủ nghĩa, bằng nền kinh tế thị trường định hướng xã hội chủ nghĩa: học lấy những gì nhân loại đã làm được dưới chủ nghĩa tư bản, nhưng không lặp lại áp bức, bất công, bóc lột. Hội nhập nhưng không hòa tan.',
-    'Hướng đi này có trong các văn bản trên màn hình, từ Hiến pháp 2013, Nghị quyết 50 năm 2019 về thu hút FDI có chọn lọc, đến Nghị quyết 59 năm 2025 về hội nhập quốc tế và Đại hội XIV. Ứng với ba giới hạn của chủ nghĩa tư bản, Việt Nam có ba hướng đi: dân giàu, nước mạnh, dân chủ, công bằng, văn minh; đối ngoại độc lập, tự chủ, hòa bình, hợp tác và phát triển; và kinh tế lớn lên phải đi cùng tiến bộ, công bằng xã hội ngay từ từng bước.',
+    'Hướng đi này có trong các văn bản trên màn hình, từ Hiến pháp 2013, Nghị quyết 50 năm 2019 về thu hút FDI có chọn lọc, đến Nghị quyết 59 năm 2025 về hội nhập quốc tế và Đại hội XIV. Ứng với ba giới hạn của chủ nghĩa tư bản, Việt Nam có ba hướng đi: dân giàu, nước mạnh, dân chủ, công bằng, văn minh; đối ngoại độc lập, tự chủ, tự cường, hòa bình, hữu nghị, hợp tác và phát triển, như Đại hội XIV ghi; và kinh tế lớn lên phải đi cùng tiến bộ, công bằng xã hội ngay từ từng bước.',
     'Nhóm nghĩ thế này: FDI là cây cầu giúp Việt Nam bước vào chuỗi giá trị toàn cầu. Nhưng muốn cây cầu đó thành bậc thang đưa mình lên khâu có giá trị cao hơn, thì mình phải đủ sức học được công nghệ, và phải có chính sách để doanh nghiệp Việt được làm cùng, học được từ doanh nghiệp FDI. Mà sức mạnh đó bắt đầu từ con người.',
   ),
 }

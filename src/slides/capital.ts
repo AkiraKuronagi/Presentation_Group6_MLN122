@@ -10,7 +10,7 @@ import { count, nf, notes, refs, source } from './util'
 const TOWER_LABELS = [
   { id: 'vn', v: SCALE.vnGdp2025, d: 1, t: 'GDP Việt Nam 2025', cls: 'lo' },
   { id: 'apple', v: SCALE.appleRevenueFY2025, d: 1, t: 'Doanh thu Apple, năm TC 2025', cls: '' },
-  { id: 'top100', v: SCALE.top100Revenue2025, d: 0, t: 'Doanh thu 100 TNC phi tài chính lớn nhất', cls: '' },
+  { id: 'top100', v: SCALE.top100Revenue2025, d: 0, t: 'Doanh thu 100 TNC lớn nhất (UNCTAD, sơ bộ)', cls: '' },
   { id: 'blackrock', v: SCALE.blackrockAum2025, d: 0, t: 'Tài sản BlackRock quản lý hộ', cls: 'hi' },
 ]
 
@@ -92,7 +92,7 @@ export const fdi: Slide = {
         <text x="${SW}" y="${SH + 30}" text-anchor="end" class="spark__t spark__t--dim">2025</text>
       </svg>
       <div class="row" data-in>
-        <div class="stat"><div class="stat__v">${nf(FDI.stock2025.registered, 1)}<small>tỷ USD</small></div><div class="stat__l">vốn đăng ký lũy kế · ${nf(FDI.stock2025.projects)} dự án</div></div>
+        <div class="stat"><div class="stat__v">${nf(FDI.stock2025.registered, 1)}<small>tỷ USD</small></div><div class="stat__l">vốn đăng ký lũy kế · ${nf(FDI.stock2025.projects)} dự án còn hiệu lực</div></div>
         <div class="stat stat--red"><div class="stat__v">${nf(FDI.manufacturingShare2025, 1)}<small>%</small></div><div class="stat__l">vốn thực hiện 2025 vào chế biến, chế tạo</div></div>
       </div>
     </div>
@@ -151,7 +151,7 @@ export const fdiShare: Slide = {
   notes: notes(
     'Doanh nghiệp vốn nước ngoài đang nắm hơn ba phần tư hàng xuất khẩu của Việt Nam: 77,3% năm 2025, và 80,7% trong chín tháng đầu năm 2026. Nghĩa là phần lớn hàng ghi “Made in Vietnam” là do công ty nước ngoài làm ra.',
     'Hai bên còn ngược nhau về chuyện mua bán với nước ngoài. Năm 2025, khối FDI bán ra nhiều hơn mua vào 49,46 tỷ USD, còn doanh nghiệp trong nước thì mua vào nhiều hơn bán ra 29,43 tỷ USD; chín tháng năm 2026, khoảng cách này vẫn còn.',
-    'Công bằng mà nói, FDI có đóng góp thật: khoảng 20% GDP, khoảng một nửa giá trị sản xuất công nghiệp, và khoảng 5 triệu việc làm. Nhưng theo Cục Thống kê, phần giá trị ở lại trong nước của nhiều dự án FDI còn thấp, và họ còn ít làm ăn với doanh nghiệp Việt. Vấn đề không phải FDI tốt hay xấu, mà là Việt Nam đang đứng ở khâu nào trong chuỗi.',
+    'Công bằng mà nói, FDI có đóng góp thật: khoảng 20% GDP, khoảng một nửa giá trị sản xuất công nghiệp, và khoảng 5 triệu việc làm. Nhưng theo Cục Thống kê, giá trị gia tăng nội địa trong nhiều dự án FDI vẫn ở mức thấp, và họ còn ít làm ăn với doanh nghiệp Việt. Vấn đề không phải FDI tốt hay xấu, mà là Việt Nam đang đứng ở khâu nào trong chuỗi.',
     'Nếu bị hỏi: nhóm không nói FDI là “bóc lột”; vấn đề là vị trí của mình trong chuỗi.',
   ),
 }

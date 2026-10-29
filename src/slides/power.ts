@@ -64,17 +64,17 @@ export const stateMono: Slide = {
       </div>
       <div class="sm__cards">
         <div class="stat" data-in><div class="stat__v">52,7<small>tỷ USD</small></div><div class="stat__l">Đạo luật CHIPS (Mỹ) hỗ trợ ngành bán dẫn</div></div>
-        <div class="stat" data-in><div class="stat__v">10<small>%</small></div><div class="stat__l">cổ phần Chính phủ Mỹ nắm tại Intel</div></div>
+        <div class="stat" data-in><div class="stat__v">9,9<small>%</small></div><div class="stat__l">cổ phần Chính phủ Mỹ mua tại Intel (8/2025)</div></div>
         <div class="stat" data-in><div class="stat__v">&gt; 43<small>tỷ EUR</small></div><div class="stat__l">Đạo luật Chip châu Âu — vốn công và tư</div></div>
         <div class="stat" data-in><div class="stat__v">AIG · Citi</div><div class="stat__l">nhà nước cứu tập đoàn 2008–2009 (giáo trình)</div></div>
       </div>
     </div>
-    <p class="distinct" data-in style="bottom:104px"><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15); thu hút đầu tư bằng hạ tầng, con người, thủ tục — không đua nhau giảm thuế.</p>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục II.2, III.2; ${refs('chips-act', 'wir2026', 'eu-chips', 'oecd-pillar2', 'nq107', 'nd236', 'hp-2013')}`)}`,
+    <p class="distinct" data-in style="bottom:104px"><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15); chuyển từ miễn, giảm thuế sang hỗ trợ có chọn lọc — Quỹ Hỗ trợ đầu tư (NĐ 182/2024/NĐ-CP) cho công nghệ cao, R&amp;D.</p>
+    ${source(`${refs('gt-ktct')}, Ch.4 mục II.2, III.2; ${refs('chips-act', 'intel-2025', 'eu-chips', 'oecd-pillar2', 'nq107', 'nd236', 'nd182', 'qd1018', 'hp-2013')}`)}`,
   notes: notes(
     'Độc quyền nhà nước trong chủ nghĩa tư bản là khi các tập đoàn độc quyền tư nhân bắt tay với nhà nước tư sản. Bây giờ cái bắt tay đó thể hiện qua ba đường: người qua lại giữa chính phủ và tập đoàn, nhà nước nắm cổ phần, và nhà nước dùng chính sách để can thiệp.',
-    'Ngành chip là ví dụ rõ nhất. Đạo luật CHIPS của Mỹ dành 52,7 tỷ USD hỗ trợ ngành bán dẫn. Chính phủ Mỹ nắm 10% cổ phần Intel. Đạo luật Chip của châu Âu huy động hơn 43 tỷ euro, cả vốn nhà nước lẫn vốn tư nhân. Trước đó, trong khủng hoảng 2008–2009, nhà nước Mỹ đã bỏ tiền cứu các tập đoàn như AIG và Citigroup.',
-    'Cần nói rõ: kinh tế nhà nước ở Việt Nam giữ vai trò chủ đạo trong nền kinh tế thị trường định hướng xã hội chủ nghĩa, theo Điều 51 Hiến pháp 2013. Cái này khác hẳn về bản chất với độc quyền nhà nước tư bản. Việt Nam cũng chủ động thích nghi: từ năm 2024 áp dụng thuế tối thiểu toàn cầu 15%, tức là tập đoàn lớn đặt ở đâu cũng phải chịu thuế ít nhất 15%, theo Nghị quyết 107 của Quốc hội; và thu hút đầu tư bằng hạ tầng, con người, thủ tục, chứ không đua nhau giảm thuế.',
+    'Ngành chip là ví dụ rõ nhất. Đạo luật CHIPS của Mỹ dành 52,7 tỷ USD hỗ trợ ngành bán dẫn. Tháng 8/2025, Chính phủ Mỹ mua 9,9% cổ phần Intel, theo chính thông cáo của Intel; tiền lấy từ khoản hỗ trợ của Đạo luật CHIPS chưa giải ngân. Đạo luật Chip của châu Âu, theo thông cáo của Ủy ban châu Âu năm 2022, huy động hơn 43 tỷ euro cả vốn nhà nước lẫn vốn tư nhân. Trước đó, trong khủng hoảng 2008–2009, nhà nước Mỹ đã bỏ tiền cứu các tập đoàn như AIG và Citigroup.',
+    'Cần nói rõ: kinh tế nhà nước ở Việt Nam giữ vai trò chủ đạo trong nền kinh tế thị trường định hướng xã hội chủ nghĩa, theo Điều 51 Hiến pháp 2013. Cái này khác hẳn về bản chất với độc quyền nhà nước tư bản. Việt Nam cũng chủ động thích nghi: từ năm 2024 áp dụng thuế tối thiểu toàn cầu 15% theo Nghị quyết 107 của Quốc hội — áp cho tập đoàn đa quốc gia có doanh thu từ 750 triệu euro trở lên trong 2 năm của 4 năm gần nhất. Đồng thời, Việt Nam chuyển từ miễn, giảm thuế sang hỗ trợ có chọn lọc: Nghị định 182/2024 lập Quỹ Hỗ trợ đầu tư cho dự án công nghệ cao, nghiên cứu phát triển — đúng như Quyết định 1018 đã giao nhiệm vụ “thành lập Quỹ hỗ trợ đầu tư để giảm thiểu ảnh hưởng của thuế thu nhập tối thiểu toàn cầu”.',
     'Nếu bị hỏi: không đánh đồng doanh nghiệp nhà nước Việt Nam với độc quyền nhà nước tư bản.',
   ),
 }

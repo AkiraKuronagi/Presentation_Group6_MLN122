@@ -55,15 +55,30 @@ export const SCALE = {
   blackrockAum2025: 14042,
   globalFdi2025: 1624,
   crossBorderMA2025: 420.5,
+  /** Apple 10-K năm TC 2025: biên lãi gộp cả công ty 46,9% = sản phẩm 36,8% + dịch vụ 75,4% */
   appleGrossMargin: 46.9,
+  appleProductsMargin: 36.8,
+  appleServicesMargin: 75.4,
 }
 
-/** Dệt may — nd-dm-2025, nd-dm-vai, moit-cmt, nd-dm-smile, moit-roo, qd1643, vcci-loc */
+/** WIPO, World IP Report 2017 (wipr2017): iPhone 7 giá ~810 USD, Apple thu về ~42% giá bán; vốn vô hình 30,4% giá trị hàng chế tạo 2000–2014 */
+export const CAPTURE = {
+  iphonePrice: 810,
+  appleShare: 42,
+  intangibleShare: 30.4,
+}
+
+/**
+ * Dệt may — nd-dm-2025 (46 tỷ USD, ~52%), tcct-npl (vải nhập ~15 tỷ USD, Cục Hải quan), nd-dm-vai (~17 tỷ USD, cách tính khác),
+ * nd-dm-smile (80% lao động – 18–20% giá trị: ông Nguyễn Xuân Dương; CMT/FOB/ODM/OBM theo % SỐ DOANH NGHIỆP: TS Hoàng Xuân Hiệp),
+ * moit-roo (C/O CPTPP ~15%, EVFTA 30–35%), qd1643, vcci-loc
+ */
 export const TEXTILE = {
   export2025: 46,
   domesticValueAdded2025: 52,
-  fabricImport2025: 17,
-  /** theo TS Hoàng Xuân Hiệp (Báo Nhân Dân, 02/01/2024); 10 năm trước CMT chiếm 70–80% */
+  /** vải các loại nhập khẩu 2025: "gần 15 tỷ USD" (Cục Hải quan, qua tcct-npl); Báo Nhân Dân 20/3/2026 nêu "khoảng 17 tỷ USD" */
+  fabricImport2025: 15,
+  /** % số doanh nghiệp theo phương thức — TS Hoàng Xuân Hiệp (Báo Nhân Dân, 02/01/2024); 10 năm trước CMT chiếm 70–80% */
   modes: { cmt: 35, fob: 55, odm: 9, obm: 1 },
   sewingLabourShare: 80,
   sewingValueShare: '18–20',

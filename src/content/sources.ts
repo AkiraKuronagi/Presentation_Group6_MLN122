@@ -4,7 +4,9 @@
  * tổ chức thuộc LHQ & quốc tế, báo cáo bắt buộc của doanh nghiệp (SEC).
  * ⚠️ Số trang giáo trình KTCT: đề bài ghi Ch.4 mục III "tr.134–151", nhưng mục lục bản in 6/2021
  *    (ISBN 978-604-57-6588-3) ghi Ch.4 mục III = tr.149–168, Ch.6 mục II = tr.260–286.
- *    → Trên trang chỉ trích theo CHƯƠNG/MỤC; nhóm đối chiếu với cuốn sách thật trước khi ghi số trang.
+ *    Slide hiện ghi số trang theo cách đánh số của ĐỀ BÀI (Ch.4 mục III = tr.134–151, theo góp ý của giảng viên).
+ *    Bản scan in 6/2021 lệch khoảng +15 trang (vd. concern/conglomerate: tr.150; “hệ thống gia công”: tr.151;
+ *    5 đặc điểm của Lênin: tr.136–144) → nhóm đối chiếu cuốn sách đang dùng và ghi rõ bản in khi bị hỏi.
  */
 export interface Source {
   id: string
@@ -158,25 +160,31 @@ export const SOURCES: Source[] = [
   {
     id: 'nd-dm-2025',
     short: 'Báo Nhân Dân, 2025',
-    apa: 'Báo Nhân Dân. (2025). Xuất khẩu dệt may năm 2025 ước đạt 46 tỷ USD. <i>Báo Nhân Dân điện tử</i>.',
+    apa: 'Báo Nhân Dân. (2025, 25/11). Xuất khẩu dệt may năm 2025 ước đạt 46 tỷ USD (họp báo của Hiệp hội Dệt may Việt Nam – VITAS). <i>Báo Nhân Dân điện tử</i>.',
     url: 'https://nhandan.vn/xuat-khau-det-may-nam-2025-uoc-dat-46-ty-usd-post925678.html',
   },
   {
     id: 'nd-dm-vai',
     short: 'Báo Nhân Dân, 2026',
-    apa: 'Báo Nhân Dân. (2026). Dệt may trước bài toán tự chủ nguyên liệu. <i>Báo Nhân Dân điện tử</i>.',
+    apa: 'Báo Nhân Dân. (2026, 20/3). Dệt may trước bài toán tự chủ nguyên liệu. <i>Báo Nhân Dân điện tử</i>.',
     url: 'https://nhandan.vn/det-may-truoc-bai-toan-tu-chu-nguyen-lieu-post949327.html',
   },
   {
+    id: 'tcct-npl',
+    short: 'Lê Thị Hồng Hạnh, 2026',
+    apa: 'Lê Thị Hồng Hạnh. (2026, 03/8). Tác động của nhập khẩu nguyên phụ liệu đến năng lực cạnh tranh của ngành dệt may Việt Nam (dẫn số liệu sơ bộ của Cục Hải quan). <i>Tạp chí Công Thương – Các kết quả nghiên cứu khoa học và ứng dụng công nghệ</i>, (15).',
+    url: 'https://tapchicongthuong.vn/tac-dong-cua-nhap-khau-nguyen-phu-lieu-den-nang-luc-canh-tranh-cua-nganh-det-may-viet-nam-538472.htm',
+  },
+  {
     id: 'nd-dm-smile',
-    short: 'Báo Nhân Dân, 2024',
-    apa: 'Báo Nhân Dân. (2024). Nâng tầm giá trị dệt may. <i>Báo Nhân Dân điện tử</i>.',
+    short: 'Hoàng Anh, 2024',
+    apa: 'Hoàng Anh. (2024, 02/01). Nâng tầm giá trị dệt may – Bài 1: Định vị giá trị trong chuỗi. <i>Báo Nhân Dân điện tử</i>.',
     url: 'https://nhandan.vn/nang-tam-gia-tri-det-may-post790243.html',
   },
   {
     id: 'moit-roo',
     short: 'Bộ Công Thương, 2025',
-    apa: 'Bộ Công Thương. (2025). Gỡ nút thắt nguyên phụ liệu dệt may, tận dụng dài hạn C/O ưu đãi. <i>Cổng TTĐT Bộ Công Thương</i>.',
+    apa: 'Bộ Công Thương. (2025, 19/11). Gỡ nút thắt nguyên phụ liệu dệt may, tận dụng dài hạn C/O ưu đãi. <i>Cổng TTĐT Bộ Công Thương</i>.',
     url: 'https://moit.gov.vn/tin-tuc/thi-truong-nuoc-ngoai/go-nut-that-nguyen-phu-lieu-det-may-tan-dung-dai-han-c-o-uu-dai.html',
   },
   {
@@ -212,6 +220,12 @@ export const SOURCES: Source[] = [
     url: 'https://www.wto.org/english/res_e/booksp_e/gvcs_report_2017_chapter2.pdf',
   },
   {
+    id: 'wipr2017',
+    short: 'WIPO, 2017',
+    apa: 'World Intellectual Property Organization. (2017). <i>World Intellectual Property Report 2017: Intangible capital in global value chains</i>. WIPO.',
+    url: 'https://www.wipo.int/pressroom/en/articles/2017/article_0012.html',
+  },
+  {
     id: 'apple-10k',
     short: 'Apple Inc., 2025',
     apa: 'Apple Inc. (2025). <i>Form 10-K for the fiscal year ended September 27, 2025</i>. U.S. Securities and Exchange Commission.',
@@ -238,8 +252,20 @@ export const SOURCES: Source[] = [
   {
     id: 'eu-chips',
     short: 'European Commission, 2023',
-    apa: 'European Commission. (2023). <i>European Chips Act</i> [Regulation (EU) 2023/1781] — huy động hơn 43 tỷ EUR đầu tư công và tư.',
-    url: 'https://digital-strategy.ec.europa.eu/en/factpages/chips-act',
+    apa: 'European Commission. (2022, 08/02). <i>Digital sovereignty: Commission proposes Chips Act to confront semiconductor shortages and strengthen Europe’s technological leadership</i> (IP/22/729) — “more than €43 billion euros of public and private investments”.',
+    url: 'https://ec.europa.eu/commission/presscorner/detail/en/ip_22_729',
+  },
+  {
+    id: 'intel-2025',
+    short: 'Intel Corporation, 2025',
+    apa: 'Intel Corporation. (2025, 22/8). <i>Intel, Trump Administration reach historic agreement to accelerate American technology and manufacturing leadership</i> [Thông cáo báo chí] — “equivalent to a 9.9 percent stake”. Business Wire.',
+    url: 'https://www.businesswire.com/news/home/20250822458848/en',
+  },
+  {
+    id: 'nd182',
+    short: 'Báo Chính phủ, 2025d',
+    apa: 'Báo Điện tử Chính phủ. (2025, 01/01). Quy định thành lập, quản lý Quỹ Hỗ trợ đầu tư (Nghị định 182/2024/NĐ-CP). <i>baochinhphu.vn</i>.',
+    url: 'https://baochinhphu.vn/quy-dinh-thanh-lap-quan-ly-quy-ho-tro-dau-tu-102250101165503135.htm',
   },
   {
     id: 'oecd-pillar2',

@@ -24,7 +24,7 @@ export const MAJORS: Major[] = [
       ['Tiếng Anh kỹ thuật', 'đọc tài liệu chuẩn quốc tế'],
       ['Sở hữu trí tuệ', 'bằng sáng chế, bí mật kinh doanh'],
     ],
-    fact: `Cả nước mới có khoảng ${nf(SKILLS.chipDesignEngineers)} kỹ sư thiết kế chip, mục tiêu ${nf(SKILLS.chipDesignTarget)} người đến 2030 (${refs('most-chip', 'qd1017')})`,
+    fact: `Cả nước mới có khoảng ${nf(SKILLS.chipDesignEngineers)} kỹ sư thiết kế chip; mục tiêu đào tạo ít nhất ${nf(SKILLS.chipDesignTarget)} nhân lực khâu thiết kế đến 2030 (${refs('most-chip', 'qd1017')})`,
   },
   {
     id: 'ai',
@@ -37,7 +37,7 @@ export const MAJORS: Major[] = [
       ['Đạo đức & pháp lý AI', 'dùng AI có trách nhiệm'],
       ['Giải bài toán Việt Nam', 'ngôn ngữ, y tế, nông nghiệp…'],
     ],
-    fact: `ILO: khoảng ${nf(SKILLS.aiExposedWorkersM, 1)} triệu lao động Việt Nam làm nghề có nhiệm vụ chịu tác động của AI tạo sinh (${refs('ilo-2026')})`,
+    fact: `ILO: khoảng ${nf(SKILLS.aiExposedWorkersM, 1)} triệu lao động Việt Nam làm nghề có thể chịu tác động của AI tạo sinh (${refs('ilo-2026')})`,
   },
   {
     id: 'se',
@@ -63,7 +63,7 @@ export const MAJORS: Major[] = [
       ['Vật liệu & sản xuất', 'thiết kế làm ra được'],
       ['Bản sắc Việt', 'khác biệt khó sao chép'],
     ],
-    fact: `Dệt may mới ~9% doanh nghiệp làm ODM, ~1% OBM (${refs('nd-dm-smile')}); Chiến lược đến 2030 yêu cầu chuyển sang thiết kế, thương hiệu (${refs('qd1643')})`,
+    fact: `Dệt may mới ~9% làm ODM, ~1% làm OBM (${refs('nd-dm-smile')}); Chiến lược đến 2030 yêu cầu chuyển sang thiết kế, thương hiệu (${refs('qd1643')})`,
   },
   {
     id: 'logi',
@@ -89,7 +89,7 @@ export const MAJORS: Major[] = [
       ['Tài chính & quản trị rủi ro', 'đọc hiểu báo cáo, dòng vốn'],
       ['Kinh doanh có trách nhiệm', 'tuân thủ pháp luật, ESG'],
     ],
-    fact: `Dệt may: chỉ ~1% doanh nghiệp làm thương hiệu riêng (OBM), theo chuyên gia (${refs('nd-dm-smile')})`,
+    fact: `Dệt may: chỉ ~1% làm thương hiệu riêng (OBM), theo TS Hoàng Xuân Hiệp (${refs('nd-dm-smile')})`,
   },
   {
     id: 'lang',

@@ -70,7 +70,7 @@ export const lenin: Slide = {
         </button>`,
       ).join('')}
     </div>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục II–III.1 (tr.134–136); ${refs('lenin-t27')}`)}`,
+    ${source(`${refs('gt-ktct')}, Ch.4 mục II; mục III.1 (tr.134–136); ${refs('lenin-t27')}`)}`,
   enter(el) {
     // luôn mở ở 1916; người trình bày nhấn ↓ (hoặc bấm vào slide) mới lật sang “ngày nay”
     const year = el.querySelector('[data-year]') as HTMLElement
