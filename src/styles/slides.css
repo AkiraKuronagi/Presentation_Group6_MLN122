@@ -1442,3 +1442,58 @@ p.more {
   line-height: 1.45;
   color: var(--fg-2);
 }
+
+/* ─── Slide 9: chia tiền một chiếc iPhone 7 (WIPO 2017) ─── */
+.split {
+  margin-top: 30px;
+}
+.split__h {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: var(--fg-2);
+}
+.split__bar {
+  display: flex;
+  height: 92px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.split__bar i {
+  flex: var(--v) 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 18px;
+  font-style: normal;
+}
+.split__bar b {
+  font-size: 26px;
+  line-height: 1.15;
+}
+.split__bar span {
+  font-size: 18px;
+  opacity: 0.85;
+}
+.split__a {
+  background: var(--gold);
+  color: var(--bg);
+}
+.split__b {
+  background: color-mix(in srgb, var(--fg) 14%, var(--bg-2));
+  color: var(--fg-2);
+}
+.split__b b {
+  font-size: 20px;
+  font-weight: 600;
+}
+.split__n {
+  margin: 12px 0 0;
+  font-size: 19px;
+  color: var(--fg-3);
+}
+.split {
+  margin-top: 22px;
+}
+.split__n {
+  white-space: nowrap;
+}

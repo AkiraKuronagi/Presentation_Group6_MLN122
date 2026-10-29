@@ -105,12 +105,16 @@ export const phoneBlueprint: Slide = {
         <li><b>Lao động phức tạp:</b> nghiên cứu, thiết kế — cùng một giờ làm tạo ra nhiều giá trị hơn</li>
         <li><b>Vị thế độc quyền:</b> bán giá cao, mua giá thấp → lợi nhuận độc quyền</li>
       </ul>
-      <div class="stat" data-in style="margin-top:32px"><div class="stat__v">~${count(CAPTURE.appleShare)}<small>%</small></div><div class="stat__l">giá bán một iPhone 7 (~${CAPTURE.iphonePrice} USD) do Apple thu về — WIPO, cơ quan của Liên Hợp Quốc, 2017</div></div>
+      <div class="split" data-in>
+        <p class="split__h">Một iPhone 7 bán ~${CAPTURE.iphonePrice} USD, tiền chia về đâu?</p>
+        <div class="split__bar"><i class="split__a" style="--v:${CAPTURE.appleShare}"><b>Apple ~${Math.round((CAPTURE.iphonePrice * CAPTURE.appleShare) / 100)} USD</b><span>~${CAPTURE.appleShare}%</span></i><i class="split__b" style="--v:${100 - CAPTURE.appleShare}"><b>Linh kiện · lắp ráp · phân phối</b><span>phần còn lại</span></i></div>
+        <p class="split__n">Không tự lắp ráp, vẫn giữ phần lớn nhất nhờ công nghệ, thương hiệu — WIPO (LHQ), 2017</p>
+      </div>
     </div>
     ${source(`${refs('gt-ktct')}, Ch.2 mục I (lao động phức tạp), Ch.4 mục II.1 (giá cả, lợi nhuận độc quyền); ${refs('wipr2017', 'apple-10k')}`)}`,
   notes: notes(
     'Ở đây phải tách hai chuyện cho rõ. Giá trị là do người lao động trên cả chuỗi làm ra, kể cả công nhân lắp ráp. Nhưng tiền thu về thì lại dồn về phía công ty nắm công nghệ và thương hiệu.',
-    'Theo kinh tế chính trị thì có hai lý do. Một, nghiên cứu, thiết kế là lao động phức tạp: cùng một giờ làm nhưng tạo ra nhiều giá trị hơn. Hai, ai nắm độc quyền thì bán được giá cao, mua được giá thấp, nên thu được lợi nhuận độc quyền và kéo phần giá trị dôi ra, giáo trình gọi là giá trị thặng dư, về phía mình. Con số trên màn hình lấy từ Báo cáo Sở hữu trí tuệ thế giới 2017 của WIPO, cơ quan của Liên Hợp Quốc: mỗi chiếc iPhone 7 bán giá khoảng 810 USD thì Apple thu về khoảng 42% giá bán. WIPO coi đó là phần thu về nhờ “vốn vô hình” — công nghệ, thiết kế, thương hiệu. Cũng báo cáo này tính ra, giai đoạn 2000–2014, vốn vô hình chiếm trung bình 30,4% giá trị hàng chế tạo bán ra trên thế giới.',
+    'Theo kinh tế chính trị thì có hai lý do. Một, nghiên cứu, thiết kế là lao động phức tạp: cùng một giờ làm nhưng tạo ra nhiều giá trị hơn. Hai, ai nắm độc quyền thì bán được giá cao, mua được giá thấp, nên thu được lợi nhuận độc quyền và kéo phần giá trị dôi ra, giáo trình gọi là giá trị thặng dư, về phía mình. Con số trên màn hình lấy từ Báo cáo Sở hữu trí tuệ thế giới 2017 của WIPO, cơ quan của Liên Hợp Quốc: mỗi chiếc iPhone 7 bán giá khoảng 810 USD thì Apple thu về khoảng 42% giá bán, tức khoảng 340 USD; phần còn lại chia cho các hãng làm linh kiện, nhà máy lắp ráp, vận chuyển và bán lẻ. Apple không tự lắp ráp chiếc máy. WIPO coi đó là phần thu về nhờ “vốn vô hình” — công nghệ, thiết kế, thương hiệu. Cũng báo cáo này tính ra, giai đoạn 2000–2014, vốn vô hình chiếm trung bình 30,4% giá trị hàng chế tạo bán ra trên thế giới.',
     'Nếu bị hỏi “42% có phải lợi nhuận độc quyền không?” — Không hẳn. Đó là phần giá bán Apple giữ lại theo cách đo của WIPO, chưa trừ hết chi phí nghiên cứu, bán hàng. Nhóm dùng nó để thấy khâu thiết kế, thương hiệu thu về rất nhiều. Số mới hơn trong báo cáo 10-K năm tài chính 2025 của Apple: biên lãi gộp mảng sản phẩm phần cứng 36,8%; cả công ty 46,9% vì mảng dịch vụ (App Store, iCloud…) lãi tới 75,4% — nhóm không dùng 46,9% vì dịch vụ không đi qua chuỗi lắp ráp.',
   ),
 }
