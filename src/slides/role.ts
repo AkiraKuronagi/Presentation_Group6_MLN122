@@ -50,6 +50,11 @@ export const bridge: Slide = {
       <h2 class="h h--m" data-in>FDI là <em>cây cầu</em> —<br />chỉ thành <em class="r">bậc thang</em><br />khi có nội lực</h2>
       <p class="lead" data-in>Kế thừa thành tựu nhân loại đạt được dưới CNTB — <b>không lặp lại</b> áp bức, bất công, bóc lột. Hội nhập, không hòa tan.</p>
       <ol class="docs" data-in>${DOCS.map((d) => `<li>${d}</li>`).join('')}</ol>
+      <ul class="more more--narrow" data-in>
+        <li>Vì lợi ích thiểu số → <b>dân giàu, nước mạnh, dân chủ, công bằng, văn minh</b></li>
+        <li>Chiến tranh, xung đột → <b>độc lập, tự chủ, hòa bình, hợp tác và phát triển</b></li>
+        <li>Phân hóa giàu nghèo → <b>tăng trưởng đi cùng tiến bộ, công bằng xã hội</b></li>
+      </ul>
     </div>
     ${source(`${refs('hp-2013', 'nq50', 'dh13', 'nq59', 'dh14', 'npt-2021')}; ${refs('gt-ktct')}, Ch.6 mục II`)}`,
   notes: notes(

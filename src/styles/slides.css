@@ -290,7 +290,7 @@
 .flip {
   all: unset;
   display: block;
-  height: 380px;
+  height: 440px;
   cursor: pointer;
 }
 .flip__in {
@@ -325,7 +325,7 @@
 }
 .flip__face span {
   margin-top: auto;
-  font-size: 30px;
+  font-size: 27px;
   line-height: 1.25;
   font-weight: 500;
 }
@@ -1376,4 +1376,54 @@
 #tai-lieu .slide__stage {
   padding-top: 84px;
   padding-bottom: 40px;
+}
+
+/* ─── Chữ giải thích thêm (lấy từ lời nói) ─── */
+.more {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 760px;
+  display: grid;
+  gap: 8px;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--fg-2);
+}
+p.more {
+  display: block;
+}
+.more li {
+  position: relative;
+  padding-left: 22px;
+}
+.more li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.more b {
+  color: var(--fg);
+  font-weight: 600;
+}
+.more--narrow {
+  max-width: 620px;
+}
+.flip__face em {
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--fg-2);
+}
+.phil__more {
+  margin: 14px 0 0;
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--fg-2);
 }

@@ -25,11 +25,12 @@ export const softBorder: Slide = {
     <div class="col">
       <p class="k"><b>12</b>Biểu hiện mới 5 · Lãnh thổ ảnh hưởng</p>
       <h2 class="h h--m" data-in>“Biên giới mềm”</h2>
-      <p class="lead" data-in>Thuộc địa kiểu cũ sụp đổ — thay bằng <b>luật chơi</b>: thuế quan, kiểm soát công nghệ, quy tắc xuất xứ.</p>
+      <p class="lead" data-in>Thuộc địa kiểu cũ sụp đổ — không cần đem quân chiếm đất, thay bằng <b>luật chơi</b>: thuế quan, kiểm soát công nghệ, quy tắc xuất xứ.</p>
       <ol class="tl" data-in>
         ${TIMELINE.map((e) => `<li><span>${e.d}</span><p>${e.t}</p></li>`).join('')}
       </ol>
       <div class="chip chip--red" data-in><b>Việt Nam</b> vừa hợp tác, vừa đấu tranh · 7 phiên đàm phán</div>
+      <p class="more" data-in>Đồng thời tìm thêm thị trường, đối tác khác để không phụ thuộc vào một nơi.</p>
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs(...TIMELINE.map((e) => e.src), 'treasury-2022', 'vgp-tariff20', 'vgp-ieepa', 'vgp-dam-phan', 'nq59')}`)}`,
   notes: notes(
@@ -51,6 +52,7 @@ export const stateMono: Slide = {
       <div>
         <p class="k"><b>13</b>Độc quyền nhà nước trong CNTB ngày nay</p>
         <h2 class="h h--m" data-in>Nhà nước <em>+</em> tập đoàn</h2>
+        <p class="more" data-in style="max-width:640px">Tổ chức độc quyền tư nhân bắt tay với nhà nước tư sản, phục vụ tư bản độc quyền.</p>
         <svg class="venn" viewBox="0 0 640 360" data-in aria-hidden="true">
           <circle class="venn__a" cx="240" cy="180" r="150" />
           <circle class="venn__b" cx="400" cy="180" r="150" />
@@ -58,7 +60,7 @@ export const stateMono: Slide = {
           <text x="470" y="186" text-anchor="middle">Nhà nước</text><text x="470" y="214" text-anchor="middle">tư sản</text>
           <text x="320" y="196" text-anchor="middle" class="venn__mid">ĐQNN</text>
         </svg>
-        <p class="sm__3" data-in>nhân sự · sở hữu nhà nước · công cụ điều tiết</p>
+        <p class="sm__3" data-in>Ba đường bắt tay: nhân sự qua lại · nhà nước nắm cổ phần · chính sách điều tiết</p>
       </div>
       <div class="sm__cards">
         <div class="stat" data-in><div class="stat__v">52,7<small>tỷ USD</small></div><div class="stat__l">Đạo luật CHIPS (Mỹ) hỗ trợ ngành bán dẫn</div></div>
@@ -67,7 +69,7 @@ export const stateMono: Slide = {
         <div class="stat" data-in><div class="stat__v">AIG · Citi</div><div class="stat__l">nhà nước cứu tập đoàn 2008–2009 (giáo trình)</div></div>
       </div>
     </div>
-    <p class="distinct" data-in><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15).</p>
+    <p class="distinct" data-in style="bottom:104px"><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15); thu hút đầu tư bằng hạ tầng, con người, thủ tục — không đua nhau giảm thuế.</p>
     ${source(`${refs('gt-ktct')}, Ch.4 mục II.2, III.2; ${refs('chips-act', 'wir2026', 'eu-chips', 'oecd-pillar2', 'nq107', 'nd236', 'hp-2013')}`)}`,
   notes: notes(
     'Độc quyền nhà nước trong chủ nghĩa tư bản là khi các tập đoàn độc quyền tư nhân bắt tay với nhà nước tư sản. Bây giờ cái bắt tay đó thể hiện qua ba đường: người qua lại giữa chính phủ và tập đoàn, nhà nước nắm cổ phần, và nhà nước dùng chính sách để điều tiết.',

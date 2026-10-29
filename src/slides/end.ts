@@ -42,6 +42,10 @@ export const lesson: Slide = {
       <div>
         <ul class="skills" data-skills></ul>
         <p class="lesson__fact" data-fact></p>
+        <ul class="more" data-in>
+          <li><b>Lao động phức tạp</b> tạo ra nhiều giá trị hơn lao động giản đơn trong cùng một thời gian</li>
+          <li><b>Lượng – chất:</b> tích lũy đủ kỹ năng, kinh nghiệm mới có bước nhảy — không vội vàng, cũng đừng đứng yên</li>
+        </ul>
       </div>
     </div>
     <div class="row row--3 lesson__stats" data-in>
@@ -96,6 +100,10 @@ export const outro: Slide = {
     <div class="col col--wide">
       <p class="k"><b>17</b>Thông điệp của nhóm</p>
       <h2 class="h h--l outro__h" data-in>Hội nhập để lớn lên —<br /><em>tự chủ để không<br />bị cuốn đi.</em></h2>
+      <ul class="more" data-in style="max-width:960px">
+        <li>Độc quyền không mất đi mà đổi cách làm: tập đoàn xuyên quốc gia điều khiển chuỗi giá trị, giữ hai đầu có lời nhất</li>
+        <li>Việt Nam hội nhập sâu nhưng giữ độc lập, tự chủ; sinh viên nâng năng lực để leo lên hai đầu đường cong</li>
+      </ul>
       <div class="pledges" data-in>
         ${PLEDGES.map(([b, s]) => `<div class="pledge"><b>${b}</b><span>${s}</span></div>`).join('')}
       </div>

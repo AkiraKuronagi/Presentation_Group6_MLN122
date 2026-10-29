@@ -39,11 +39,11 @@ export const cover: Slide = {
 
 // ─── 2. Lênin 1916 → hôm nay ────────────────────────────────────────
 const FEATURES = [
-  { then: 'Tích tụ, tập trung tư bản → tổ chức độc quyền', now: 'Tập đoàn xuyên quốc gia + “hệ thống gia công”' },
-  { then: 'Tư bản tài chính, “chế độ tham dự”', now: '“Chế độ ủy nhiệm”, quỹ đầu tư khổng lồ' },
-  { then: 'Xuất khẩu tư bản', now: 'Xuất khẩu tư bản đổi chiều, đổi chủ thể, đổi hình thức' },
-  { then: 'Phân chia thị trường thế giới', now: 'Toàn cầu hóa song hành khu vực hóa (EU, FTA)' },
-  { then: 'Phân chia lãnh thổ ảnh hưởng', now: '“Biên giới mềm”, biên giới kinh tế' },
+  { then: 'Tích tụ, tập trung tư bản → tổ chức độc quyền', thenD: 'tư bản gom lại ngày càng lớn', now: 'Tập đoàn xuyên quốc gia + “hệ thống gia công”', nowD: 'nhiều công ty vừa và nhỏ nhận gia công cho tập đoàn' },
+  { then: 'Tư bản tài chính, “chế độ tham dự”', thenD: 'một nhóm nhỏ tài phiệt chi phối nền kinh tế', now: '“Chế độ ủy nhiệm”, quỹ đầu tư khổng lồ', nowD: 'cổ đông nhỏ giao quyền cho cổ đông lớn, quỹ quyết định thay' },
+  { then: 'Xuất khẩu tư bản', thenD: 'nước giàu đem vốn ra nước ngoài đầu tư', now: 'Xuất khẩu tư bản đổi chiều, đổi chủ thể, đổi hình thức', nowD: 'chủ yếu do tập đoàn xuyên quốc gia thực hiện' },
+  { then: 'Phân chia thị trường thế giới', thenD: 'các tập đoàn lớn chia nhau thị trường', now: 'Toàn cầu hóa song hành khu vực hóa (EU, FTA)', nowD: 'thị trường được “chia” qua chuỗi giá trị' },
+  { then: 'Phân chia lãnh thổ ảnh hưởng', thenD: 'cường quốc chia nhau vùng ảnh hưởng', now: '“Biên giới mềm”, biên giới kinh tế', nowD: 'thuế quan, công nghệ, quy tắc xuất xứ thay cho chiếm đất' },
 ]
 
 export const lenin: Slide = {
@@ -64,8 +64,8 @@ export const lenin: Slide = {
         (f, i) => `
         <button type="button" class="flip" data-flip>
           <span class="flip__in">
-            <span class="flip__face flip__face--then"><i>${i + 1}</i><span>${f.then}</span><small>Lênin, 1916</small></span>
-            <span class="flip__face flip__face--now"><i>${i + 1}</i><span>${f.now}</span><small>Ngày nay</small></span>
+            <span class="flip__face flip__face--then"><i>${i + 1}</i><span>${f.then}</span><em>${f.thenD}</em><small>Lênin, 1916</small></span>
+            <span class="flip__face flip__face--now"><i>${i + 1}</i><span>${f.now}</span><em>${f.nowD}</em><small>Ngày nay</small></span>
           </span>
         </button>`,
       ).join('')}
@@ -139,6 +139,7 @@ export const phil: Slide = {
           ${FORMS.map((f, i) => `<g class="phil__form"><circle cx="${360 + i * 98}" cy="130" r="7" /><text x="${360 + i * 98}" y="${i % 2 ? 100 : 72}" text-anchor="middle">${f}</text></g>`).join('')}
           <text x="560" y="178" text-anchor="middle" class="phil__t phil__t--gold">cùng một chất: CNTB độc quyền</text>
         </svg>
+        <p class="phil__more">Như đun nước: nóng dần, tới 100°C mới sôi. Tư bản gom dần về lượng, tới điểm nút thì có bước nhảy — độc quyền ra đời. TNC, quỹ đầu tư, chuỗi giá trị chỉ to hơn, khác hình thức, vẫn trong cùng một “độ”.</p>
       </figure>
       <figure class="phil__panel" data-in>
         <figcaption><b>LLSX – QHSX</b>Sản xuất xã hội hóa toàn cầu ↔ sở hữu, phân phối tập trung.</figcaption>
@@ -150,6 +151,7 @@ export const phil: Slide = {
           <text x="660" y="188" text-anchor="middle" class="phil__t phil__t--own">Sở hữu</text>
           <text x="660" y="272" text-anchor="middle" class="phil__t phil__t--own2">công nghệ · thương hiệu</text>
         </svg>
+        <p class="phil__more">Thiết kế ở nước này, linh kiện ở nước kia, lắp ráp ở Việt Nam — nhưng công nghệ, thương hiệu chỉ thuộc về vài công ty. Ai làm chủ thì người đó chia phần: mâu thuẫn cơ bản của CNTB, nay trên quy mô toàn cầu.</p>
       </figure>
     </div>
     ${source(`${PHIL.qty.cite}; ${PHIL.prod.cite}`)}`,

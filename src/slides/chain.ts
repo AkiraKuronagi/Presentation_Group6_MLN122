@@ -29,6 +29,10 @@ export const containers: Slide = {
         <span class="chip"><b>1 container</b> = 10 tỷ USD</span>
       </div>
       <div class="stat stat--blue" data-in style="margin-top:46px"><div class="stat__v">${count(ELECTRONICS.capitalGoodsImportShare2025, 1)}<small>%</small></div><div class="stat__l">kim ngạch nhập khẩu <b>cả nước</b> 2025 là tư liệu sản xuất<br />(máy móc, nguyên liệu, linh kiện)</div></div>
+      <ul class="more" data-in>
+        <li>Nhập nhiều hơn xuất đã có từ 2016 (xuất ${nf(ELECTRONICS.exports[0], 1)} – nhập ${nf(ELECTRONICS.imports[0], 1)}) đến 2024 (${nf(ELECTRONICS.exports[1], 1)} – ${nf(ELECTRONICS.imports[1], 1)})</li>
+        <li>Nhập linh kiện về, lắp ráp rồi xuất đi — <b>bán được nhiều chưa chắc giữ lại được nhiều</b></li>
+      </ul>
     </div>
     ${source(`${refs('nso-dientu', 'tttctt-2026', 'nso-2025')} · số liệu chưa gồm nhóm điện thoại`)}`,
   notes: notes(
@@ -66,6 +70,10 @@ export const phoneExplode: Slide = {
         <span><i class="sw sw--gold"></i>công nghệ lõi</span>
         <span><i class="sw sw--red"></i>gia công · lắp ráp</span>
       </div>
+      <ul class="more more--narrow" data-in>
+        <li>Báo cáo 10-K của Apple: thuê đối tác gia công ở nhiều nước, trong đó có Việt Nam — giáo trình gọi là <b>“hệ thống gia công”</b></li>
+        <li>Phần khó (chip, màn hình, cảm biến) ở một bên; gia công, lắp ráp, đóng gói ở bên kia</li>
+      </ul>
     </div>
     ${source(`${refs('wir2013')} (ước tính); ${refs('apple-10k')} — minh họa mô hình thuê ngoài`)}`,
   notes: notes(
@@ -93,7 +101,11 @@ export const phoneBlueprint: Slide = {
         <div class="card"><b>Tạo ra</b><span>lao động trên toàn chuỗi — kể cả lắp ráp</span></div>
         <div class="card card--gold"><b>Thu về</b><span>dồn cho bên nắm công nghệ, thương hiệu</span></div>
       </div>
-      <div class="stat" data-in style="margin-top:44px"><div class="stat__v">${count(SCALE.appleGrossMargin, 1)}<small>%</small></div><div class="stat__l">biên lợi nhuận gộp của Apple, năm tài chính 2025</div></div>
+      <ul class="more more--narrow" data-in>
+        <li><b>Lao động phức tạp:</b> nghiên cứu, thiết kế — cùng một giờ làm tạo ra nhiều giá trị hơn</li>
+        <li><b>Vị thế độc quyền:</b> bán giá cao, mua giá thấp → lợi nhuận độc quyền, kéo giá trị thặng dư về phía mình</li>
+      </ul>
+      <div class="stat" data-in style="margin-top:32px"><div class="stat__v">${count(SCALE.appleGrossMargin, 1)}<small>%</small></div><div class="stat__l">biên lợi nhuận gộp của Apple, năm tài chính 2025 — cứ 100 đồng doanh thu lãi gộp ${nf(SCALE.appleGrossMargin, 1)} đồng</div></div>
     </div>
     ${source(`${refs('gt-ktct')}, Ch.2 mục I (lao động phức tạp), Ch.4 mục II.1 (giá cả, lợi nhuận độc quyền); ${refs('apple-10k')}`)}`,
   notes: notes(
@@ -122,6 +134,10 @@ export const answer: Slide = {
         <h2 class="h h--l" data-in>100 USD điện tử<br />xuất khẩu — giữ lại<br /><em class="r">dưới 20 USD</em></h2>
         <p class="lead" data-in>giá trị gia tăng nội địa · ước tính của nhóm</p>
         <div class="chip chip--gold" data-in style="margin-top:34px"><b>QĐ 1018/QĐ-TTg</b> mục tiêu GTGT nội địa điện tử – bán dẫn: ${ELECTRONICS.vaTarget2030}% vào 2030</div>
+        <ul class="more" data-in>
+          <li>Căn cứ: chủ yếu lắp ráp, linh kiện phần lớn nhập (Cục Thống kê); mục tiêu 2030 mới 10–15%</li>
+          <li>Đáy đường cong: vị trí bất lợi, chịu thiệt (giáo trình Ch.6)</li>
+        </ul>
       </div>
       <figure class="smile" data-in>
         <svg viewBox="0 0 900 520" aria-label="Đường cong nụ cười">
@@ -149,8 +165,8 @@ export const answer: Slide = {
 
 // ─── 11. Dệt may ─────────────────────────────────────────────────────
 const MODES: Array<[string, number, string, string]> = [
-  ['CMT', TEXTILE.modes.cmt, 'gia công thuần', 'red'],
-  ['FOB', TEXTILE.modes.fob, 'mua nguyên liệu, sản xuất', 'gold'],
+  ['CMT', TEXTILE.modes.cmt, 'nhận vải về may', 'red'],
+  ['FOB', TEXTILE.modes.fob, 'tự mua nguyên liệu, sản xuất', 'gold'],
   ['ODM', TEXTILE.modes.odm, 'tự thiết kế', 'blue'],
   ['OBM', TEXTILE.modes.obm, 'thương hiệu riêng', 'fg'],
 ]
@@ -163,16 +179,16 @@ export const textile: Slide = {
   html: () => `
     <p class="k"><b>11</b>Dệt may — cùng một đường cong</p>
     <h2 class="h h--m" data-in><em>${TEXTILE.sewingLabourShare}%</em> lao động —<br />chỉ thu về <em class="r">${TEXTILE.sewingValueShare}%</em> giá trị</h2>
-    <p class="lead" data-in>Giá trị nội địa tăng thêm toàn ngành: <b>~${TEXTILE.domesticValueAdded2025}%</b> (2025)</p>
+    <p class="lead" data-in style="max-width:none">Giá trị nội địa tăng thêm toàn ngành: <b>~${TEXTILE.domesticValueAdded2025}%</b> (2025) · chỗ vướng nhất: nguyên liệu, phải nhập vải</p>
     <div class="stack" data-in>
-      <p class="stack__h">Phương thức sản xuất của doanh nghiệp dệt may hiện nay (%)</p>
+      <p class="stack__h">Phương thức sản xuất của doanh nghiệp dệt may hiện nay (%) — 10 năm trước CMT chiếm 70–80%, nay ngành đang leo lên dần</p>
       <div class="stack__bar">${MODES.map(([k, v, , c]) => `<i class="stack__seg stack__seg--${c}" style="--v:${v}"><b>${k} ${v}%</b></i>`).join('')}</div>
       <div class="stack__keys">${MODES.map(([k, , t, c]) => `<span><i class="sw sw--${c}"></i><b>${k}</b> ${t}</span>`).join('')}</div>
     </div>
     <div class="row row--3" data-in>
       <div class="stat"><div class="stat__v">~${TEXTILE.export2025}<small>tỷ USD</small></div><div class="stat__l">xuất khẩu dệt may 2025</div></div>
       <div class="stat stat--red"><div class="stat__v">~${TEXTILE.fabricImport2025}<small>tỷ USD</small></div><div class="stat__l">vải nhập khẩu 2025</div></div>
-      <div class="stat stat--blue"><div class="stat__v">${TEXTILE.coUtilisation.cptpp}% · ${TEXTILE.coUtilisation.evfta}%</div><div class="stat__l">tỷ lệ tận dụng ưu đãi thuế quan (C/O) · CPTPP · EVFTA</div></div>
+      <div class="stat stat--blue"><div class="stat__v">${TEXTILE.coUtilisation.cptpp}% · ${TEXTILE.coUtilisation.evfta}%</div><div class="stat__l">tỷ lệ tận dụng ưu đãi thuế quan (C/O) · CPTPP · EVFTA — vì quy tắc xuất xứ “từ sợi”, “từ vải”</div></div>
     </div>
     ${source(refs('nd-dm-smile', 'nd-dm-2025', 'nd-dm-vai', 'moit-roo', 'vcci-loc', 'qd1643'))}`,
   enter(el) {
