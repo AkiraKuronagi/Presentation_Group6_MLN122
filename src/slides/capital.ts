@@ -6,11 +6,11 @@ import { reduceMotion, type Slide } from '../core/deck'
 import { VN_PLACES } from './intro'
 import { count, nf, notes, refs, source } from './util'
 
-// ─── 5. Tháp quy mô: tích tụ & tư bản tài chính ──────────────────────
+// ─── 4. Tháp quy mô: tích tụ & tư bản tài chính ──────────────────────
 const TOWER_LABELS = [
   { id: 'vn', v: SCALE.vnGdp2025, d: 1, t: 'GDP Việt Nam 2025', cls: 'lo' },
   { id: 'apple', v: SCALE.appleRevenueFY2025, d: 1, t: 'Doanh thu Apple, năm TC 2025', cls: '' },
-  { id: 'top100', v: SCALE.top100Revenue2025, d: 0, t: 'Doanh thu 100 TNC lớn nhất', cls: '' },
+  { id: 'top100', v: SCALE.top100Revenue2025, d: 0, t: 'Doanh thu 100 TNC phi tài chính lớn nhất', cls: '' },
   { id: 'blackrock', v: SCALE.blackrockAum2025, d: 0, t: 'Tài sản BlackRock quản lý hộ', cls: 'hi' },
 ]
 
@@ -29,7 +29,7 @@ export const towers: Slide = {
   })),
   html: () => `
     <div class="col">
-      <p class="k"><b>05</b>Biểu hiện mới 1 · 2</p>
+      <p class="k"><b>04</b>Biểu hiện mới 1 · 2</p>
       <h2 class="h h--m" data-in>Đế chế <em>lớn hơn</em><br />cả một quốc gia</h2>
       <p class="lead" data-in>tỷ USD · mỗi lát tháp = một GDP Việt Nam năm 2025</p>
       <div class="cards" data-in>
@@ -47,7 +47,7 @@ export const towers: Slide = {
   ),
 }
 
-// ─── 6. FDI: xuất khẩu tư bản vào Việt Nam ──────────────────────────
+// ─── 5. FDI: xuất khẩu tư bản vào Việt Nam ──────────────────────────
 const SW = 720
 const SH = 170
 const spark = () => {
@@ -71,7 +71,7 @@ export const fdi: Slide = {
     const [lx, ly] = s.pts[s.pts.length - 1]
     return `
     <div class="col">
-      <p class="k"><b>06</b>Biểu hiện mới 3 · Xuất khẩu tư bản</p>
+      <p class="k"><b>05</b>Biểu hiện mới 3 · Xuất khẩu tư bản</p>
       <h2 class="h h--m" data-in>Vốn <em>chảy vào</em><br />Việt Nam</h2>
       <div class="hero-num" data-in>
         <div class="big big--gold">${count(FDI.disbursed[10], 2)}<small>tỷ USD</small></div>
@@ -101,7 +101,7 @@ export const fdi: Slide = {
   ),
 }
 
-// ─── 7. FDI trong xuất khẩu: đóng góp & giới hạn ─────────────────────
+// ─── 6. FDI trong xuất khẩu: đóng góp & giới hạn ─────────────────────
 const R = 190
 const C = 2 * Math.PI * R
 const bal = (label: string, v: number, max: number) =>
@@ -113,7 +113,7 @@ export const fdiShare: Slide = {
   seconds: 45,
   bg: photo('industrial-park', { dim: 0.8 }),
   html: () => `
-    <p class="k"><b>07</b>Khu vực FDI trong nền kinh tế</p>
+    <p class="k"><b>06</b>Khu vực FDI trong nền kinh tế</p>
     <h2 class="h h--m" data-in>FDI nắm <em>hơn 3/4</em> xuất khẩu</h2>
     <div class="share">
       <figure class="gauge" data-in>
@@ -137,7 +137,7 @@ export const fdiShare: Slide = {
       <div class="twin__a"><b>Đóng góp</b>~${FDI.role.gdp}% GDP · ~${FDI.role.industry}% giá trị SX công nghiệp · ~${FDI.role.workersM} triệu việc làm</div>
       <div class="twin__b"><b>Giới hạn</b>giá trị gia tăng nội địa thấp · liên kết với DN trong nước lỏng lẻo</div>
     </div>
-    ${source(refs('nso-2025', 'nso-9m2026', 'fia-2026'))}`,
+    ${source(refs('nso-series', 'nso-2025', 'nso-9m2026', 'fia-2026', 'nso-fdi-2025'))}`,
   enter(el) {
     const g = el.querySelector<SVGCircleElement>('[data-gauge]')!
     const target = C * (1 - +g.dataset.gauge! / 100)

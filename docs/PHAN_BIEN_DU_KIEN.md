@@ -9,7 +9,7 @@
 - **Context:** FDI chiếm 77,3% xuất khẩu (2025), 80,7% (9T/2026); khu vực trong nước nhập siêu.
 - **Concept:** xuất khẩu tư bản; “hệ thống gia công” là độc quyền dưới dạng mới.
 - **Conflict:** Nếu FDI là biểu hiện của độc quyền, sao Việt Nam vẫn ra sức thu hút FDI? Có mâu thuẫn với độc lập, tự chủ?
-- **Trả lời:** Nhóm **không phủ nhận FDI**. Giáo trình nêu xuất khẩu tư bản ngày nay đề cao *nguyên tắc cùng có lợi*. FDI đóng góp ~20% GDP, ~50% giá trị sản xuất công nghiệp, ~5 triệu việc làm (lãnh đạo Cục ĐTNN, 2026). Vấn đề là **vị trí** của ta trong chuỗi. Đại hội XIV: thu hút FDI *có chọn lọc*, tăng liên kết FDI – doanh nghiệp trong nước. Quan điểm nhóm: “FDI là cây cầu, không phải chiếc thang”.
+- **Trả lời:** Nhóm **không phủ nhận FDI**. Giáo trình nêu xuất khẩu tư bản ngày nay đề cao *nguyên tắc cùng có lợi*. FDI đóng góp ~20% GDP, ~50% giá trị sản xuất công nghiệp, ~5 triệu việc làm (lãnh đạo Cục ĐTNN, 2026). Vấn đề là **vị trí** của ta trong chuỗi. Đại hội XIV: thu hút FDI *có chọn lọc*, tăng liên kết FDI – doanh nghiệp trong nước. Quan điểm nhóm: “FDI là cây cầu — chỉ thành bậc thang khi có nội lực”.
 
 ### 2. “Đường cong nụ cười có phải lý luận Mác không?” *(câu dễ bị hỏi nhất)*
 - **Context:** Nhóm nói khâu lắp ráp tạo ít giá trị, khâu thương hiệu tạo nhiều giá trị.
@@ -31,9 +31,9 @@
 
 ### 5. “‘Đổi áo nhưng chưa đổi chất’ — căn cứ đâu?”
 - **Context:** Nhóm dùng quy luật lượng – chất.
-- **Concept:** độ, điểm nút, bước nhảy (Giáo trình Triết học, tr.241–243).
+- **Concept:** độ, điểm nút, bước nhảy; phương thức liên kết (Giáo trình Triết học, tr.239–243).
 - **Conflict:** Kinh tế số, AI, nền tảng… chẳng lẽ không phải một “chất mới” của CNTB?
-- **Trả lời:** Giáo trình KTCT gọi đó là **“biểu hiện mới”** của độc quyền — tức hình thức mới. Bản chất (chiếm hữu tư nhân TBCN, sản xuất vì lợi nhuận của thiểu số, mâu thuẫn cơ bản) **không đổi**. Giáo trình cũng chỉ ra quan hệ sở hữu đã điều chỉnh (tư nhân → tập thể tư bản → nhà nước tư sản) nên CNTB còn thích ứng, nhưng mâu thuẫn cơ bản không tự giải quyết được. Ví dụ độc quyền là **vận dụng của nhóm**, giáo trình Triết không viết ví dụ này.
+- **Trả lời:** Giáo trình KTCT gọi đó là **“biểu hiện mới”** của độc quyền — tức hình thức mới. Bản chất (chiếm hữu tư nhân TBCN, sản xuất vì lợi nhuận của thiểu số, mâu thuẫn cơ bản) **không đổi**. Giáo trình cũng chỉ ra quan hệ sở hữu đã điều chỉnh (tư nhân → tập thể tư bản → nhà nước tư sản) nên CNTB còn thích ứng, nhưng mâu thuẫn cơ bản không tự giải quyết được. Nếu hỏi tiếp “Cartel → Trust → TNC là đổi phương thức liên kết, mà phương thức liên kết quy định chất (tr.239–240)?”: đúng — ở cấp hình thức tổ chức đó là các **bước nhảy cục bộ**, chỉ đổi một số mặt (tr.243); phân biệt lượng – chất tùy mối quan hệ được xét (tr.240). Xét ở cấp giai đoạn phát triển của CNTB thì chưa có bước nhảy toàn bộ. Ví dụ độc quyền là **vận dụng của nhóm**, giáo trình Triết không viết ví dụ này.
 
 ### 6. “Khí hậu, bất bình đẳng: số liệu toàn cầu gồm cả nước XHCN — đổ cho CNTB có phiến diện?”
 - **Context:** UNEP: 2,8°C; IPCC: 10% hộ phát thải cao nhất chiếm 34–45%.

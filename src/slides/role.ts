@@ -2,7 +2,7 @@ import { LIMITS } from '../content/data'
 import type { Slide } from '../core/deck'
 import { notes, refs, source } from './util'
 
-// ─── 15. Hai mặt của một hình thái ──────────────────────────────────
+// ─── 14. Hai mặt của một hình thái ──────────────────────────────────
 export const coin: Slide = {
   id: 'vai-tro',
   title: 'Vai trò lịch sử của CNTB',
@@ -10,7 +10,7 @@ export const coin: Slide = {
   gl: { scene: 'coin', mode: 'spin', x: 1420, y: 520, p: 1, speed: 0.22 },
   html: () => `
     <div class="col">
-      <p class="k"><b>15</b>Vai trò lịch sử của chủ nghĩa tư bản</p>
+      <p class="k"><b>14</b>Vai trò lịch sử của chủ nghĩa tư bản</p>
       <h2 class="h h--m" data-in>Hai mặt của<br /><em>một hình thái</em></h2>
       <div class="sides" data-in>
         <ul class="sides__a"><li>Phát triển lực lượng sản xuất</li><li>Sản xuất nhỏ → sản xuất lớn</li><li>Xã hội hóa sản xuất</li></ul>
@@ -22,7 +22,7 @@ export const coin: Slide = {
       </div>
       <blockquote class="q" data-in>“Chủ nghĩa tư bản chưa bao giờ mang tính toàn cầu như ngày nay … [nhưng] vẫn không thể khắc phục được những mâu thuẫn cơ bản vốn có của nó.”<cite>— Cố Tổng Bí thư Nguyễn Phú Trọng (2021)</cite></blockquote>
     </div>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục III.3; ${refs('npt-2021', 'wir-ineq', 'unep-2025', 'ipcc-2023')}`)}`,
+    ${source(`${refs('gt-ktct')}, Ch.4 mục III.3; ${refs('npt-2021', 'wir-ineq', 'wir-exec', 'unep-2025', 'ipcc-2023')}`)}`,
   notes: notes(
     'Giáo trình Ch.4 mục III.3: ba vai trò tích cực (phát triển LLSX; chuyển sản xuất nhỏ thành lớn; xã hội hóa sản xuất) và ba giới hạn (vì lợi ích thiểu số; gây chiến tranh, xung đột; phân hóa giàu nghèo).',
     'Nối với bài: chuỗi giá trị toàn cầu chính là xã hội hóa sản xuất ở quy mô hành tinh — vai trò tích cực; nhưng phần giá trị lại dồn về chủ sở hữu công nghệ, thương hiệu — giới hạn.',
@@ -33,7 +33,7 @@ export const coin: Slide = {
   ),
 }
 
-// ─── 16. Lựa chọn của Việt Nam: cây cầu → bậc thang ─────────────────
+// ─── 15. Lựa chọn của Việt Nam: cây cầu → bậc thang ─────────────────
 const DOCS = ['Hiến pháp 2013 · Điều 50–51', 'NQ 50-NQ/TW (2019)', 'Đại hội XIII (2021)', 'NQ 59-NQ/TW (2025)', 'Đại hội XIV (2026)']
 
 export const bridge: Slide = {
@@ -48,12 +48,12 @@ export const bridge: Slide = {
   ],
   html: () => `
     <div class="col">
-      <p class="k"><b>16</b>Lựa chọn của Việt Nam · quan điểm nhóm</p>
-      <h2 class="h h--m" data-in>FDI là <em>cây cầu</em> —<br />thành <em class="r">bậc thang</em><br />khi có nội lực</h2>
-      <p class="lead" data-in>Kế thừa vốn, công nghệ, quản trị của CNTB — <b>không lặp lại</b> áp bức, bất công. Hội nhập, không hòa tan.</p>
+      <p class="k"><b>15</b>Lựa chọn của Việt Nam · quan điểm nhóm</p>
+      <h2 class="h h--m" data-in>FDI là <em>cây cầu</em> —<br />chỉ thành <em class="r">bậc thang</em><br />khi có nội lực</h2>
+      <p class="lead" data-in>Kế thừa thành tựu nhân loại đạt được dưới CNTB — <b>không lặp lại</b> áp bức, bất công, bóc lột. Hội nhập, không hòa tan.</p>
       <ol class="docs" data-in>${DOCS.map((d) => `<li>${d}</li>`).join('')}</ol>
     </div>
-    ${source(`${refs('hp-2013', 'nq50', 'dh13', 'nq59', 'dh14', 'gt-ktct')}, Ch.6 mục II`)}`,
+    ${source(`${refs('hp-2013', 'nq50', 'dh13', 'nq59', 'dh14', 'npt-2021')}; ${refs('gt-ktct')}, Ch.6 mục II`)}`,
   notes: notes(
     'Từ vai trò và giới hạn của CNTB → lý giải lựa chọn của Việt Nam: kinh tế thị trường định hướng XHCN, kế thừa thành tựu (vốn, công nghệ, quản trị) nhưng không chấp nhận áp bức, bất công.',
     'Mạch văn kiện: Hiến pháp 2013 (Điều 50, 51) → NQ 50-NQ/TW (2019, FDI có chọn lọc, lấy công nghệ làm tiêu chí) → Đại hội XIII → NQ 59 (2025) → Đại hội XIV (2026) — nêu thẳng quan hệ giữa tự chủ sản xuất với tham gia chuỗi giá trị toàn cầu.',

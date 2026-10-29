@@ -242,7 +242,7 @@ export function mountUI(engine: Deck, opts: UIOptions) {
     const d = ev.data
     if (d?.type !== 'cmd') return
     // trang chính bị che (trình duyệt dừng hoạt ảnh) → nhảy tức thì để không bị "đứng"
-    if (d.cmd === 'next') engine.goTo(engine.current + 1, document.hidden)
+    if (d.cmd === 'next') document.hidden ? engine.goTo(engine.current + 1, true) : engine.next()
     else if (d.cmd === 'prev') engine.goTo(engine.current - 1, document.hidden)
     else if (d.cmd === 'hello') publish()
     else if (d.cmd === 'clock') {

@@ -33,6 +33,8 @@ export interface Slide {
   mount?(el: HTMLElement, deck: Deck): void
   enter?(el: HTMLElement, deck: Deck): void
   leave?(el: HTMLElement, deck: Deck): void
+  /** bước trong slide: ↓ gọi trước khi sang slide sau; trả về true nếu đã dùng lượt nhấn (vd. lật thẻ) */
+  step?(el: HTMLElement, deck: Deck): boolean
 }
 
 type ProjectFn = (a: string | number, b?: number) => { x: number; y: number; front?: boolean }
@@ -74,7 +76,7 @@ export class Deck {
       .map(
         (s, i) => `
       <section class="slide" id="${s.id}" data-i="${i}" aria-roledescription="slide" aria-label="${i + 1}/${slides.length}: ${s.title.replace(/<[^>]+>/g, '')}">
-        <div class="slide__stage">${s.html()}${s.bg ? `<p class="slide__credit">${s.bg.credit}</p>` : ''}</div>
+        <div class="slide__stage">${s.html()}</div>
       </section>`,
       )
       .join('')
@@ -196,6 +198,8 @@ export class Deck {
   }
 
   next() {
+    const s = this.slides[this.idx]
+    if (s?.step && !this.busy && s.step(this.els[this.idx], this)) return
     this.goTo(this.idx + 1)
   }
 
@@ -238,7 +242,7 @@ export class Deck {
     window.addEventListener('keydown', (e) => {
       if (typing(e.target) || e.ctrlKey || e.metaKey || e.altKey) return
       const k = e.key
-      // nút đang được focus (minigame, bình chọn): Enter/Space bấm nút, không chuyển slide
+      // nút đang được focus (thẻ lật, chọn ngành): Enter/Space bấm nút, không chuyển slide
       if ((k === 'Enter' || k === ' ') && (e.target as HTMLElement).closest?.('button')) return
       if (k === 'ArrowDown' || k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && !e.shiftKey) || k === 'Enter') {
         e.preventDefault()

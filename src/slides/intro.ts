@@ -21,16 +21,15 @@ export const cover: Slide = {
   labels: VN_PLACES.map((p) => ({ ...p, cls: 'vn small' })),
   html: () => `
     <div class="cover">
-      <p class="k">${meta.courseCode} · ${meta.courseName} · ${meta.topicNo}</p>
+      <p class="k">${meta.school} · ${meta.courseCode} – ${meta.courseName}${meta.semester.startsWith('«') ? '' : ` · ${meta.semester}`}</p>
       <h1 class="h h--xl cover__title" data-in>Ai nắm giữ<br /><em>chuỗi giá trị?</em></h1>
-      <p class="lead cover__sub" data-in>Biểu hiện mới của độc quyền và độc quyền nhà nước — tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của CNTB.</p>
+      <p class="lead cover__sub" data-in>${meta.topicNo}: Biểu hiện mới của độc quyền, độc quyền nhà nước trong điều kiện ngày nay — các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản.</p>
       <div class="cover__meta" data-in>
         <div><span>Nhóm thực hiện</span><b>${meta.group}</b></div>
         <div><span>Lớp · Giảng viên</span><b>${meta.className} · ${meta.lecturer}</b></div>
         <div><span>Nhóm phản biện</span><b>${meta.critics.join(', ')}</b></div>
       </div>
-      <ul class="cover__team" data-in>${meta.members.map((m) => `<li>${m.name}<small>${m.id}</small></li>`).join('')}</ul>
-      <p class="cover__hint"><kbd>↓</kbd> slide tiếp · <kbd>F</kbd> toàn màn hình · <kbd>?</kbd> phím tắt</p>
+      <ul class="cover__team" data-in>${meta.members.map((m) => `<li>${m.name}</li>`).join('')}</ul>
     </div>`,
   notes: notes(
     'Chào thầy/cô và các bạn. Nhóm 6 trình bày Chủ đề 6: biểu hiện mới của độc quyền, độc quyền nhà nước; tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của CNTB.',
@@ -39,69 +38,12 @@ export const cover: Slide = {
   ),
 }
 
-// ─── 2. Câu hỏi mở đầu ──────────────────────────────────────────────
-export const HOOK_OPTIONS = [
-  { k: 'A', t: 'Trên 60 USD' },
-  { k: 'B', t: '40 – 60 USD' },
-  { k: 'C', t: '20 – 40 USD' },
-  { k: 'D', t: 'Dưới 20 USD' },
-]
-/** Đáp án — công bố ở slide "Đáp án" sau khi tách lớp chiếc điện thoại */
-export const HOOK_ANSWER = 3
-const votes = [0, 0, 0, 0]
-export const hookVotes = () => votes.slice()
-
-export const hook: Slide = {
-  id: 'cau-hoi',
-  title: 'Câu hỏi mở đầu',
-  seconds: 45,
-  bg: photo('port', { dim: 0.7 }),
-  html: () => `
-    <p class="k"><b>02</b>Câu hỏi mở đầu · cả lớp bình chọn</p>
-    <h2 class="h h--l hook__q" data-in>Trong <em>100 USD</em> hàng điện tử<br />“Made in Vietnam”, bao nhiêu<br /><em class="r">ở lại Việt Nam?</em></h2>
-    <div class="vote" data-in>
-      ${HOOK_OPTIONS.map(
-        (o, i) => `
-        <div class="vote__opt">
-          <span class="vote__k">${o.k}</span>
-          <span class="vote__t">${o.t}</span>
-          <span class="vote__n" data-n="${i}">0</span>
-          <i class="vote__bar"><i data-bar="${i}"></i></i>
-          <span class="vote__btns"><button type="button" data-tally="${i}" data-d="1" aria-label="Thêm phiếu ${o.k}">+</button><button type="button" data-tally="${i}" data-d="-1" aria-label="Bớt phiếu ${o.k}">−</button></span>
-        </div>`,
-      ).join('')}
-    </div>
-    <p class="hook__foot">Giơ tay chọn A – D · đáp án sau khi “tách lớp” một chiếc điện thoại</p>`,
-  mount(el) {
-    const render = () => {
-      const total = votes.reduce((a, b) => a + b, 0)
-      votes.forEach((v, i) => {
-        ;(el.querySelector(`[data-n="${i}"]`) as HTMLElement).textContent = `${v}`
-        ;(el.querySelector(`[data-bar="${i}"]`) as HTMLElement).style.transform = `scaleX(${total ? v / total : 0})`
-      })
-      document.dispatchEvent(new CustomEvent('hook:votes'))
-    }
-    el.addEventListener('click', (e) => {
-      const t = (e.target as HTMLElement).closest<HTMLElement>('[data-tally]')
-      if (!t) return
-      const i = +t.dataset.tally!
-      votes[i] = Math.max(0, votes[i] + +t.dataset.d!)
-      render()
-    })
-  },
-  notes: notes(
-    'Đọc câu hỏi, mời cả lớp giơ tay cho A, B, C, D; bấm “+” dưới mỗi phương án để ghi phiếu.',
-    'Không tiết lộ đáp án — hẹn công bố sau khi tách lớp chiếc điện thoại.',
-    'Ba câu hỏi dẫn dắt: (1) Độc quyền “đổi áo” thế nào? (2) Việt Nam đứng ở đâu trong chuỗi giá trị? (3) CNTB đóng vai trò gì trong lịch sử — và sinh viên cần làm gì?',
-  ),
-}
-
-// ─── 3. Lênin 1916 → hôm nay ────────────────────────────────────────
+// ─── 2. Lênin 1916 → hôm nay ────────────────────────────────────────
 const FEATURES = [
   { then: 'Tích tụ, tập trung tư bản → tổ chức độc quyền', now: 'Tập đoàn xuyên quốc gia + “hệ thống gia công”' },
   { then: 'Tư bản tài chính, “chế độ tham dự”', now: '“Chế độ ủy nhiệm”, quỹ đầu tư khổng lồ' },
-  { then: 'Xuất khẩu tư bản', now: 'FDI đa chiều, nhiều chủ thể, nhiều hình thức' },
-  { then: 'Phân chia thị trường thế giới', now: 'Chuỗi giá trị toàn cầu' },
+  { then: 'Xuất khẩu tư bản', now: 'Xuất khẩu tư bản đổi chiều, đổi chủ thể, đổi hình thức' },
+  { then: 'Phân chia thị trường thế giới', now: 'Toàn cầu hóa song hành khu vực hóa (EU, FTA)' },
   { then: 'Phân chia lãnh thổ ảnh hưởng', now: '“Biên giới mềm”, biên giới kinh tế' },
 ]
 
@@ -113,7 +55,7 @@ export const lenin: Slide = {
   html: () => `
     <div class="lenin__head">
       <div>
-        <p class="k"><b>03</b>5 đặc điểm của CNTB độc quyền</p>
+        <p class="k"><b>02</b>5 đặc điểm của CNTB độc quyền</p>
         <h2 class="h h--m" data-in>Độc quyền không biến mất —<br /><em>chỉ “đổi áo”</em></h2>
       </div>
       <p class="lenin__year" aria-live="off"><span data-year>1916</span></p>
@@ -131,34 +73,43 @@ export const lenin: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục II–III.1; ${refs('lenin-t27')}`)}`,
   enter(el) {
+    // luôn mở ở 1916; người trình bày nhấn ↓ (hoặc bấm vào slide) mới lật sang “ngày nay”
     const year = el.querySelector('[data-year]') as HTMLElement
-    const cards = el.querySelectorAll<HTMLElement>('[data-flip]')
     year.textContent = '1916'
-    cards.forEach((c) => c.classList.remove('is-now'))
-    gsap.killTweensOf(cards)
-    const t = gsap.delayedCall(reduceMotion ? 0 : 1.6, () => {
-      scramble(year, '2026', 1.1)
-      cards.forEach((c, i) => gsap.delayedCall(i * 0.18, () => c.classList.add('is-now')))
-    })
-    ;(el as HTMLElement & { _t?: gsap.core.Tween })._t = t
+    el.querySelectorAll<HTMLElement>('[data-flip]').forEach((c) => c.classList.remove('is-now'))
+    el.dataset.flipped = ''
   },
   leave(el) {
-    ;(el as HTMLElement & { _t?: gsap.core.Tween })._t?.kill()
+    ;(el as HTMLElement & { _t?: gsap.core.Tween[] })._t?.forEach((t) => t.kill())
   },
-  mount(el) {
-    el.addEventListener('click', (e) => (e.target as HTMLElement).closest('[data-flip]')?.classList.toggle('is-now'))
+  step(el) {
+    if (el.dataset.flipped) return false
+    el.dataset.flipped = '1'
+    const year = el.querySelector('[data-year]') as HTMLElement
+    scramble(year, '2026', reduceMotion ? 0 : 1.1)
+    ;(el as HTMLElement & { _t?: gsap.core.Tween[] })._t = [...el.querySelectorAll<HTMLElement>('[data-flip]')].map((c, i) =>
+      gsap.delayedCall(reduceMotion ? 0 : i * 0.18, () => c.classList.add('is-now')),
+    )
+    return true
+  },
+  mount(el, deck) {
+    el.addEventListener('click', (e) => {
+      const card = (e.target as HTMLElement).closest('[data-flip]')
+      if (!el.dataset.flipped) lenin.step!(el, deck)
+      else card?.classList.toggle('is-now')
+    })
   },
   notes: notes(
     'Giáo trình (Ch.4 mục II) tóm tắt 5 đặc điểm kinh tế của CNTB độc quyền theo Lênin: tích tụ, tập trung tư bản tạo ra tổ chức độc quyền; tư bản tài chính và tài phiệt chi phối; xuất khẩu tư bản; phân chia thị trường thế giới; phân định khu vực lãnh thổ ảnh hưởng.',
     'Thẻ lật sang “ngày nay” (Ch.4 mục III.1): cả 5 đặc điểm vẫn còn, nhưng mang hình thức mới. Luận điểm của nhóm: <b>độc quyền không biến mất mà “đổi áo”</b>.',
     '• Thẻ 1 — điểm then chốt cho cả bài: giáo trình gọi <b>“hệ thống gia công”</b> là biểu hiện của độc quyền dưới dạng mới.',
     '• Thẻ 2 — “chế độ tham dự” được bổ sung bằng “chế độ ủy nhiệm” (cổ đông nhỏ ủy nhiệm cho đại cổ đông).',
-    '• Thẻ 3 — xuất khẩu tư bản đổi chiều, đổi chủ thể. • Thẻ 4 — chuỗi giá trị toàn cầu (nhóm vận dụng). • Thẻ 5 — “biên giới mềm”.',
-    'Bấm vào một thẻ để lật lại. Chuyển ý: “Vì sao nói là ‘đổi áo’ chứ không phải ‘đổi người’? Triết học giúp ta trả lời.”',
+    '• Thẻ 3 — xuất khẩu tư bản đổi chiều, đổi chủ thể. • Thẻ 4 — giáo trình: sức mạnh TNC thúc đẩy toàn cầu hóa, song hành là khu vực hóa (EU, các FTA…), do tư bản độc quyền quốc tế chi phối; nhóm vận dụng: hôm nay thị trường được “chia” qua chuỗi giá trị toàn cầu và quy tắc xuất xứ. • Thẻ 5 — “biên giới mềm”.',
+    'Slide mở ở năm 1916: nói xong 5 đặc điểm của Lênin thì nhấn ↓ (hoặc bấm chuột) để lật cả 5 thẻ sang “ngày nay”; nhấn ↓ lần nữa mới sang slide sau. Bấm vào một thẻ để lật riêng thẻ đó. Chuyển ý: “Vì sao nói là ‘đổi áo’ chứ không phải ‘đổi người’? Triết học giúp ta trả lời.”',
   ),
 }
 
-// ─── 4. Lăng kính triết học ─────────────────────────────────────────
+// ─── 3. Lăng kính triết học ─────────────────────────────────────────
 const FORMS = ['Cartel', 'Trust', 'Concern', 'TNC', 'Chuỗi giá trị']
 const NODES: Array<[number, number, string]> = [
   [70, 70, 'Thiết kế'],
@@ -175,7 +126,7 @@ export const phil: Slide = {
   title: 'Lăng kính triết học',
   seconds: 40,
   html: () => `
-    <p class="k"><b>04</b>Nhìn từ triết học Mác – Lênin</p>
+    <p class="k"><b>03</b>Nhìn từ triết học Mác – Lênin</p>
     <h2 class="h h--m" data-in>Đổi hình thức — <em class="r">chưa đổi chất</em></h2>
     <div class="phil">
       <figure class="phil__panel" data-in>

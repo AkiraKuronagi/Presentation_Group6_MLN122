@@ -3,12 +3,12 @@ import type { Slide } from '../core/deck'
 import { VN_PLACES } from './intro'
 import { notes, refs, source } from './util'
 
-// ─── 13. "Biên giới mềm" ────────────────────────────────────────────
+// ─── 12. "Biên giới mềm" ────────────────────────────────────────────
 const TIMELINE = [
   { d: '10/2022', t: 'Mỹ siết xuất khẩu chip tiên tiến', src: 'bis-2022' },
-  { d: '4/2025', t: 'Thuế “đối ứng” <b>46%</b> với hàng Việt Nam', src: 'vgp-tariff46' },
+  { d: '4/2025', t: 'Mỹ công bố thuế “đối ứng” <b>46%</b> với hàng Việt Nam', src: 'vgp-tariff46' },
   { d: '7/2025', t: 'Giảm còn <b>20%</b>', src: 'wh-2025' },
-  { d: '2/2026', t: 'Mức chung <b>10%</b> theo Mục 122', src: 'vgp-ieepa' },
+  { d: '2/2026', t: 'Ngừng thu thuế đối ứng · mức chung <b>10%</b> (Mục 122, 150 ngày)', src: 'moit-2026' },
   { d: '7/2026', t: '<b>12,5%</b> theo Mục 301 · điện tử được miễn', src: 'nd-301' },
 ]
 
@@ -23,7 +23,7 @@ export const softBorder: Slide = {
   ],
   html: () => `
     <div class="col">
-      <p class="k"><b>13</b>Biểu hiện mới 5</p>
+      <p class="k"><b>12</b>Biểu hiện mới 5 · Lãnh thổ ảnh hưởng</p>
       <h2 class="h h--m" data-in>“Biên giới mềm”</h2>
       <p class="lead" data-in>Thuộc địa kiểu cũ sụp đổ — thay bằng <b>luật chơi</b>: thuế quan, kiểm soát công nghệ, quy tắc xuất xứ.</p>
       <ol class="tl" data-in>
@@ -31,16 +31,16 @@ export const softBorder: Slide = {
       </ol>
       <div class="chip chip--red" data-in><b>Việt Nam</b> vừa hợp tác, vừa đấu tranh · 7 phiên đàm phán</div>
     </div>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs(...TIMELINE.map((e) => e.src), 'vgp-dam-phan', 'nq59')}`)}`,
+    ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs(...TIMELINE.map((e) => e.src), 'treasury-2022', 'vgp-tariff20', 'vgp-ieepa', 'vgp-dam-phan', 'nq59')}`)}`,
   notes: notes(
     'Giáo trình: thực dân cũ sụp đổ, nhưng cường quốc tư bản dùng “chiến lược biên giới mềm”, bành trướng “biên giới kinh tế”.',
-    'Dòng thời gian từ nguồn chính thức: friend-shoring (4/2022), kiểm soát chip (10/2022), thuế đối ứng 46% (4/2025) → 20% (Sắc lệnh 31/7/2025) → Tuyên bố chung khuôn khổ Hiệp định (26/10/2025) → ngừng thu, áp 10% theo Mục 122 (24/02/2026) → 12,5% theo Mục 301 (24/7/2026, điện tử được miễn) → 7 phiên đàm phán (10/2026).',
+    'Dòng thời gian từ nguồn chính thức: friend-shoring (4/2022), kiểm soát chip (10/2022), thuế đối ứng 46% (4/2025) → 20% (Sắc lệnh 31/7/2025) → Tuyên bố chung khuôn khổ Hiệp định (26/10/2025) → ngừng thu thuế đối ứng sau phán quyết của Tòa án Tối cao Mỹ, áp 10% theo Mục 122 (24/02/2026, theo Bộ Công Thương; nếu bị hỏi về mức 15%: Báo Chính phủ 23/02/2026 đưa tin ông Trump tuyên bố 15%) → 12,5% theo Mục 301 (24/7/2026, điện tử được miễn) → 7 phiên đàm phán (10/2026).',
     'Việt Nam ứng xử theo NQ 59: vừa hợp tác vừa đấu tranh; Đại hội XIII: tránh lệ thuộc vào một thị trường, một đối tác.',
     'Giữ giọng trung lập, trình bày sự kiện và nguồn; không bình luận cảm tính về quốc gia nào.',
   ),
 }
 
-// ─── 14. Độc quyền nhà nước kiểu mới ────────────────────────────────
+// ─── 13. Độc quyền nhà nước kiểu mới ────────────────────────────────
 export const stateMono: Slide = {
   id: 'doc-quyen-nha-nuoc',
   title: 'Độc quyền nhà nước',
@@ -49,7 +49,7 @@ export const stateMono: Slide = {
   html: () => `
     <div class="sm">
       <div>
-        <p class="k"><b>14</b>Độc quyền nhà nước trong CNTB ngày nay</p>
+        <p class="k"><b>13</b>Độc quyền nhà nước trong CNTB ngày nay</p>
         <h2 class="h h--m" data-in>Nhà nước <em>+</em> tập đoàn</h2>
         <svg class="venn" viewBox="0 0 640 360" data-in aria-hidden="true">
           <circle class="venn__a" cx="240" cy="180" r="150" />
@@ -64,10 +64,10 @@ export const stateMono: Slide = {
         <div class="stat" data-in><div class="stat__v">52,7<small>tỷ USD</small></div><div class="stat__l">Đạo luật CHIPS (Mỹ) hỗ trợ ngành bán dẫn</div></div>
         <div class="stat" data-in><div class="stat__v">10<small>%</small></div><div class="stat__l">cổ phần Chính phủ Mỹ nắm tại Intel</div></div>
         <div class="stat" data-in><div class="stat__v">&gt; 43<small>tỷ EUR</small></div><div class="stat__l">Đạo luật Chip châu Âu — vốn công và tư</div></div>
-        <div class="stat stat--red" data-in><div class="stat__v">15<small>%</small></div><div class="stat__l">thuế tối thiểu toàn cầu — Việt Nam áp dụng từ 2024 (NQ 107/2023/QH15)</div></div>
+        <div class="stat" data-in><div class="stat__v">AIG · Citi</div><div class="stat__l">nhà nước cứu tập đoàn 2008–2009 (giáo trình)</div></div>
       </div>
     </div>
-    <p class="distinct" data-in><b>Phân biệt:</b> kinh tế nhà nước Việt Nam giữ vai trò chủ đạo trong kinh tế thị trường định hướng XHCN (Hiến pháp 2013, Điều 51) — khác bản chất với độc quyền nhà nước tư bản.</p>
+    <p class="distinct" data-in><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15).</p>
     ${source(`${refs('gt-ktct')}, Ch.4 mục II.2, III.2; ${refs('chips-act', 'wir2026', 'eu-chips', 'oecd-pillar2', 'nq107', 'nd236', 'hp-2013')}`)}`,
   notes: notes(
     'Bản chất (Ch.4 mục II.2): kết hợp sức mạnh của tổ chức độc quyền tư nhân với sức mạnh nhà nước tư sản, phục vụ tư bản độc quyền. Ba biểu hiện mới: quan hệ nhân sự (cơ chế thỏa hiệp), sở hữu nhà nước, công cụ điều tiết.',

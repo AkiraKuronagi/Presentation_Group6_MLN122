@@ -16,14 +16,6 @@ export interface Photo {
 }
 
 export const PHOTOS: Record<string, Photo> = {
-  port: {
-    title: 'Container Ship at the Hai Phong International Container Terminal 01.jpg',
-    author: 'Nathan.cima',
-    license: 'CC BY-SA 4.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
-    url: 'https://commons.wikimedia.org/wiki/File:Container_Ship_at_the_Hai_Phong_International_Container_Terminal_01.jpg',
-    caption: 'Tàu container tại Cảng quốc tế Hải Phòng',
-  },
   'factory-1910': {
     title: 'Ford assembly line - 1913.jpg',
     author: 'Không rõ tác giả (Lưu trữ Quốc gia Hoa Kỳ)',
@@ -47,6 +39,22 @@ export const PHOTOS: Record<string, Photo> = {
     licenseUrl: 'https://creativecommons.org/licenses/by/2.0/',
     url: 'https://commons.wikimedia.org/wiki/File:5C2A5961R_%E2%80%93_Silicon_Wafer_20200519.jpg',
     caption: 'Cận cảnh tấm wafer silicon',
+  },
+  electronics: {
+    title: 'Electronic Factory in Shenzhen.jpg',
+    author: 'Lint1729',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    url: 'https://commons.wikimedia.org/wiki/File:Electronic_Factory_in_Shenzhen.jpg',
+    caption: 'Nhà máy điện tử ở Thâm Quyến',
+  },
+  students: {
+    title: 'Classroom at University of Economics Ho Chi Minh City (UEH).jpg',
+    author: 'Tran Trong Nhan',
+    license: 'CC0 1.0',
+    licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
+    url: 'https://commons.wikimedia.org/wiki/File:Classroom_at_University_of_Economics_Ho_Chi_Minh_City_(UEH).jpg',
+    caption: 'Phòng học tại Đại học Kinh tế TP.HCM',
   },
 }
 

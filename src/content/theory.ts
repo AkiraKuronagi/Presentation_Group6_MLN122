@@ -74,6 +74,7 @@ export const PHIL = {
   notes: notes(
     'Ý 1 (lượng – chất): độc quyền sinh ra từ cạnh tranh là một <b>bước nhảy về chất</b>. Còn TNC, chuỗi giá trị, quỹ đầu tư… là thay đổi về lượng và hình thức trong cùng một “độ”: bản chất vẫn là CNTB độc quyền → vì thế nói “đổi áo”.',
     'Ý 2 (LLSX – QHSX): sản xuất ngày càng xã hội hóa (thiết kế ở nước A, linh kiện ở B, lắp ráp ở Việt Nam) nhưng sở hữu công nghệ, thương hiệu lại tập trung → giáo trình Triết học tr.298: quan hệ sở hữu quyết định quản lý và phân phối. Đây là cách nhìn mâu thuẫn cơ bản của CNTB ở quy mô toàn cầu.',
+    'Nếu bị hỏi “Cartel → Trust → TNC là đổi phương thức liên kết, mà giáo trình (tr.239–240) nói phương thức liên kết quy định chất?”: đúng — ở cấp hình thức tổ chức đó là các bước nhảy cục bộ, chỉ đổi một số mặt (tr.243); phân biệt lượng – chất tùy mối quan hệ được xét (tr.240). Xét ở cấp giai đoạn phát triển của CNTB thì chưa có bước nhảy toàn bộ: tổ chức độc quyền vẫn chi phối, lợi nhuận độc quyền vẫn dựa trên chiếm hữu tư nhân TBCN.',
     'Lưu ý khi bị hỏi: ví dụ về độc quyền là <b>vận dụng của nhóm</b>, giáo trình Triết không viết ví dụ này.',
   ),
 }

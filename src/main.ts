@@ -109,6 +109,8 @@ async function boot() {
       count: () => deck.count,
       go: (i: number) => deck.goTo(i, true),
       labels: () => deck.stations.map((s) => s.label),
+      /** phân công trình bày (meta.members) cho kịch bản theo từng bạn */
+      members: () => meta.members,
       /** xuất kịch bản: slide, thời lượng gợi ý, ghi chú */
       script: () =>
         deck.stations.map((s, i) => ({

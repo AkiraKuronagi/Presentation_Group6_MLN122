@@ -20,7 +20,7 @@ export const SOURCES: Source[] = [
   {
     id: 'gt-ktct',
     short: 'Bộ GD&ĐT, 2021a',
-    apa: 'Bộ Giáo dục và Đào tạo. (2021a). <i>Giáo trình Kinh tế chính trị Mác – Lênin (Dành cho bậc đại học hệ không chuyên lý luận chính trị)</i>. Nxb. Chính trị quốc gia Sự thật. (Ch.4 mục II–III; Ch.6 mục II)',
+    apa: 'Bộ Giáo dục và Đào tạo. (2021a). <i>Giáo trình Kinh tế chính trị Mác – Lênin (Dành cho bậc đại học hệ không chuyên lý luận chính trị)</i>. Nxb. Chính trị quốc gia Sự thật. (Ch.2 mục I; Ch.4 mục II–III; Ch.6 mục II)',
   },
   {
     id: 'gt-triet',
@@ -73,7 +73,7 @@ export const SOURCES: Source[] = [
   {
     id: 'nso-series',
     short: 'Tổng cục Thống kê, 2015–2025',
-    apa: 'Tổng cục Thống kê. (2015–2025). <i>Báo cáo / Thông cáo báo chí tình hình kinh tế – xã hội quý IV và cả năm</i> (các năm 2015–2024; đường dẫn từng năm trong bảng số liệu của biểu đồ). nso.gov.vn.',
+    apa: 'Tổng cục Thống kê. (2015–2025). <i>Báo cáo / Thông cáo báo chí tình hình kinh tế – xã hội quý IV và cả năm</i> (các năm 2015–2024; đường dẫn từng năm ở slide Tài liệu tham khảo). nso.gov.vn.',
   },
   {
     id: 'nso-2025',
@@ -116,12 +116,6 @@ export const SOURCES: Source[] = [
     short: 'Nguyễn Duy Quý & Đào Thanh Hương, 2026',
     apa: 'Nguyễn Duy Quý, & Đào Thanh Hương. (2026, 14/07). Phát triển kinh tế có vốn đầu tư nước ngoài: Thực trạng và định hướng. <i>Tạp chí Kinh tế – Tài chính</i>.',
     url: 'https://tapchikinhtetaichinh.vn/phat-trien-kinh-te-co-von-dau-tu-nuoc-ngoai-thuc-trang-va-dinh-huong-161738.html',
-  },
-  {
-    id: 'vgp-930',
-    short: 'Anh Thơ, 2026',
-    apa: 'Anh Thơ. (2026, 14/02). Xuất nhập khẩu sau mốc 930 tỷ USD: Những thách thức phía sau tăng trưởng. <i>Báo Điện tử Chính phủ</i>.',
-    url: 'https://baochinhphu.vn/xuat-nhap-khau-sau-moc-930-ty-usd-nhung-thach-thuc-phia-sau-tang-truong-102260202142538212.htm',
   },
   {
     id: 'qd1018',
@@ -348,18 +342,6 @@ export const SOURCES: Source[] = [
     short: 'World Inequality Lab, 2025b',
     apa: 'World Inequality Lab. (2025b). <i>World Inequality Report 2026 – Executive summary</i>.',
     url: 'https://wir2026.wid.world/insight/executive-summary/',
-  },
-  {
-    id: 'un-climate',
-    short: 'United Nations, 2025',
-    apa: 'United Nations. (2025). <i>Climate change</i> (dẫn UNEP Emissions Gap Report 2025). Sustainable Development Goals.',
-    url: 'https://www.un.org/sustainabledevelopment/climate-change/',
-  },
-  {
-    id: 'net-zero',
-    short: 'Báo Đại biểu Nhân dân, 2026',
-    apa: 'Báo Đại biểu Nhân dân. (2026, 14/01). Thủ tướng Phạm Minh Chính: Giảm phát thải ròng bằng “0” vào năm 2050 là sứ mệnh chính trị của quốc gia.',
-    url: 'https://daibieunhandan.vn/thu-tuong-pham-minh-chinh-giam-phat-thai-rong-bang-0-vao-nam-2050-la-su-menh-chinh-tri-cua-quoc-gia-10403748.html',
   },
   {
     id: 'wipo-gii',
