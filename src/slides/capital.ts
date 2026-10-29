@@ -17,7 +17,7 @@ const TOWER_LABELS = [
 export const towers: Slide = {
   id: 'quy-mo',
   title: 'Đế chế lớn hơn quốc gia',
-  seconds: 50,
+  seconds: 85,
   gl: { scene: 'towers', mode: 'rise', x: 1330, y: 600, p: 1, speed: 0.32 },
   bg: photo('finance', { dim: 0.86, pos: '50% 60%' }),
   labels: TOWER_LABELS.map((l, i) => ({
@@ -33,20 +33,21 @@ export const towers: Slide = {
       <h2 class="h h--m" data-in>Đế chế <em>lớn hơn</em><br />cả một quốc gia</h2>
       <p class="lead" data-in>tỷ USD · mỗi lát tháp = một GDP Việt Nam năm 2025</p>
       <div class="cards" data-in>
-        <div class="card"><b>TNC + “hệ thống gia công”</b><span>nhiều công ty vừa và nhỏ nhận gia công cho tập đoàn — giáo trình: độc quyền dưới dạng mới</span></div>
-        <div class="card"><b>“Chế độ ủy nhiệm”</b><span>cổ đông nhỏ giao quyền cho cổ đông lớn; vài quỹ lớn cầm tiền của rất nhiều nhà đầu tư</span></div>
+        <div class="card"><b>TNC + “hệ thống gia công”</b><span>nhiều công ty nhỏ nhận gia công cho tập đoàn</span></div>
+        <div class="card"><b>“Chế độ ủy nhiệm”</b><span>vài quỹ lớn quyết định thay rất nhiều nhà đầu tư nhỏ</span></div>
       </div>
       <ul class="more" data-in>
-        <li>Doanh thu một năm của Apple (~${nf(SCALE.appleRevenueFY2025, 1)} tỷ USD) gần bằng cả GDP Việt Nam</li>
-        <li>BlackRock giữ hộ ~${nf(SCALE.blackrockAum2025)} tỷ USD — gấp khoảng 27 lần GDP Việt Nam (nhóm tự tính)</li>
+        <li><b>Concern:</b> độc quyền đa ngành, hàng trăm xí nghiệp ở nhiều ngành, nhiều nước</li>
+        <li><b>Conglomerate:</b> ghép hàng chục hãng vừa và nhỏ không liên quan về sản xuất, chủ yếu kiếm lời từ chứng khoán</li>
       </ul>
-      <p class="note" data-in>Tài sản quản lý là số tồn, GDP là số dòng — đặt cạnh nhau chỉ để hình dung quy mô.</p>
+      <p class="note" data-in><b>Giới hạn của phép so sánh:</b> doanh thu gồm cả chi phí mua ngoài, tài sản quản lý là số tồn, còn GDP là giá trị mới tạo ra trong năm — đặt cạnh nhau chỉ để hình dung quy mô.</p>
     </div>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs('wir2026', 'apple-10k', 'blackrock', 'wb-gdp')}`)}`,
+    ${source(`${refs('gt-ktct')}, Ch.4 mục III.1 (tr.135); ${refs('wir2026', 'apple-10k', 'blackrock', 'wb-gdp')}`)}`,
   notes: notes(
-    'Bốn cái tháp trên màn hình dùng chung một thước đo: mỗi tầng tháp bằng cả GDP của Việt Nam năm 2025, khoảng 514,7 tỷ USD. Doanh thu một năm của Apple đã khoảng 416,2 tỷ USD, gần bằng những gì cả nước mình làm ra trong một năm. 100 tập đoàn phi tài chính lớn nhất thế giới thu về khoảng 12.677 tỷ USD. Riêng quỹ BlackRock đang giữ hộ khoảng 14.042 tỷ USD tiền của nhà đầu tư, gấp khoảng 27 lần GDP Việt Nam.',
-    'Lưu ý một chút: tiền quỹ giữ hộ là số tích góp lại, còn GDP là số làm ra trong một năm, nên đặt cạnh nhau chỉ để dễ hình dung độ lớn. Hai con số này ứng với hai biểu hiện mới đầu tiên: tập đoàn lớn cùng mạng lưới gia công của nó, và chế độ ủy nhiệm, khi vài quỹ lớn cầm tiền của rất nhiều nhà đầu tư.',
-    'Nếu bị hỏi về Apple: nhóm chỉ lấy Apple làm ví dụ cho cách thuê ngoài, theo chính báo cáo của công ty, không đánh giá riêng doanh nghiệp nào. Con số gấp 27 lần GDP là nhóm tự tính.',
+    'Bốn cái tháp trên màn hình dùng chung một thước đo: mỗi tầng tháp bằng cả GDP của Việt Nam năm 2025, khoảng 514,7 tỷ USD. Doanh thu một năm của Apple khoảng 416,2 tỷ USD. 100 tập đoàn phi tài chính lớn nhất thế giới thu về khoảng 12.677 tỷ USD. Riêng quỹ BlackRock đang giữ hộ khoảng 14.042 tỷ USD tiền của nhà đầu tư.',
+    'Phải nói rõ giới hạn của phép so sánh này. Doanh thu là toàn bộ tiền bán hàng, trong đó có cả tiền mua linh kiện, dịch vụ từ bên ngoài. Tiền quỹ giữ hộ là số tích góp qua nhiều năm. Còn GDP chỉ tính phần giá trị mới làm ra trong một năm. Ba thứ khác bản chất, nên nhóm đặt cạnh nhau chỉ để dễ hình dung độ lớn, không phải để nói cái nào bằng cái nào.',
+    'Về lý luận, đây là hai biểu hiện mới đầu tiên. Thứ nhất, tích tụ và tập trung tư bản sinh ra các hình thức tổ chức độc quyền mới, giáo trình nêu ở trang 135. Concern là độc quyền đa ngành, gồm hàng trăm xí nghiệp ở nhiều ngành, nhiều nước. Conglomerate là ghép hàng chục công ty vừa và nhỏ không liên quan gì về sản xuất, mục đích chính là kiếm lời từ mua bán chứng khoán. Cùng với đó là tập đoàn xuyên quốc gia và hệ thống gia công của nó. Thứ hai là chế độ ủy nhiệm: vài quỹ lớn cầm tiền và quyết định thay cho rất nhiều nhà đầu tư nhỏ.',
+    'Nếu bị hỏi về Apple, BlackRock: nhóm chỉ dùng để hình dung độ lớn và đã ghi giới hạn trên slide (doanh thu gồm chi phí mua ngoài, tài sản quản lý là số tồn, GDP là giá trị mới tạo ra); không đánh giá riêng doanh nghiệp nào.',
   ),
 }
 
@@ -112,7 +113,7 @@ const bal = (label: string, v: number, max: number) =>
 export const fdiShare: Slide = {
   id: 'fdi-xuat-khau',
   title: 'FDI trong xuất khẩu',
-  seconds: 55,
+  seconds: 50,
   bg: photo('industrial-park', { dim: 0.8 }),
   html: () => `
     <p class="k"><b>06</b>Khu vực FDI trong nền kinh tế</p>
@@ -149,7 +150,7 @@ export const fdiShare: Slide = {
   },
   notes: notes(
     'Doanh nghiệp vốn nước ngoài đang nắm hơn ba phần tư hàng xuất khẩu của Việt Nam: 77,3% năm 2025, và 80,7% trong chín tháng đầu năm 2026. Nghĩa là phần lớn hàng ghi “Made in Vietnam” là do công ty nước ngoài làm ra.',
-    'Hai bên còn ngược nhau về chuyện mua bán với nước ngoài. Năm 2025, khối FDI bán ra nhiều hơn mua vào 49,46 tỷ USD, còn doanh nghiệp trong nước thì mua vào nhiều hơn bán ra 29,43 tỷ USD. Chín tháng năm 2026, doanh nghiệp trong nước nhập siêu 34,28 tỷ USD, còn phần dư của khối FDI giảm xuống 14,86 tỷ USD.',
+    'Hai bên còn ngược nhau về chuyện mua bán với nước ngoài. Năm 2025, khối FDI xuất siêu 49,46 tỷ USD, còn doanh nghiệp trong nước nhập siêu 29,43 tỷ USD; chín tháng năm 2026, khoảng cách này vẫn còn.',
     'Công bằng mà nói, FDI có đóng góp thật: khoảng 20% GDP, khoảng một nửa giá trị sản xuất công nghiệp, và khoảng 5 triệu việc làm. Nhưng theo Cục Thống kê, phần giá trị ở lại trong nước của nhiều dự án FDI còn thấp, và họ còn ít làm ăn với doanh nghiệp Việt. Vấn đề không phải FDI tốt hay xấu, mà là Việt Nam đang đứng ở khâu nào trong chuỗi.',
     'Nếu bị hỏi: nhóm không nói FDI là “bóc lột”; vấn đề là vị trí của mình trong chuỗi.',
   ),

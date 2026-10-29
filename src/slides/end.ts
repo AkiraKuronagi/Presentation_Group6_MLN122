@@ -19,7 +19,7 @@ const miniPath = () =>
 export const lesson: Slide = {
   id: 'bai-hoc',
   title: 'Bài học cho sinh viên',
-  seconds: 45,
+  seconds: 50,
   bg: photo('students', { dim: 0.86 }),
   html: () => {
     const [vx, vy] = sp(0)
@@ -145,7 +145,7 @@ export const references: Slide = {
       ${SOURCES.map((s) => `<li>${s.apa}${s.url ? ` <a href="${s.url}" target="_blank" rel="noopener">${s.url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}</a>` : ''}</li>`).join('')}
     </ol>`,
   notes: notes(
-    'Tất cả số liệu và ý trong bài đều lấy từ giáo trình, văn kiện, văn bản pháp luật, Cục Thống kê, báo Đảng, báo Chính phủ và các tổ chức quốc tế, ghi nguồn theo chuẩn APA 7. Ảnh nền là ảnh chụp thật trên Wikimedia Commons, được phép dùng. Việc nhóm dùng AI được ghi đầy đủ trong Phụ lục AI nộp kèm.',
+    'Toàn bộ số liệu trong bài đều có nguồn chính thống, ghi theo chuẩn APA 7 ở slide này. Việc nhóm dùng AI được ghi trong Phụ lục AI nộp kèm.',
   ),
 }
 

@@ -1393,6 +1393,21 @@
 p.more {
   display: block;
 }
+.why {
+  margin: 26px 0 0;
+  padding: 14px 20px;
+  border-left: 4px solid var(--red);
+  border-radius: 0 12px 12px 0;
+  max-width: 800px;
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--fg-2);
+  background: color-mix(in srgb, var(--bg-2) 72%, transparent);
+}
+.why b {
+  color: var(--fg);
+  font-weight: 600;
+}
 .more li {
   position: relative;
   padding-left: 22px;

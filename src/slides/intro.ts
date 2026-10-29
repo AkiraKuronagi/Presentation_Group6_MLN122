@@ -16,7 +16,7 @@ export const VN_PLACES = [
 export const cover: Slide = {
   id: 'bia',
   title: 'Bìa',
-  seconds: 30,
+  seconds: 35,
   gl: { scene: 'globe', mode: 'cover', x: 1530, y: 560, p: 1, speed: 0.35 },
   labels: VN_PLACES.map((p) => ({ ...p, cls: 'vn small' })),
   html: () => `
@@ -39,7 +39,7 @@ export const cover: Slide = {
 
 // ─── 2. Lênin 1916 → hôm nay ────────────────────────────────────────
 const FEATURES = [
-  { then: 'Tích tụ, tập trung tư bản → tổ chức độc quyền', thenD: 'tư bản gom lại ngày càng lớn', now: 'Tập đoàn xuyên quốc gia + “hệ thống gia công”', nowD: 'nhiều công ty vừa và nhỏ nhận gia công cho tập đoàn' },
+  { then: 'Tích tụ, tập trung tư bản → tổ chức độc quyền', thenD: 'tư bản gom lại ngày càng lớn', now: 'Concern, conglomerate, TNC + “hệ thống gia công”', nowD: 'tổ chức độc quyền kiểu mới; quanh tập đoàn là nhiều công ty nhận gia công' },
   { then: 'Tư bản tài chính, “chế độ tham dự”', thenD: 'một nhóm nhỏ tài phiệt chi phối nền kinh tế', now: '“Chế độ ủy nhiệm”, quỹ đầu tư khổng lồ', nowD: 'cổ đông nhỏ giao quyền cho cổ đông lớn, quỹ quyết định thay' },
   { then: 'Xuất khẩu tư bản', thenD: 'nước giàu đem vốn ra nước ngoài đầu tư', now: 'Xuất khẩu tư bản đổi chiều, đổi chủ thể, đổi hình thức', nowD: 'chủ yếu do tập đoàn xuyên quốc gia thực hiện' },
   { then: 'Phân chia thị trường thế giới', thenD: 'các tập đoàn lớn chia nhau thị trường', now: 'Toàn cầu hóa song hành khu vực hóa (EU, FTA)', nowD: 'thị trường được “chia” qua chuỗi giá trị' },
@@ -49,7 +49,7 @@ const FEATURES = [
 export const lenin: Slide = {
   id: 'lenin',
   title: 'Từ Lênin đến hôm nay',
-  seconds: 85,
+  seconds: 75,
   bg: photo('factory-1910', { dim: 0.82 }),
   html: () => `
     <div class="lenin__head">
@@ -70,7 +70,7 @@ export const lenin: Slide = {
         </button>`,
       ).join('')}
     </div>
-    ${source(`${refs('gt-ktct')}, Ch.4 mục II–III.1; ${refs('lenin-t27')}`)}`,
+    ${source(`${refs('gt-ktct')}, Ch.4 mục II–III.1 (tr.134–136); ${refs('lenin-t27')}`)}`,
   enter(el) {
     // luôn mở ở 1916; người trình bày nhấn ↓ (hoặc bấm vào slide) mới lật sang “ngày nay”
     const year = el.querySelector('[data-year]') as HTMLElement
@@ -100,7 +100,7 @@ export const lenin: Slide = {
   },
   notes: notes(
     'Trong giáo trình Kinh tế chính trị, chương 4, Lênin nêu ra năm đặc điểm của chủ nghĩa tư bản độc quyền. Một, tư bản gom lại ngày càng lớn, sinh ra các tổ chức độc quyền. Hai, vốn ngân hàng và vốn công nghiệp nhập lại thành tư bản tài chính, và một nhóm nhỏ tài phiệt chi phối cả nền kinh tế. Ba, các nước giàu đem vốn ra nước ngoài đầu tư, gọi là xuất khẩu tư bản. Bốn, các tập đoàn lớn chia nhau thị trường thế giới. Năm, các cường quốc chia nhau vùng ảnh hưởng.',
-    'Hơn một trăm năm sau, năm đặc điểm này vẫn còn, chỉ là cách làm đã khác. Thứ nhất, quanh mỗi tập đoàn lớn bây giờ có rất nhiều công ty vừa và nhỏ nhận làm gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói rõ đó vẫn là độc quyền, chỉ ở dạng mới. Thứ hai, ngoài “chế độ tham dự” còn có thêm “chế độ ủy nhiệm”: rất nhiều cổ đông nhỏ giao quyền cho cổ đông lớn và các quỹ đầu tư quyết định thay mình. Thứ ba, xuất khẩu tư bản đổi chiều, đổi người làm và đổi cách làm. Thứ tư, các tập đoàn lớn đẩy mạnh toàn cầu hóa, đi cùng với việc các nước lập khối như EU hay ký hiệp định thương mại tự do; nhóm dùng ý này để nói về chuỗi giá trị. Thứ năm, các nước lớn không đi chiếm thuộc địa như trước nữa, mà dùng “biên giới mềm”.',
+    'Hơn một trăm năm sau, năm đặc điểm này vẫn còn, chỉ là cách làm đã khác, như năm thẻ trên màn hình. Nổi bật nhất là thẻ một: tích tụ và tập trung tư bản sinh ra những kiểu tổ chức độc quyền mới như concern, conglomerate và các tập đoàn xuyên quốc gia; quanh mỗi tập đoàn lại có rất nhiều công ty vừa và nhỏ nhận làm gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói rõ đó vẫn là độc quyền, chỉ ở dạng mới. Bốn thẻ còn lại là chế độ ủy nhiệm, xuất khẩu tư bản đổi chiều, toàn cầu hóa đi cùng khu vực hóa, và “biên giới mềm”; nhóm sẽ nói kỹ ở các slide sau.',
     'Nói ngắn gọn: độc quyền không mất đi, nó chỉ “đổi áo”.',
     'Cách bấm: slide mở ở năm 1916. Nói xong 5 đặc điểm thì nhấn ↓ để lật cả 5 thẻ sang “ngày nay”; nhấn ↓ lần nữa mới sang slide sau. Bấm vào một thẻ để lật riêng thẻ đó.',
   ),
@@ -121,9 +121,9 @@ const NODES: Array<[number, number, string]> = [
 export const phil: Slide = {
   id: 'triet-hoc',
   title: 'Lăng kính triết học',
-  seconds: 65,
+  seconds: 85,
   html: () => `
-    <p class="k"><b>03</b>Nhìn từ triết học Mác – Lênin</p>
+    <p class="k"><b>03</b>Nhìn từ triết học Mác – Lênin · quan điểm nhóm</p>
     <h2 class="h h--m" data-in>Đổi hình thức — <em class="r">chưa đổi chất</em></h2>
     <div class="phil">
       <figure class="phil__panel" data-in>
@@ -139,7 +139,7 @@ export const phil: Slide = {
           ${FORMS.map((f, i) => `<g class="phil__form"><circle cx="${360 + i * 98}" cy="130" r="7" /><text x="${360 + i * 98}" y="${i % 2 ? 100 : 72}" text-anchor="middle">${f}</text></g>`).join('')}
           <text x="560" y="178" text-anchor="middle" class="phil__t phil__t--gold">cùng một chất: CNTB độc quyền</text>
         </svg>
-        <p class="phil__more">Như đun nước: nóng dần, tới 100°C mới sôi. Tư bản gom dần về lượng, tới điểm nút thì có bước nhảy — độc quyền ra đời. TNC, quỹ đầu tư, chuỗi giá trị chỉ to hơn, khác hình thức, vẫn trong cùng một “độ”.</p>
+        <p class="phil__more">Như đun nước: nóng dần, tới 100°C mới sôi. Tư bản gom dần về lượng, tới điểm nút thì có bước nhảy — độc quyền ra đời. TNC, quỹ đầu tư, chuỗi giá trị chỉ to hơn, khác hình thức, vẫn trong cùng một “độ”. <b>Giáo trình KTCT</b> gọi ĐQNN là bước phát triển mới của độc quyền (tr.137) — nhóm hiểu đó là bước nhảy cục bộ, chưa đổi chất CNTB.</p>
       </figure>
       <figure class="phil__panel" data-in>
         <figcaption><b>LLSX – QHSX</b>Sản xuất xã hội hóa toàn cầu ↔ sở hữu, phân phối tập trung.</figcaption>

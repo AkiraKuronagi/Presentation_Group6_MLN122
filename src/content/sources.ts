@@ -20,7 +20,7 @@ export const SOURCES: Source[] = [
   {
     id: 'gt-ktct',
     short: 'Bộ GD&ĐT, 2021a',
-    apa: 'Bộ Giáo dục và Đào tạo. (2021a). <i>Giáo trình Kinh tế chính trị Mác – Lênin (Dành cho bậc đại học hệ không chuyên lý luận chính trị)</i>. Nxb. Chính trị quốc gia Sự thật. (Ch.2 mục I; Ch.4 mục II–III; Ch.6 mục II)',
+    apa: 'Bộ Giáo dục và Đào tạo. (2021a). <i>Giáo trình Kinh tế chính trị Mác – Lênin (Dành cho bậc đại học hệ không chuyên lý luận chính trị)</i>. Nxb. Chính trị quốc gia Sự thật. (Ch.2 mục I; Ch.4 mục II–III, tr.134–151; Ch.6 mục II)',
   },
   {
     id: 'gt-triet',
