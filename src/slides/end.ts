@@ -49,7 +49,7 @@ export const lesson: Slide = {
       </div>
     </div>
     <div class="row row--3 lesson__stats" data-in>
-      <div class="stat stat--red"><div class="stat__v">${count(SKILLS.trainedLabour2025, 1)}<small>%</small></div><div class="stat__l">lao động có bằng, chứng chỉ (2025)</div></div>
+      <div class="stat stat--red"><div class="stat__v">${count(SKILLS.trainedLabour2025, 1)}<small>%</small></div><div class="stat__l">lao động qua đào tạo có bằng, chứng chỉ (ước tính 2025)</div></div>
       <div class="stat stat--blue"><div class="stat__v">${SKILLS.giiRank2026}<small>/139</small></div><div class="stat__l">Đổi mới sáng tạo 2026 · vốn con người &amp; nghiên cứu hạng ${SKILLS.giiHumanCapitalRank2026}</div></div>
       <div class="stat"><div class="stat__v">${count(SKILLS.chipTotalTarget)}</div><div class="stat__l">nhân lực bán dẫn trình độ ĐH trở lên cần đào tạo đến 2030</div></div>
     </div>
