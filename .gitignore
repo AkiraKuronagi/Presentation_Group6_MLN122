@@ -147,3 +147,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Bản in (PDF nội dung thuyết trình) — không đưa lên GitHub
+ban-in/
