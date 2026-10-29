@@ -15,7 +15,7 @@ const TIMELINE = [
 export const softBorder: Slide = {
   id: 'bien-gioi-mem',
   title: 'Biên giới mềm',
-  seconds: 60,
+  seconds: 65,
   gl: { scene: 'globe', mode: 'tariff', x: 1380, y: 560, p: 1, speed: 0.45 },
   labels: [
     { at: '37.77,-122.42', html: '<b>Hoa Kỳ</b>', cls: 'hub' },
@@ -34,8 +34,8 @@ export const softBorder: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs(...TIMELINE.map((e) => e.src), 'treasury-2022', 'vgp-tariff20', 'vgp-ieepa', 'vgp-dam-phan', 'nq59')}`)}`,
   notes: notes(
-    'Thời thuộc địa kiểu cũ đã qua. Nhưng giáo trình nói các nước tư bản lớn chuyển sang “chiến lược biên giới mềm”, tức là mở rộng ảnh hưởng kinh tế bằng thuế, bằng kiểm soát công nghệ và bằng quy tắc xuất xứ, chứ không cần đem quân đi chiếm đất.',
-    'Các mốc trên màn hình cho thấy rất rõ: Mỹ siết bán chip tiên tiến từ tháng 10 năm 2022; tháng 4 năm 2025 công bố thuế đối ứng 46% với hàng Việt Nam, tháng 7 giảm còn 20%; tháng 2 năm 2026 chuyển sang mức chung 10% theo Mục 122 trong 150 ngày. Từ ngày 24 tháng 7 năm 2026, Mỹ áp thêm thuế 12,5% theo Mục 301; thiết bị điện tử, sản phẩm công nghệ cao, AI và bán dẫn được miễn, còn dệt may, cao su, gỗ thì không.',
+    'Thời thuộc địa kiểu cũ đã qua. Nhưng giáo trình nói các nước tư bản lớn chuyển sang “biên giới mềm”, tức là mở rộng ảnh hưởng bằng thuế, bằng việc giữ chặt công nghệ và bằng quy định về nguồn gốc hàng hóa, chứ không cần đem quân đi chiếm đất.',
+    'Các mốc trên màn hình cho thấy rất rõ: Mỹ siết bán chip đời mới từ tháng 10 năm 2022; tháng 4 năm 2025 công bố thuế đối ứng 46% với hàng Việt Nam, tháng 7 giảm còn 20%; tháng 2 năm 2026 chuyển sang mức chung 10% trong 150 ngày, theo Mục 122 của luật thương mại Mỹ. Từ ngày 24 tháng 7 năm 2026, Mỹ đánh thêm 12,5% theo Mục 301; thiết bị điện tử, sản phẩm công nghệ cao, AI và chip được miễn, còn dệt may, cao su, gỗ thì không.',
     'Trước những thay đổi đó, Việt Nam vừa hợp tác vừa đấu tranh. Theo Bộ Công Thương, từ tháng 4 năm 2025 đến tháng 10 năm 2026, hai nước đã qua bảy phiên đàm phán chính thức. Việt Nam cũng tìm thêm thị trường và đối tác khác để không phụ thuộc vào một nơi.',
     'Nếu bị hỏi về mức 15%: Báo Chính phủ ngày 23/2/2026 có đưa tin ông Trump tuyên bố 15%, nhưng theo Bộ Công Thương mức áp dụng là 10% theo Mục 122. Giữ giọng trung lập, chỉ nói sự kiện và nguồn.',
   ),
@@ -45,7 +45,7 @@ export const softBorder: Slide = {
 export const stateMono: Slide = {
   id: 'doc-quyen-nha-nuoc',
   title: 'Độc quyền nhà nước',
-  seconds: 70,
+  seconds: 75,
   bg: photo('wafer', { dim: 0.84 }),
   html: () => `
     <div class="sm">
@@ -72,9 +72,9 @@ export const stateMono: Slide = {
     <p class="distinct" data-in style="bottom:104px"><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15); thu hút đầu tư bằng hạ tầng, con người, thủ tục — không đua nhau giảm thuế.</p>
     ${source(`${refs('gt-ktct')}, Ch.4 mục II.2, III.2; ${refs('chips-act', 'wir2026', 'eu-chips', 'oecd-pillar2', 'nq107', 'nd236', 'hp-2013')}`)}`,
   notes: notes(
-    'Độc quyền nhà nước trong chủ nghĩa tư bản là khi các tập đoàn độc quyền tư nhân bắt tay với nhà nước tư sản. Bây giờ cái bắt tay đó thể hiện qua ba đường: người qua lại giữa chính phủ và tập đoàn, nhà nước nắm cổ phần, và nhà nước dùng chính sách để điều tiết.',
+    'Độc quyền nhà nước trong chủ nghĩa tư bản là khi các tập đoàn độc quyền tư nhân bắt tay với nhà nước tư sản. Bây giờ cái bắt tay đó thể hiện qua ba đường: người qua lại giữa chính phủ và tập đoàn, nhà nước nắm cổ phần, và nhà nước dùng chính sách để can thiệp.',
     'Ngành chip là ví dụ rõ nhất. Đạo luật CHIPS của Mỹ dành 52,7 tỷ USD hỗ trợ ngành bán dẫn. Chính phủ Mỹ nắm 10% cổ phần Intel. Đạo luật Chip của châu Âu huy động hơn 43 tỷ euro, cả vốn nhà nước lẫn vốn tư nhân. Trước đó, trong khủng hoảng 2008–2009, nhà nước Mỹ đã bỏ tiền cứu các tập đoàn như AIG và Citigroup.',
-    'Cần nói rõ: kinh tế nhà nước ở Việt Nam giữ vai trò chủ đạo trong nền kinh tế thị trường định hướng xã hội chủ nghĩa, theo Điều 51 Hiến pháp 2013. Cái này khác về bản chất với độc quyền nhà nước tư bản. Việt Nam cũng chủ động thích nghi: từ năm 2024 áp dụng thuế tối thiểu toàn cầu 15% theo Nghị quyết 107 của Quốc hội, và thu hút đầu tư bằng hạ tầng, con người, thủ tục, chứ không đua nhau giảm thuế.',
+    'Cần nói rõ: kinh tế nhà nước ở Việt Nam giữ vai trò chủ đạo trong nền kinh tế thị trường định hướng xã hội chủ nghĩa, theo Điều 51 Hiến pháp 2013. Cái này khác hẳn về bản chất với độc quyền nhà nước tư bản. Việt Nam cũng chủ động thích nghi: từ năm 2024 áp dụng thuế tối thiểu toàn cầu 15%, tức là tập đoàn lớn đặt ở đâu cũng phải chịu thuế ít nhất 15%, theo Nghị quyết 107 của Quốc hội; và thu hút đầu tư bằng hạ tầng, con người, thủ tục, chứ không đua nhau giảm thuế.',
     'Nếu bị hỏi: không đánh đồng doanh nghiệp nhà nước Việt Nam với độc quyền nhà nước tư bản.',
   ),
 }

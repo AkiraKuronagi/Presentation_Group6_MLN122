@@ -49,7 +49,7 @@ const FEATURES = [
 export const lenin: Slide = {
   id: 'lenin',
   title: 'Từ Lênin đến hôm nay',
-  seconds: 75,
+  seconds: 80,
   bg: photo('factory-1910', { dim: 0.82 }),
   html: () => `
     <div class="lenin__head">
@@ -99,8 +99,8 @@ export const lenin: Slide = {
     })
   },
   notes: notes(
-    'Trong giáo trình Kinh tế chính trị, chương 4, Lênin nêu ra năm đặc điểm của chủ nghĩa tư bản độc quyền. Một, tư bản gom lại ngày càng lớn, sinh ra các tổ chức độc quyền. Hai, vốn ngân hàng và vốn công nghiệp nhập lại thành tư bản tài chính, và một nhóm nhỏ tài phiệt chi phối cả nền kinh tế. Ba, các nước giàu đem vốn ra nước ngoài đầu tư, gọi là xuất khẩu tư bản. Bốn, các tập đoàn lớn chia nhau thị trường thế giới. Năm, các cường quốc chia nhau vùng ảnh hưởng.',
-    'Hơn một trăm năm sau, năm đặc điểm này vẫn còn, chỉ là cách làm đã khác, như năm thẻ trên màn hình. Nổi bật nhất là thẻ một: tích tụ và tập trung tư bản sinh ra những kiểu tổ chức độc quyền mới như concern, conglomerate và các tập đoàn xuyên quốc gia; quanh mỗi tập đoàn lại có rất nhiều công ty vừa và nhỏ nhận làm gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói rõ đó vẫn là độc quyền, chỉ ở dạng mới. Bốn thẻ còn lại là chế độ ủy nhiệm, xuất khẩu tư bản đổi chiều, toàn cầu hóa đi cùng khu vực hóa, và “biên giới mềm”; nhóm sẽ nói kỹ ở các slide sau.',
+    'Trong giáo trình Kinh tế chính trị, chương 4, Lênin nêu ra năm đặc điểm của chủ nghĩa tư bản độc quyền. Một, tư bản gom lại ngày càng lớn, sinh ra các công ty độc quyền. Hai, tiền của ngân hàng và tiền của nhà máy nhập lại làm một, gọi là tư bản tài chính, và một nhóm nhỏ trùm tài chính nắm cả nền kinh tế. Ba, các nước giàu đem tiền ra nước ngoài đầu tư, gọi là xuất khẩu tư bản. Bốn, các tập đoàn lớn chia nhau thị trường thế giới. Năm, các nước lớn chia nhau vùng ảnh hưởng.',
+    'Hơn một trăm năm sau, năm đặc điểm này vẫn còn, chỉ là cách làm đã khác, như năm thẻ trên màn hình. Đáng chú ý nhất là thẻ một: tư bản gom lại càng lớn thì càng sinh ra những kiểu công ty độc quyền mới, như concern, conglomerate và các tập đoàn xuyên quốc gia; quanh mỗi tập đoàn lại có rất nhiều công ty vừa và nhỏ nhận làm gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói rõ đó vẫn là độc quyền, chỉ ở dạng mới. Bốn thẻ còn lại là chế độ ủy nhiệm, xuất khẩu tư bản đổi chiều, các nước vừa mở cửa ra thế giới vừa lập khối với nhau, và “biên giới mềm”; nhóm sẽ nói kỹ ở các slide sau.',
     'Nói ngắn gọn: độc quyền không mất đi, nó chỉ “đổi áo”.',
     'Cách bấm: slide mở ở năm 1916. Nói xong 5 đặc điểm thì nhấn ↓ để lật cả 5 thẻ sang “ngày nay”; nhấn ↓ lần nữa mới sang slide sau. Bấm vào một thẻ để lật riêng thẻ đó.',
   ),
@@ -121,7 +121,7 @@ const NODES: Array<[number, number, string]> = [
 export const phil: Slide = {
   id: 'triet-hoc',
   title: 'Lăng kính triết học',
-  seconds: 85,
+  seconds: 90,
   html: () => `
     <p class="k"><b>03</b>Nhìn từ triết học Mác – Lênin · quan điểm nhóm</p>
     <h2 class="h h--m" data-in>Đổi hình thức — <em class="r">chưa đổi chất</em></h2>
