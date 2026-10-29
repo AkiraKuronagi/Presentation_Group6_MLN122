@@ -56,19 +56,6 @@
 .hud__count {
   opacity: 0.7;
 }
-.keyhint {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid currentColor;
-  font-family: var(--f-mono);
-  font-size: 12px;
-  opacity: 0.65;
-  transition: opacity 0.2s;
-}
-.keyhint:hover {
-  opacity: 1;
-}
 .clock {
   font-size: var(--t-small);
   letter-spacing: 0.06em;

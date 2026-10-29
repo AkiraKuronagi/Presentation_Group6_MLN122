@@ -44,7 +44,6 @@ export function mountUI(engine: Deck, opts: UIOptions) {
     <nav class="rail" aria-label="Mục lục" data-ui="rail"></nav>
     <div class="hud hud--br mono">
       <span class="clock" data-ui="clock" hidden></span>
-      <button class="keyhint" data-ui="help-btn" aria-label="Phím tắt">?</button>
     </div>
     <aside class="notes" data-ui="notes" aria-live="polite" hidden>
       <div class="notes__head mono"><span data-ui="notes-label"></span><span data-ui="notes-time"></span></div>
@@ -185,7 +184,6 @@ export function mountUI(engine: Deck, opts: UIOptions) {
     const show = force ?? el.hidden
     el.hidden = !show
   }
-  $('help-btn').addEventListener('click', () => toggle(help))
   help.addEventListener('click', (e) => {
     if (e.target === help) toggle(help, false)
   })
