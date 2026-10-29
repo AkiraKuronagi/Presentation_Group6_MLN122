@@ -15,7 +15,7 @@ const TIMELINE = [
 export const softBorder: Slide = {
   id: 'bien-gioi-mem',
   title: 'Biên giới mềm',
-  seconds: 40,
+  seconds: 50,
   gl: { scene: 'globe', mode: 'tariff', x: 1380, y: 560, p: 1, speed: 0.45 },
   labels: [
     { at: '37.77,-122.42', html: '<b>Hoa Kỳ</b>', cls: 'hub' },
@@ -33,10 +33,10 @@ export const softBorder: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs(...TIMELINE.map((e) => e.src), 'treasury-2022', 'vgp-tariff20', 'vgp-ieepa', 'vgp-dam-phan', 'nq59')}`)}`,
   notes: notes(
-    'Giáo trình: thực dân cũ sụp đổ, nhưng cường quốc tư bản dùng “chiến lược biên giới mềm”, bành trướng “biên giới kinh tế”.',
-    'Dòng thời gian từ nguồn chính thức: friend-shoring (4/2022), kiểm soát chip (10/2022), thuế đối ứng 46% (4/2025) → 20% (Sắc lệnh 31/7/2025) → Tuyên bố chung khuôn khổ Hiệp định (26/10/2025) → ngừng thu thuế đối ứng sau phán quyết của Tòa án Tối cao Mỹ, áp 10% theo Mục 122 (24/02/2026, theo Bộ Công Thương; nếu bị hỏi về mức 15%: Báo Chính phủ 23/02/2026 đưa tin ông Trump tuyên bố 15%) → 12,5% theo Mục 301 (24/7/2026, điện tử được miễn) → 7 phiên đàm phán (10/2026).',
-    'Việt Nam ứng xử theo NQ 59: vừa hợp tác vừa đấu tranh; Đại hội XIII: tránh lệ thuộc vào một thị trường, một đối tác.',
-    'Giữ giọng trung lập, trình bày sự kiện và nguồn; không bình luận cảm tính về quốc gia nào.',
+    'Thời thuộc địa kiểu cũ đã qua. Nhưng giáo trình nói các nước tư bản lớn chuyển sang “chiến lược biên giới mềm”, tức là mở rộng ảnh hưởng kinh tế bằng thuế, bằng kiểm soát công nghệ và bằng quy tắc xuất xứ, chứ không cần đem quân đi chiếm đất.',
+    'Mấy năm gần đây thấy rất rõ. Tháng 10 năm 2022, Mỹ siết bán chip tiên tiến ra nước ngoài. Tháng 4 năm 2025, Mỹ công bố đánh thuế đối ứng 46% lên hàng Việt Nam; tháng 7 năm 2025 giảm còn 20%. Tháng 2 năm 2026, Mỹ ngừng thu thuế đối ứng, thay bằng mức chung 10% theo Mục 122 trong 150 ngày. Tháng 7 năm 2026, Mỹ áp mức 12,5% theo Mục 301, riêng hàng điện tử được miễn.',
+    'Trước những thay đổi đó, Việt Nam vừa hợp tác vừa đấu tranh, qua bảy vòng đàm phán, đồng thời tìm thêm thị trường và đối tác khác để không phụ thuộc vào một nơi.',
+    'Nếu bị hỏi về mức 15%: Báo Chính phủ ngày 23/2/2026 có đưa tin ông Trump tuyên bố 15%, nhưng theo Bộ Công Thương mức áp dụng là 10% theo Mục 122. Giữ giọng trung lập, chỉ nói sự kiện và nguồn.',
   ),
 }
 
@@ -44,7 +44,7 @@ export const softBorder: Slide = {
 export const stateMono: Slide = {
   id: 'doc-quyen-nha-nuoc',
   title: 'Độc quyền nhà nước',
-  seconds: 50,
+  seconds: 65,
   bg: photo('wafer', { dim: 0.84 }),
   html: () => `
     <div class="sm">
@@ -70,9 +70,9 @@ export const stateMono: Slide = {
     <p class="distinct" data-in><b>Phân biệt:</b> kinh tế nhà nước VN giữ vai trò chủ đạo (Hiến pháp 2013, Điều 51) — khác bản chất với ĐQNN tư bản. <b>VN chủ động:</b> thuế tối thiểu toàn cầu 15% từ 2024 (NQ 107/2023/QH15).</p>
     ${source(`${refs('gt-ktct')}, Ch.4 mục II.2, III.2; ${refs('chips-act', 'wir2026', 'eu-chips', 'oecd-pillar2', 'nq107', 'nd236', 'hp-2013')}`)}`,
   notes: notes(
-    'Bản chất (Ch.4 mục II.2): kết hợp sức mạnh của tổ chức độc quyền tư nhân với sức mạnh nhà nước tư sản, phục vụ tư bản độc quyền. Ba biểu hiện mới: quan hệ nhân sự (cơ chế thỏa hiệp), sở hữu nhà nước, công cụ điều tiết.',
-    'Bằng chứng ở các nền kinh tế TBCN phát triển: Mỹ nắm 10% Intel (UNCTAD 2026); gói cứu AIG, Citigroup (giáo trình); CHIPS Act 52,7 tỷ USD; EU Chips Act >43 tỷ EUR công và tư; 229 biện pháp chính sách đầu tư năm 2025.',
-    'Việt Nam chủ động: Nghị quyết 107/2023/QH15 áp thuế TNDN bổ sung theo quy định chống xói mòn cơ sở thuế toàn cầu, hiệu lực 1/1/2024; Nghị định 236/2025/NĐ-CP hướng dẫn — cạnh tranh bằng hạ tầng, nhân lực, thể chế thay vì “chạy đua xuống đáy” bằng ưu đãi thuế.',
-    'Phân biệt rõ: kinh tế nhà nước ở Việt Nam giữ vai trò chủ đạo (Hiến pháp Điều 51) — khác bản chất với độc quyền nhà nước TBCN. Không đồng nhất DNNN Việt Nam với ĐQNN.',
+    'Độc quyền nhà nước trong chủ nghĩa tư bản là khi các tập đoàn độc quyền tư nhân bắt tay với nhà nước tư sản. Bây giờ cái bắt tay đó thể hiện qua ba đường: người qua lại giữa chính phủ và tập đoàn, nhà nước nắm cổ phần, và nhà nước dùng chính sách để điều tiết.',
+    'Ngành chip là ví dụ rõ nhất. Đạo luật CHIPS của Mỹ dành 52,7 tỷ USD hỗ trợ ngành bán dẫn. Chính phủ Mỹ nắm 10% cổ phần Intel. Đạo luật Chip của châu Âu huy động hơn 43 tỷ euro, cả vốn nhà nước lẫn vốn tư nhân. Trước đó, trong khủng hoảng 2008–2009, nhà nước Mỹ đã bỏ tiền cứu các tập đoàn như AIG và Citigroup.',
+    'Cần nói rõ: kinh tế nhà nước ở Việt Nam giữ vai trò chủ đạo trong nền kinh tế thị trường định hướng xã hội chủ nghĩa, theo Điều 51 Hiến pháp 2013. Cái này khác về bản chất với độc quyền nhà nước tư bản. Việt Nam cũng chủ động thích nghi: từ năm 2024 áp dụng thuế tối thiểu toàn cầu 15% theo Nghị quyết 107 của Quốc hội, và thu hút đầu tư bằng hạ tầng, con người, thủ tục, chứ không đua nhau giảm thuế.',
+    'Nếu bị hỏi: không đánh đồng doanh nghiệp nhà nước Việt Nam với độc quyền nhà nước tư bản.',
   ),
 }

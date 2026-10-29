@@ -40,10 +40,9 @@ export const towers: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.1; ${refs('wir2026', 'apple-10k', 'blackrock', 'wb-gdp')}`)}`,
   notes: notes(
-    'Bốn tháp cùng một thước đo, mỗi lát = GDP cả Việt Nam năm 2025 (514,7 tỷ USD). Tháp Việt Nam chỉ là một lát bên cạnh doanh thu của 100 tập đoàn lớn nhất hay tài sản một quỹ quản lý.',
-    'Biểu hiện mới 1: tập đoàn xuyên quốc gia và “hệ thống gia công” — giáo trình viết: “Đây cũng chính là biểu hiện của độc quyền dưới một dạng mới”. Nhóm mở sách giấy, ghi số trang trước khi thuyết trình.',
-    'Biểu hiện mới 2: “chế độ tham dự” được bổ sung bằng “chế độ ủy nhiệm” — cổ đông nhỏ ủy nhiệm cho đại cổ đông, định chế tài chính thay mặt quyết định. BlackRock quản lý hộ 14,0 nghìn tỷ USD (tiền của nhiều nhà đầu tư, kể cả quỹ hưu trí — không phải vốn sở hữu), gấp ~27 lần GDP Việt Nam (tự tính).',
-    'Nói rõ: tài sản quản lý là “tồn”, GDP là “dòng”. Apple chỉ minh họa mô hình thuê ngoài, theo chính báo cáo 10-K của công ty; không quy chụp doanh nghiệp cụ thể.',
+    'Bốn cái tháp trên màn hình dùng chung một thước đo: mỗi tầng tháp bằng cả GDP của Việt Nam năm 2025, khoảng 514,7 tỷ USD. Doanh thu một năm của Apple đã khoảng 416,2 tỷ USD, gần bằng những gì cả nước mình làm ra trong một năm. 100 tập đoàn phi tài chính lớn nhất thế giới thu về khoảng 12.677 tỷ USD. Riêng quỹ BlackRock đang giữ hộ khoảng 14.042 tỷ USD tiền của nhà đầu tư, gấp khoảng 27 lần GDP Việt Nam.',
+    'Lưu ý một chút: tiền quỹ giữ hộ là số tích góp lại, còn GDP là số làm ra trong một năm, nên đặt cạnh nhau chỉ để dễ hình dung độ lớn. Hai con số này ứng với hai biểu hiện mới đầu tiên: tập đoàn lớn cùng mạng lưới gia công của nó, và chế độ ủy nhiệm, khi vài quỹ lớn cầm tiền của rất nhiều nhà đầu tư.',
+    'Nếu bị hỏi về Apple: nhóm chỉ lấy Apple làm ví dụ cho cách thuê ngoài, theo chính báo cáo của công ty, không đánh giá riêng doanh nghiệp nào. Con số gấp 27 lần GDP là nhóm tự tính.',
   ),
 }
 
@@ -94,10 +93,8 @@ export const fdi: Slide = {
     ${source(refs('nso-series', 'nso-fdi-2025', 'fia-2025', 'gt-ktct') + ', Ch.4 mục III.1')}`
   },
   notes: notes(
-    'Biểu hiện mới 3 theo giáo trình có 4 ý: đổi chiều (chủ yếu giữa các nước phát triển), đổi chủ thể (TNC, FDI), đổi hình thức (BOT, BT, đan xen xuất khẩu hàng hóa), và đề cao nguyên tắc cùng có lợi.',
-    'Trên quả địa cầu: cung vàng là dòng vốn từ Hàn Quốc, Singapore, Nhật Bản, Đài Loan (TQ), Hồng Kông (TQ), Trung Quốc… vào Việt Nam. Nhóm phân tích quy luật vận động của dòng vốn, không gán chế độ chính trị cho từng đối tác.',
-    'Vốn FDI thực hiện tăng gần gấp đôi: 14,5 tỷ USD (2015) → 27,62 tỷ USD (2025). 9 tháng 2026 vốn đăng ký đạt 50,36 tỷ USD, tăng 76,4%.',
-    'Lũy kế đến hết 2025: 45.416 dự án, 529,6 tỷ USD; Hàn Quốc dẫn đầu (94,6 tỷ USD), Singapore thứ hai (89,8 tỷ USD). 82,8% vốn thực hiện 2025 vào chế biến, chế tạo — tức khâu sản xuất của chuỗi giá trị.',
+    'Biểu hiện mới thứ ba là xuất khẩu tư bản, tức là đem vốn ra nước ngoài đầu tư. Giáo trình nói nó thay đổi ở ba chỗ. Đổi chiều: giờ chủ yếu là các nước giàu đầu tư qua lại với nhau. Đổi người làm: chủ yếu là các tập đoàn xuyên quốc gia. Đổi cách làm: đầu tư đi cùng với bán hàng hóa và dịch vụ. Và chuyện hai bên cùng có lợi được coi trọng hơn.',
+    'Ở Việt Nam, vốn chủ yếu đến từ Hàn Quốc, Singapore, Nhật Bản, Đài Loan, Hồng Kông và Trung Quốc. Vốn FDI giải ngân tăng gần gấp đôi, từ 14,5 tỷ USD năm 2015 lên 27,62 tỷ USD năm 2025, cao nhất trong năm năm. Tính đến hết năm 2025, Việt Nam có 45.416 dự án, tổng vốn đăng ký 529,6 tỷ USD. Và 82,8% số vốn giải ngân năm 2025 đổ vào nhà máy chế biến, chế tạo, tức là khâu sản xuất trong chuỗi.',
   ),
 }
 
@@ -110,7 +107,7 @@ const bal = (label: string, v: number, max: number) =>
 export const fdiShare: Slide = {
   id: 'fdi-xuat-khau',
   title: 'FDI trong xuất khẩu',
-  seconds: 45,
+  seconds: 55,
   bg: photo('industrial-park', { dim: 0.8 }),
   html: () => `
     <p class="k"><b>06</b>Khu vực FDI trong nền kinh tế</p>
@@ -145,9 +142,9 @@ export const fdiShare: Slide = {
     gsap.fromTo(el.querySelectorAll('.bal__track i'), { scaleX: 0 }, { scaleX: 1, duration: reduceMotion ? 0 : 1.1, delay: 0.7, stagger: 0.12, ease: 'expo.out' })
   },
   notes: notes(
-    'Giai đoạn 2015–2024, khu vực FDI chiếm khoảng 69–74% xuất khẩu; năm 2025 vọt lên 77,3% và 9 tháng 2026 là 80,7%. “Made in Vietnam” phần lớn là hàng của doanh nghiệp vốn nước ngoài.',
-    'Hai khu vực, hai cán cân: năm 2025 khu vực FDI xuất siêu 49,46 tỷ USD, khu vực trong nước nhập siêu 29,43 tỷ USD. 9 tháng 2026, khu vực trong nước nhập siêu 34,28 tỷ USD — vượt cả năm 2025; thặng dư khu vực FDI thu hẹp còn 14,86 tỷ USD.',
-    'Đánh giá lịch sử – cụ thể: FDI đóng góp ~20% GDP, ~50% giá trị sản xuất công nghiệp, ~5 triệu việc làm (Nguyễn Duy Quý & Đào Thanh Hương, 2026) — vai trò tích cực thật. Nhưng Cục Thống kê đánh giá GTGT nội địa trong nhiều dự án FDI còn thấp, phần lớn ở khâu gia công, lắp ráp.',
-    'Không quy chụp FDI là “bóc lột”; vấn đề là vị trí của ta trong chuỗi. Chuyển ý: “Vậy cụ thể, trong một sản phẩm, Việt Nam giữ lại bao nhiêu?”',
+    'Doanh nghiệp vốn nước ngoài đang nắm hơn ba phần tư hàng xuất khẩu của Việt Nam: 77,3% năm 2025, và 80,7% trong chín tháng đầu năm 2026. Nghĩa là phần lớn hàng ghi “Made in Vietnam” là do công ty nước ngoài làm ra.',
+    'Hai bên còn ngược nhau về chuyện mua bán với nước ngoài. Năm 2025, khối FDI bán ra nhiều hơn mua vào 49,46 tỷ USD, còn doanh nghiệp trong nước thì mua vào nhiều hơn bán ra 29,43 tỷ USD. Chín tháng năm 2026, doanh nghiệp trong nước nhập siêu 34,28 tỷ USD, còn phần dư của khối FDI giảm xuống 14,86 tỷ USD.',
+    'Công bằng mà nói, FDI có đóng góp thật: khoảng 20% GDP, khoảng một nửa giá trị sản xuất công nghiệp, và khoảng 5 triệu việc làm. Nhưng theo Cục Thống kê, phần giá trị ở lại trong nước của nhiều dự án FDI còn thấp, và họ còn ít làm ăn với doanh nghiệp Việt. Vấn đề không phải FDI tốt hay xấu, mà là Việt Nam đang đứng ở khâu nào trong chuỗi.',
+    'Nếu bị hỏi: nhóm không nói FDI là “bóc lột”; vấn đề là vị trí của mình trong chuỗi.',
   ),
 }

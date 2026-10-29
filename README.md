@@ -5,7 +5,7 @@ Bộ slide web toàn màn hình (18 slide, mỗi slide đúng một khung hình 
 
 - Lý luận: Giáo trình KTCT Mác – Lênin (Bộ GD&ĐT, 2021) Ch.4 mục III; phụ trợ Ch.6 mục II. Lăng kính phụ: Giáo trình Triết học (2021) — lượng – chất, LLSX – QHSX.
 - Minh chứng bắt buộc: số liệu FDI, xuất khẩu, tỷ lệ giá trị gia tăng nội địa (điện tử + dệt may) từ Cục Thống kê, cơ quan nhà nước, tổ chức thuộc LHQ; văn kiện Đảng.
-- 18 slide · ít chữ, nhiều mô hình 3D và ảnh thật · ~16–17 phút + phản biện (Rubric 2.1: không vượt 20 phút).
+- 18 slide · ít chữ, nhiều mô hình 3D và ảnh thật · ~15–16 phút + phản biện (Rubric 2.1: không vượt 20 phút).
 
 ## Trình chiếu ở lớp (không cần mạng)
 

@@ -32,10 +32,8 @@ export const containers: Slide = {
     </div>
     ${source(`${refs('nso-dientu', 'tttctt-2026', 'nso-2025')} · số liệu chưa gồm nhóm điện thoại`)}`,
   notes: notes(
-    'Biểu hiện mới thứ 4 (giáo trình): toàn cầu hóa song hành khu vực hóa, do tư bản độc quyền quốc tế chi phối. Nhóm vận dụng: phân chia thị trường hôm nay diễn ra qua <b>chuỗi giá trị toàn cầu</b>.',
-    'Số liệu Cục Thống kê, nhóm máy vi tính – điện tử – linh kiện (chưa gồm điện thoại): xuất khẩu 107,7 tỷ USD năm 2025, nhưng nhập khẩu cùng nhóm 150,7 tỷ USD. 2016: xuất 18,5 – nhập 27,8; 2024: xuất 72,6 – nhập 107,1.',
-    'Tư liệu sản xuất chiếm 93,6% kim ngạch nhập khẩu năm 2025 — phù hợp với mô hình nhập linh kiện, nguyên liệu để lắp ráp, xuất khẩu (tỷ trọng này cũng là đặc điểm chung của nền kinh tế đang công nghiệp hóa).',
-    'Ý nghĩa: kim ngạch lớn chưa chắc phần giữ lại lớn.',
+    'Biểu hiện mới thứ tư, nhóm đem áp vào chuỗi giá trị toàn cầu, và ngành điện tử là ví dụ dễ thấy nhất. Năm 2025, máy tính, đồ điện tử và linh kiện Việt Nam xuất đi 107,7 tỷ USD, nhưng phải nhập về tới 150,7 tỷ USD. Chuyện nhập nhiều hơn xuất đã có từ năm 2016, khi xuất 18,5 và nhập 27,8 tỷ USD; đến năm 2024 là xuất 72,6 và nhập 107,1 tỷ USD.',
+    'Trong toàn bộ hàng nhập khẩu của cả nước năm 2025, có 93,6% là máy móc, nguyên liệu và linh kiện để sản xuất. Tức là mình nhập đồ về, lắp lại rồi xuất đi. Bán được nhiều tiền chưa chắc đã giữ lại được nhiều.',
   ),
 }
 
@@ -53,7 +51,7 @@ const LAYERS: Array<{ key: string; name: string; tag: string; v: 'hi' | 'lo' | '
 export const phoneExplode: Slide = {
   id: 'tach-lop',
   title: 'Tách lớp điện thoại',
-  seconds: 30,
+  seconds: 35,
   gl: { scene: 'phone', mode: 'chain', x: 1180, y: 560, p: 0.52, speed: 0.3 },
   labels: LAYERS.map((l, i) => ({ at: `${l.key}@${(-0.42 + i * 0.14).toFixed(2)}`, minP: 0.3, html: `${l.name}<span class="tag ${l.v}">${l.tag}</span>` })),
   html: () => `
@@ -71,9 +69,8 @@ export const phoneExplode: Slide = {
     </div>
     ${source(`${refs('wir2013')} (ước tính); ${refs('apple-10k')} — minh họa mô hình thuê ngoài`)}`,
   notes: notes(
-    'UNCTAD ước tính (2013): khoảng 80% thương mại thế giới gắn với chuỗi giá trị do TNC điều phối.',
-    'Ví dụ trích từ báo cáo 10-K của Apple (nộp cho SEC): đối tác gia công ở nhiều nước, có Việt Nam; phần cứng gần như được lắp ráp hoàn toàn ở châu Á — minh họa mô hình thuê ngoài, KHÔNG đánh giá doanh nghiệp cụ thể. Giáo trình gọi “hệ thống gia công” là biểu hiện của độc quyền dưới dạng mới.',
-    'Nhãn vàng: khâu công nghệ lõi; nhãn đỏ: gia công, lắp ráp.',
+    'Nếu tháo một chiếc điện thoại ra từng lớp, ta sẽ thấy mỗi linh kiện đến từ một nước khác nhau. UNCTAD ước tính khoảng 80% hàng hóa buôn bán trên thế giới đi qua các chuỗi do tập đoàn xuyên quốc gia điều khiển.',
+    'Chính báo cáo hằng năm Apple gửi cơ quan chứng khoán Mỹ cũng ghi là họ thuê các đối tác ở nhiều nước làm gia công, trong đó có Việt Nam. Đây đúng là cái giáo trình gọi là “hệ thống gia công”. Phần khó như chip, màn hình, cảm biến nằm ở một bên; phần gia công, lắp ráp, đóng gói nằm ở bên kia.',
   ),
 }
 
@@ -81,7 +78,7 @@ export const phoneExplode: Slide = {
 export const phoneBlueprint: Slide = {
   id: 'ban-ve',
   title: 'Giá trị nằm ở tri thức',
-  seconds: 25,
+  seconds: 40,
   gl: { scene: 'phone', mode: 'chain', x: 1180, y: 560, p: 0.76, speed: 0.22 },
   labels: [
     { at: 'board@0.3', minP: 0.6, html: '<b class="hi">Thiết kế chip · bằng sáng chế</b><i>lao động phức tạp · độc quyền công nghệ</i>' },
@@ -100,9 +97,8 @@ export const phoneBlueprint: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.2 mục I (lao động phức tạp), Ch.4 mục II.1 (giá cả, lợi nhuận độc quyền); ${refs('apple-10k')}`)}`,
   notes: notes(
-    'Nhấn mạnh khác biệt: giá trị do lao động trên toàn chuỗi TẠO RA (kể cả lắp ráp); nhưng phần giá trị gia tăng mỗi khâu THU VỀ thì dồn về bên nắm công nghệ, thương hiệu.',
-    'Hai lý do theo lý luận: (1) R&D, thiết kế là lao động phức tạp, tạo nhiều giá trị hơn trong cùng thời gian; (2) độc quyền cho phép “bán cao, mua thấp” → lợi nhuận độc quyền, phân phối lại giá trị thặng dư về hai đầu.',
-    'Biên lợi nhuận gộp 46,9% lấy từ báo cáo 10-K của Apple — minh họa mức thu về của khâu thiết kế, thương hiệu.',
+    'Ở đây phải tách hai chuyện cho rõ. Giá trị là do người lao động trên cả chuỗi làm ra, kể cả công nhân lắp ráp. Nhưng tiền thu về thì lại dồn về phía công ty nắm công nghệ và thương hiệu.',
+    'Theo kinh tế chính trị thì có hai lý do. Một, nghiên cứu, thiết kế là lao động phức tạp: cùng một giờ làm nhưng tạo ra nhiều giá trị hơn. Hai, ai nắm độc quyền thì bán được giá cao, mua được giá thấp, thu lợi nhuận độc quyền và kéo phần giá trị thặng dư về phía mình. Năm tài chính 2025, cứ 100 đồng doanh thu thì Apple còn lãi gộp 46,9 đồng. Con số đó cho thấy khâu thiết kế và thương hiệu thu về nhiều cỡ nào.',
   ),
 }
 
@@ -117,7 +113,7 @@ const smilePath = () =>
 export const answer: Slide = {
   id: 'duong-cong',
   title: 'Đường cong nụ cười',
-  seconds: 50,
+  seconds: 60,
   bg: photo('electronics', { dim: 0.86 }),
   html: () => `
     <div class="answer">
@@ -146,10 +142,8 @@ export const answer: Slide = {
     </div>
     ${source(`ước tính của nhóm từ ${refs('nso-dientu', 'qd1018')}; khái niệm “đường cong nụ cười”: Stan Shih (~1992), ${refs('gvc2017')}`)}`,
   notes: notes(
-    'Trả lời câu hỏi dẫn đường “Việt Nam đứng ở đâu?”: trong 100 USD một thiết bị điện tử “Made in Vietnam” xuất khẩu, phần <b>giá trị gia tăng</b> ở lại Việt Nam ước tính <b>dưới 20 USD</b>.',
-    'Căn cứ: Cục Thống kê (Việt Nam chủ yếu lắp ráp, linh kiện phần lớn nhập khẩu) và QĐ 1018/QĐ-TTg (mục tiêu GTGT tại Việt Nam của điện tử – bán dẫn đạt 10–15% vào 2030, tức hiện nay còn thấp hơn). Đây là ước tính có căn cứ, không phải số đo trực tiếp. Phân biệt nội địa hóa (đầu vào mua trong nước) với GTGT nội địa.',
-    'Đường cong nụ cười (Stan Shih, ~1992; WTO – World Bank – OECD, 2017): biểu diễn phần giá trị gia tăng mỗi khâu THU VỀ (đo bằng giá cả), không phải nơi giá trị được TẠO RA. Hai đầu thu về nhiều nhờ lao động phức tạp và vị thế độc quyền công nghệ, thương hiệu.',
-    'Giáo trình Ch.6 mục II.2 cảnh báo nguy cơ “có vị trí bất lợi và thua thiệt trong chuỗi giá trị toàn cầu” — đáy đường cong chính là vị trí đó.',
+    'Giờ quay lại câu hỏi lúc đầu. Theo ước tính của nhóm, một món đồ điện tử “Made in Vietnam” bán ra nước ngoài giá 100 USD thì phần giá trị ở lại Việt Nam chưa tới 20 USD. Nhóm dựa vào hai điều. Một là số liệu Cục Thống kê cho thấy mình chủ yếu lắp ráp, linh kiện phần lớn phải nhập. Hai là Quyết định 1018 của Thủ tướng đặt mục tiêu đến năm 2030, phần giá trị tạo ra tại Việt Nam trong ngành điện tử – bán dẫn mới đạt 10 đến 15%, nghĩa là bây giờ còn thấp hơn. Lưu ý đây là phần giá trị ở lại trong nước, không phải tỷ lệ linh kiện làm ở trong nước.',
+    'Đường cong trên màn hình gọi là đường cong nụ cười. Hai đầu cao là nghiên cứu, thiết kế, chip, và thương hiệu, bán hàng; chỗ thấp nhất ở giữa là lắp ráp, gia công. Việt Nam đang ở chỗ thấp nhất đó. Giáo trình chương 6 đã cảnh báo nguy cơ bị đặt vào vị trí bất lợi, chịu thiệt trong chuỗi giá trị toàn cầu, và đáy đường cong chính là chỗ đó.',
   ),
 }
 
@@ -164,7 +158,7 @@ const MODES: Array<[string, number, string, string]> = [
 export const textile: Slide = {
   id: 'det-may',
   title: 'Dệt may',
-  seconds: 35,
+  seconds: 55,
   bg: photo('garment', { dim: 0.8 }),
   html: () => `
     <p class="k"><b>11</b>Dệt may — cùng một đường cong</p>
@@ -185,8 +179,8 @@ export const textile: Slide = {
     gsap.fromTo(el.querySelectorAll('.stack__seg'), { scaleX: 0 }, { scaleX: 1, duration: reduceMotion ? 0 : 0.9, delay: 0.6, stagger: 0.18, ease: 'expo.out' })
   },
   notes: notes(
-    'Dệt may: khâu may dùng ~80% lao động nhưng chỉ thu về 18–20% giá trị gia tăng (chuyên gia trên Báo Nhân Dân, 2024). Phương thức hiện nay: CMT ~35%, FOB ~55%, ODM ~9%, OBM ~1% (TS Hoàng Xuân Hiệp); 10 năm trước CMT 70–80% → đang dịch chuyển lên. (Bộ Công Thương 2023 từng nêu CMT ~65% — khác phương pháp, nếu bị hỏi thì giải thích.)',
-    'Nút thắt: nhập ~17 tỷ USD vải năm 2025; quy tắc xuất xứ “từ vải” (EVFTA), “từ sợi” (CPTPP) → tỷ lệ tận dụng ưu đãi chỉ ~15% (CPTPP), 30–35% (EVFTA). Đây là “luật chơi” mà người chơi lớn đặt ra — nối sang biểu hiện mới 5.',
-    'Giá trị nội địa tăng thêm của dệt may ~52% (VITAS, dẫn theo Báo Nhân Dân — nguồn ở chân slide). Phân biệt với tỷ lệ nội địa hóa (đầu vào mua trong nước) của dệt may ~45–48% (VCCI, 2025). QĐ 1643/QĐ-TTg: chuyển từ gia công sang quản lý chuỗi cung ứng, thiết kế, thương hiệu.',
+    'Ngành dệt may cũng y như vậy. Khâu may dùng khoảng 80% lao động nhưng chỉ thu về 18 đến 20% giá trị. Về cách làm: nhận vải về may rồi giao hàng, gọi là CMT, còn khoảng 35%; tự mua nguyên liệu rồi sản xuất, gọi là FOB, khoảng 55%; tự thiết kế, gọi là ODM, khoảng 9%; còn có thương hiệu riêng, gọi là OBM, chỉ khoảng 1%. Mười năm trước CMT chiếm tới 70 đến 80%, nên ngành đang leo lên dần. Năm 2025, phần giá trị tạo ra trong nước của cả ngành đạt khoảng 52%.',
+    'Chỗ vướng nhất là nguyên liệu. Năm 2025, ngành xuất khẩu khoảng 46 tỷ USD nhưng phải nhập khoảng 17 tỷ USD vải. Hiệp định EVFTA đòi hàng phải làm từ khâu vải trở đi, CPTPP còn đòi từ khâu sợi, thì mới được giảm thuế. Vì vậy, với CPTPP mình chỉ tận dụng được ưu đãi thuế khoảng 15%, với EVFTA khoảng 30 đến 35%. Luật chơi này do các bên lớn đặt ra, và nó dẫn sang biểu hiện mới thứ năm.',
+    'Nếu bị hỏi về số CMT: Bộ Công Thương năm 2023 từng nêu CMT khoảng 65% vì cách tính khác; nhóm dùng một bộ số của TS Hoàng Xuân Hiệp cho thống nhất. Còn 52% là giá trị tạo thêm trong nước, khác với tỷ lệ nội địa hóa (đầu vào mua trong nước) khoảng 45–48% theo VCCI.',
   ),
 }

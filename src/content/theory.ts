@@ -72,9 +72,9 @@ export const PHIL = {
     cite: 'Giáo trình Triết học (2021), tr.295–300 · vận dụng của nhóm',
   },
   notes: notes(
-    'Ý 1 (lượng – chất): độc quyền sinh ra từ cạnh tranh là một <b>bước nhảy về chất</b>. Còn TNC, chuỗi giá trị, quỹ đầu tư… là thay đổi về lượng và hình thức trong cùng một “độ”: bản chất vẫn là CNTB độc quyền → vì thế nói “đổi áo”.',
-    'Ý 2 (LLSX – QHSX): sản xuất ngày càng xã hội hóa (thiết kế ở nước A, linh kiện ở B, lắp ráp ở Việt Nam) nhưng sở hữu công nghệ, thương hiệu lại tập trung → giáo trình Triết học tr.298: quan hệ sở hữu quyết định quản lý và phân phối. Đây là cách nhìn mâu thuẫn cơ bản của CNTB ở quy mô toàn cầu.',
-    'Nếu bị hỏi “Cartel → Trust → TNC là đổi phương thức liên kết, mà giáo trình (tr.239–240) nói phương thức liên kết quy định chất?”: đúng — ở cấp hình thức tổ chức đó là các bước nhảy cục bộ, chỉ đổi một số mặt (tr.243); phân biệt lượng – chất tùy mối quan hệ được xét (tr.240). Xét ở cấp giai đoạn phát triển của CNTB thì chưa có bước nhảy toàn bộ: tổ chức độc quyền vẫn chi phối, lợi nhuận độc quyền vẫn dựa trên chiếm hữu tư nhân TBCN.',
-    'Lưu ý khi bị hỏi: ví dụ về độc quyền là <b>vận dụng của nhóm</b>, giáo trình Triết không viết ví dụ này.',
+    'Vì sao nhóm nói là “đổi áo” chứ không phải đổi bản chất? Giáo trình Triết học, chương 2, trang 241 đến 243, có quy luật lượng – chất. Hiểu đơn giản giống như đun nước: nhiệt độ tăng dần, nhưng phải tới 100 độ nước mới sôi và bốc hơi. Tư bản cũng vậy. Trong thời cạnh tranh tự do, tư bản cứ gom dần về lượng; tới cuối thế kỷ 19, đầu thế kỷ 20 thì chạm điểm nút, có bước nhảy, và độc quyền ra đời. Còn tập đoàn xuyên quốc gia, quỹ đầu tư hay chuỗi giá trị bây giờ chỉ là to hơn, khác hình thức hơn, nhưng vẫn nằm trong cùng một “độ”. Chất thì chưa đổi.',
+    'Nhìn theo quan hệ giữa lực lượng sản xuất và quan hệ sản xuất thì thế này: để làm ra một sản phẩm, giờ có cả thế giới cùng tham gia, thiết kế ở nước này, linh kiện ở nước kia, lắp ráp ở Việt Nam. Nhưng người làm chủ công nghệ và thương hiệu thì chỉ có vài công ty. Ai làm chủ thì người đó quyết định chia tiền. Đó chính là mâu thuẫn cơ bản của chủ nghĩa tư bản, giờ diễn ra trên cả thế giới.',
+    'Nếu bị hỏi: “Cartel → Trust → TNC là đổi cách liên kết, mà giáo trình (tr.239–240) nói cách liên kết quyết định chất?” — Đúng, xét riêng từng kiểu tổ chức thì đó là những bước nhảy nhỏ, chỉ đổi một vài mặt (tr.243). Nhưng xét cả giai đoạn phát triển của CNTB thì chưa có bước nhảy toàn bộ: tổ chức độc quyền vẫn chi phối, lợi nhuận độc quyền vẫn dựa trên sở hữu tư nhân tư bản chủ nghĩa.',
+    'Ví dụ về độc quyền là nhóm tự vận dụng, giáo trình Triết học không viết ví dụ này.',
   ),
 }

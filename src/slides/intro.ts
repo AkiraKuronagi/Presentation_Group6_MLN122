@@ -32,9 +32,8 @@ export const cover: Slide = {
       <ul class="cover__team" data-in>${meta.members.map((m) => `<li>${m.name}</li>`).join('')}</ul>
     </div>`,
   notes: notes(
-    'Chào thầy/cô và các bạn. Nhóm 6 trình bày Chủ đề 6: biểu hiện mới của độc quyền, độc quyền nhà nước; tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của CNTB.',
-    'Câu hỏi dẫn đường của cả bài: <b>Ai nắm giữ chuỗi giá trị — và Việt Nam đang đứng ở đâu?</b>',
-    'Trên quả địa cầu: cung vàng là dòng vốn FDI vào Việt Nam, cung đỏ là hàng hóa Việt Nam xuất đi. Quần đảo Hoàng Sa, Trường Sa là của Việt Nam.',
+    'Chào thầy và các bạn. Nhóm 6 xin trình bày Chủ đề 6: biểu hiện mới của độc quyền và độc quyền nhà nước ngày nay, qua các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản.',
+    'Cả bài, nhóm chỉ muốn trả lời một câu hỏi: ai đang nắm chuỗi giá trị toàn cầu, và Việt Nam đang đứng ở đâu trong chuỗi đó. Trên quả địa cầu này, đường màu vàng là tiền đầu tư nước ngoài chảy vào Việt Nam, còn đường màu đỏ là hàng Việt Nam bán đi khắp thế giới.',
   ),
 }
 
@@ -50,7 +49,7 @@ const FEATURES = [
 export const lenin: Slide = {
   id: 'lenin',
   title: 'Từ Lênin đến hôm nay',
-  seconds: 75,
+  seconds: 85,
   bg: photo('factory-1910', { dim: 0.82 }),
   html: () => `
     <div class="lenin__head">
@@ -100,12 +99,10 @@ export const lenin: Slide = {
     })
   },
   notes: notes(
-    'Giáo trình (Ch.4 mục II) tóm tắt 5 đặc điểm kinh tế của CNTB độc quyền theo Lênin: tích tụ, tập trung tư bản tạo ra tổ chức độc quyền; tư bản tài chính và tài phiệt chi phối; xuất khẩu tư bản; phân chia thị trường thế giới; phân định khu vực lãnh thổ ảnh hưởng.',
-    'Thẻ lật sang “ngày nay” (Ch.4 mục III.1): cả 5 đặc điểm vẫn còn, nhưng mang hình thức mới. Luận điểm của nhóm: <b>độc quyền không biến mất mà “đổi áo”</b>.',
-    '• Thẻ 1 — điểm then chốt cho cả bài: giáo trình gọi <b>“hệ thống gia công”</b> là biểu hiện của độc quyền dưới dạng mới.',
-    '• Thẻ 2 — “chế độ tham dự” được bổ sung bằng “chế độ ủy nhiệm” (cổ đông nhỏ ủy nhiệm cho đại cổ đông).',
-    '• Thẻ 3 — xuất khẩu tư bản đổi chiều, đổi chủ thể. • Thẻ 4 — giáo trình: sức mạnh TNC thúc đẩy toàn cầu hóa, song hành là khu vực hóa (EU, các FTA…), do tư bản độc quyền quốc tế chi phối; nhóm vận dụng: hôm nay thị trường được “chia” qua chuỗi giá trị toàn cầu và quy tắc xuất xứ. • Thẻ 5 — “biên giới mềm”.',
-    'Slide mở ở năm 1916: nói xong 5 đặc điểm của Lênin thì nhấn ↓ (hoặc bấm chuột) để lật cả 5 thẻ sang “ngày nay”; nhấn ↓ lần nữa mới sang slide sau. Bấm vào một thẻ để lật riêng thẻ đó. Chuyển ý: “Vì sao nói là ‘đổi áo’ chứ không phải ‘đổi người’? Triết học giúp ta trả lời.”',
+    'Trong giáo trình Kinh tế chính trị, chương 4, Lênin nêu ra năm đặc điểm của chủ nghĩa tư bản độc quyền. Một, tư bản gom lại ngày càng lớn, sinh ra các tổ chức độc quyền. Hai, vốn ngân hàng và vốn công nghiệp nhập lại thành tư bản tài chính, và một nhóm nhỏ tài phiệt chi phối cả nền kinh tế. Ba, các nước giàu đem vốn ra nước ngoài đầu tư, gọi là xuất khẩu tư bản. Bốn, các tập đoàn lớn chia nhau thị trường thế giới. Năm, các cường quốc chia nhau vùng ảnh hưởng.',
+    'Hơn một trăm năm sau, năm đặc điểm này vẫn còn, chỉ là cách làm đã khác. Thứ nhất, quanh mỗi tập đoàn lớn bây giờ có rất nhiều công ty vừa và nhỏ nhận làm gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói rõ đó vẫn là độc quyền, chỉ ở dạng mới. Thứ hai, ngoài “chế độ tham dự” còn có thêm “chế độ ủy nhiệm”: rất nhiều cổ đông nhỏ giao quyền cho cổ đông lớn và các quỹ đầu tư quyết định thay mình. Thứ ba, xuất khẩu tư bản đổi chiều, đổi người làm và đổi cách làm. Thứ tư, các tập đoàn lớn đẩy mạnh toàn cầu hóa, đi cùng với việc các nước lập khối như EU hay ký hiệp định thương mại tự do; nhóm dùng ý này để nói về chuỗi giá trị. Thứ năm, các nước lớn không đi chiếm thuộc địa như trước nữa, mà dùng “biên giới mềm”.',
+    'Nói ngắn gọn: độc quyền không mất đi, nó chỉ “đổi áo”.',
+    'Cách bấm: slide mở ở năm 1916. Nói xong 5 đặc điểm thì nhấn ↓ để lật cả 5 thẻ sang “ngày nay”; nhấn ↓ lần nữa mới sang slide sau. Bấm vào một thẻ để lật riêng thẻ đó.',
   ),
 }
 
@@ -124,7 +121,7 @@ const NODES: Array<[number, number, string]> = [
 export const phil: Slide = {
   id: 'triet-hoc',
   title: 'Lăng kính triết học',
-  seconds: 40,
+  seconds: 65,
   html: () => `
     <p class="k"><b>03</b>Nhìn từ triết học Mác – Lênin</p>
     <h2 class="h h--m" data-in>Đổi hình thức — <em class="r">chưa đổi chất</em></h2>

@@ -19,7 +19,7 @@ const miniPath = () =>
 export const lesson: Slide = {
   id: 'bai-hoc',
   title: 'Bài học cho sinh viên',
-  seconds: 55,
+  seconds: 45,
   bg: photo('students', { dim: 0.86 }),
   html: () => {
     const [vx, vy] = sp(0)
@@ -73,10 +73,9 @@ export const lesson: Slide = {
     pick(MAJORS[0].id)
   },
   notes: notes(
-    'Ba con số: 29,2% lao động có bằng, chứng chỉ (2025); GII hạng 43/139 nhưng vốn con người & nghiên cứu chỉ hạng 79; cần 50.000 nhân lực bán dẫn đến 2030. (Kinh tế số mới 14,02% GDP so với mục tiêu 30% — hiện trong ngành Phần mềm.)',
-    'Liên hệ lý luận: lao động phức tạp tạo nhiều giá trị hơn lao động giản đơn trong cùng thời gian.',
-    'Bấm lần lượt 2–3 ngành tiêu biểu (ví dụ ngành của các thành viên trong nhóm) để thấy vị trí trên đường cong và 4 năng lực cần có. Thông điệp: ngành nào cũng có đường lên hai đầu — vấn đề là có chủ động tích lũy hay không.',
-    'Lượng – chất cho chính mình (Giáo trình Triết học): tích lũy đủ về lượng — kỹ năng, kinh nghiệm — mới có bước nhảy về chất; không nôn nóng, cũng không bảo thủ.',
+    'Với sinh viên như chúng em, bài học khá cụ thể. Năm 2025, chỉ 29,2% lao động Việt Nam có bằng cấp, chứng chỉ. Năm 2026, Việt Nam xếp hạng 43 trên 139 nước về đổi mới sáng tạo, nhưng riêng mục con người và nghiên cứu thì chỉ hạng 79. Đến năm 2030, ngành bán dẫn cần đào tạo 50.000 người có trình độ đại học trở lên.',
+    'Ngành nào cũng có đường đi lên hai đầu của đường cong nụ cười, từ thiết kế vi mạch, trí tuệ nhân tạo, phần mềm, đến kinh doanh quốc tế, marketing hay ngoại ngữ. Lao động phức tạp tạo ra nhiều giá trị hơn lao động giản đơn trong cùng một khoảng thời gian. Và theo quy luật lượng – chất, phải tích lũy đủ kỹ năng và kinh nghiệm thì mới có bước nhảy; không vội vàng, nhưng cũng đừng đứng yên.',
+    'Cách bấm: bấm 2–3 ngành (ví dụ ngành của các bạn trong nhóm) để thấy vị trí trên đường cong và các kỹ năng cần có.',
   ),
 }
 
@@ -90,7 +89,7 @@ const PLEDGES = [
 export const outro: Slide = {
   id: 'ket',
   title: 'Kết luận',
-  seconds: 45,
+  seconds: 40,
   gl: { scene: 'globe', mode: 'footer', x: 1500, y: 520, p: 1, speed: 0.4 },
   labels: VN_PLACES.map((p) => ({ ...p, cls: 'vn small' })),
   html: () => `
@@ -100,13 +99,12 @@ export const outro: Slide = {
       <div class="pledges" data-in>
         ${PLEDGES.map(([b, s]) => `<div class="pledge"><b>${b}</b><span>${s}</span></div>`).join('')}
       </div>
-      <p class="outro__thanks" data-in>Cảm ơn thầy cô và các bạn đã lắng nghe!</p>
+      <p class="outro__thanks" data-in>Cảm ơn thầy và các bạn đã lắng nghe!</p>
     </div>`,
   notes: notes(
-    'Kết luận một câu: độc quyền ngày nay không biến mất mà đổi hình thức — tập đoàn xuyên quốc gia điều phối chuỗi giá trị toàn cầu và giữ hai đầu giá trị cao.',
-    'Việt Nam lựa chọn hội nhập sâu rộng nhưng giữ vững độc lập, tự chủ; với sinh viên, đó là nâng năng lực để leo lên hai đầu “đường cong nụ cười” — ba việc cụ thể trên màn hình.',
-    'Theo quy luật lượng – chất: tích lũy đủ về lượng (kỹ năng, kinh nghiệm) mới có bước nhảy về chất trong vị trí nghề nghiệp.',
-    'Mời các nhóm phản biện (Nhóm 7, 8, 9) đặt câu hỏi.',
+    'Tóm lại, độc quyền ngày nay không mất đi mà chỉ đổi cách làm: các tập đoàn xuyên quốc gia điều khiển chuỗi giá trị toàn cầu và giữ hai đầu có lời nhất. Việt Nam chọn hội nhập sâu, nhưng vẫn giữ độc lập, tự chủ. Còn với mỗi sinh viên, điều đó có nghĩa là phải nâng năng lực của mình để leo lên hai đầu đường cong, bằng ba việc: học thật sâu một kỹ năng chính, hiểu luật chơi của thế giới, và làm việc có trách nhiệm.',
+    'Thông điệp của nhóm 6 là: hội nhập để lớn lên, tự chủ để không bị cuốn đi. Phần trình bày của nhóm đến đây là hết. Cảm ơn thầy và các bạn đã lắng nghe.',
+    'Sau đó mời Nhóm 7, 8, 9 đặt câu hỏi.',
   ),
 }
 
@@ -138,6 +136,8 @@ export const references: Slide = {
     <ol class="refs">
       ${SOURCES.map((s) => `<li>${s.apa}${s.url ? ` <a href="${s.url}" target="_blank" rel="noopener">${s.url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}</a>` : ''}</li>`).join('')}
     </ol>`,
-  notes: notes('Lướt qua: nguồn chính thống, trích dẫn APA 7, ảnh nền từ Wikimedia Commons có giấy phép mở; nhắc tới Phụ lục AI đã nộp kèm.'),
+  notes: notes(
+    'Tất cả số liệu và ý trong bài đều lấy từ giáo trình, văn kiện, văn bản pháp luật, Cục Thống kê, báo Đảng, báo Chính phủ và các tổ chức quốc tế, ghi nguồn theo chuẩn APA 7. Ảnh nền là ảnh chụp thật trên Wikimedia Commons, được phép dùng. Việc nhóm dùng AI được ghi đầy đủ trong Phụ lục AI nộp kèm.',
+  ),
 }
 

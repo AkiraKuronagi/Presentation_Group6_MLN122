@@ -6,7 +6,7 @@ import { notes, refs, source } from './util'
 export const coin: Slide = {
   id: 'vai-tro',
   title: 'Vai trò lịch sử của CNTB',
-  seconds: 60,
+  seconds: 75,
   gl: { scene: 'coin', mode: 'spin', x: 1420, y: 520, p: 1, speed: 0.22 },
   html: () => `
     <div class="col">
@@ -24,12 +24,9 @@ export const coin: Slide = {
     </div>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.3; ${refs('npt-2021', 'wir-ineq', 'wir-exec', 'unep-2025', 'ipcc-2023')}`)}`,
   notes: notes(
-    'Giáo trình Ch.4 mục III.3: ba vai trò tích cực (phát triển LLSX; chuyển sản xuất nhỏ thành lớn; xã hội hóa sản xuất) và ba giới hạn (vì lợi ích thiểu số; gây chiến tranh, xung đột; phân hóa giàu nghèo).',
-    'Nối với bài: chuỗi giá trị toàn cầu chính là xã hội hóa sản xuất ở quy mô hành tinh — vai trò tích cực; nhưng phần giá trị lại dồn về chủ sở hữu công nghệ, thương hiệu — giới hạn.',
-    'Số liệu quốc tế: World Inequality Report 2026 — 10% giàu nhất nhận 53% thu nhập, nắm ~75% của cải; 50% dưới cùng: 8% thu nhập, 2% của cải. UNEP 2025: theo chính sách hiện hành, trái đất ấm lên 2,8°C; phát thải 2024 kỷ lục 57,7 GtCO₂e. IPCC: 10% hộ phát thải cao nhất chiếm 34–45% phát thải hộ gia đình. Số liệu toàn cầu không quy cho từng quốc gia.',
-    'Trích đủ hai vế của cố Tổng Bí thư Nguyễn Phú Trọng (2021) — không cắt riêng vế đầu.',
-    'Quan điểm nhóm — vì sao khó giải quyết triệt để: (1) sản xuất vì lợi nhuận → chi phí môi trường bị đẩy ra ngoài; (2) quan hệ sở hữu quyết định phân phối → bất bình đẳng tự tái sản xuất; (3) cạnh tranh giữa các khối làm khó hợp tác toàn cầu.',
-    'Kết luận giáo trình: QHSX TBCN còn tự điều chỉnh được nên CNTB còn phát triển, nhưng mâu thuẫn cơ bản không tự giải quyết được → CNTB không tồn tại vĩnh viễn.',
+    'Chủ nghĩa tư bản có hai mặt. Mặt tích cực, giáo trình nêu ba điểm: phát triển lực lượng sản xuất, biến sản xuất nhỏ thành sản xuất lớn, và làm cho sản xuất mang tính xã hội. Chuỗi giá trị toàn cầu chính là cả thế giới cùng làm ra một sản phẩm.',
+    'Mặt giới hạn: chủ nghĩa tư bản sản xuất vì lợi ích của số ít, gây ra chiến tranh, xung đột, và khoảng cách giàu nghèo ngày càng xa. Theo Báo cáo Bất bình đẳng Thế giới 2026, 10% người giàu nhất nhận 53% thu nhập của cả thế giới. Theo UNEP, nếu cứ giữ chính sách như hiện nay, trái đất sẽ nóng lên khoảng 2,8 độ C.',
+    'Cố Tổng Bí thư Nguyễn Phú Trọng từng nhận định: chủ nghĩa tư bản chưa bao giờ mang tính toàn cầu như ngày nay, nhưng vẫn không thể khắc phục được những mâu thuẫn cơ bản vốn có của nó. Nhóm nghĩ có ba lý do. Một, làm ra là để kiếm lời, nên cái giá về môi trường bị đẩy cho người khác gánh. Hai, ai làm chủ thì người đó quyết định chia phần, nên chuyện giàu nghèo cứ lặp đi lặp lại. Ba, các khối nước cạnh tranh nhau nên khó ngồi lại hợp tác. Chủ nghĩa tư bản vẫn tự điều chỉnh được nên vẫn còn phát triển, nhưng mâu thuẫn gốc thì không tự hết được, vì vậy nó không tồn tại mãi mãi.',
   ),
 }
 
@@ -39,7 +36,7 @@ const DOCS = ['Hiến pháp 2013 · Điều 50–51', 'NQ 50-NQ/TW (2019)', 'Đ�
 export const bridge: Slide = {
   id: 'con-duong',
   title: 'Lựa chọn của Việt Nam',
-  seconds: 50,
+  seconds: 70,
   gl: { scene: 'bridge', mode: 'morph', x: 1300, y: 600, p: 1, speed: 0.2 },
   labels: [
     { at: 'vn', html: '<b class="lo">Hôm nay</b><i>lắp ráp, gia công</i>', align: 'right', dx: -130, dy: 20, minP: 0.05 },
@@ -55,10 +52,8 @@ export const bridge: Slide = {
     </div>
     ${source(`${refs('hp-2013', 'nq50', 'dh13', 'nq59', 'dh14', 'npt-2021')}; ${refs('gt-ktct')}, Ch.6 mục II`)}`,
   notes: notes(
-    'Từ vai trò và giới hạn của CNTB → lý giải lựa chọn của Việt Nam: kinh tế thị trường định hướng XHCN, kế thừa thành tựu (vốn, công nghệ, quản trị) nhưng không chấp nhận áp bức, bất công.',
-    'Mạch văn kiện: Hiến pháp 2013 (Điều 50, 51) → NQ 50-NQ/TW (2019, FDI có chọn lọc, lấy công nghệ làm tiêu chí) → Đại hội XIII → NQ 59 (2025) → Đại hội XIV (2026) — nêu thẳng quan hệ giữa tự chủ sản xuất với tham gia chuỗi giá trị toàn cầu.',
-    'Đối ứng 3 giới hạn ↔ 3 định hướng: sản xuất vì lợi ích thiểu số → mục tiêu dân giàu, nước mạnh, dân chủ, công bằng, văn minh (Hiến pháp 2013); chiến tranh, xung đột → đối ngoại độc lập, tự chủ, hòa bình, hợp tác và phát triển; phân hóa giàu nghèo → tăng trưởng đi đôi với tiến bộ, công bằng xã hội ngay trong từng bước (Nguyễn Phú Trọng, 2021).',
-    'Theo cố Tổng Bí thư Nguyễn Phú Trọng: bỏ qua chế độ TBCN là bỏ qua áp bức, bất công, bóc lột — không bỏ qua thành tựu, giá trị văn minh nhân loại đạt được dưới CNTB. Giáo trình Ch.6 mục II: độc lập, tự chủ là nền tảng — hội nhập không phải hòa tan.',
-    'Câu chốt quan điểm riêng: FDI giúp ta vào chuỗi (cây cầu); nó chỉ thành bậc thang lên khâu giá trị cao khi có nội lực hấp thụ cùng chính sách liên kết, chuyển giao công nghệ. Chuyển ý: “Nội lực — tức là chính chúng ta.”',
+    'Hiểu hai mặt đó rồi thì sẽ hiểu vì sao Việt Nam chọn kinh tế thị trường định hướng xã hội chủ nghĩa: học lấy những gì nhân loại đã làm được dưới chủ nghĩa tư bản, nhưng không lặp lại áp bức, bất công, bóc lột. Hội nhập nhưng không hòa tan.',
+    'Hướng đi này có trong Hiến pháp 2013, Nghị quyết 50 của Bộ Chính trị năm 2019 về thu hút FDI có chọn lọc, Đại hội XIII, Nghị quyết 59 năm 2025 về hội nhập quốc tế, và Đại hội XIV năm 2026. Ứng với ba giới hạn của chủ nghĩa tư bản, Việt Nam có ba hướng đi: mục tiêu dân giàu, nước mạnh, dân chủ, công bằng, văn minh; đối ngoại độc lập, tự chủ, hòa bình, hợp tác và phát triển; và tăng trưởng kinh tế phải đi cùng với tiến bộ, công bằng xã hội ngay trong từng bước.',
+    'Nhóm nghĩ thế này: FDI là cây cầu giúp Việt Nam bước vào chuỗi giá trị toàn cầu. Nhưng muốn cây cầu đó thành bậc thang đưa mình lên khâu có giá trị cao hơn, thì mình phải đủ sức học được công nghệ, và phải có chính sách để doanh nghiệp Việt được làm cùng, học được từ doanh nghiệp FDI. Mà sức mạnh đó bắt đầu từ con người.',
   ),
 }
