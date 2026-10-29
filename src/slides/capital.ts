@@ -63,7 +63,7 @@ export const fdi: Slide = {
   seconds: 50,
   gl: { scene: 'globe', mode: 'fdi', x: 1390, y: 560, p: 1, speed: 0.4 },
   labels: [
-    ...HUBS_IN.slice(0, 6).map((h) => ({ at: `${h.lat},${h.lon}`, html: h.name, cls: 'hub', dy: h.labelDy ?? 0 })),
+    ...HUBS_IN.slice(0, 6).map((h) => ({ at: `${h.lat},${h.lon}`, html: h.name, cls: 'hub', dy: h.labelDy ?? 0, align: h.labelAlign })),
     ...VN_PLACES.map((p) => ({ ...p, cls: 'vn small' })),
   ],
   html: () => {

@@ -3,7 +3,7 @@
 > ⚠️ Đây là **bản nháp** do trợ lý AI ghi lại những việc nó đã làm trong phiên làm việc. Nhóm **phải đọc, sửa cho đúng thực tế, bổ sung việc của từng thành viên**, rồi chép sang Word/Excel/Google Doc để nộp.
 > Theo Rubric 1.4 và FAQ Q2: “Dùng AI 100%” → 0 điểm tiêu chí 1.4; không giải thích được nội dung khi bị hỏi → cờ ĐỎ #3. Vì vậy mỗi thành viên cần **tự kiểm chứng lại số liệu mình trình bày** và **nói bằng lời của mình**.
 
-**Tên nhóm:** Nhóm 6 — «Mã lớp»
+**Tên nhóm:** Nhóm 6 — SE1919
 **Dự án – Chủ đề:** Chủ đề 6 — Biểu hiện mới của độc quyền, độc quyền nhà nước trong điều kiện ngày nay: các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản
 **Cam kết:** Nhóm em cam kết đã sử dụng AI một cách liêm chính và đã kiểm chứng tất cả thông tin quan trọng dưới đây.
 

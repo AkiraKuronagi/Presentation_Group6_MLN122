@@ -1,5 +1,5 @@
 /**
- * ✏️  THÔNG TIN BÌA — nhóm tự sửa các dòng có dấu « » trước khi nộp.
+ * ✏️  THÔNG TIN BÌA — nhóm tự sửa trước khi nộp.
  * (Checklist Tab 4 – mục 4: "Có trang bìa đầy đủ thông tin".)
  */
 export const meta = {
@@ -10,7 +10,6 @@ export const meta = {
   lecturer: 'BinhNV26',
   group: 'Nhóm 6',
   topicNo: 'Chủ đề 6',
-  semester: '«Học kỳ – năm học»',
   /** slides: [từ, đến] — phần trình bày của từng bạn (dùng khi xuất kịch bản PDF); đổi tùy nhóm */
   members: [
     { name: 'Nguyễn Đình Ngọc Ân', slides: [1, 3], part: 'Mở đầu & lý luận: Lênin → biểu hiện mới, lăng kính triết học' },

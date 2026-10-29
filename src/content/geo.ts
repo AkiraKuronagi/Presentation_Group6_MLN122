@@ -5,10 +5,10 @@ const HCM: [number, number] = [10.82, 106.63]
 const HP: [number, number] = [20.86, 106.68] // Hải Phòng
 
 /** Dòng vốn (vàng): từ các trung tâm đầu tư lớn vào Việt Nam */
-export const HUBS_IN: Array<{ name: string; lat: number; lon: number; to: [number, number]; labelDy?: number }> = [
+export const HUBS_IN: Array<{ name: string; lat: number; lon: number; to: [number, number]; labelDy?: number; labelAlign?: 'left' | 'right' }> = [
   { name: 'Singapore', lat: 1.35, lon: 103.82, to: HCM },
   { name: 'Hàn Quốc', lat: 37.57, lon: 126.98, to: BN, labelDy: -12 },
-  { name: 'Nhật Bản', lat: 35.68, lon: 139.69, to: HN, labelDy: 14 },
+  { name: 'Nhật Bản', lat: 35.68, lon: 139.69, to: HN, labelDy: 14, labelAlign: 'right' },
   { name: 'Đài Loan (TQ)', lat: 25.03, lon: 121.56, to: HP },
   { name: 'Hồng Kông (TQ)', lat: 22.32, lon: 114.17, to: HCM },
   { name: 'Trung Quốc', lat: 31.23, lon: 121.47, to: HP },
