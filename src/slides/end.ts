@@ -127,7 +127,7 @@ export const references: Slide = {
         <h2 class="h h--m">Tài liệu tham khảo</h2>
       </div>
       <div>
-        <p class="refs__note">Nguồn chính thống: giáo trình, văn kiện, văn bản pháp luật, cơ quan nhà nước, báo Đảng – Chính phủ, tổ chức quốc tế, báo cáo bắt buộc của doanh nghiệp. Các phép so sánh “lần GDP” do nhóm tự tính. Công cụ AI chỉ hỗ trợ tìm nguồn, dựng giao diện, phản biện — chi tiết ở <b>Phụ lục AI</b>; không dùng ảnh do AI tạo.</p>
+        <p class="refs__note">Nguồn chính thống: giáo trình, văn kiện, văn bản pháp luật, cơ quan nhà nước, báo Đảng – Chính phủ, tổ chức quốc tế, báo cáo bắt buộc của doanh nghiệp. Các phép so sánh “lần GDP” do nhóm tự tính.</p>
         ${
           Object.keys(PHOTOS).length
             ? `<p class="refs__note">Ảnh nền (Wikimedia Commons, giấy phép mở): ${Object.values(PHOTOS)

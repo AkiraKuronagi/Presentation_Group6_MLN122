@@ -4796,7 +4796,7 @@ varying float vAlpha;`).replace(`#include <color_fragment>`,`#include <color_fra
         <h2 class="h h--m">Tài liệu tham khảo</h2>
       </div>
       <div>
-        <p class="refs__note">Nguồn chính thống: giáo trình, văn kiện, văn bản pháp luật, cơ quan nhà nước, báo Đảng – Chính phủ, tổ chức quốc tế, báo cáo bắt buộc của doanh nghiệp. Các phép so sánh “lần GDP” do nhóm tự tính. Công cụ AI chỉ hỗ trợ tìm nguồn, dựng giao diện, phản biện — chi tiết ở <b>Phụ lục AI</b>; không dùng ảnh do AI tạo.</p>
+        <p class="refs__note">Nguồn chính thống: giáo trình, văn kiện, văn bản pháp luật, cơ quan nhà nước, báo Đảng – Chính phủ, tổ chức quốc tế, báo cáo bắt buộc của doanh nghiệp. Các phép so sánh “lần GDP” do nhóm tự tính.</p>
         ${Object.keys(Jv).length?`<p class="refs__note">Ảnh nền (Wikimedia Commons, giấy phép mở): ${Object.values(Jv).map(e=>`<a href="${e.url}" target="_blank" rel="noopener">${e.caption}</a> — ${e.author}, <a href="${e.licenseUrl}" target="_blank" rel="noopener">${e.license}</a>`).join(`; `)}.</p>`:``}
         <p class="refs__note">Chuỗi FDI – xuất khẩu (Tổng cục/Cục Thống kê) theo năm: ${Object.entries(py).map(([e,t])=>`<a href="${t}" target="_blank" rel="noopener">${e}</a>`).join(` · `)}.</p>
       </div>
