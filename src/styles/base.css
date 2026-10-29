@@ -70,14 +70,12 @@ a {
 .display {
   font-family: var(--f-display);
   font-weight: 400;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50, 'WONK' 0;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   line-height: 0.96;
 }
 .display em,
 .display i {
-  font-style: italic;
-  font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+  font-style: normal;
 }
 .t-mega { font-size: var(--t-mega); }
 .t-h1 { font-size: var(--t-h1); }
@@ -94,7 +92,7 @@ a {
 }
 .eyebrow {
   font-size: var(--t-micro);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
   display: inline-flex;

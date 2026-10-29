@@ -91,8 +91,9 @@ body {
 .k {
   /* kicker */
   font-family: var(--f-mono);
-  font-size: 20px;
-  letter-spacing: 0.16em;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
   display: flex;
@@ -102,9 +103,9 @@ body {
 }
 .k b {
   font-family: var(--f-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
   letter-spacing: 0;
   text-transform: none;
   color: var(--red);
@@ -117,16 +118,14 @@ body {
 }
 .h {
   font-family: var(--f-display);
-  font-weight: 400;
-  font-variation-settings: 'opsz' 144, 'SOFT' 50;
-  letter-spacing: -0.025em;
-  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.08;
   margin: 0;
 }
 .h em {
-  font-style: italic;
+  font-style: normal;
   color: var(--gold);
-  font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1;
 }
 .h .r,
 .h em.r {
@@ -174,7 +173,7 @@ body {
   font-weight: 600;
   font-size: 170px;
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 .big small {
   font-size: 0.3em;
@@ -232,7 +231,7 @@ body {
   font-weight: 600;
   font-size: 64px;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 .stat__v small {
   font-size: 0.4em;

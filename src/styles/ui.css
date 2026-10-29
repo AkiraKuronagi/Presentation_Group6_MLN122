@@ -37,7 +37,7 @@
 }
 .hud__mark {
   font-family: var(--f-mono);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .hud__mark b {
@@ -308,7 +308,7 @@ kbd {
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--fg-3);
 }
 .pc__clock {

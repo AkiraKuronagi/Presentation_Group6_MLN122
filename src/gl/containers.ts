@@ -340,7 +340,7 @@ function glowCanvas() {
 function tickCanvas(text: string) {
   const { c, g } = canvas(512, 96)
   g.fillStyle = '#ffffff'
-  g.font = '500 54px "JetBrains Mono Variable", "JetBrains Mono", monospace'
+  g.font = '500 54px "Roboto Condensed", sans-serif'
   g.textBaseline = 'middle'
   g.fillText(text, 6, 50)
   return c

@@ -34,9 +34,9 @@
   --fg-2: var(--bone-2);
   --fg-3: var(--bone-3);
 
-  --f-display: 'Fraunces', 'Times New Roman', serif;
-  --f-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --f-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --f-display: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  --f-body: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  --f-mono: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
 
   /* Thang chữ co giãn theo khung nhìn — tối ưu cho máy chiếu 1920×1080 & 1366×768 */
   --t-mega: clamp(3.4rem, 9.4vw, 11.5rem);

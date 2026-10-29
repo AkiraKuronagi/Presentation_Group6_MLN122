@@ -50,7 +50,7 @@ function makeBackTexture(text: string[], color: string) {
   g.fillRect(0, 0, c.width, c.height)
   g.fillStyle = color
   g.textAlign = 'center'
-  g.font = '500 26px "JetBrains Mono", monospace'
+  g.font = '500 26px "Roboto Condensed", sans-serif'
   text.forEach((t, i) => g.fillText(t, c.width / 2, 870 + i * 38))
   const tex = new THREE.CanvasTexture(c)
   tex.colorSpace = THREE.SRGBColorSpace
@@ -77,7 +77,7 @@ function makeScreenTexture() {
   }
   g.fillStyle = 'rgba(255,255,255,0.92)'
   g.textAlign = 'center'
-  g.font = '300 120px "Be Vietnam Pro", sans-serif'
+  g.font = '300 120px "Roboto", sans-serif'
   g.fillText('09:41', 256, 250)
   const tex = new THREE.CanvasTexture(c)
   tex.colorSpace = THREE.SRGBColorSpace

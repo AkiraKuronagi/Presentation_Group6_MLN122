@@ -29,8 +29,8 @@ const YAW = -0.72 // góc 3/4: mặt đồng xu hướng sang trái (về phía 
 const HALF_TURN = 4.6 // giây cho mỗi nửa vòng (đổi mặt)
 const LINGER = 0.82 // 0..1: càng lớn càng "dừng" lâu ở mỗi mặt
 const TEX = 1024
-const FONT = '600 110px "Be Vietnam Pro", sans-serif'
-const FONT_SMALL = '500 38px "Be Vietnam Pro", sans-serif'
+const FONT = '600 110px "Roboto", sans-serif'
+const FONT_SMALL = '500 38px "Roboto", sans-serif'
 const DUST = 260
 
 type Side = 'A' | 'B'
@@ -649,7 +649,7 @@ export class Coin implements GLScene {
 
     this.setTheme(light)
 
-    // font Be Vietnam Pro có thể nạp sau → vẽ lại mặt khắc khi sẵn sàng
+    // font Roboto có thể nạp sau → vẽ lại mặt khắc khi sẵn sàng
     const fonts = document.fonts
     if (fonts) {
       const sample = 'TÍCH CỰC GIỚI HẠN ỰỢ'

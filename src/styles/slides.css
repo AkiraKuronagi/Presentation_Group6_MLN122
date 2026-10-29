@@ -133,7 +133,7 @@
   display: block;
   font-family: var(--f-mono);
   font-size: 15px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
 }
@@ -198,7 +198,7 @@
 .vote__k {
   grid-row: span 2;
   font-family: var(--f-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 84px;
   line-height: 1;
   color: var(--gold);
@@ -275,7 +275,7 @@
   font-family: var(--f-display);
   font-size: 230px;
   line-height: 0.8;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   color: transparent;
   -webkit-text-stroke: 2px var(--gold);
   font-variant-numeric: tabular-nums;
@@ -318,7 +318,7 @@
 }
 .flip__face i {
   font-family: var(--f-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 60px;
   line-height: 1;
   color: var(--fg-3);
@@ -333,7 +333,7 @@
   margin-top: 18px;
   font-family: var(--f-mono);
   font-size: 15px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
 }
@@ -400,7 +400,7 @@
 }
 .phil .phil__t--gold {
   fill: var(--gold);
-  font-style: italic;
+  font-style: normal;
   font-size: 22px;
 }
 .phil__form circle {
@@ -521,7 +521,7 @@
 .gauge__c > b {
   font-size: 104px;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   line-height: 1;
   color: var(--gold);
 }
@@ -542,7 +542,7 @@
   margin: 0 0 8px;
   font-family: var(--f-mono);
   font-size: 18px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
 }
@@ -619,7 +619,7 @@
   display: block;
   font-size: 18px;
   font-family: var(--f-mono);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -884,7 +884,7 @@
 }
 .venn .venn__mid {
   font-family: var(--f-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 46px;
   fill: var(--red);
 }
@@ -960,7 +960,7 @@
   padding-left: 24px;
   border-left: 3px solid var(--fg-3);
   font-family: var(--f-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 25px;
   line-height: 1.4;
   color: var(--fg-2);
@@ -1199,7 +1199,7 @@
   margin: 0 0 16px;
   font-family: var(--f-mono);
   font-size: 18px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
 }
@@ -1268,7 +1268,7 @@
   bottom: 70px;
   margin: 0;
   font-family: var(--f-display);
-  font-style: italic;
+  font-style: normal;
   font-size: 40px;
   color: var(--gold);
 }
@@ -1287,7 +1287,7 @@
   margin: 0;
   font-family: var(--f-mono);
   font-size: 16px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fg-3);
 }
