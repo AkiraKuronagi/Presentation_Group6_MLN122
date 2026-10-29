@@ -22,6 +22,7 @@ export const coin: Slide = {
       </div>
       <blockquote class="q" data-in>“Chủ nghĩa tư bản chưa bao giờ mang tính toàn cầu như ngày nay … [nhưng] vẫn không thể khắc phục được những mâu thuẫn cơ bản vốn có của nó.”<cite>— Cố Tổng Bí thư Nguyễn Phú Trọng (2021)</cite></blockquote>
     </div>
+    <p class="distinct" data-in><b>Vì sao khó giải quyết triệt để? (quan điểm nhóm)</b> Sản xuất vì lợi nhuận → chi phí môi trường bị đẩy ra ngoài · Sở hữu quyết định phân phối → bất bình đẳng tự lặp lại · Cạnh tranh giữa các khối → khó hợp tác toàn cầu</p>
     ${source(`${refs('gt-ktct')}, Ch.4 mục III.3; ${refs('npt-2021', 'wir-ineq', 'wir-exec', 'unep-2025', 'ipcc-2023')}`)}`,
   notes: notes(
     'Chủ nghĩa tư bản có hai mặt. Mặt tích cực, giáo trình nêu ba điểm: phát triển lực lượng sản xuất, biến sản xuất nhỏ thành sản xuất lớn, và làm cho sản xuất mang tính xã hội. Chuỗi giá trị toàn cầu chính là cả thế giới cùng làm ra một sản phẩm.',
