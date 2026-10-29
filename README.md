@@ -32,8 +32,8 @@ Mở thẳng một slide để tập dượt: `index.html?s=15` hoặc `index.ht
 1. **`src/content/meta.ts`** — mã lớp (SE1919), giảng viên (BinhNV26), họ tên 5 thành viên đã điền; còn trống: học kỳ – năm học.
 2. **Số trang giáo trình KTCT**: đề bài ghi Ch.4 mục III “tr.134–151”, nhưng mục lục bản in 6/2021 (ISBN 978-604-57-6588-3) ghi **tr.149–168** (Ch.6 mục II: tr.260–286). Trang hiện chỉ trích theo *chương/mục*; nhóm đối chiếu cuốn sách đang dùng rồi mới ghi số trang.
 3. **`docs/PHU_LUC_AI.md`** — bản nháp Phụ lục AI theo mẫu Tab 6: đọc, sửa cho đúng việc nhóm thực sự làm, điền link minh chứng.
-4. **`docs/KICH_BAN_THUYET_TRINH.md`** — điền cột “Người trình bày”; tập nói bằng lời của mình (không đọc slide).
-5. **`docs/PHAN_BIEN_DU_KIEN.md`** — câu hỏi phản biện 3C dự kiến + hướng trả lời (phần trả lời phản biện không được dùng AI).
+4. **Kịch bản và phản biện dự kiến** nằm trong thư mục `ban-in/` (không đưa lên GitHub): `KICH_BAN_THUYET_TRINH.md` (chia theo người), `Noi_dung_thuyet_trinh_Nhom6.pdf` (lời nói liền mạch); tập nói bằng lời của mình, không đọc slide.
+5. **`ban-in/PHAN_BIEN_DU_KIEN.md`** — câu hỏi phản biện 3C dự kiến, chỉ dùng nội bộ; khi trả lời phản biện tại lớp không được dùng AI.
 
 Sau khi sửa: `npm run build:single` để tạo lại `dist-single/index.html`.
 

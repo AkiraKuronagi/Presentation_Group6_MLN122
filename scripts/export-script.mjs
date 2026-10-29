@@ -1,5 +1,5 @@
 // Xuất kịch bản thuyết trình từ ghi chú người nói trong trang, chia theo từng bạn (meta.members[].slides):
-//   docs/KICH_BAN_THUYET_TRINH.md (bản PDF nội dung nói nằm ngoài repo, thư mục ban-in/)
+//   ban-in/KICH_BAN_THUYET_TRINH.md (thư mục ban-in/ không đưa lên git)
 // Cần: đã build bản 1 file (npm run build:single) và có gói puppeteer-core + Chrome.
 // Chạy: node scripts/export-script.mjs [đường-dẫn-chrome]
 import { writeFileSync, mkdirSync } from 'node:fs'
@@ -51,7 +51,8 @@ parts.forEach((p) => {
   })
 })
 mkdirSync(resolve(root, 'docs'), { recursive: true })
-writeFileSync(resolve(root, 'docs/KICH_BAN_THUYET_TRINH.md'), md)
+mkdirSync(resolve(root, 'ban-in'), { recursive: true })
+writeFileSync(resolve(root, 'ban-in/KICH_BAN_THUYET_TRINH.md'), md)
 
 await browser.close()
 console.log(`OK: ${rows.length} slide, tổng ${mmss(total)} · ${parts.map((p) => `${p.name} ${mmss(p.seconds)}`).join(' · ')}`)
