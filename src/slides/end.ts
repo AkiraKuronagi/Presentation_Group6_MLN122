@@ -77,8 +77,8 @@ export const lesson: Slide = {
     pick(MAJORS[0].id)
   },
   notes: notes(
-    'Với sinh viên như chúng em, bài học khá cụ thể. Năm 2025, tỷ lệ lao động qua đào tạo có bằng, chứng chỉ ước đạt 29,2%. Năm 2026, Việt Nam xếp hạng 43 trên 139 nền kinh tế về Chỉ số Đổi mới sáng tạo toàn cầu, nhưng riêng trụ cột vốn con người và nghiên cứu chỉ hạng 79 — đây là hạng của một trụ cột, không phải hạng chung. Theo Quyết định 1017 của Thủ tướng, đến năm 2030 phải đào tạo ít nhất 50.000 nhân lực bán dẫn trình độ từ đại học trở lên.',
-    'Sinh viên cần nâng cao chuyên môn, công nghệ, ngoại ngữ và kỹ năng để có khả năng tham gia những công đoạn có giá trị gia tăng cao hơn — từ thiết kế vi mạch, trí tuệ nhân tạo, phần mềm, đến kinh doanh quốc tế, marketing hay ngoại ngữ. Lao động phức tạp tạo ra nhiều giá trị hơn lao động giản đơn trong cùng một khoảng thời gian. Và theo quy luật lượng – chất, phải tích lũy đủ kỹ năng và kinh nghiệm thì mới có bước nhảy; không vội vàng, nhưng cũng đừng đứng yên.',
+    'Với sinh viên, có mấy con số đáng nghĩ. Năm 2025, tỷ lệ lao động qua đào tạo có bằng, chứng chỉ ước đạt 29,2%. Năm 2026, Việt Nam xếp hạng 43 trên 139 về Chỉ số Đổi mới sáng tạo toàn cầu, nhưng riêng trụ cột vốn con người và nghiên cứu chỉ hạng 79. Theo Quyết định 1017, đến năm 2030 cần đào tạo ít nhất 50.000 nhân lực bán dẫn trình độ đại học trở lên.',
+    '(Bấm 2–3 ngành trên màn hình.) Ngành nào thì sinh viên cũng cần nâng chuyên môn, công nghệ, ngoại ngữ và kỹ năng để tham gia được những khâu có giá trị cao hơn. Lao động phức tạp tạo ra nhiều giá trị hơn lao động giản đơn trong cùng một thời gian. Và theo quy luật lượng – chất, phải tích lũy đủ thì mới có bước nhảy: không vội vàng, nhưng cũng không đứng yên.',
     'Cách bấm: bấm 2–3 ngành (ví dụ ngành của các bạn trong nhóm) để thấy vị trí trên đường cong và các kỹ năng cần có.',
   ),
 }
@@ -110,9 +110,8 @@ export const outro: Slide = {
       <p class="outro__thanks" data-in>Cảm ơn thầy và các bạn đã lắng nghe!</p>
     </div>`,
   notes: notes(
-    'Tóm lại, độc quyền ngày nay không mất đi mà chỉ đổi cách làm: các tập đoàn xuyên quốc gia có vai trò chi phối trong nhiều chuỗi giá trị toàn cầu; các tập đoàn dẫn đầu thường có lợi thế ở những công đoạn như nghiên cứu, thiết kế, công nghệ và thương hiệu, vốn tạo ra giá trị gia tăng cao. Việt Nam chọn hội nhập sâu, nhưng vẫn giữ độc lập, tự chủ. Còn với mỗi sinh viên, điều đó có nghĩa là phải nâng năng lực của mình để tham gia những khâu có giá trị gia tăng cao hơn, bằng ba việc: học thật sâu một kỹ năng chính, hiểu luật chơi của thế giới, và làm việc có trách nhiệm.',
-    'Thông điệp của nhóm 6 là: hội nhập để lớn lên, tự chủ để không bị cuốn đi. Phần trình bày của nhóm đến đây là hết. Cảm ơn thầy và các bạn đã lắng nghe.',
-    'Sau đó mời Nhóm 7, 8, 9 đặt câu hỏi.',
+    'Tóm lại, độc quyền ngày nay không mất đi mà đổi hình thức. Tập đoàn xuyên quốc gia chi phối nhiều chuỗi giá trị toàn cầu và thường nắm các khâu có giá trị gia tăng cao như nghiên cứu, thiết kế, công nghệ, thương hiệu. Việt Nam hội nhập sâu nhưng giữ độc lập, tự chủ. Còn sinh viên thì cần nâng năng lực để tham gia những khâu có giá trị cao hơn, bằng ba việc: học sâu một năng lực chính, hiểu luật chơi toàn cầu, và làm việc có trách nhiệm.',
+    'Thông điệp của nhóm 6: hội nhập để lớn lên, tự chủ để không bị cuốn đi. Phần trình bày của nhóm đến đây là hết. Cảm ơn thầy và các bạn đã lắng nghe. Mời Nhóm 7, 8, 9 đặt câu hỏi.',
   ),
 }
 
@@ -145,7 +144,7 @@ export const references: Slide = {
       ${SOURCES.map((s) => `<li>${s.apa}${s.url ? ` <a href="${s.url}" target="_blank" rel="noopener">${s.url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}</a>` : ''}</li>`).join('')}
     </ol>`,
   notes: notes(
-    'Toàn bộ số liệu trong bài đều có nguồn chính thống, ghi theo chuẩn APA 7 ở slide này. Việc nhóm dùng AI được ghi trong Phụ lục AI nộp kèm.',
+    'Số liệu trong bài đều có nguồn, ghi theo chuẩn APA 7 ở slide này. Việc nhóm dùng AI được ghi trong Phụ lục AI nộp kèm.',
   ),
 }
 

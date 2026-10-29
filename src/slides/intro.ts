@@ -33,7 +33,7 @@ export const cover: Slide = {
     </div>`,
   notes: notes(
     'Chào thầy và các bạn. Nhóm 6 xin trình bày Chủ đề 6: biểu hiện mới của độc quyền và độc quyền nhà nước ngày nay, qua các tập đoàn xuyên quốc gia, chuỗi giá trị toàn cầu và vai trò lịch sử của chủ nghĩa tư bản.',
-    'Cả bài, nhóm chỉ muốn trả lời một câu hỏi: ai đang nắm chuỗi giá trị toàn cầu, và Việt Nam đang đứng ở đâu trong chuỗi đó. Trên quả địa cầu này, đường màu vàng là tiền đầu tư nước ngoài chảy vào Việt Nam, còn đường màu đỏ là hàng Việt Nam bán đi khắp thế giới.',
+    'Cả bài xoay quanh một câu hỏi: ai đang nắm chuỗi giá trị toàn cầu, và Việt Nam đang ở đâu trong chuỗi đó. Trên quả địa cầu, đường màu vàng là tiền đầu tư nước ngoài vào Việt Nam, đường màu đỏ là hàng Việt Nam bán ra nước ngoài.',
   ),
 }
 
@@ -99,9 +99,9 @@ export const lenin: Slide = {
     })
   },
   notes: notes(
-    'Trong giáo trình Kinh tế chính trị, chương 4, Lênin nêu ra năm đặc điểm của chủ nghĩa tư bản độc quyền. Một, tư bản gom lại ngày càng lớn, sinh ra các công ty độc quyền. Hai, tiền của ngân hàng và tiền của nhà máy nhập lại làm một, gọi là tư bản tài chính, và một nhóm nhỏ trùm tài chính nắm cả nền kinh tế. Ba, các nước giàu đem tiền ra nước ngoài đầu tư, gọi là xuất khẩu tư bản. Bốn, các tập đoàn lớn chia nhau thị trường thế giới. Năm, các nước lớn chia nhau vùng ảnh hưởng.',
-    'Hơn một trăm năm sau, năm đặc điểm này vẫn còn, chỉ là cách làm đã khác, như năm thẻ trên màn hình. Đáng chú ý nhất là thẻ một: tư bản gom lại càng lớn thì càng sinh ra những kiểu công ty độc quyền mới, như concern, conglomerate và các tập đoàn xuyên quốc gia; quanh mỗi tập đoàn lại có rất nhiều công ty vừa và nhỏ nhận làm gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói rõ đó vẫn là độc quyền, chỉ ở dạng mới. Bốn thẻ còn lại là chế độ ủy nhiệm, xuất khẩu tư bản đổi chiều, các nước vừa mở cửa ra thế giới vừa lập khối với nhau, và “biên giới mềm”; nhóm sẽ nói kỹ ở các slide sau.',
-    'Nói ngắn gọn: độc quyền không mất đi, nó chỉ “đổi áo”.',
+    'Giáo trình Kinh tế chính trị, chương 4, có nêu năm đặc điểm của chủ nghĩa tư bản độc quyền theo Lênin. Một, tư bản gom lại ngày càng lớn, sinh ra các tổ chức độc quyền. Hai, tiền ngân hàng và tiền công nghiệp nhập lại, gọi là tư bản tài chính, và một nhóm nhỏ tài phiệt chi phối nền kinh tế. Ba, nước giàu đem vốn ra nước ngoài đầu tư, gọi là xuất khẩu tư bản. Bốn, các tập đoàn lớn chia nhau thị trường thế giới. Năm, các cường quốc chia nhau vùng ảnh hưởng.',
+    '(Nhấn ↓ để lật thẻ.) Hơn một trăm năm sau, năm đặc điểm này vẫn còn, nhưng cách làm đã khác. Thẻ một: ngoài các kiểu độc quyền cũ, giờ có concern, conglomerate và tập đoàn xuyên quốc gia; quanh mỗi tập đoàn có nhiều công ty nhỏ nhận gia công cho nó. Giáo trình gọi đây là “hệ thống gia công”, và nói đó vẫn là độc quyền, chỉ ở dạng mới. Bốn thẻ còn lại là chế độ ủy nhiệm, xuất khẩu tư bản đổi chiều, toàn cầu hóa đi cùng khu vực hóa, và “biên giới mềm”. Các slide sau nhóm sẽ nói từng cái.',
+    'Tóm lại: độc quyền không mất đi, nó chỉ “đổi áo”.',
     'Cách bấm: slide mở ở năm 1916. Nói xong 5 đặc điểm thì nhấn ↓ để lật cả 5 thẻ sang “ngày nay”; nhấn ↓ lần nữa mới sang slide sau. Bấm vào một thẻ để lật riêng thẻ đó.',
   ),
 }
@@ -139,7 +139,7 @@ export const phil: Slide = {
           ${FORMS.map((f, i) => `<g class="phil__form"><circle cx="${360 + i * 98}" cy="130" r="7" /><text x="${360 + i * 98}" y="${i % 2 ? 100 : 72}" text-anchor="middle">${f}</text></g>`).join('')}
           <text x="560" y="178" text-anchor="middle" class="phil__t phil__t--gold">cùng một chất: CNTB độc quyền</text>
         </svg>
-        <p class="phil__more">Như đun nước: nóng dần, tới 100°C mới sôi. Tư bản gom dần về lượng, tới điểm nút thì có bước nhảy — độc quyền ra đời. TNC, quỹ đầu tư, chuỗi giá trị chỉ to hơn, khác hình thức, vẫn trong cùng một “độ”. <b>Giáo trình KTCT</b> gọi ĐQNN là bước phát triển mới của độc quyền (tr.137) — nhóm hiểu đó là bước nhảy cục bộ, chưa đổi chất CNTB.</p>
+        <p class="phil__more">Như đun nước: nóng dần, tới 100°C mới sôi. Tư bản gom dần về lượng, tới điểm nút thì có bước nhảy — độc quyền ra đời. TNC, quỹ đầu tư, chuỗi giá trị chỉ to hơn, khác hình thức, vẫn trong cùng một “độ”. <b>Giáo trình KTCT (tr.137):</b> CNTB độc quyền nhà nước là “biểu hiện mới của độc quyền”, “hình thức vận động mới” của QHSX TBCN — đổi hình thức, chưa đổi chất.</p>
       </figure>
       <figure class="phil__panel" data-in>
         <figcaption><b>LLSX – QHSX</b>Sản xuất xã hội hóa toàn cầu ↔ sở hữu, phân phối tập trung.</figcaption>
