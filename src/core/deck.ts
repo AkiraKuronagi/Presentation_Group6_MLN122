@@ -174,10 +174,11 @@ export class Deck {
     gsap.killTweensOf([from, to, from?.querySelector('.slide__stage'), to.querySelector('.slide__stage')])
     if (from) {
       gsap.to(from, { autoAlpha: 0, duration: dur * 0.6, ease: 'power2.in', onComplete: () => from.classList.remove('is-active') })
-      gsap.to(from.querySelector('.slide__stage'), { y: -60 * dir, duration: dur * 0.6, ease: 'power2.in' })
+      gsap.to(from.querySelector('.slide__stage'), { '--y': `${-60 * dir}px`, duration: dur * 0.6, ease: 'power2.in' })
     }
     gsap.fromTo(to, { autoAlpha: 0 }, { autoAlpha: 1, duration: dur, delay: dur * 0.3, ease: 'power2.out' })
-    gsap.fromTo(to.querySelector('.slide__stage'), { y: 60 * dir }, { y: 0, duration: dur * 1.2, delay: dur * 0.3, ease: 'expo.out' })
+    // trượt qua biến --y (không dùng y của GSAP: nó gộp scale lúc đó vào transform, F11/đổi cỡ cửa sổ sẽ không co giãn lại)
+    gsap.fromTo(to.querySelector('.slide__stage'), { '--y': `${60 * dir}px` }, { '--y': '0px', duration: dur * 1.2, delay: dur * 0.3, ease: 'expo.out' })
     // ảnh nền: mờ chéo, rồi zoom chậm kiểu điện ảnh (Ken Burns)
     const bgFrom = prev >= 0 ? this.bgEls[prev] : null
     const bgTo = this.bgEls[k]

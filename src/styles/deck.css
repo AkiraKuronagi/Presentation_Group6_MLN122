@@ -33,8 +33,9 @@ body {
   width: 1920px;
   height: 1080px;
   transform-origin: 0 0;
-  /* scale do JS đặt qua --s; y được GSAP điều khiển riêng nên tách thành translate */
+  /* scale do JS đặt qua --s; độ trượt khi chuyển slide do GSAP đặt qua --y (đơn vị sân khấu) */
   scale: var(--s, 1);
+  translate: 0 calc(var(--y, 0px) * var(--s, 1));
   padding: 110px 120px 96px;
   color: var(--fg);
   font-size: 28px;
