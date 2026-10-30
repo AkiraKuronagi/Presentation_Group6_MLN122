@@ -71,7 +71,7 @@ export const CAPTURE = {
 /**
  * Dệt may — nd-dm-2025 (46 tỷ USD, ~52%), tcct-npl (vải nhập ~15 tỷ USD, Cục Hải quan), nd-dm-vai (~17 tỷ USD, cách tính khác),
  * nd-dm-smile (80% lao động – 18–20% giá trị: ông Nguyễn Xuân Dương; CMT/FOB/ODM/OBM theo % SỐ DOANH NGHIỆP: TS Hoàng Xuân Hiệp),
- * moit-roo (C/O CPTPP ~15%, EVFTA 30–35%), qd1643, vcci-loc
+ * moit-co, moit-roo (C/O CPTPP ~15%, EVFTA 30–35%; moit-co dẫn lời ông Trương Văn Cẩm), vcci-dm2025 (46 tỷ USD, ~52%), qd1643, vcci-loc
  */
 export const TEXTILE = {
   export2025: 46,

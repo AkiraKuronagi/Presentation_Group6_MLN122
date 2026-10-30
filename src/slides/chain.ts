@@ -182,12 +182,11 @@ const MODES: Array<[string, number, string, string]> = [
 export const textile: Slide = {
   id: 'det-may',
   title: 'Dệt may',
-  seconds: 90,
+  seconds: 55,
   bg: photo('garment', { dim: 0.8 }),
   html: () => `
     <p class="k"><b>11</b>Dệt may — cùng một đường cong</p>
     <h2 class="h h--m" data-in><em>${TEXTILE.sewingLabourShare}%</em> lao động —<br />chỉ thu về <em class="r">${TEXTILE.sewingValueShare}%</em> giá trị</h2>
-    <p class="lead" data-in style="max-width:none">Giá trị nội địa tăng thêm toàn ngành: <b>~${TEXTILE.domesticValueAdded2025}%</b> (2025) · chỗ vướng nhất: nguyên liệu, phải nhập vải</p>
     <div class="stack" data-in>
       <p class="stack__h">Phương thức sản xuất của ngành dệt may (%, TS Hoàng Xuân Hiệp, 2024) — 10 năm trước CMT chiếm 70–80%</p>
       <div class="stack__bar">${MODES.map(([k, v, , c]) => `<i class="stack__seg stack__seg--${c}" style="--v:${v}"><b>${k} ${v}%</b></i>`).join('')}</div>
@@ -198,17 +197,18 @@ export const textile: Slide = {
       <div class="stat stat--red"><div class="stat__v">~${TEXTILE.fabricImport2025}<small>tỷ USD</small></div><div class="stat__l">vải nhập khẩu 2025 (số liệu Cục Hải quan)</div></div>
       <div class="stat stat--blue"><div class="stat__v">${TEXTILE.coUtilisation.cptpp}% · ${TEXTILE.coUtilisation.evfta}%</div><div class="stat__l">tỷ lệ tận dụng ưu đãi thuế quan (C/O) · CPTPP · EVFTA — vì quy tắc xuất xứ “từ sợi”, “từ vải”</div></div>
     </div>
-    <p class="why" data-in style="max-width:none"><b>80% lao động – 18–20% giá trị là ước tính của chuyên gia</b> (Chủ tịch HĐQT Tổng công ty May Hưng Yên, Báo Nhân Dân 2024), không phải số thống kê: phần của khâu may trong <b>cả chuỗi</b> (trồng bông → may → phân phối). ~${TEXTILE.domesticValueAdded2025}% là số của ngành: giá trị tạo thêm trong nước trên <b>kim ngạch xuất khẩu</b> — khác mẫu số nên không mâu thuẫn.</p>
     ${source(refs('nd-dm-smile', 'nd-dm-2025', 'tcct-npl', 'moit-roo', 'qd1643'))}`,
   enter(el) {
     gsap.fromTo(el.querySelectorAll('.stack__seg'), { scaleX: 0 }, { scaleX: 1, duration: reduceMotion ? 0 : 0.9, delay: 0.6, stagger: 0.18, ease: 'expo.out' })
   },
   notes: notes(
-    'Dệt may cũng tương tự. Theo ông Nguyễn Xuân Dương, Chủ tịch Tổng công ty May Hưng Yên, trên Báo Nhân Dân năm 2024, khâu may dùng khoảng 80% lao động nhưng chỉ chiếm 18 đến 20% giá trị của cả chuỗi. Đây là ước tính của chuyên gia, không phải số thống kê.',
-    'Cũng trong bài báo đó, theo TS Hoàng Xuân Hiệp: cắt may thuê, gọi là CMT, còn khoảng 35%; tự mua nguyên liệu rồi sản xuất, gọi là FOB, khoảng 55%; tự thiết kế, ODM, khoảng 9%; có thương hiệu riêng, OBM, chỉ khoảng 1%. Mười năm trước CMT chiếm tới 70 đến 80%, nên ngành đang đi lên dần.',
-    'Năm 2025, giá trị nội địa tăng thêm của cả ngành khoảng 52%. Con số này không mâu thuẫn với 18 đến 20%: 52% tính trên tiền xuất khẩu, còn 18 đến 20% là phần của khâu may trong cả chuỗi, từ trồng bông tới bán lẻ.',
-    'Chỗ vướng nhất là nguyên liệu. Năm 2025, dệt may xuất khẩu khoảng 46 tỷ USD, nhưng riêng vải đã nhập gần 15 tỷ USD, theo Cục Hải quan. EVFTA yêu cầu hàng làm từ vải trở đi, CPTPP yêu cầu từ sợi trở đi, mới được ưu đãi thuế. Nên theo Bộ Công Thương, tỷ lệ tận dụng ưu đãi mới khoảng 15% với CPTPP và 30 đến 35% với EVFTA. Ai nắm được khâu nguyên liệu thì hưởng lợi nhiều hơn.',
-    'Nguồn: 18–20% là lời ông Nguyễn Xuân Dương, Chủ tịch HĐQT Tổng công ty May Hưng Yên, trong bài “Nâng tầm giá trị dệt may” (Báo Nhân Dân, 02/01/2024; cùng bài: khâu trồng bông đến dệt nhuộm 15% lao động – 60% giá trị, khâu phân phối 5% lao động – hơn 20% giá trị); 46 tỷ USD và 52% do Hiệp hội Dệt may công bố (Báo Nhân Dân, 25/11/2025); vải gần 15 tỷ USD là số sơ bộ của Cục Hải quan (Tạp chí Công Thương, 8/2026) — Báo Nhân Dân 3/2026 có nêu “khoảng 17 tỷ USD”, nhóm dùng số Hải quan vì là số thống kê; C/O 15% và 30–35%: Bộ Công Thương, 19/11/2025.',
-    'Nếu bị hỏi về số CMT: bài báo ghi “còn tới 35% các doanh nghiệp” làm cắt may thuê, tức là tính theo số doanh nghiệp, không phải theo kim ngạch; các tỷ lệ FOB, ODM, OBM nối tiếp trong cùng câu của TS Hoàng Xuân Hiệp. Các nguồn cũ hơn có bộ số khác (ví dụ gia công 65%, FOB 25%) vì khác năm và cách tính; nhóm dùng trọn một bộ số của TS Hoàng Xuân Hiệp cho thống nhất.',
+    'Dệt may cũng tương tự. Theo ông Nguyễn Xuân Dương, Chủ tịch Tổng công ty May Hưng Yên, trên báo Nhân Dân năm 2024, khâu may dùng khoảng 80% lao động nhưng chỉ tạo ra 18 đến 20% giá trị của cả chuỗi. Đây là ước tính của chuyên gia, không phải số thống kê.',
+    'Cũng trong bài báo đó, TS Hoàng Xuân Hiệp, Hiệu trưởng Trường Đại học Công nghiệp Dệt May Hà Nội, chia các doanh nghiệp may thành bốn mức, từ thấp lên cao, như trên màn hình. Mười năm trước may thuê chiếm tới 70 đến 80%, nên ngành đang leo lên dần, nhưng phần lớn vẫn ở các bậc dưới.',
+    'Chỗ vướng nhất là nguyên liệu: năm 2025, riêng vải đã nhập gần 15 tỷ USD. EVFTA yêu cầu hàng làm từ vải trở đi, CPTPP yêu cầu từ sợi trở đi thì mới được ưu đãi thuế. Vì vậy, theo ông Trương Văn Cẩm, Phó Chủ tịch Hiệp hội Dệt may, CPTPP mới được khai thác khoảng 15%, EVFTA khoảng 30 đến 35%. Ai nắm được khâu nguyên liệu thì hưởng lợi nhiều hơn.',
+    'Nếu còn thời gian, đọc bốn mức: May thuê (khách đưa vải, mình cắt may lấy tiền công): khoảng 35%. Tự mua vải rồi may: khoảng 55%. Tự thiết kế mẫu: khoảng 9%. Có thương hiệu riêng: chỉ khoảng 1%.',
+    'Nguồn: 80% lao động – 18–20% giá trị và bộ số 35/55/9/1: Báo Nhân Dân, 02/01/2024, https://nhandan.vn/nang-tam-gia-tri-det-may-post790243.html; vải gần 15 tỷ USD (số sơ bộ của Cục Hải quan): Tạp chí Công Thương, 2026, https://tapchicongthuong.vn/tac-dong-cua-nhap-khau-nguyen-phu-lieu-den-nang-luc-canh-tranh-cua-nganh-det-may-viet-nam-538472.htm; CPTPP 15%, EVFTA 30–35% (lời ông Trương Văn Cẩm, Phó Chủ tịch kiêm Tổng Thư ký VITAS): Cổng TTĐT Bộ Công Thương, 09/12/2025, https://moit.gov.vn/tin-tuc/thi-truong-nuoc-ngoai/tan-dung-c-o-uu-dai-don-bay-tang-toc-xuat-khau-det-may-viet-nam.html.',
+    'Nếu bị hỏi tỷ lệ giá trị nội địa của cả ngành: Năm 2025, theo Hiệp hội Dệt may, xuất khẩu khoảng 46 tỷ USD, tỷ lệ giá trị nội địa khoảng 52% (https://vcci.com.vn/news/xuat-khau-det-may-nam-2025-uoc-dat-46-ty-usd-giu-vi-the-top-3-the-gioi). Con số này tính trên tiền xuất khẩu, còn 18–20% là phần của riêng khâu may trong cả chuỗi, nên hai con số không mâu thuẫn.',
+    'Nếu bị hỏi 52% tính thế nào: Hiệp hội Dệt may không công bố phương pháp chi tiết, nhóm dẫn đúng con số họ công bố.',
+    'Nếu bị hỏi về số may thuê 35%: bài báo ghi “còn tới 35% các doanh nghiệp” làm cắt may thuê (CMT), tức là tính theo số doanh nghiệp, không phải theo kim ngạch; FOB 55%, ODM 9%, OBM 1% nối tiếp trong cùng câu của TS Hoàng Xuân Hiệp.',
   ),
 }

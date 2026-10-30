@@ -188,6 +188,12 @@ export const SOURCES: Source[] = [
     url: 'https://moit.gov.vn/tin-tuc/thi-truong-nuoc-ngoai/go-nut-that-nguyen-phu-lieu-det-may-tan-dung-dai-han-c-o-uu-dai.html',
   },
   {
+    id: 'moit-co',
+    short: 'Bộ Công Thương, 2025b',
+    apa: 'Bộ Công Thương. (2025b, 09/12). Tận dụng C/O ưu đãi: Đòn bẩy tăng tốc xuất khẩu dệt may Việt Nam (dẫn lời ông Trương Văn Cẩm, Phó Chủ tịch kiêm Tổng Thư ký VITAS). <i>Cổng TTĐT Bộ Công Thương</i>.',
+    url: 'https://moit.gov.vn/tin-tuc/thi-truong-nuoc-ngoai/tan-dung-c-o-uu-dai-don-bay-tang-toc-xuat-khau-det-may-viet-nam.html',
+  },
+  {
     id: 'qd1643',
     short: 'Thủ tướng Chính phủ, 2022',
     apa: 'Thủ tướng Chính phủ. (2022). <i>Quyết định số 1643/QĐ-TTg ngày 29/12/2022 phê duyệt Chiến lược phát triển ngành Dệt May và Da Giầy Việt Nam đến năm 2030, tầm nhìn đến năm 2035</i>.',
@@ -195,9 +201,15 @@ export const SOURCES: Source[] = [
   },
   {
     id: 'vcci-loc',
-    short: 'VCCI, 2025',
-    apa: 'VCCI. (2025). Tỷ lệ nội địa hóa dệt may được cải thiện đáng kể (đăng lại từ Báo Đầu tư). <i>vcci.com.vn</i>.',
+    short: 'VCCI, 2025a',
+    apa: 'VCCI. (2025a). Tỷ lệ nội địa hóa dệt may được cải thiện đáng kể (đăng lại từ Báo Đầu tư). <i>vcci.com.vn</i>.',
     url: 'https://www.vcci.com.vn/tin-tuc/ty-le-noi-dia-hoa-det-may-duoc-cai-thien-dang-ke',
+  },
+  {
+    id: 'vcci-dm2025',
+    short: 'VCCI, 2025b',
+    apa: 'VCCI. (2025b, 18/12). Xuất khẩu dệt may năm 2025 ước đạt 46 tỷ USD, giữ vị thế Top 3 thế giới. <i>vcci.com.vn</i>.',
+    url: 'https://vcci.com.vn/news/xuat-khau-det-may-nam-2025-uoc-dat-46-ty-usd-giu-vi-the-top-3-the-gioi',
   },
 
   // ── Quốc tế ─────────────────────────────────────────────────────
