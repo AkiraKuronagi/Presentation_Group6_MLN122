@@ -1,6 +1,6 @@
 import { photo } from '../content/images'
 import type { Slide } from '../core/deck'
-import { VN_PLACES } from './intro'
+import { PHU_QUOC, VN_PLACES } from './intro'
 import { notes, refs, source } from './util'
 
 // ─── 12. "Biên giới mềm" ────────────────────────────────────────────
@@ -19,7 +19,8 @@ export const softBorder: Slide = {
   gl: { scene: 'globe', mode: 'tariff', x: 1380, y: 560, p: 1, speed: 0.45 },
   labels: [
     { at: '37.77,-122.42', html: '<b>Hoa Kỳ</b>', cls: 'hub' },
-    ...VN_PLACES.map((p) => ({ ...p, cls: 'vn small' })),
+    // Việt Nam nằm sát mép cầu, cạnh cột mốc thời gian: hạ nhãn Phú Quốc xuống ngang dòng 7/2025 (dòng ngắn) để khỏi đè dòng 4/2025
+    ...VN_PLACES.map((p) => ({ ...p, cls: 'vn small', ...(p === PHU_QUOC && { dy: 32 }) })),
   ],
   html: () => `
     <div class="col">

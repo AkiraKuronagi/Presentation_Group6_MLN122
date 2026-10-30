@@ -52,7 +52,7 @@ npm run build:single
 ```
 
 - `npm run build` → `dist/` (đưa lên GitHub Pages hoặc máy chủ tĩnh bất kỳ).
-- `npm run data:land` → tạo lại dữ liệu chấm quả địa cầu (Natural Earth 110m; có thêm quần đảo Hoàng Sa, Trường Sa của Việt Nam).
+- `npm run data:land` → tạo lại dữ liệu chấm quả địa cầu (Natural Earth 110m; có thêm quần đảo Hoàng Sa, Trường Sa, đảo Phú Quốc và các đảo ven bờ của Việt Nam).
 - `node scripts/export-script.mjs` → xuất lại kịch bản từ ghi chú người nói (cần `puppeteer-core`).
 
 ### Cấu trúc

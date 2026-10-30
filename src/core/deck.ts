@@ -16,6 +16,8 @@ export interface GLLabel {
   cls?: string
   /** chỉ hiện khi tiến độ cảnh vượt ngưỡng này (mặc định 0.25) */
   minP?: number
+  /** chỉ hiện khi điểm gắn nằm bên phải mốc này (px sân khấu) — tránh nhãn lấn sang cột chữ khi quả cầu quay */
+  minX?: number
 }
 
 export interface Slide {
@@ -230,7 +232,8 @@ export class Deck {
         const [id, fy] = l.at.split('@')
         const pt = ll ? scene.project(+ll[1], +ll[2]) : fy !== undefined ? scene.project(id, +fy) : scene.project(id)
         e.style.transform = `translate(${pt.x + (l.dx ?? 0) * this.scale}px, ${pt.y + (l.dy ?? 0) * this.scale}px)`
-        e.classList.toggle('is-on', pt.front !== false && (this.stage?.state?.p ?? 0) > (l.minP ?? 0.25))
+        const inX = l.minX === undefined || (pt.x - this.offsetX) / this.scale > l.minX
+        e.classList.toggle('is-on', pt.front !== false && inX && (this.stage?.state?.p ?? 0) > (l.minP ?? 0.25))
       })
     })
   }

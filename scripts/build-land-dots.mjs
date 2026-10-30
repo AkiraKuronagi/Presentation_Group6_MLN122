@@ -1,7 +1,7 @@
 // Tạo dữ liệu chấm cho quả địa cầu (Natural Earth 110m, public domain, qua gói world-atlas).
 // Chạy: npm run data:land  →  src/data/land-dots.json
 //   land: [lat, lon, ...]  — lục địa, lưới gần-đều diện tích ~1°
-//   vn:   [lat, lon, ...]  — lãnh thổ Việt Nam, lưới dày 0,3° + quần đảo Hoàng Sa, Trường Sa
+//   vn:   [lat, lon, ...]  — lãnh thổ Việt Nam, lưới dày 0,3° + quần đảo Hoàng Sa, Trường Sa, đảo Phú Quốc, đảo ven bờ
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -41,7 +41,7 @@ for (let lat = 8; lat <= 23.6; lat += STEP) {
     if (geoContains(vietNam, [lon, lat])) vnOut.push(r2(lat), r2(lon))
   }
 }
-// Quần đảo Hoàng Sa (Đà Nẵng) và Trường Sa (Khánh Hòa) — chủ quyền của Việt Nam.
+// Quần đảo Hoàng Sa (Đà Nẵng), Trường Sa (Khánh Hòa), đảo Phú Quốc và các đảo ven bờ — chủ quyền của Việt Nam.
 // Bản đồ 110m không vẽ đảo nhỏ nên thêm thủ công các điểm tiêu biểu.
 const archipelagos = [
   // Hoàng Sa
@@ -49,6 +49,12 @@ const archipelagos = [
   // Trường Sa
   [8.64, 111.92], [11.43, 114.33], [9.88, 114.33], [10.18, 114.36], [10.37, 114.48], [7.89, 112.91], [8.17, 113.3],
   [10.86, 114.08], [9.3, 113.0], [8.85, 112.6], [10.5, 115.0],
+  // Phú Quốc (Kiên Giang) — rộng ở phía bắc, thon dần xuống An Thới
+  [10.42, 103.96], [10.4, 104.04], [10.36, 103.88], [10.33, 103.97], [10.31, 104.05],
+  [10.25, 103.97], [10.22, 104.03], [10.15, 103.99], [10.08, 104.0], [10.01, 104.01], [9.95, 104.02],
+  // Đảo ven bờ khác: Thổ Chu, Nam Du, Hòn Khoai, Côn Đảo, Phú Quý, Lý Sơn, Cồn Cỏ, Bạch Long Vĩ, Cô Tô, Cát Bà
+  [9.3, 103.48], [9.68, 104.36], [8.43, 104.83], [8.68, 106.58], [8.71, 106.64], [10.52, 108.94],
+  [15.38, 109.12], [17.16, 107.34], [20.13, 107.72], [20.98, 107.77], [20.8, 107.02],
 ]
 for (const [lat, lon] of archipelagos) vnOut.push(lat, lon)
 

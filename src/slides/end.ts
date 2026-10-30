@@ -4,7 +4,7 @@ import { photo, PHOTOS } from '../content/images'
 import { MAJORS } from '../content/majors'
 import { SOURCES } from '../content/sources'
 import { reduceMotion, type Slide } from '../core/deck'
-import { VN_PLACES } from './intro'
+import { PHU_QUOC, VN_PLACES } from './intro'
 import { count, notes, refs, source } from './util'
 
 // ─── 16. Bài học cho sinh viên ──────────────────────────────────────
@@ -95,7 +95,8 @@ export const outro: Slide = {
   title: 'Kết luận',
   seconds: 40,
   gl: { scene: 'globe', mode: 'footer', x: 1500, y: 520, p: 1, speed: 0.4 },
-  labels: VN_PLACES.map((p) => ({ ...p, cls: 'vn small' })),
+  // quả cầu quay liên tục: nhãn Phú Quốc (nằm bên trái đảo) tắt khi đảo trôi gần cột chữ (rộng tới x ≈ 1080)
+  labels: VN_PLACES.map((p) => ({ ...p, cls: 'vn small', ...(p === PHU_QUOC && { minX: 1290 }) })),
   html: () => `
     <div class="col col--wide">
       <p class="k"><b>17</b>Thông điệp của nhóm</p>

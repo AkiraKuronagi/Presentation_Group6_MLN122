@@ -2,14 +2,18 @@ import gsap from 'gsap'
 import { meta } from '../content/meta'
 import { photo } from '../content/images'
 import { PHIL } from '../content/theory'
-import { reduceMotion, type Slide } from '../core/deck'
+import { reduceMotion, type GLLabel, type Slide } from '../core/deck'
 import { scramble } from '../core/fx'
 import { notes, refs, source } from './util'
 
+/** nhãn nằm bên trái đảo để không đè lên đồng bằng sông Cửu Long */
+export const PHU_QUOC: GLLabel = { at: '10.22,103.97', html: 'Đ. Phú Quốc <i>(Việt Nam)</i>', align: 'right' }
+
 /** Đảo, thành phố luôn ghi khi quả địa cầu quay tới Việt Nam */
-export const VN_PLACES = [
+export const VN_PLACES: GLLabel[] = [
   { at: '16.5,112', html: 'Q.đ. Hoàng Sa <i>(Việt Nam)</i>' },
   { at: '10,114.2', html: 'Q.đ. Trường Sa <i>(Việt Nam)</i>' },
+  PHU_QUOC,
 ]
 
 // ─── 1. Bìa ──────────────────────────────────────────────────────────
